@@ -15,7 +15,7 @@ const Main = () => {
                     padding: '20px 20% 40px 20%',
                 }}>
                 <Title level={1}>
-                    TW VALUES
+                    TW Values
                 </Title>
             </Header>
             <Content style=
@@ -32,7 +32,7 @@ const Main = () => {
                     padding: '0 20% 0 20%',
                     textAlign: 'right',
                 }}>
-                <Title level={4}>Copyright (c) 2023 TW VALUES</Title>
+                <Title level={4}>Copyright (c) 2023 TW Values</Title>
             </Footer >
         </Layout >
     )
