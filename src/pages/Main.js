@@ -1,5 +1,6 @@
 
 import { Layout, Typography } from 'antd'
+import { Outlet } from 'react-router-dom'
 
 const { Header, Content, Footer } = Layout
 const { Title } = Typography
@@ -22,10 +23,9 @@ const Main = () => {
                     display: 'flex',
                     alignItems: 'center',
                     padding: '10px 20% 10px 20%',
-                    color: 'black',
-                    backgroundColor: 'white',
+                    backgroundColor: '#E0E0E0',
                 }}>
-                Content
+                <Outlet />
             </Content>
             <Footer style=
                 {{
