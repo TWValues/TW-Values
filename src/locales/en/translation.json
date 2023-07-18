@@ -33,6 +33,18 @@
       },
       "q0103": {
         "description": "Those with a greater ability to pay should receive better healthcare."
+      },
+      "q1000": {
+        "description": "We are already indepedent, the name is 'Republic of China (R.O.C)'."
+      },
+      "q1001": {
+        "description": "We need a new constitution for 'Republic of Taiwan'."
+      },
+      "q1100": {
+        "description": "Taiwan is a province of 'People's Republic of China (PRC)'."
+      },
+      "q1101": {
+        "description": "'Republic of China (R.O.C)' is the sole legitimate government of China."
       }
     }
   }

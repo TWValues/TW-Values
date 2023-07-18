@@ -72,6 +72,30 @@ const QUESTIONS = [
             societal: 0,
         }
     },
+    {
+        id: "q1000",
+        effect: {
+            sovereignty: 10,
+        }
+    },
+    {
+        id: "q1001",
+        effect: {
+            sovereignty: 10,
+        }
+    },
+    {
+        id: "q1100",
+        effect: {
+            sovereignty: -10,
+        }
+    },
+    {
+        id: "q1101",
+        effect: {
+            sovereignty: -10,
+        }
+    },
 ]
 
 export default QUESTIONS
