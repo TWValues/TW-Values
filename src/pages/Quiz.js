@@ -2,11 +2,13 @@ import { Layout, Card, Button } from 'antd'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import QUESTIONS from '../utils/questions'
+import { useNavigate } from 'react-router-dom'
 
 const Quiz = () => {
 
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
+  const navigate = useNavigate()
 
   const questions = useMemo(() => {
 
@@ -52,7 +54,11 @@ const Quiz = () => {
   }
 
   const moveToNextQuestion = () => {
-    setCurrentSelectedQuestionIndex(currentSelectedQuestionIndex + 1)
+    if (currentSelectedQuestionIndex + 1 === questions.length) {
+      navigate('/result', { state: { value: 100 } })
+    } else {
+      setCurrentSelectedQuestionIndex(currentSelectedQuestionIndex + 1)
+    }
   }
 
   return (
