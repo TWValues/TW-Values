@@ -1,5 +1,10 @@
 {
   "quiz": {
+    "welcome": {
+      "title": "什麼是 TW Values？",
+      "content": "TW Values 是參考自 8values 所製作的政治立場測驗，為使測驗更貼近台灣民情，題目內容有針對台灣現況進行調整。 （實驗性質，測驗結果僅供參考）",
+      "start": "開始測驗!"
+    },
     "question_n_of_all": "題目 {{index}} 之 {{all}}",
     "answers": {
       "strongly_agree": "強烈贊成",

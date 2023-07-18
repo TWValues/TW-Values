@@ -1,5 +1,10 @@
 {
   "quiz": {
+    "welcome": {
+      "title": "What is TW Values ?",
+      "content": "TW Values is a political quiz for taiwanese.",
+      "start": "Start Quiz!"
+    },
     "question_n_of_all": "Question {{index}} of {{all}}",
     "answers": {
       "strongly_agree": "Strongly Agree",
