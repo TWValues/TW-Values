@@ -1,7 +1,7 @@
-import { Layout, Card, Button } from "antd"
-import { useMemo, useState } from "react"
-import { useTranslation } from "react-i18next"
-import QUESTIONS from "../utils/questions"
+import { Layout, Card, Button } from 'antd'
+import { useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import QUESTIONS from '../utils/questions'
 
 const Quiz = () => {
 
