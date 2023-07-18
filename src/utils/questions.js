@@ -73,6 +73,96 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0400",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: 10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0401",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: 10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0402",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: 10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0403",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: 10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0404",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: 10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0405",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: 10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0500",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: -10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0501",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: -10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0502",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: -10,
+      societal: 0,
+    }
+  },
+  {
+    id: "q0503",
+    effect: {
+      econamic: 0,
+      deplomatic: 0,
+      civil: -10,
+      societal: 0,
+    }
+  },
+  {
     id: "q1000",
     effect: {
       sovereignty: 10,

@@ -39,6 +39,36 @@
       "q0103": {
         "description": "Those with a greater ability to pay should receive better healthcare."
       },
+      "q0400": {
+        "description": "Physician-assisted suicide should be legal."
+      },
+      "q0401": {
+        "description": "The very existence of the state is a threat to our liberty."
+      },
+      "q0402": {
+        "description": "All authority should be questioned."
+      },
+      "q0403": {
+        "description": "It is important that the government follows the majority opinion, even if it is wrong."
+      },
+      "q0404": {
+        "description": "Democracy is more than a decision-making process."
+      },
+      "q0405": {
+        "description": "Drug use should be legalized or decriminalized."
+      },
+      "q0500": {
+        "description": "The general populace makes poor decisions."
+      },
+      "q0501": {
+        "description": "Government surveillance is necessary in the modern world."
+      },
+      "q0502": {
+        "description": "The sacrifice of some civil liberties is necessary to protect us from acts of terrorism."
+      },
+      "q0503": {
+        "description": "The stronger the leadership, the better."
+      },
       "q1000": {
         "description": "We are already indepedent, the name is 'Republic of China (R.O.C)'."
       },
