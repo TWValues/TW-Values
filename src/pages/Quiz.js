@@ -4,8 +4,10 @@ import { useTranslation } from "react-i18next"
 
 const Quiz = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
 
+  // eslint-disable-next-line no-unused-vars
   const [questionIdx, setQuestionIdx] = useState(0)
 
   const questions = [
