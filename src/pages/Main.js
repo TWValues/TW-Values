@@ -1,11 +1,14 @@
 
 import { Layout, Typography } from 'antd'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 const { Header, Content, Footer } = Layout
 const { Title } = Typography
 
 const Main = () => {
+
+  const navigate = useNavigate()
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Header style=
@@ -14,7 +17,7 @@ const Main = () => {
           alignItems: 'center',
           padding: '20px 20% 40px 20%',
         }}>
-        <Title level={1}>
+        <Title level={1} style={{ cursor: 'pointer' }} onClick={() => { navigate('/') }}>
           TW Values
         </Title>
       </Header>
