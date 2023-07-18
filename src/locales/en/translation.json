@@ -1,0 +1,18 @@
+{
+  "quiz": {
+    "question_n_of_all": "Question {{index}} of {{all}}",
+    "answers": {
+      "strongly_agree": "Strongly Agree",
+      "agree": "Agree",
+      "neutral": "Neutral",
+      "disagree": "Disagree",
+      "strongly_disagree": "Strongly Disagree",
+      "back": "Back"
+    },
+    "questions": {
+      "q1": {
+        "description": "The freer the markets, the freer the people."
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "quiz": {
+    "question_n_of_all": "題目 {{index}} 之 {{all}}",
+    "answers": {
+      "strongly_agree": "強烈贊成",
+      "agree": "贊成",
+      "neutral": "中立",
+      "disagree": "反對",
+      "strongly_disagree": "強烈反對",
+      "back": "回到上一題"
+    },
+    "questions": {
+      "q1": {
+        "description": "市場更自由，則人們也更自由。"
+      }
+    }
+  }
+}

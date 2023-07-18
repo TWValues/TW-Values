@@ -1,14 +1,16 @@
 import { Layout, Card, Button } from "antd"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 const Quiz = () => {
+
+  const [t, i18n] = useTranslation()
 
   const [questionIdx, setQuestionIdx] = useState(0)
 
   const questions = [
     {
-      id: 1,
-      question: 'The freer the markets, the freer the people.',
+      id: "q1",
       effect: {
         econamic: -10,
         deplomatic: 0,
@@ -25,7 +27,7 @@ const Quiz = () => {
       alignItems: 'center',
     }}>
       <Card
-        title={`Question ${questionIdx + 1} of ${questions.length}`}
+        title={t(`quiz.question_n_of_all`, { index: questionIdx + 1, all: questions.length })}
         headStyle={{
           fontSize: 'xx-large',
         }}
@@ -34,7 +36,7 @@ const Quiz = () => {
           fontSize: 'x-large',
           margin: '20px',
         }}>
-        {questions[questionIdx].question}
+        {t(`quiz.questions.q${questionIdx + 1}.description`)}
       </Card>
       <Button style={{
         backgroundColor: '#006000',
@@ -45,7 +47,7 @@ const Quiz = () => {
         margin: '5px',
         fontSize: 'large',
       }}>
-        Strongly Agree
+        {t('quiz.answers.strongly_agree')}
       </Button>
       <Button style={{
         backgroundColor: '#00D000',
@@ -56,7 +58,7 @@ const Quiz = () => {
         margin: '5px',
         fontSize: 'large',
       }}>
-        Agree
+        {t('quiz.answers.agree')}
       </Button>
       <Button style={{
         backgroundColor: 'gray',
@@ -67,7 +69,7 @@ const Quiz = () => {
         margin: '5px',
         fontSize: 'large',
       }}>
-        Neutral
+        {t('quiz.answers.neutral')}
       </Button>
       <Button style={{
         backgroundColor: 'red',
@@ -78,7 +80,7 @@ const Quiz = () => {
         margin: '5px',
         fontSize: 'large',
       }}>
-        Disagree
+        {t('quiz.answers.disagree')}
       </Button>
       <Button style={{
         backgroundColor: '#600000',
@@ -89,7 +91,7 @@ const Quiz = () => {
         margin: '5px',
         fontSize: 'large',
       }}>
-        Strongly Disagree
+        {t('quiz.answers.strongly_disagree')}
       </Button>
       <Button style={{
         backgroundColor: 'transparent',
@@ -98,7 +100,7 @@ const Quiz = () => {
         width: '20%',
         margin: '5px',
       }}>
-        Back
+        {t('quiz.answers.back')}
       </Button>
     </Layout >
   )
