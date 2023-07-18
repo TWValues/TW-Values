@@ -10,8 +10,29 @@
       "back": "Back"
     },
     "questions": {
-      "q1": {
+      "q0000": {
+        "description": "It is necessary for the government to intervene in the economy to protect consumers."
+      },
+      "q0001": {
+        "description": "Taxes should be increased on the rich to provide for the poor."
+      },
+      "q0002": {
+        "description": "Basic utilities like roads and electricity should be publicly owned."
+      },
+      "q0003": {
+        "description": "Quality education is a right of all people."
+      },
+      "q0100": {
         "description": "The freer the markets, the freer the people."
+      },
+      "q0101": {
+        "description": "Inheritance is a legitimate form of wealth."
+      },
+      "q0102": {
+        "description": "Government intervention is a threat to the economy."
+      },
+      "q0103": {
+        "description": "Those with a greater ability to pay should receive better healthcare."
       }
     }
   }
