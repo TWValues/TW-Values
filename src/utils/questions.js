@@ -96,6 +96,30 @@ const QUESTIONS = [
             sovereignty: -10,
         }
     },
+    {
+        id: "q1200",
+        effect: {
+            pro_usa: 10,
+        }
+    },
+    {
+        id: "q1201",
+        effect: {
+            pro_usa: 10,
+        }
+    },
+    {
+        id: "q1300",
+        effect: {
+            pro_usa: -10,
+        }
+    },
+    {
+        id: "q1301",
+        effect: {
+            pro_usa: -10,
+        }
+    },
 ]
 
 export default QUESTIONS
