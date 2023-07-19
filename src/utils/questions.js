@@ -189,31 +189,31 @@ const QUESTIONS = [
   {
     id: "q1200",
     effect: {
-      pro_usa: 10,
+      us_china_relation: 10,
     }
   },
   {
     id: "q1201",
     effect: {
-      pro_usa: 10,
+      us_china_relation: 10,
     }
   },
   {
     id: "q1300",
     effect: {
-      pro_usa: -10,
+      us_china_relation: -10,
     }
   },
   {
     id: "q1301",
     effect: {
-      pro_usa: -10,
+      us_china_relation: -10,
     }
   },
   {
     id: "q1302",
     effect: {
-      pro_usa: -10,
+      us_china_relation: -10,
     }
   },
 ]

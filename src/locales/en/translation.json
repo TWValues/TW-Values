@@ -70,7 +70,7 @@
         "description": "The stronger the leadership, the better."
       },
       "q1000": {
-        "description": "We are already indepedent, the name is 'Republic of China (R.O.C)'."
+        "description": "We are already independent, the name is 'Republic of China (R.O.C)'."
       },
       "q1001": {
         "description": "We need a new constitution for 'Republic of Taiwan'."
@@ -96,6 +96,26 @@
       "q1302": {
         "description": "We shall sign Cross-strait peace agreement as soon as possible."
       }
+    },
+    "result": {
+      "econamic": "Econamic",
+      "diplomatic": "Diplomatic",
+      "civil": "Civil",
+      "societal": "Societal",
+      "sovereignty": "Sovereignty",
+      "us_china_relation": "U.S China Relations",
+      "equality": "Equality",
+      "market": "Market",
+      "globe": "Globe",
+      "nation": "Nation",
+      "authority": "Authority",
+      "liberty": "Liberty",
+      "progress": "Progress",
+      "tradition": "Tradition",
+      "independence": "Independence",
+      "unification": "Unification",
+      "pro_us": "Pro-US",
+      "pro_china": "Pro-China"
     }
   }
 }

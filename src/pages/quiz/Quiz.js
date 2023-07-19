@@ -55,7 +55,16 @@ const Quiz = () => {
 
   const moveToNextQuestion = () => {
     if (currentSelectedQuestionIndex + 1 === questions.length) {
-      navigate('/result', { state: { value: 100 } })
+      navigate('/result', {
+        state: {
+          econamic: 80,
+          diplomatic: 50,
+          civil: 30,
+          societal: 20,
+          sovereignty: 90,
+          us_china_relation: 60,
+        }
+      })
     } else {
       setCurrentSelectedQuestionIndex(currentSelectedQuestionIndex + 1)
     }
@@ -66,107 +75,100 @@ const Quiz = () => {
       backgroundColor: 'transparent',
       display: 'flex',
       alignItems: 'center',
-    }}> {currentSelectedQuestionIndex < questions.length ?
-      <>
-        <Card
-          title={t(`quiz.question_n_of_all`, { index: currentSelectedQuestionIndex + 1, all: questions.length })}
-          headStyle={{
-            fontSize: 'xx-large',
-          }}
-          style={{
-            width: '100%',
-            fontSize: 'x-large',
-            margin: '20px',
-          }}>
-          {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
-        </Card>
-        <Button style={{
-          backgroundColor: '#006000',
-          borderColor: '#006000',
-          color: 'white',
-          width: '60%',
-          height: '40px',
-          margin: '5px',
-          fontSize: 'large',
-        }} onClick={() => {
-          setChoice(1.0)
-          moveToNextQuestion()
+    }}>
+      <Card
+        title={t(`quiz.question_n_of_all`, { index: currentSelectedQuestionIndex + 1, all: questions.length })}
+        headStyle={{
+          fontSize: 'xx-large',
+        }}
+        style={{
+          width: '100%',
+          fontSize: 'x-large',
+          margin: '20px',
         }}>
-          {t('quiz.answers.strongly_agree')}
-        </Button>
-        <Button style={{
-          backgroundColor: '#00D000',
-          borderColor: '#00D000',
-          color: 'white',
-          width: '60%',
-          height: '40px',
-          margin: '5px',
-          fontSize: 'large',
-        }} onClick={() => {
-          setChoice(0.5)
-          moveToNextQuestion()
-        }}>
-          {t('quiz.answers.agree')}
-        </Button>
-        <Button style={{
-          backgroundColor: 'gray',
-          borderColor: 'gray',
-          color: 'white',
-          width: '60%',
-          height: '40px',
-          margin: '5px',
-          fontSize: 'large',
-        }} onClick={() => {
-          setChoice(0.0)
-          moveToNextQuestion()
-        }}>
-          {t('quiz.answers.neutral')}
-        </Button>
-        <Button style={{
-          backgroundColor: 'red',
-          borderColor: 'red',
-          color: 'white',
-          width: '60%',
-          height: '40px',
-          margin: '5px',
-          fontSize: 'large',
-        }} onClick={() => {
-          setChoice(-0.5)
-          moveToNextQuestion()
-        }}>
-          {t('quiz.answers.disagree')}
-        </Button>
-        <Button style={{
-          backgroundColor: '#600000',
-          borderColor: '#600000',
-          color: 'white',
-          width: '60%',
-          height: '40px',
-          margin: '5px',
-          fontSize: 'large',
-        }} onClick={() => {
-          setChoice(-1.0)
-          moveToNextQuestion()
-        }}>
-          {t('quiz.answers.strongly_disagree')}
-        </Button>
-        {currentSelectedQuestionIndex > 0 &&
-          <Button style={{
-            backgroundColor: 'transparent',
-            borderColor: 'gray',
-            color: 'gray',
-            width: '20%',
-            margin: '5px',
-          }} onClick={() => {
-            moveToPrevQuestion()
-          }}>
-            {t('quiz.answers.back')}
-          </Button>
-        }
-      </>
-      :
-      <p>TODO</p>
-      }
+        {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
+      </Card>
+      <Button style={{
+        backgroundColor: '#006000',
+        borderColor: '#006000',
+        color: 'white',
+        width: '60%',
+        height: '40px',
+        margin: '5px',
+        fontSize: 'large',
+      }} onClick={() => {
+        setChoice(1.0)
+        moveToNextQuestion()
+      }}>
+        {t('quiz.answers.strongly_agree')}
+      </Button>
+      <Button style={{
+        backgroundColor: '#00D000',
+        borderColor: '#00D000',
+        color: 'white',
+        width: '60%',
+        height: '40px',
+        margin: '5px',
+        fontSize: 'large',
+      }} onClick={() => {
+        setChoice(0.5)
+        moveToNextQuestion()
+      }}>
+        {t('quiz.answers.agree')}
+      </Button>
+      <Button style={{
+        backgroundColor: 'gray',
+        borderColor: 'gray',
+        color: 'white',
+        width: '60%',
+        height: '40px',
+        margin: '5px',
+        fontSize: 'large',
+      }} onClick={() => {
+        setChoice(0.0)
+        moveToNextQuestion()
+      }}>
+        {t('quiz.answers.neutral')}
+      </Button>
+      <Button style={{
+        backgroundColor: 'red',
+        borderColor: 'red',
+        color: 'white',
+        width: '60%',
+        height: '40px',
+        margin: '5px',
+        fontSize: 'large',
+      }} onClick={() => {
+        setChoice(-0.5)
+        moveToNextQuestion()
+      }}>
+        {t('quiz.answers.disagree')}
+      </Button>
+      <Button style={{
+        backgroundColor: '#600000',
+        borderColor: '#600000',
+        color: 'white',
+        width: '60%',
+        height: '40px',
+        margin: '5px',
+        fontSize: 'large',
+      }} onClick={() => {
+        setChoice(-1.0)
+        moveToNextQuestion()
+      }}>
+        {t('quiz.answers.strongly_disagree')}
+      </Button>
+      <Button style={{
+        backgroundColor: 'transparent',
+        borderColor: 'gray',
+        color: 'gray',
+        width: '20%',
+        margin: '5px',
+      }} onClick={() => {
+        moveToPrevQuestion()
+      }} disabled={currentSelectedQuestionIndex === 0}>
+        {t('quiz.answers.back')}
+      </Button>
     </Layout >
   )
 }

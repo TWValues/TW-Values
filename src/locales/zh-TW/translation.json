@@ -96,6 +96,26 @@
       "q1302": {
         "description": "應盡快簽署兩岸和平協議。"
       }
+    },
+    "result": {
+      "econamic": "經濟",
+      "diplomatic": "外交",
+      "civil": "公民",
+      "societal": "社會",
+      "sovereignty": "主權",
+      "us_china_relation": "美中",
+      "equality": "公平",
+      "market": "市場",
+      "globe": "全球",
+      "nation": "本土",
+      "authority": "威權",
+      "liberty": "自由",
+      "progress": "進步",
+      "tradition": "傳統",
+      "independence": "獨立",
+      "unification": "統一",
+      "pro_us": "親美",
+      "pro_china": "親中"
     }
   }
 }
