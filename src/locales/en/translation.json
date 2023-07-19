@@ -40,28 +40,25 @@
         "description": "Those with a greater ability to pay should receive better healthcare."
       },
       "q0200": {
-        "description": "A united world government would be beneficial to mankind."
+        "description": "Climate change is currently one of the greatest threats to our way of life."
       },
       "q0201": {
-        "description": "Governments should be accountable to the international community."
+        "description": "It is acceptable to increase the cost of living in pursuit of environmental protection."
       },
       "q0202": {
-        "description": "It is important that we work as a united world to combat climate change."
+        "description": "The extinction of species due to human actions is unacceptable."
       },
       "q0203": {
-        "description": "Governments should be as concerned about foreigners as they are about their own citizens."
+        "description": "The development of renewable energy is most important."
       },
       "q0300": {
-        "description": "The United Nations should be abolished."
+        "description": "It is acceptable to have environmental pollution in pursuit of economic growth."
       },
       "q0301": {
-        "description": "It is important to maintain our national sovereignty."
+        "description": "The use of cheap  fossil fuels is necessary."
       },
       "q0302": {
-        "description": "International aid is a waste of money."
-      },
-      "q0303": {
-        "description": "Regardless of political opinions, it is important to side with your country."
+        "description": "There should not be any quotas on fishing."
       },
       "q0400": {
         "description": "Physician-assisted suicide should be legal."
@@ -94,21 +91,15 @@
         "description": "The stronger the leadership, the better."
       },
       "q0600": {
-        "description": "Environmental regulations are essential."
-      },
-      "q0601": {
         "description": "A better world will come from automation, science, and technology."
       },
-      "q0602": {
+      "q0601": {
         "description": "Churches should be taxed the same way other institutions are taxed."
       },
-      "q0603": {
-        "description": "Climate change is currently one of the greatest threats to our way of life."
-      },
-      "q0604": {
+      "q0602": {
         "description": "Same-sex marriage should be legal."
       },
-      "q0605": {
+      "q0603": {
         "description": "Death penalty should be abolished."
       },
       "q0700": {
@@ -155,16 +146,16 @@
       }
     },
     "result": {
-      "econamic": "Econamic",
-      "diplomatic": "Diplomatic",
+      "economic": "Economic",
+      "environmental": "Environmental",
       "civil": "Civil",
       "societal": "Societal",
       "sovereignty": "Sovereignty",
       "us_china_relation": "U.S China Relations",
       "equality": "Equality",
       "market": "Market",
-      "globe": "Globe",
-      "nation": "Nation",
+      "ecology": "Ecology",
+      "production": "Production",
       "authority": "Authority",
       "liberty": "Liberty",
       "progress": "Progress",

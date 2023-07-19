@@ -17,19 +17,19 @@ const Result = () => {
       alignItems: 'center',
     }}>
       <ValuesCard
-        title={t('quiz.result.econamic')}
+        title={t('quiz.result.economic')}
         leftTitle={t('quiz.result.equality')}
         rightTitle={t('quiz.result.market')}
         leftColor='crimson'
         rightColor='lawngreen'
-        percent={location.state.econamic} />
+        percent={location.state.economic} />
       <ValuesCard
-        title={t('quiz.result.diplomatic')}
-        leftTitle={t('quiz.result.nation')}
-        rightTitle={t('quiz.result.globe')}
+        title={t('quiz.result.environmental')}
+        leftTitle={t('quiz.result.ecology')}
+        rightTitle={t('quiz.result.production')}
         leftColor='orange'
         rightColor='dodgerblue'
-        percent={location.state.diplomatic} />
+        percent={location.state.environmental} />
       <ValuesCard
         title={t('quiz.result.civil')}
         leftTitle={t('quiz.result.liberty')}

@@ -3,97 +3,91 @@ const QUESTIONS = [
   {
     id: "q0000",
     effect: {
-      econamic: 10,
+      economic: 10,
     }
   },
   {
     id: "q0001",
     effect: {
-      econamic: 10,
+      economic: 10,
     }
   },
   {
     id: "q0002",
     effect: {
-      econamic: 10,
+      economic: 10,
     }
   },
   {
     id: "q0003",
     effect: {
-      econamic: 10,
+      economic: 10,
     }
   },
   {
     id: "q0100",
     effect: {
-      econamic: -10,
+      economic: -10,
     }
   },
   {
     id: "q0101",
     effect: {
-      econamic: -10,
+      economic: -10,
     }
   },
   {
     id: "q0102",
     effect: {
-      econamic: -10,
+      economic: -10,
     }
   },
   {
     id: "q0103",
     effect: {
-      econamic: -10,
+      economic: -10,
     }
   },
   {
     id: "q0200",
     effect: {
-      diplomatic: 10,
+      environmental: 10,
     }
   },
   {
     id: "q0201",
     effect: {
-      diplomatic: 10,
+      environmental: 10,
     }
   },
   {
     id: "q0202",
     effect: {
-      diplomatic: 10,
+      environmental: 10,
     }
   },
   {
     id: "q0203",
     effect: {
-      diplomatic: 10,
+      environmental: 10,
     }
   },
   {
     id: "q0300",
     effect: {
-      diplomatic: -10,
+      environmental: -10,
     }
   },
   {
     id: "q0301",
     effect: {
-      diplomatic: -10,
+      environmental: -10,
     }
   },
   {
     id: "q0302",
     effect: {
-      diplomatic: -10,
-    }
-  },
-  {
-    id: "q0303",
-    effect: {
-      diplomatic: -10,
+      environmental: -10,
     }
   },
   {
@@ -176,18 +170,6 @@ const QUESTIONS = [
   },
   {
     id: "q0603",
-    effect: {
-      societal: 10,
-    }
-  },
-  {
-    id: "q0604",
-    effect: {
-      societal: 10,
-    }
-  },
-  {
-    id: "q0605",
     effect: {
       societal: 10,
     }

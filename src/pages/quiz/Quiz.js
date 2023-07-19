@@ -72,8 +72,8 @@ const Quiz = () => {
         }
 
         return {
-          econamic: getScore(questions.map((value) => value.effect.econamic || 0.0)),
-          diplomatic: getScore(questions.map((value) => value.effect.diplomatic || 0.0)),
+          economic: getScore(questions.map((value) => value.effect.economic || 0.0)),
+          environmental: getScore(questions.map((value) => value.effect.environmental || 0.0)),
           civil: getScore(questions.map((value) => value.effect.civil || 0.0)),
           societal: getScore(questions.map((value) => value.effect.societal || 0.0)),
           sovereignty: getScore(questions.map((value) => value.effect.sovereignty || 0.0)),

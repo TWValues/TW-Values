@@ -40,28 +40,25 @@
         "description": "有錢人應該受到更好的醫療照護。"
       },
       "q0200": {
-        "description": "成立一個統一的世界政府是對人類最好的選擇。"
+        "description": "氣候變遷已經嚴重威脅到人類的生存。"
       },
       "q0201": {
-        "description": "各國政府應該對國際社會負責。"
+        "description": "為了追求環境保護而造成生活成本上漲是可接受的。"
       },
       "q0202": {
-        "description": "世界各國應當攜手對付氣候變遷的問題。"
+        "description": "因人類行為而造成的物種滅絕是不可接受的。"
       },
       "q0203": {
-        "description": "政府對待外國人應當如同對待自己國民一樣。"
+        "description": "應全力發展再生能源。"
       },
       "q0300": {
-        "description": "聯合國應該被廢除。"
+        "description": "為追求經濟成長而造成汙染是可接受的。"
       },
       "q0301": {
-        "description": "我們要盡力維護國家主權。"
+        "description": "使用成本便宜的化石燃料是必要的。"
       },
       "q0302": {
-        "description": "國際援助是一種資源浪費。"
-      },
-      "q0303": {
-        "description": "無論政治觀點如何，都應該跟自己國家的立場一致。"
+        "description": "對於魚類捕撈不應該有任何配額限制。"
       },
       "q0400": {
         "description": "安樂死應該合法化。"
@@ -94,21 +91,15 @@
         "description": "強人政治是對領導國家更有利。"
       },
       "q0600": {
-        "description": "規範環境的法規是必要的。"
-      },
-      "q0601": {
         "description": "自動化、科學與科技將帶來更美好的世界。"
       },
-      "q0602": {
+      "q0601": {
         "description": "宗教應該也要被徵稅。"
       },
-      "q0603": {
-        "description": "氣候變遷已經嚴重威脅到人類的生存。"
-      },
-      "q0604": {
+      "q0602": {
         "description": "同性婚姻應該合法化。"
       },
-      "q0605": {
+      "q0603": {
         "description": "死刑應該被廢除。"
       },
       "q0700": {
@@ -121,7 +112,7 @@
         "description": "未婚而發生性行為是不道德的。"
       },
       "q0703": {
-        "description": "墮胎應該在大部分的情況下都被禁止。"
+        "description": "墮胎應該在大部分或全部的情況下都被禁止。"
       },
       "q0704": {
         "description": "賣淫是非法的。"
@@ -155,16 +146,16 @@
       }
     },
     "result": {
-      "econamic": "經濟",
-      "diplomatic": "外交",
+      "economic": "經濟",
+      "environmental": "環境",
       "civil": "公民",
       "societal": "社會",
       "sovereignty": "主權",
       "us_china_relation": "美中",
       "equality": "公平",
       "market": "市場",
-      "globe": "全球",
-      "nation": "本土",
+      "ecology": "生態",
+      "production": "生產",
       "authority": "威權",
       "liberty": "自由",
       "progress": "進步",
