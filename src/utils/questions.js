@@ -210,6 +210,12 @@ const QUESTIONS = [
       pro_usa: -10,
     }
   },
+  {
+    id: "q1302",
+    effect: {
+      pro_usa: -10,
+    }
+  },
 ]
 
 export default QUESTIONS

@@ -82,16 +82,19 @@
         "description": "'Republic of China (R.O.C)' is the sole legitimate government of China."
       },
       "q1200": {
-        "description": "TODO: 加入歐美陣營，抗中保台。"
+        "description": "We shall stand with U.S to fight against China."
       },
       "q1201": {
-        "description": "TODO: 應加入CPTPP，增加國際貿易優勢。"
+        "description": "We shall be the 51st state of U.S."
       },
       "q1300": {
         "description": "We are chinese."
       },
       "q1301": {
-        "description": "TODO: 應重啟服貿與貨貿談判，以便從中國獲取更多經濟利益。"
+        "description": "We shall restart talks on cross-strait service trade Agreement as soon as possible."
+      },
+      "q1302": {
+        "description": "We shall sign Cross-strait peace agreement as soon as possible."
       }
     }
   }
