@@ -146,24 +146,92 @@
       }
     },
     "result": {
-      "economic": "Economic",
-      "environmental": "Environmental",
-      "civil": "Civil",
-      "societal": "Societal",
-      "sovereignty": "Sovereignty",
-      "us_china_relation": "U.S China Relations",
-      "equality": "Equality",
-      "market": "Market",
-      "ecology": "Ecology",
-      "production": "Production",
-      "authority": "Authority",
-      "liberty": "Liberty",
-      "progress": "Progress",
-      "tradition": "Tradition",
-      "independence": "Independence",
-      "unification": "Unification",
-      "pro_us": "Pro-US",
-      "pro_china": "Pro-China"
+      "axes": {
+        "economic": {
+          "title": "Economic",
+          "equality": "Equality",
+          "market": "Market",
+          "categories": {
+            "0": "Communist",
+            "1": "Socialist",
+            "2": "Social",
+            "3": "Centrist",
+            "4": "Market",
+            "5": "Capitalist",
+            "6": "Laissez-Faire"
+          }
+        },
+        "environmental": {
+          "title": "Environmental",
+          "ecology": "Ecology",
+          "production": "Production",
+          "categories": {
+            "0": "Radical environmentalism",
+            "1": "Environmentalism",
+            "2": "Environmentalism",
+            "3": "Centrist",
+            "4": "Anti-environmentalism",
+            "5": "Anti-environmentalism",
+            "6": "Anti-environmentalism"
+          }
+        },
+        "civil": {
+          "title": "Civil",
+          "authority": "Authority",
+          "liberty": "Liberty",
+          "categories": {
+            "0": "Anarchist",
+            "1": "Libertarian",
+            "2": "Liberal",
+            "3": "Moderate",
+            "4": "Statist",
+            "5": "Authoritarian",
+            "6": "Totalitarian"
+          }
+        },
+        "societal": {
+          "title": "Societal",
+          "progress": "Progress",
+          "tradition": "Tradition",
+          "categories": {
+            "0": "Revolutionary",
+            "1": "Very Progressive",
+            "2": "Progressive",
+            "3": "Neutral",
+            "4": "Traditional",
+            "5": "Very Traditional",
+            "6": "Reactionary"
+          }
+        },
+        "sovereignty": {
+          "title": "Sovereignty",
+          "independence": "Independence",
+          "unification": "Unification",
+          "categories": {
+            "0": "Independence",
+            "1": "Independence",
+            "2": "Independence",
+            "3": "Independence",
+            "4": "Unification",
+            "5": "Unification",
+            "6": "Unification"
+          }
+        },
+        "us_china_relation": {
+          "title": "U.S China Relations",
+          "pro_american": "Pro-American",
+          "pro_chinese": "Pro-Chinese",
+          "categories": {
+            "0": "Pro-Americanism",
+            "1": "Pro-American",
+            "2": "Pro-American",
+            "3": "Neutral",
+            "4": "Pro-Chinese",
+            "5": "Pro-Chinese",
+            "6": "Chinese nationalism"
+          }
+        }
+      }
     }
   }
 }

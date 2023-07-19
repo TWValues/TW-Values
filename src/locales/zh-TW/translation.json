@@ -146,24 +146,92 @@
       }
     },
     "result": {
-      "economic": "經濟",
-      "environmental": "環境",
-      "civil": "公民",
-      "societal": "社會",
-      "sovereignty": "主權",
-      "us_china_relation": "美中",
-      "equality": "公平",
-      "market": "市場",
-      "ecology": "生態",
-      "production": "生產",
-      "authority": "威權",
-      "liberty": "自由",
-      "progress": "進步",
-      "tradition": "傳統",
-      "independence": "獨立",
-      "unification": "統一",
-      "pro_us": "親美",
-      "pro_china": "親中"
+      "axes": {
+        "economic": {
+          "title": "經濟",
+          "equality": "平等",
+          "market": "市場",
+          "categories": {
+            "0": "共產主義",
+            "1": "社會主義",
+            "2": "偏向平等",
+            "3": "中間派",
+            "4": "偏向市場",
+            "5": "資本主義",
+            "6": "自由放任主義"
+          }
+        },
+        "environmental": {
+          "title": "環境",
+          "ecology": "生態",
+          "production": "生產",
+          "categories": {
+            "0": "極端環境保護主義",
+            "1": "環境保護主義",
+            "2": "環境保護主義",
+            "3": "中間派",
+            "4": "反環境保護主義",
+            "5": "反環境保護主義",
+            "6": "反環境保護主義"
+          }
+        },
+        "civil": {
+          "title": "政治",
+          "authority": "威權",
+          "liberty": "自由",
+          "categories": {
+            "0": "無政府主義",
+            "1": "自由主義",
+            "2": "偏向自由",
+            "3": "溫和派",
+            "4": "偏向國家",
+            "5": "威權主義",
+            "6": "極權主義"
+          }
+        },
+        "societal": {
+          "title": "社會",
+          "progress": "進步",
+          "tradition": "傳統",
+          "categories": {
+            "0": "革命份子",
+            "1": "進步主義",
+            "2": "偏向進步",
+            "3": "中立派",
+            "4": "偏向傳統",
+            "5": "保守主義",
+            "6": "反動份子"
+          }
+        },
+        "sovereignty": {
+          "title": "主權",
+          "independence": "獨立",
+          "unification": "統一",
+          "categories": {
+            "0": "獨派",
+            "1": "獨派",
+            "2": "獨派",
+            "3": "中立派",
+            "4": "統派",
+            "5": "統派",
+            "6": "統派"
+          }
+        },
+        "us_china_relation": {
+          "title": "美中",
+          "pro_american": "親美",
+          "pro_chinese": "親中",
+          "categories": {
+            "0": "親美主義",
+            "1": "親美",
+            "2": "親美",
+            "3": "中立",
+            "4": "親中",
+            "5": "親中",
+            "6": "中國民族主義"
+          }
+        }
+      }
     }
   }
 }
