@@ -13,25 +13,30 @@ const Welcome = () => {
 
   return (
     <Layout style={{
-      backgroundColor: 'transparent',
+      backgroundColor: 'white',
       display: 'flex',
       alignItems: 'center',
+      padding: '40px',
     }}>
       <Title
         level={1}
-        style={{ color: 'black' }}>
+        style={{
+          color: 'black',
+          padding: '20px',
+        }}>
         {t('quiz.welcome.title')}
       </Title>
       <Text style={{
         color: 'black',
         fontSize: 'x-large',
+        padding: '20px',
       }}>
         {t('quiz.welcome.content')}
       </Text>
       <Divider style={{ backgroundColor: 'black' }} />
       <Button style={{
-        backgroundColor: '#006060',
-        borderColor: '#006060',
+        backgroundColor: 'lightseagreen',
+        borderColor: 'lightseagreen',
         color: 'white',
         width: '40%',
         height: '60px',

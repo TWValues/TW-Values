@@ -26,7 +26,7 @@ const Main = () => {
           display: 'flex',
           alignItems: 'center',
           padding: '10px 20% 10px 20%',
-          backgroundColor: '#E0E0E0',
+          backgroundColor: 'ghostwhite',
         }}>
         <Outlet />
       </Content>

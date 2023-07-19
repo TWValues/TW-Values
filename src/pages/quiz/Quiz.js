@@ -108,8 +108,8 @@ const Quiz = () => {
         {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
       </Card>
       <Button style={{
-        backgroundColor: '#006000',
-        borderColor: '#006000',
+        backgroundColor: 'darkgreen',
+        borderColor: 'darkgreen',
         color: 'white',
         width: '60%',
         height: '40px',
@@ -122,8 +122,8 @@ const Quiz = () => {
         {t('quiz.answers.strongly_agree')}
       </Button>
       <Button style={{
-        backgroundColor: '#00D000',
-        borderColor: '#00D000',
+        backgroundColor: 'limegreen',
+        borderColor: 'limegreen',
         color: 'white',
         width: '60%',
         height: '40px',
@@ -164,8 +164,8 @@ const Quiz = () => {
         {t('quiz.answers.disagree')}
       </Button>
       <Button style={{
-        backgroundColor: '#600000',
-        borderColor: '#600000',
+        backgroundColor: 'darkred',
+        borderColor: 'darkred',
         color: 'white',
         width: '60%',
         height: '40px',

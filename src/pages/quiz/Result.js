@@ -20,21 +20,21 @@ const Result = () => {
         title={t('quiz.result.econamic')}
         leftTitle={t('quiz.result.equality')}
         rightTitle={t('quiz.result.market')}
-        leftColor='red'
-        rightColor='green'
+        leftColor='crimson'
+        rightColor='lawngreen'
         percent={location.state.econamic} />
       <ValuesCard
         title={t('quiz.result.diplomatic')}
         leftTitle={t('quiz.result.nation')}
         rightTitle={t('quiz.result.globe')}
         leftColor='orange'
-        rightColor='cyan'
+        rightColor='dodgerblue'
         percent={location.state.diplomatic} />
       <ValuesCard
         title={t('quiz.result.civil')}
         leftTitle={t('quiz.result.liberty')}
         rightTitle={t('quiz.result.authority')}
-        leftColor='cyan'
+        leftColor='turquoise'
         rightColor='red'
         percent={location.state.civil} />
       <ValuesCard
@@ -42,7 +42,7 @@ const Result = () => {
         leftTitle={t('quiz.result.progress')}
         rightTitle={t('quiz.result.tradition')}
         leftColor='magenta'
-        rightColor='orange'
+        rightColor='brown'
         percent={location.state.societal} />
       <ValuesCard
         title={t('quiz.result.sovereignty')}
@@ -55,7 +55,7 @@ const Result = () => {
         title={t('quiz.result.us_china_relation')}
         leftTitle={t('quiz.result.pro_us')}
         rightTitle={t('quiz.result.pro_china')}
-        leftColor='blue'
+        leftColor='navy'
         rightColor='red'
         percent={location.state.us_china_relation} />
     </Layout>
