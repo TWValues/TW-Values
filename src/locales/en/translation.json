@@ -27,6 +27,9 @@
       "q0003": {
         "description": "Quality education is a right of all people."
       },
+      "q0004": {
+        "description": "Taxes should be rapidly increased on multiple property owners."
+      },
       "q0100": {
         "description": "The freer the markets, the freer the people."
       },
@@ -73,7 +76,7 @@
         "description": "It is important that the government follows the majority opinion, even if it is wrong."
       },
       "q0404": {
-        "description": "Democracy is more than a decision-making process."
+        "description": "Political leaders should be able to be satirized or vilified in artistic works."
       },
       "q0405": {
         "description": "Drug use should be legalized or decriminalized."
@@ -123,11 +126,17 @@
       "q1001": {
         "description": "We need a new constitution for 'Republic of Taiwan'."
       },
+      "q1002": {
+        "description": "Military spending is essential to protect our country."
+      },
       "q1100": {
         "description": "Taiwan is a province of 'People's Republic of China (PRC)'."
       },
       "q1101": {
         "description": "'Republic of China (R.O.C)' is the sole legitimate government of China."
+      },
+      "q1102": {
+        "description": "Use 'Chinese Taipei' to participate in international events is acceptable."
       },
       "q1200": {
         "description": "We shall stand with U.S to fight against China."

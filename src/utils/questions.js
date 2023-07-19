@@ -25,6 +25,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0004",
+    effect: {
+      economic: 10,
+    }
+  },
+  {
     id: "q0100",
     effect: {
       economic: -10,
@@ -217,6 +223,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q1002",
+    effect: {
+      sovereignty: 10,
+    }
+  },
+  {
     id: "q1100",
     effect: {
       sovereignty: -10,
@@ -224,6 +236,12 @@ const QUESTIONS = [
   },
   {
     id: "q1101",
+    effect: {
+      sovereignty: -10,
+    }
+  },
+  {
+    id: "q1102",
     effect: {
       sovereignty: -10,
     }
