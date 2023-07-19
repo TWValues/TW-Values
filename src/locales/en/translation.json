@@ -39,6 +39,30 @@
       "q0103": {
         "description": "Those with a greater ability to pay should receive better healthcare."
       },
+      "q0200": {
+        "description": "A united world government would be beneficial to mankind."
+      },
+      "q0201": {
+        "description": "Governments should be accountable to the international community."
+      },
+      "q0202": {
+        "description": "It is important that we work as a united world to combat climate change."
+      },
+      "q0203": {
+        "description": "Governments should be as concerned about foreigners as they are about their own citizens."
+      },
+      "q0300": {
+        "description": "The United Nations should be abolished."
+      },
+      "q0301": {
+        "description": "It is important to maintain our national sovereignty."
+      },
+      "q0302": {
+        "description": "International aid is a waste of money."
+      },
+      "q0303": {
+        "description": "Regardless of political opinions, it is important to side with your country."
+      },
       "q0400": {
         "description": "Physician-assisted suicide should be legal."
       },
@@ -83,6 +107,9 @@
       },
       "q0604": {
         "description": "Same-sex marriage should be legal."
+      },
+      "q0605": {
+        "description": "Death penalty should be abolished."
       },
       "q0700": {
         "description": "Society was better many years ago than it is now."

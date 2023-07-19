@@ -49,6 +49,54 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0200",
+    effect: {
+      diplomatic: 10,
+    }
+  },
+  {
+    id: "q0201",
+    effect: {
+      diplomatic: 10,
+    }
+  },
+  {
+    id: "q0202",
+    effect: {
+      diplomatic: 10,
+    }
+  },
+  {
+    id: "q0203",
+    effect: {
+      diplomatic: 10,
+    }
+  },
+  {
+    id: "q0300",
+    effect: {
+      diplomatic: -10,
+    }
+  },
+  {
+    id: "q0301",
+    effect: {
+      diplomatic: -10,
+    }
+  },
+  {
+    id: "q0302",
+    effect: {
+      diplomatic: -10,
+    }
+  },
+  {
+    id: "q0303",
+    effect: {
+      diplomatic: -10,
+    }
+  },
+  {
     id: "q0400",
     effect: {
       civil: 10,
@@ -134,6 +182,12 @@ const QUESTIONS = [
   },
   {
     id: "q0604",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
+    id: "q0605",
     effect: {
       societal: 10,
     }
