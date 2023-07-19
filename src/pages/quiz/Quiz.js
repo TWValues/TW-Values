@@ -55,15 +55,34 @@ const Quiz = () => {
 
   const moveToNextQuestion = () => {
     if (currentSelectedQuestionIndex + 1 === questions.length) {
-      navigate('/result', {
-        state: {
-          econamic: 80,
-          diplomatic: 50,
-          civil: 30,
-          societal: 20,
-          sovereignty: 90,
-          us_china_relation: 60,
+
+      const calculateScores = () => {
+
+        const getScoreWithMultiplier = (array) => {
+          return array.reduce((accu, value, index) => accu + value * choices[index])
         }
+        const getAbsMaxScore = (array) => {
+          return array.reduce((accu, value) => accu + Math.abs(value))
+        }
+        const getPercentage = (bias, total) => Math.round(100 * (bias + total) / (2 * total))
+        const getScore = (array) => {
+          const score = getScoreWithMultiplier(array)
+          const maxScore = getAbsMaxScore(array)
+          return getPercentage(score, maxScore)
+        }
+
+        return {
+          econamic: getScore(questions.map((value) => value.effect.econamic || 0.0)),
+          diplomatic: getScore(questions.map((value) => value.effect.diplomatic || 0.0)),
+          civil: getScore(questions.map((value) => value.effect.civil || 0.0)),
+          societal: getScore(questions.map((value) => value.effect.societal || 0.0)),
+          sovereignty: getScore(questions.map((value) => value.effect.sovereignty || 0.0)),
+          us_china_relation: getScore(questions.map((value) => value.effect.us_china_relation || 0.0)),
+        }
+      }
+
+      navigate('/result', {
+        state: calculateScores()
       })
     } else {
       setCurrentSelectedQuestionIndex(currentSelectedQuestionIndex + 1)
