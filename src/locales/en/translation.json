@@ -69,6 +69,36 @@
       "q0503": {
         "description": "The stronger the leadership, the better."
       },
+      "q0600": {
+        "description": "Environmental regulations are essential."
+      },
+      "q0601": {
+        "description": "A better world will come from automation, science, and technology."
+      },
+      "q0602": {
+        "description": "Churches should be taxed the same way other institutions are taxed."
+      },
+      "q0603": {
+        "description": "Climate change is currently one of the greatest threats to our way of life."
+      },
+      "q0604": {
+        "description": "Same-sex marriage should be legal."
+      },
+      "q0700": {
+        "description": "Society was better many years ago than it is now."
+      },
+      "q0701": {
+        "description": "It is important that we maintain the traditions of our past."
+      },
+      "q0702": {
+        "description": "Sex outside marriage is immoral."
+      },
+      "q0703": {
+        "description": "Abortion should be prohibited in most or all cases."
+      },
+      "q0704": {
+        "description": "Prostitution should be illegal."
+      },
       "q1000": {
         "description": "We are already independent, the name is 'Republic of China (R.O.C)'."
       },

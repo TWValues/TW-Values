@@ -4,162 +4,168 @@ const QUESTIONS = [
     id: "q0000",
     effect: {
       econamic: 10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0001",
     effect: {
       econamic: 10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0002",
     effect: {
       econamic: 10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0003",
     effect: {
       econamic: 10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0100",
     effect: {
       econamic: -10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0101",
     effect: {
       econamic: -10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0102",
     effect: {
       econamic: -10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0103",
     effect: {
       econamic: -10,
-      deplomatic: 0,
-      civil: 0,
-      societal: 0,
     }
   },
   {
     id: "q0400",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: 10,
-      societal: 0,
     }
   },
   {
     id: "q0401",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: 10,
-      societal: 0,
     }
   },
   {
     id: "q0402",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: 10,
-      societal: 0,
     }
   },
   {
     id: "q0403",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: 10,
-      societal: 0,
     }
   },
   {
     id: "q0404",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: 10,
-      societal: 0,
     }
   },
   {
     id: "q0405",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: 10,
-      societal: 0,
     }
   },
   {
     id: "q0500",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: -10,
-      societal: 0,
     }
   },
   {
     id: "q0501",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: -10,
-      societal: 0,
     }
   },
   {
     id: "q0502",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: -10,
-      societal: 0,
     }
   },
   {
     id: "q0503",
     effect: {
-      econamic: 0,
-      deplomatic: 0,
       civil: -10,
-      societal: 0,
+    }
+  },
+  {
+    id: "q0600",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
+    id: "q0601",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
+    id: "q0602",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
+    id: "q0603",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
+    id: "q0604",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
+    id: "q0700",
+    effect: {
+      societal: -10,
+    }
+  },
+  {
+    id: "q0701",
+    effect: {
+      societal: -10,
+    }
+  },
+  {
+    id: "q0702",
+    effect: {
+      societal: -10,
+    }
+  },
+  {
+    id: "q0703",
+    effect: {
+      societal: -10,
+    }
+  },
+  {
+    id: "q0704",
+    effect: {
+      societal: -10,
     }
   },
   {
