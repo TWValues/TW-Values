@@ -17,7 +17,7 @@ const Main = () => {
           alignItems: 'center',
           padding: '20px 20% 40px 20%',
         }}>
-        <Title level={1} style={{ cursor: 'pointer' }} onClick={() => { navigate('/') }}>
+        <Title level={1} style={{ cursor: 'pointer', color: 'white' }} onClick={() => { navigate('/') }}>
           TW Values
         </Title>
       </Header>
@@ -32,10 +32,11 @@ const Main = () => {
       </Content>
       <Footer style=
         {{
+          backgroundColor: 'black',
           padding: '0 20% 0 20%',
           textAlign: 'right',
         }}>
-        <Title level={4}>Copyright (c) 2023 TW Values</Title>
+        <Title level={4} style={{ color: 'white' }}>Copyright (c) 2023 TW Values</Title>
       </Footer >
     </Layout >
   )
