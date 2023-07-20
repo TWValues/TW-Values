@@ -1,10 +1,10 @@
 
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Main from './pages/Main';
-import Welcome from './pages/quiz/Welcome';
-import Quiz from './pages/quiz/Quiz';
-import Result from './pages/quiz/Result';
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Main from './pages/Main'
+import Welcome from './pages/quiz/Welcome'
+import Quiz from './pages/quiz/Quiz'
+import Result from './pages/quiz/Result'
 
 function App() {
   return (
@@ -20,4 +20,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
