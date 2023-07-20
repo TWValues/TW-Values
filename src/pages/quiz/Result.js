@@ -3,6 +3,13 @@ import { Layout } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValuesCard from '../../components/ValuesCard'
 
+import RecyclingSymbol from '../../assets/RecyclingSymbol.svg'
+import YellowFlagWaving from '../../assets/YellowFlagWaving.svg'
+import FlagOfTWIndependence from '../../assets/FlagOfTWIndependence.svg'
+import ChinaTerritory from '../../assets/ChinaTerritory.svg'
+import FlagOfUSA from '../../assets/FlagOfUSA.svg'
+import FlagOfPRC from '../../assets/FlagOfPRC.svg'
+
 const Result = () => {
 
   const location = useLocation()
@@ -34,14 +41,15 @@ const Result = () => {
         leftTitle={t('quiz.result.axes.economic.equality')}
         rightTitle={t('quiz.result.axes.economic.market')}
         leftColor='crimson'
-        rightColor='lawngreen'
+        rightColor='turquoise'
         percent={location.state.economic}
         leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(location.state.economic)}`)} />
       <ValuesCard
         title={t('quiz.result.axes.environmental.title')}
         leftTitle={t('quiz.result.axes.environmental.ecology')}
         rightTitle={t('quiz.result.axes.environmental.production')}
-        leftColor='orange'
+        leftImage={RecyclingSymbol}
+        leftColor='forestgreen'
         rightColor='dodgerblue'
         percent={location.state.environmental}
         leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(location.state.environmental)}`)} />
@@ -49,7 +57,8 @@ const Result = () => {
         title={t('quiz.result.axes.civil.title')}
         leftTitle={t('quiz.result.axes.civil.liberty')}
         rightTitle={t('quiz.result.axes.civil.authority')}
-        leftColor='turquoise'
+        leftImage={YellowFlagWaving}
+        leftColor='gold'
         rightColor='red'
         percent={location.state.civil}
         leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(location.state.civil)}`)} />
@@ -65,14 +74,18 @@ const Result = () => {
         title={t('quiz.result.axes.sovereignty.title')}
         leftTitle={t('quiz.result.axes.sovereignty.independence')}
         rightTitle={t('quiz.result.axes.sovereignty.unification')}
+        leftImage={FlagOfTWIndependence}
+        rightImage={ChinaTerritory}
         leftColor='green'
-        rightColor='red'
+        rightColor='black'
         percent={location.state.sovereignty}
         leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(location.state.sovereignty)}`)} />
       <ValuesCard
         title={t('quiz.result.axes.us_china_relation.title')}
         leftTitle={t('quiz.result.axes.us_china_relation.pro_american')}
         rightTitle={t('quiz.result.axes.us_china_relation.pro_chinese')}
+        leftImage={FlagOfUSA}
+        rightImage={FlagOfPRC}
         leftColor='navy'
         rightColor='red'
         percent={location.state.us_china_relation}

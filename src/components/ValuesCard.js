@@ -1,9 +1,9 @@
-import { Card, Typography, Progress, Layout } from 'antd'
+import { Card, Typography, Progress, Layout, Image } from 'antd'
 import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
-const ValuesCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, percent, leaningsTitle }) => {
+const ValuesCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
 
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
@@ -31,8 +31,26 @@ const ValuesCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, perce
         justifyContent: 'center',
         width: '100%',
       }}>
-        <Title level={3} style={{ width: '20%', margin: '10px', color: leftColor, textAlign: 'center' }}>{leftTitle}</Title>
-        <Progress type='circle' percent={percent} showInfo={true} status='active' strokeColor={leftColor} trailColor='gray' size='small' style={{ margin: '5px' }} />
+        <Layout style={{
+          backgroundColor: 'transparent',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <Image width={60} src={leftImage || ""} />
+          <Title level={3} style={{ margin: '10px', color: leftColor, textAlign: 'center' }}>{leftTitle}</Title>
+        </Layout>
+        <Progress
+          type='circle'
+          percent={percent}
+          showInfo={true}
+          status='active'
+          strokeColor={leftColor}
+          trailColor='gray'
+          size='small'
+          style={{ margin: '5px' }}
+        />
         <Layout style={{
           backgroundColor: 'transparent',
           display: 'flex',
@@ -51,10 +69,36 @@ const ValuesCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, perce
           }}>
             {leaningsTitle}
           </Text>
-          <Progress type='line' percent={percent} showInfo={false} strokeLinecap='square' strokeColor={leftColor} trailColor={rightColor} style={{ margin: '10px' }} />
+          <Progress
+            type='line'
+            percent={percent}
+            showInfo={false}
+            strokeLinecap='square'
+            strokeColor={leftColor}
+            trailColor={rightColor}
+            style={{ margin: '10px' }}
+          />
         </Layout>
-        <Progress type='circle' percent={100 - percent} showInfo={true} status='active' strokeColor={rightColor} trailColor='gray' size='small' style={{ margin: '5px' }} />
-        <Title level={3} style={{ width: '20%', margin: '10px', color: rightColor, textAlign: 'center' }}>{rightTitle}</Title>
+        <Progress
+          type='circle'
+          percent={100 - percent}
+          showInfo={true}
+          status='active'
+          strokeColor={rightColor}
+          trailColor='gray'
+          size='small'
+          style={{ margin: '5px' }}
+        />
+        <Layout style={{
+          backgroundColor: 'transparent',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <Image width={60} src={rightImage || ""} />
+          <Title level={3} style={{ margin: '10px', color: rightColor, textAlign: 'center' }}>{rightTitle}</Title>
+        </Layout>
       </Layout>
     </Card >
   )
