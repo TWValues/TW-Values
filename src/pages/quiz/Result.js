@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Layout, Card, Typography } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
+import IDEOLOGIES from '../../utils/ideologies'
 
 import Balance from '../../assets/Balance.svg'
 import DollarSign from '../../assets/DollarSign.svg'
@@ -24,6 +25,31 @@ const Result = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
+
+  const economic = searchParams.get('economic')
+  const environmental = searchParams.get('environmental')
+  const civil = searchParams.get('civil')
+  const societal = searchParams.get('societal')
+  const diplomatic = searchParams.get('diplomatic')
+  const sovereignty = searchParams.get('sovereignty')
+  const us_china_relation = searchParams.get('us_china_relation')
+
+  const getIdeologyName = () => {
+    const ideologies = IDEOLOGIES.map((value) => {
+      let distance = 0.0
+      distance += Math.pow(Math.abs(value.state.economic - economic), 2)
+      // distance += Math.pow(Math.abs(value.state.environmental - environmental), 2)
+      distance += Math.pow(Math.abs(value.state.civil - civil), 2)
+      distance += Math.pow(Math.abs(value.state.societal - societal), 2)
+      distance += Math.pow(Math.abs(value.state.diplomatic - diplomatic), 2)
+      return {
+        id: value.id,
+        distance: distance
+      }
+    }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+
+    return t(`quiz.result.ideologies.${ideologies[0].id}.name`)
+  }
 
   const getCategory = (percent) => {
     const threshold = [0, 10, 25, 40, 60, 75, 90]
@@ -59,7 +85,7 @@ const Result = () => {
           margin: '5px 10px 5px 10px',
         }}>
         <Title level={1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
-          {searchParams.get('ideology_name')}
+          {getIdeologyName()}
         </Title>
       </Card>
       <ValueCard
@@ -70,8 +96,8 @@ const Result = () => {
         rightImage={DollarSign}
         leftColor='crimson'
         rightColor='turquoise'
-        percent={searchParams.get('economic')}
-        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(searchParams.get('economic'))}`)}
+        percent={economic}
+        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(economic)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.environmental.title')}
@@ -81,8 +107,8 @@ const Result = () => {
         rightImage={Factory}
         leftColor='forestgreen'
         rightColor='dodgerblue'
-        percent={searchParams.get('environmental')}
-        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(searchParams.get('environmental'))}`)}
+        percent={environmental}
+        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(environmental)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.civil.title')}
@@ -92,8 +118,8 @@ const Result = () => {
         rightImage={Crown}
         leftColor='gold'
         rightColor='red'
-        percent={searchParams.get('civil')}
-        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(searchParams.get('civil'))}`)}
+        percent={civil}
+        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(civil)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.societal.title')}
@@ -103,8 +129,8 @@ const Result = () => {
         rightImage={Family}
         leftColor='magenta'
         rightColor='brown'
-        percent={searchParams.get('societal')}
-        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(searchParams.get('societal'))}`)}
+        percent={societal}
+        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(societal)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.sovereignty.title')}
@@ -114,8 +140,8 @@ const Result = () => {
         rightImage={ChinaTerritory}
         leftColor='green'
         rightColor='black'
-        percent={searchParams.get('sovereignty')}
-        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(searchParams.get('sovereignty'))}`)}
+        percent={sovereignty}
+        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(sovereignty)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.us_china_relation.title')}
@@ -125,8 +151,8 @@ const Result = () => {
         rightImage={FlagOfPRC}
         leftColor='navy'
         rightColor='red'
-        percent={searchParams.get('us_china_relation')}
-        leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(searchParams.get('us_china_relation'))}`)}
+        percent={us_china_relation}
+        leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(us_china_relation)}`)}
       />
     </Layout>
   )

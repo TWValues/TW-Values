@@ -3,7 +3,6 @@ import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import QUESTIONS from '../../utils/questions'
-import IDEOLOGIES from '../../utils/ideologies'
 
 const Quiz = () => {
 
@@ -66,41 +65,19 @@ const Quiz = () => {
             return array.reduce((accu, value) => accu + Math.abs(value))
           }
           const getPercentage = (bias, total) => 100 * (bias + total) / (2 * total)
+          const roundToDecimal = (percent) => Math.round(10 * percent) / 10
 
           const score = getScoreWithMultiplier(array)
           const maxScore = getAbsMaxScore(array)
-          return getPercentage(score, maxScore)
-        }
-
-        const economic = getScore(questions.map((value) => value.effect.economic || 0.0))
-        const environmental = getScore(questions.map((value) => value.effect.environmental || 0.0))
-        const civil = getScore(questions.map((value) => value.effect.civil || 0.0))
-        const societal = getScore(questions.map((value) => value.effect.societal || 0.0))
-        const diplomatic = getScore(questions.map((value) => value.effect.diplomatic || 0.0))
-
-        const getIdeologyName = () => {
-          const ideologies = IDEOLOGIES.map((value) => {
-            let distance = 0.0
-            distance += Math.pow(Math.abs(value.state.economic - economic), 2)
-            // distance += Math.pow(Math.abs(value.state.environmental - environmental), 2)
-            distance += Math.pow(Math.abs(value.state.civil - civil), 2)
-            distance += Math.pow(Math.abs(value.state.societal - societal), 2)
-            distance += Math.pow(Math.abs(value.state.diplomatic - diplomatic), 2)
-            return {
-              id: value.id,
-              distance: distance
-            }
-          }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
-
-          return t(`quiz.result.ideologies.${ideologies[0].id}.name`)
+          return roundToDecimal(getPercentage(score, maxScore))
         }
 
         return {
-          ideology_name: getIdeologyName(),
-          economic,
-          environmental,
-          civil,
-          societal,
+          economic: getScore(questions.map((value) => value.effect.economic || 0.0)),
+          environmental: getScore(questions.map((value) => value.effect.environmental || 0.0)),
+          civil: getScore(questions.map((value) => value.effect.civil || 0.0)),
+          societal: getScore(questions.map((value) => value.effect.societal || 0.0)),
+          diplomatic: getScore(questions.map((value) => value.effect.diplomatic || 0.0)),
           sovereignty: getScore(questions.map((value) => value.effect.sovereignty || 0.0)),
           us_china_relation: getScore(questions.map((value) => value.effect.us_china_relation || 0.0)),
         }
