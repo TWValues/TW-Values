@@ -96,8 +96,11 @@
       "q0503": {
         "description": "The stronger the leadership, the better."
       },
+      "q0504": {
+        "description": "Even when protesting an authoritarian government, violence is not acceptable."
+      },
       "q0600": {
-        "description": "A better world will come from automation, science, and technology."
+        "description": "We should believe in modern medicine and despise traditional medicine."
       },
       "q0601": {
         "description": "Churches should be taxed the same way other institutions are taxed."
@@ -107,6 +110,9 @@
       },
       "q0603": {
         "description": "Death penalty should be abolished."
+      },
+      "q0604": {
+        "description": "Governments should be as concerned about foreigners as they are about their own citizens."
       },
       "q0700": {
         "description": "Society was better many years ago than it is now."

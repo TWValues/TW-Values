@@ -90,8 +90,6 @@ const Quiz = () => {
             }
           }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
-          console.log(ideologies)
-
           return {
             name: t(`quiz.result.ideologies.${ideologies[0].id}.name`),
           }

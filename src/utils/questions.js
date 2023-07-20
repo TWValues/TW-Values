@@ -163,6 +163,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0504",
+    effect: {
+      civil: -10,
+    }
+  },
+  {
     id: "q0600",
     effect: {
       societal: 10,
@@ -182,6 +188,12 @@ const QUESTIONS = [
   },
   {
     id: "q0603",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
+    id: "q0604",
     effect: {
       societal: 10,
     }
