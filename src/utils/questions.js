@@ -55,6 +55,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0104",
+    effect: {
+      economic: -10,
+    }
+  },
+  {
     id: "q0200",
     effect: {
       environmental: 10,
@@ -211,6 +217,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0705",
+    effect: {
+      societal: -10,
+    }
+  },
+  {
     id: "q1000",
     effect: {
       sovereignty: 10,
@@ -266,6 +278,12 @@ const QUESTIONS = [
   },
   {
     id: "q1301",
+    effect: {
+      us_china_relation: -10,
+    }
+  },
+  {
+    id: "q1302",
     effect: {
       us_china_relation: -10,
     }

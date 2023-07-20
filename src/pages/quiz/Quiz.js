@@ -104,6 +104,7 @@ const Quiz = () => {
           width: '100%',
           fontSize: 'x-large',
           margin: '20px',
+          whiteSpace: 'pre-line',
         }}>
         {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
       </Card>

@@ -31,7 +31,7 @@
         "description": "Taxes should be rapidly increased on multiple property owners."
       },
       "q0100": {
-        "description": "The freer the markets, the freer the people."
+        "description": "For the sake of economic growth, sacrifice of labor rights is acceptable."
       },
       "q0101": {
         "description": "Inheritance is a legitimate form of wealth."
@@ -41,6 +41,9 @@
       },
       "q0103": {
         "description": "Those with a greater ability to pay should receive better healthcare."
+      },
+      "q0104": {
+        "description": "Whoever invented unpaid leave should get a Nobel Prize."
       },
       "q0200": {
         "description": "Climate change is currently one of the greatest threats to our way of life."
@@ -120,6 +123,9 @@
       "q0704": {
         "description": "Prostitution should be illegal."
       },
+      "q0705": {
+        "description": "Young and beautiful girls, suitable for counter staff. \nIt is scary for women to go out on the street without makeup."
+      },
       "q1000": {
         "description": "We are already independent, the name is 'Republic of China (R.O.C)'."
       },
@@ -152,6 +158,9 @@
       },
       "q1302": {
         "description": "We shall sign Cross-strait peace agreement as soon as possible."
+      },
+      "q1303": {
+        "description": "We shall keep peaceful relationship with China to avoid World War III."
       }
     },
     "result": {
