@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { Layout } from 'antd'
 import { useTranslation } from 'react-i18next'
-import ValuesCard from '../../components/ValuesCard'
+import ValueCard from '../../components/ValueCard'
 
 import RecyclingSymbol from '../../assets/RecyclingSymbol.svg'
 import YellowFlagWaving from '../../assets/YellowFlagWaving.svg'
@@ -36,7 +36,7 @@ const Result = () => {
       display: 'flex',
       alignItems: 'center',
     }}>
-      <ValuesCard
+      <ValueCard
         title={t('quiz.result.axes.economic.title')}
         leftTitle={t('quiz.result.axes.economic.equality')}
         rightTitle={t('quiz.result.axes.economic.market')}
@@ -44,7 +44,7 @@ const Result = () => {
         rightColor='turquoise'
         percent={location.state.economic}
         leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(location.state.economic)}`)} />
-      <ValuesCard
+      <ValueCard
         title={t('quiz.result.axes.environmental.title')}
         leftTitle={t('quiz.result.axes.environmental.ecology')}
         rightTitle={t('quiz.result.axes.environmental.production')}
@@ -53,7 +53,7 @@ const Result = () => {
         rightColor='dodgerblue'
         percent={location.state.environmental}
         leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(location.state.environmental)}`)} />
-      <ValuesCard
+      <ValueCard
         title={t('quiz.result.axes.civil.title')}
         leftTitle={t('quiz.result.axes.civil.liberty')}
         rightTitle={t('quiz.result.axes.civil.authority')}
@@ -62,7 +62,7 @@ const Result = () => {
         rightColor='red'
         percent={location.state.civil}
         leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(location.state.civil)}`)} />
-      <ValuesCard
+      <ValueCard
         title={t('quiz.result.axes.societal.title')}
         leftTitle={t('quiz.result.axes.societal.progress')}
         rightTitle={t('quiz.result.axes.societal.tradition')}
@@ -70,7 +70,7 @@ const Result = () => {
         rightColor='brown'
         percent={location.state.societal}
         leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(location.state.societal)}`)} />
-      <ValuesCard
+      <ValueCard
         title={t('quiz.result.axes.sovereignty.title')}
         leftTitle={t('quiz.result.axes.sovereignty.independence')}
         rightTitle={t('quiz.result.axes.sovereignty.unification')}
@@ -80,7 +80,7 @@ const Result = () => {
         rightColor='black'
         percent={location.state.sovereignty}
         leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(location.state.sovereignty)}`)} />
-      <ValuesCard
+      <ValueCard
         title={t('quiz.result.axes.us_china_relation.title')}
         leftTitle={t('quiz.result.axes.us_china_relation.pro_american')}
         rightTitle={t('quiz.result.axes.us_china_relation.pro_chinese')}

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
-const ValuesCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
+const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
 
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
@@ -104,4 +104,4 @@ const ValuesCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftC
   )
 }
 
-export default ValuesCard
+export default ValueCard
