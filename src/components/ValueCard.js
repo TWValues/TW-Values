@@ -59,13 +59,13 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           justifyContent: 'center',
           width: '40%',
           margin: '10px',
-          paddingBottom: '10px',
+          paddingBottom: '20px',
         }}>
           <Text style={{
             fontSize: 'large',
             color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
             textAlign: 'center',
-            height: '10px',
+            height: '20px',
           }}>
             {leaningsTitle}
           </Text>
