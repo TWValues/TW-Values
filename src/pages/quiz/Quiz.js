@@ -65,7 +65,7 @@ const Quiz = () => {
           const getAbsMaxScore = (array) => {
             return array.reduce((accu, value) => accu + Math.abs(value))
           }
-          const getPercentage = (bias, total) => Math.round(100 * (bias + total) / (2 * total))
+          const getPercentage = (bias, total) => 100 * (bias + total) / (2 * total)
 
           const score = getScoreWithMultiplier(array)
           const maxScore = getAbsMaxScore(array)
@@ -89,6 +89,8 @@ const Quiz = () => {
               distance: distance
             }
           }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+
+          console.log(ideologies)
 
           return {
             name: t(`quiz.result.ideologies.${ideologies[0].id}.name`),

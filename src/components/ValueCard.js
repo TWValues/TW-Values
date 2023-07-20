@@ -8,6 +8,8 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
 
+  percent = Math.round(percent)
+
   return (
     <Card
       title={title}
