@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { Layout, Card, Typography } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
@@ -20,8 +20,8 @@ const { Title } = Typography
 
 const Result = () => {
 
-  const location = useLocation()
-
+  // eslint-disable-next-line no-unused-vars
+  const [searchParams, setSearchParams] = useSearchParams()
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
 
@@ -59,7 +59,7 @@ const Result = () => {
           margin: '5px 10px 5px 10px',
         }}>
         <Title level={1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
-          {location.state.ideology.name}
+          {searchParams.get('ideology_name')}
         </Title>
       </Card>
       <ValueCard
@@ -70,8 +70,9 @@ const Result = () => {
         rightImage={DollarSign}
         leftColor='crimson'
         rightColor='turquoise'
-        percent={location.state.economic}
-        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(location.state.economic)}`)} />
+        percent={searchParams.get('economic')}
+        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(searchParams.get('economic'))}`)}
+      />
       <ValueCard
         title={t('quiz.result.axes.environmental.title')}
         leftTitle={t('quiz.result.axes.environmental.ecology')}
@@ -80,8 +81,9 @@ const Result = () => {
         rightImage={Factory}
         leftColor='forestgreen'
         rightColor='dodgerblue'
-        percent={location.state.environmental}
-        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(location.state.environmental)}`)} />
+        percent={searchParams.get('environmental')}
+        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(searchParams.get('environmental'))}`)}
+      />
       <ValueCard
         title={t('quiz.result.axes.civil.title')}
         leftTitle={t('quiz.result.axes.civil.liberty')}
@@ -90,8 +92,9 @@ const Result = () => {
         rightImage={Crown}
         leftColor='gold'
         rightColor='red'
-        percent={location.state.civil}
-        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(location.state.civil)}`)} />
+        percent={searchParams.get('civil')}
+        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(searchParams.get('civil'))}`)}
+      />
       <ValueCard
         title={t('quiz.result.axes.societal.title')}
         leftTitle={t('quiz.result.axes.societal.progress')}
@@ -100,8 +103,9 @@ const Result = () => {
         rightImage={Family}
         leftColor='magenta'
         rightColor='brown'
-        percent={location.state.societal}
-        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(location.state.societal)}`)} />
+        percent={searchParams.get('societal')}
+        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(searchParams.get('societal'))}`)}
+      />
       <ValueCard
         title={t('quiz.result.axes.sovereignty.title')}
         leftTitle={t('quiz.result.axes.sovereignty.independence')}
@@ -110,8 +114,9 @@ const Result = () => {
         rightImage={ChinaTerritory}
         leftColor='green'
         rightColor='black'
-        percent={location.state.sovereignty}
-        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(location.state.sovereignty)}`)} />
+        percent={searchParams.get('sovereignty')}
+        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(searchParams.get('sovereignty'))}`)}
+      />
       <ValueCard
         title={t('quiz.result.axes.us_china_relation.title')}
         leftTitle={t('quiz.result.axes.us_china_relation.pro_american')}
@@ -120,8 +125,9 @@ const Result = () => {
         rightImage={FlagOfPRC}
         leftColor='navy'
         rightColor='red'
-        percent={location.state.us_china_relation}
-        leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(location.state.us_china_relation)}`)} />
+        percent={searchParams.get('us_china_relation')}
+        leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(searchParams.get('us_china_relation'))}`)}
+      />
     </Layout>
   )
 }

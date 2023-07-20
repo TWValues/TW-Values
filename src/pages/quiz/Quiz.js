@@ -1,7 +1,7 @@
 import { Layout, Card, Button } from 'antd'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, createSearchParams } from 'react-router-dom'
 import QUESTIONS from '../../utils/questions'
 import IDEOLOGIES from '../../utils/ideologies'
 
@@ -78,7 +78,7 @@ const Quiz = () => {
         const societal = getScore(questions.map((value) => value.effect.societal || 0.0))
         const diplomatic = getScore(questions.map((value) => value.effect.diplomatic || 0.0))
 
-        const getIdeology = () => {
+        const getIdeologyName = () => {
           const ideologies = IDEOLOGIES.map((value) => {
             let distance = 0.0
             distance += Math.pow(Math.abs(value.state.economic - economic), 2)
@@ -92,13 +92,11 @@ const Quiz = () => {
             }
           }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
-          return {
-            name: t(`quiz.result.ideologies.${ideologies[0].id}.name`),
-          }
+          return t(`quiz.result.ideologies.${ideologies[0].id}.name`)
         }
 
         return {
-          ideology: getIdeology(),
+          ideology_name: getIdeologyName(),
           economic,
           environmental,
           civil,
@@ -108,8 +106,11 @@ const Quiz = () => {
         }
       }
 
-      navigate('/result', {
-        state: calculateScores()
+      navigate({
+        pathname: '/result',
+        search: createSearchParams({
+          ...calculateScores()
+        }).toString()
       })
     } else {
       setCurrentSelectedQuestionIndex(currentSelectedQuestionIndex + 1)
