@@ -3,8 +3,14 @@ import { Layout, Card, Typography } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 
+import Balance from '../../assets/Balance.svg'
+import DollarSign from '../../assets/DollarSign.svg'
 import RecyclingSymbol from '../../assets/RecyclingSymbol.svg'
-import YellowFlagWaving from '../../assets/YellowFlagWaving.svg'
+import Factory from '../../assets/Factory.svg'
+import Liberty from '../../assets/Liberty.svg'
+import Crown from '../../assets/Crown.svg'
+import RainbowFlag from '../../assets/RainbowFlag.svg'
+import Family from '../../assets/Family.svg'
 import FlagOfTWIndependence from '../../assets/FlagOfTWIndependence.svg'
 import ChinaTerritory from '../../assets/ChinaTerritory.svg'
 import FlagOfUSA from '../../assets/FlagOfUSA.svg'
@@ -60,6 +66,8 @@ const Result = () => {
         title={t('quiz.result.axes.economic.title')}
         leftTitle={t('quiz.result.axes.economic.equality')}
         rightTitle={t('quiz.result.axes.economic.market')}
+        leftImage={Balance}
+        rightImage={DollarSign}
         leftColor='crimson'
         rightColor='turquoise'
         percent={location.state.economic}
@@ -69,6 +77,7 @@ const Result = () => {
         leftTitle={t('quiz.result.axes.environmental.ecology')}
         rightTitle={t('quiz.result.axes.environmental.production')}
         leftImage={RecyclingSymbol}
+        rightImage={Factory}
         leftColor='forestgreen'
         rightColor='dodgerblue'
         percent={location.state.environmental}
@@ -77,7 +86,8 @@ const Result = () => {
         title={t('quiz.result.axes.civil.title')}
         leftTitle={t('quiz.result.axes.civil.liberty')}
         rightTitle={t('quiz.result.axes.civil.authority')}
-        leftImage={YellowFlagWaving}
+        leftImage={Liberty}
+        rightImage={Crown}
         leftColor='gold'
         rightColor='red'
         percent={location.state.civil}
@@ -86,6 +96,8 @@ const Result = () => {
         title={t('quiz.result.axes.societal.title')}
         leftTitle={t('quiz.result.axes.societal.progress')}
         rightTitle={t('quiz.result.axes.societal.tradition')}
+        leftImage={RainbowFlag}
+        rightImage={Family}
         leftColor='magenta'
         rightColor='brown'
         percent={location.state.societal}
