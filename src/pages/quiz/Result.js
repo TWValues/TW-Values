@@ -10,7 +10,7 @@ import ChinaTerritory from '../../assets/ChinaTerritory.svg'
 import FlagOfUSA from '../../assets/FlagOfUSA.svg'
 import FlagOfPRC from '../../assets/FlagOfPRC.svg'
 
-const { Title, Text } = Typography
+const { Title } = Typography
 
 const Result = () => {
 
