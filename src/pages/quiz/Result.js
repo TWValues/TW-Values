@@ -38,7 +38,7 @@ const Result = () => {
     const ideologies = IDEOLOGIES.map((value) => {
       let distance = 0.0
       distance += Math.pow(Math.abs(value.state.economic - economic), 2)
-      // distance += Math.pow(Math.abs(value.state.environmental - environmental), 2)
+      distance += Math.pow(Math.abs(value.state.societal - environmental), 1.5) // Treat environmental as societal
       distance += Math.pow(Math.abs(value.state.civil - civil), 2)
       distance += Math.pow(Math.abs(value.state.societal - societal), 2)
       distance += Math.pow(Math.abs(value.state.diplomatic - diplomatic), 2)
