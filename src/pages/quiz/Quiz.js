@@ -76,6 +76,7 @@ const Quiz = () => {
         const environmental = getScore(questions.map((value) => value.effect.environmental || 0.0))
         const civil = getScore(questions.map((value) => value.effect.civil || 0.0))
         const societal = getScore(questions.map((value) => value.effect.societal || 0.0))
+        const diplomatic = getScore(questions.map((value) => value.effect.diplomatic || 0.0))
 
         const getIdeology = () => {
           const ideologies = IDEOLOGIES.map((value) => {
@@ -84,6 +85,7 @@ const Quiz = () => {
             // distance += Math.pow(Math.abs(value.state.environmental - environmental), 2)
             distance += Math.pow(Math.abs(value.state.civil - civil), 2)
             distance += Math.pow(Math.abs(value.state.societal - societal), 2)
+            distance += Math.pow(Math.abs(value.state.diplomatic - diplomatic), 2)
             return {
               id: value.id,
               distance: distance

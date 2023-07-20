@@ -166,6 +166,14 @@ const QUESTIONS = [
     id: "q0504",
     effect: {
       civil: -10,
+      diplomatic: 5,
+    }
+  },
+  {
+    id: "q0505",
+    effect: {
+      civil: -10,
+      diplomatic: -5,
     }
   },
   {
@@ -196,6 +204,7 @@ const QUESTIONS = [
     id: "q0604",
     effect: {
       societal: 10,
+      diplomatic: 5,
     }
   },
   {
@@ -250,6 +259,7 @@ const QUESTIONS = [
     id: "q1002",
     effect: {
       sovereignty: 10,
+      diplomatic: -5,
     }
   },
   {
@@ -271,9 +281,17 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q1103",
+    effect: {
+      sovereignty: -10,
+      us_china_relation: -10,
+    }
+  },
+  {
     id: "q1200",
     effect: {
       us_china_relation: 10,
+      diplomatic: -5,
     }
   },
   {
@@ -286,6 +304,7 @@ const QUESTIONS = [
     id: "q1300",
     effect: {
       us_china_relation: -10,
+      diplomatic: 5,
     }
   },
   {
@@ -304,6 +323,14 @@ const QUESTIONS = [
     id: "q1302",
     effect: {
       us_china_relation: -10,
+      diplomatic: 5,
+    }
+  },
+  {
+    id: "q1303",
+    effect: {
+      us_china_relation: -10,
+      diplomatic: 5,
     }
   },
 ]

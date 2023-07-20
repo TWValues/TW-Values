@@ -73,7 +73,7 @@
         "description": "The very existence of the state is a threat to our liberty."
       },
       "q0402": {
-        "description": "All authority should be questioned."
+        "description": "Protest marches should not require prior application."
       },
       "q0403": {
         "description": "It is important that the government follows the majority opinion, even if it is wrong."
@@ -98,6 +98,9 @@
       },
       "q0504": {
         "description": "Even when protesting an authoritarian government, violence is not acceptable."
+      },
+      "q0505": {
+        "description": "It is important to maintain law and order."
       },
       "q0600": {
         "description": "We should believe in modern medicine and despise traditional medicine."
@@ -149,6 +152,9 @@
       },
       "q1102": {
         "description": "Use 'Chinese Taipei' to participate in international events is acceptable."
+      },
+      "q1103": {
+        "description": "Political negotiations with PRC should be carried out immediately to achieve national unity."
       },
       "q1200": {
         "description": "We shall stand with U.S to fight against China."
