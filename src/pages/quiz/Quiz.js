@@ -1,8 +1,9 @@
 import { Layout, Card, Button } from 'antd'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import QUESTIONS from '../../utils/questions'
 import { useNavigate } from 'react-router-dom'
+import QUESTIONS from '../../utils/questions'
+import IDEOLOGIES from '../../utils/ideologies'
 
 const Quiz = () => {
 
@@ -57,25 +58,49 @@ const Quiz = () => {
     if (currentSelectedQuestionIndex + 1 === questions.length) {
 
       const calculateScores = () => {
-
-        const getScoreWithMultiplier = (array) => {
-          return array.reduce((accu, value, index) => accu + value * choices[index])
-        }
-        const getAbsMaxScore = (array) => {
-          return array.reduce((accu, value) => accu + Math.abs(value))
-        }
-        const getPercentage = (bias, total) => Math.round(100 * (bias + total) / (2 * total))
         const getScore = (array) => {
+          const getScoreWithMultiplier = (array) => {
+            return array.reduce((accu, value, index) => accu + value * choices[index])
+          }
+          const getAbsMaxScore = (array) => {
+            return array.reduce((accu, value) => accu + Math.abs(value))
+          }
+          const getPercentage = (bias, total) => Math.round(100 * (bias + total) / (2 * total))
+
           const score = getScoreWithMultiplier(array)
           const maxScore = getAbsMaxScore(array)
           return getPercentage(score, maxScore)
         }
 
+        const economic = getScore(questions.map((value) => value.effect.economic || 0.0))
+        const environmental = getScore(questions.map((value) => value.effect.environmental || 0.0))
+        const civil = getScore(questions.map((value) => value.effect.civil || 0.0))
+        const societal = getScore(questions.map((value) => value.effect.societal || 0.0))
+
+        const getIdeology = () => {
+          const ideologies = IDEOLOGIES.map((value) => {
+            let distance = 0.0
+            distance += Math.pow(Math.abs(value.state.economic - economic), 2)
+            // distance += Math.pow(Math.abs(value.state.environmental - environmental), 2)
+            distance += Math.pow(Math.abs(value.state.civil - civil), 2)
+            distance += Math.pow(Math.abs(value.state.societal - societal), 2)
+            return {
+              id: value.id,
+              distance: distance
+            }
+          }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+
+          return {
+            name: t(`quiz.result.ideologies.${ideologies[0].id}.name`),
+          }
+        }
+
         return {
-          economic: getScore(questions.map((value) => value.effect.economic || 0.0)),
-          environmental: getScore(questions.map((value) => value.effect.environmental || 0.0)),
-          civil: getScore(questions.map((value) => value.effect.civil || 0.0)),
-          societal: getScore(questions.map((value) => value.effect.societal || 0.0)),
+          ideology: getIdeology(),
+          economic,
+          environmental,
+          civil,
+          societal,
           sovereignty: getScore(questions.map((value) => value.effect.sovereignty || 0.0)),
           us_china_relation: getScore(questions.map((value) => value.effect.us_china_relation || 0.0)),
         }

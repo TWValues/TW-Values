@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom'
-import { Layout } from 'antd'
+import { Layout, Card, Typography } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 
@@ -9,6 +9,8 @@ import FlagOfTWIndependence from '../../assets/FlagOfTWIndependence.svg'
 import ChinaTerritory from '../../assets/ChinaTerritory.svg'
 import FlagOfUSA from '../../assets/FlagOfUSA.svg'
 import FlagOfPRC from '../../assets/FlagOfPRC.svg'
+
+const { Title, Text } = Typography
 
 const Result = () => {
 
@@ -36,6 +38,24 @@ const Result = () => {
       display: 'flex',
       alignItems: 'center',
     }}>
+      <Card
+        title={t('quiz.result.ideologies.match')}
+        headStyle={{
+          backgroundColor: 'white',
+          color: 'black',
+          fontSize: 'x-large',
+          textAlign: 'center',
+        }}
+        style={{
+          backgroundColor: 'white',
+          width: '100%',
+          fontSize: 'large',
+          margin: '5px 10px 5px 10px',
+        }}>
+        <Title level={1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
+          {location.state.ideology.name}
+        </Title>
+      </Card>
       <ValueCard
         title={t('quiz.result.axes.economic.title')}
         leftTitle={t('quiz.result.axes.economic.equality')}
