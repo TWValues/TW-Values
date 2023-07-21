@@ -1,7 +1,8 @@
-import { Layout, Card, Button } from 'antd'
+import { Layout, Card, Button, Grid } from 'antd'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
+import getScreenSize from '../../utils/getScreenSize'
 import QUESTIONS from '../../utils/questions'
 
 const Quiz = () => {
@@ -9,6 +10,19 @@ const Quiz = () => {
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
   const navigate = useNavigate()
+  const screens = Grid.useBreakpoint()
+
+  const getButtonStyles = () => {
+    const styles = {
+      sm: { width: '100%' },
+      md: { width: '60%' },
+      lg: { width: '50%' },
+      xl: { width: '40%' },
+      xxl: { width: '40%' },
+    }
+
+    return styles[getScreenSize(screens)]
+  }
 
   const questions = useMemo(() => {
 
@@ -117,7 +131,7 @@ const Quiz = () => {
         backgroundColor: 'darkgreen',
         borderColor: 'darkgreen',
         color: 'white',
-        width: '60%',
+        ...getButtonStyles(),
         height: '40px',
         margin: '5px',
         fontSize: 'large',
@@ -131,7 +145,7 @@ const Quiz = () => {
         backgroundColor: 'limegreen',
         borderColor: 'limegreen',
         color: 'white',
-        width: '60%',
+        ...getButtonStyles(),
         height: '40px',
         margin: '5px',
         fontSize: 'large',
@@ -145,7 +159,7 @@ const Quiz = () => {
         backgroundColor: 'gray',
         borderColor: 'gray',
         color: 'white',
-        width: '60%',
+        ...getButtonStyles(),
         height: '40px',
         margin: '5px',
         fontSize: 'large',
@@ -159,7 +173,7 @@ const Quiz = () => {
         backgroundColor: 'red',
         borderColor: 'red',
         color: 'white',
-        width: '60%',
+        ...getButtonStyles(),
         height: '40px',
         margin: '5px',
         fontSize: 'large',
@@ -173,7 +187,7 @@ const Quiz = () => {
         backgroundColor: 'darkred',
         borderColor: 'darkred',
         color: 'white',
-        width: '60%',
+        ...getButtonStyles(),
         height: '40px',
         margin: '5px',
         fontSize: 'large',
@@ -187,7 +201,7 @@ const Quiz = () => {
         backgroundColor: 'transparent',
         borderColor: 'gray',
         color: 'gray',
-        width: '20%',
+        ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
         moveToPrevQuestion()

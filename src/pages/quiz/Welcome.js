@@ -1,6 +1,7 @@
-import { Button, Divider, Layout, Typography } from 'antd'
+import { Button, Divider, Layout, Typography, Grid } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import getScreenSize from '../../utils/getScreenSize'
 
 const { Title, Text } = Typography
 
@@ -10,13 +11,26 @@ const Welcome = () => {
   const [t, i18n] = useTranslation()
 
   const navigate = useNavigate()
+  const screens = Grid.useBreakpoint()
+
+  const getStartButtonStyles = () => {
+    const styles = {
+      sm: { width: '100%' },
+      md: { width: '60%' },
+      lg: { width: '50%' },
+      xl: { width: '40%' },
+      xxl: { width: '40%' },
+    }
+
+    return styles[getScreenSize(screens)]
+  }
 
   return (
     <Layout style={{
       backgroundColor: 'white',
       display: 'flex',
       alignItems: 'center',
-      padding: '20px',
+      padding: '10px',
     }}>
       <Title
         level={1}
@@ -38,7 +52,7 @@ const Welcome = () => {
         backgroundColor: 'lightseagreen',
         borderColor: 'lightseagreen',
         color: 'white',
-        width: '40%',
+        ...getStartButtonStyles(),
         height: '60px',
         margin: '5px',
         fontSize: 'x-large',

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
-const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
+const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle, showColorBar }) => {
 
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
@@ -60,9 +60,10 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          width: '40%',
-          margin: '10px',
-          paddingBottom: '20px',
+          textAlign: 'center',
+          width: showColorBar ? '40%' : '20%',
+          margin: '5px',
+          paddingBottom: showColorBar ? '20px' : '40px',
         }}>
           <Text style={{
             fontSize: 'large',
@@ -72,7 +73,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           }}>
             {leaningsTitle}
           </Text>
-          <Progress
+          {showColorBar && <Progress
             type='line'
             percent={percent}
             showInfo={false}
@@ -80,7 +81,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
             strokeColor={leftColor}
             trailColor={rightColor}
             style={{ margin: '10px' }}
-          />
+          />}
         </Layout>
         <Progress
           type='circle'
