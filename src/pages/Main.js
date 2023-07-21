@@ -1,5 +1,6 @@
 
-import { Layout, Typography, Grid } from 'antd'
+import { Layout, Typography, Grid, Button } from 'antd'
+import { GithubOutlined } from '@ant-design/icons';
 import { Outlet, useNavigate } from 'react-router-dom'
 import getScreenSize from '../utils/getScreenSize'
 
@@ -13,11 +14,11 @@ const Main = () => {
 
   const getHeaderStyles = () => {
     const styles = {
-      sm: { padding: '20px 10px 40px 10px' },
-      md: { padding: '20px 20px 40px 20px' },
-      lg: { padding: '20px 10% 40px 10%' },
-      xl: { padding: '20px 15% 40px 15%' },
-      xxl: { padding: '20px 20% 40px 20%' },
+      sm: { padding: '0 10px 0 10px' },
+      md: { padding: '0 20px 0 20px' },
+      lg: { padding: '0 10% 0 10%' },
+      xl: { padding: '0 15% 0 15%' },
+      xxl: { padding: '0 20% 0 20%' },
     }
 
     return styles[getScreenSize(screens)]
@@ -37,11 +38,11 @@ const Main = () => {
 
   const getFooterStyles = () => {
     const styles = {
-      sm: { padding: '0 10px 0px 10px' },
-      md: { padding: '0 20px 0px 20px' },
-      lg: { padding: '0 10% 0px 10%' },
-      xl: { padding: '0 15% 0px 15%' },
-      xxl: { padding: '0 20% 0px 20%' },
+      sm: { padding: '0 10px 0 10px' },
+      md: { padding: '0 20px 0 20px' },
+      lg: { padding: '0 10% 0 10%' },
+      xl: { padding: '0 15% 0 15%' },
+      xxl: { padding: '0 20% 0 20%' },
     }
 
     return styles[getScreenSize(screens)]
@@ -57,12 +58,20 @@ const Main = () => {
         {{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'start',
+          justifyContent: 'space-between',
           ...getHeaderStyles(),
+          height: '60px',
+          backgroundColor: 'crimson',
         }}>
-        <Title level={1} style={{ cursor: 'pointer', color: 'white' }} onClick={() => { navigate('/') }}>
+        <Title level={1} style={{ cursor: 'pointer', color: 'white', margin: 'auto 0 auto 0' }} onClick={() => { navigate('/') }}>
           TW Values
         </Title>
+        <Button
+          type='link'
+          href='https://github.com/TWValues/TW-Values'
+          target='_blank'
+          icon={<GithubOutlined style={{ color: 'black', fontSize: 'x-large' }} />}
+        />
       </Header>
       <Content style=
         {{
@@ -78,10 +87,11 @@ const Main = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'end',
-          backgroundColor: 'black',
           ...getFooterStyles(),
+          height: '40px',
+          backgroundColor: 'crimson',
         }}>
-        <Title level={4} style={{ color: 'white' }}>Copyright (c) 2023 TW Values</Title>
+        <Title level={4} style={{ color: 'white', margin: 'auto 0 auto 0' }}>Copyright (c) 2023 TW Values</Title>
       </Footer >
     </Layout >
   )

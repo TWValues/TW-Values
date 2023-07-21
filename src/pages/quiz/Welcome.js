@@ -49,8 +49,8 @@ const Welcome = () => {
       </Text>
       <Divider style={{ backgroundColor: 'black' }} />
       <Button style={{
-        backgroundColor: 'lightseagreen',
-        borderColor: 'lightseagreen',
+        backgroundColor: 'dodgerblue',
+        borderColor: 'dodgerblue',
         color: 'white',
         ...getStartButtonStyles(),
         height: '60px',
