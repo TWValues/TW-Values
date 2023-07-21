@@ -420,6 +420,30 @@
         "anarcho_capitalism": {
           "name": "無政府資本主義"
         }
+      },
+      "political_parties": {
+        "match": "理念最接近的政黨",
+        "kmt": {
+          "name": "中國國民黨"
+        },
+        "dpp": {
+          "name": "民主進步黨"
+        },
+        "np": {
+          "name": "新黨"
+        },
+        "npp": {
+          "name": "時代力量"
+        },
+        "tmd": {
+          "name": "台灣民眾黨"
+        },
+        "tsp": {
+          "name": "台灣基進黨"
+        },
+        "cupp": {
+          "name": "中華統一促進黨"
+        }
       }
     }
   }

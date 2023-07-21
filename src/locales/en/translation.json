@@ -263,7 +263,7 @@
         }
       },
       "ideologies": {
-        "match": "Closest Match",
+        "match": "Closest Match of Ideology",
         "anarcho_communism": {
           "name": "Anarcho-Communism"
         },
@@ -419,6 +419,30 @@
         },
         "anarcho_capitalism": {
           "name": "Anarcho-Capitalism"
+        }
+      },
+      "political_parties": {
+        "match": "Closest Match of Political Parties",
+        "kmp": {
+          "name": "KuoMinTang"
+        },
+        "dpp": {
+          "name": "Democratic Progressive Party"
+        },
+        "np": {
+          "name": "New Party"
+        },
+        "npp": {
+          "name": "New Power Party"
+        },
+        "tmd": {
+          "name": "Taiwan People Party"
+        },
+        "tsp": {
+          "name": "Taiwan Statebuilding Party"
+        },
+        "cupp": {
+          "name": "Chinese Unification Promotion Party"
         }
       }
     }

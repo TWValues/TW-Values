@@ -1,8 +1,9 @@
 import { useSearchParams } from 'react-router-dom'
-import { Layout, Card, Typography } from 'antd'
+import { Layout, Card, Typography, Image } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../utils/ideologies'
+import POLITICAL_PARTIES from '../../utils/politicalparties'
 
 import Balance from '../../assets/Balance.svg'
 import DollarSign from '../../assets/DollarSign.svg'
@@ -44,11 +45,37 @@ const Result = () => {
       distance += Math.pow(Math.abs(value.state.diplomatic - diplomatic), 2)
       return {
         id: value.id,
-        distance: distance
+        distance: distance,
       }
     }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
-    return t(`quiz.result.ideologies.${ideologies[0].id}.name`)
+    return ideologies[0].id
+  }
+
+  const getPoliticalPartyMatchScores = () => {
+    const politicalParties = POLITICAL_PARTIES.map((value) => {
+      let distance = 0.0
+      distance += Math.pow(Math.abs(value.state.economic - economic), 2)
+      distance += Math.pow(Math.abs(value.state.environmental - environmental), 1.5)
+      distance += Math.pow(Math.abs(value.state.civil - civil), 2)
+      distance += Math.pow(Math.abs(value.state.societal - societal), 2)
+      distance += Math.pow(Math.abs(value.state.sovereignty - sovereignty), 2)
+      distance += Math.pow(Math.abs(value.state.us_china_relation - us_china_relation), 2)
+      return {
+        ...value,
+        distance: distance,
+      }
+    }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+
+    return politicalParties
+  }
+
+  const getBestMatchPoliticalParties = (partyScores) => {
+    const top3 = partyScores
+      .filter((value) => value.distance <= 2400)
+      .slice(0, 3)
+
+    return top3.length > 0 ? top3 : partyScores.slice(0, 1)
   }
 
   const getCategory = (percent) => {
@@ -85,8 +112,43 @@ const Result = () => {
           margin: '5px 10px 5px 10px',
         }}>
         <Title level={1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
-          {getIdeologyName()}
+          {t(`quiz.result.ideologies.${getIdeologyName()}.name`)}
         </Title>
+      </Card>
+      <Card
+        title={t('quiz.result.political_parties.match')}
+        headStyle={{
+          backgroundColor: 'white',
+          color: 'black',
+          fontSize: 'x-large',
+          textAlign: 'center',
+        }}
+        style={{
+          backgroundColor: 'white',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          width: '100%',
+          fontSize: 'large',
+          margin: '5px 10px 5px 10px',
+        }}>
+        {getBestMatchPoliticalParties(getPoliticalPartyMatchScores())
+          .map((value, index) =>
+          (<Layout
+            key={index}
+            style={{
+              backgroundColor: 'transparent',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+            <Image width={40 - 10 * index} src={value.icon} />
+            <Title key={index} level={index + 3} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
+              {t(`quiz.result.political_parties.${value.id}.name`)}
+            </Title>
+          </Layout>))
+        }
       </Card>
       <ValueCard
         title={t('quiz.result.axes.economic.title')}
