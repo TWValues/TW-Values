@@ -24,7 +24,7 @@ const POLITICAL_PARTIES = [
     id: "dpp",
     icon: DPPIcon,
     state: {
-      economic: 50,
+      economic: 55,
       environmental: 60,
       civil: 50,
       societal: 45,
