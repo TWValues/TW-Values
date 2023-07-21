@@ -16,20 +16,20 @@ const Welcome = () => {
       backgroundColor: 'white',
       display: 'flex',
       alignItems: 'center',
-      padding: '40px',
+      padding: '20px',
     }}>
       <Title
         level={1}
         style={{
           color: 'black',
-          padding: '20px',
+          padding: '10px',
         }}>
         {t('quiz.welcome.title')}
       </Title>
       <Text style={{
         color: 'black',
         fontSize: 'x-large',
-        padding: '20px',
+        padding: '10px',
       }}>
         {t('quiz.welcome.content')}
       </Text>

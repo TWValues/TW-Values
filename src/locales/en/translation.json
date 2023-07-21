@@ -1,7 +1,7 @@
 {
   "quiz": {
     "welcome": {
-      "title": "What is TW Values ?",
+      "title": "TW Values",
       "content": "TW Values is a political quiz for taiwanese.",
       "start": "Start Quiz!"
     },
