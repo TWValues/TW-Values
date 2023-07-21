@@ -24,7 +24,8 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
         width: '100%',
         fontSize: 'large',
         margin: '5px 10px 5px 10px',
-      }}>
+      }}
+      hoverable={true}>
       <Layout style={{
         backgroundColor: 'transparent',
         display: 'flex',

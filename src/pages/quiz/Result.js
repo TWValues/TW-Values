@@ -110,7 +110,8 @@ const Result = () => {
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
-        }}>
+        }}
+        hoverable={true}>
         <Title level={1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
           {t(`quiz.result.ideologies.${getIdeologyName()}.name`)}
         </Title>
@@ -131,7 +132,8 @@ const Result = () => {
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
-        }}>
+        }}
+        hoverable={true}>
         {getBestMatchPoliticalParties(getPoliticalPartyMatchScores())
           .map((value, index) =>
           (<Layout
@@ -144,7 +146,7 @@ const Result = () => {
               justifyContent: 'center'
             }}>
             <Image width={40 - 10 * index} src={value.icon} />
-            <Title key={index} level={index + 3} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
+            <Title key={index} level={index * 2 + 1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
               {t(`quiz.result.political_parties.${value.id}.name`)}
             </Title>
           </Layout>))
