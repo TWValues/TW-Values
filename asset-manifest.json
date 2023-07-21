@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.073c9b0a.css",
+    "main.js": "/static/js/main.d584a1d4.js",
+    "static/js/787.47c85a54.chunk.js": "/static/js/787.47c85a54.chunk.js",
+    "static/media/ChinaTerritory.svg": "/static/media/ChinaTerritory.69ba5bdc4a5ff937e7d4261e15f0e3b5.svg",
+    "static/media/FlagOfTWIndependence.svg": "/static/media/FlagOfTWIndependence.c736cdb9750f50710eab9132b58bbbd4.svg",
+    "static/media/NPIcon.svg": "/static/media/NPIcon.3583c31cb48e47167dddcffaeea6076b.svg",
+    "static/media/Crown.svg": "/static/media/Crown.262950c60891e970c3f22d1a65372e69.svg",
+    "static/media/Liberty.svg": "/static/media/Liberty.bf0fe522873cf40c0a12255917699e2a.svg",
+    "static/media/Family.svg": "/static/media/Family.9344ea1e06b928c4a8b1cc9a5db13e00.svg",
+    "static/media/TMDIcon.svg": "/static/media/TMDIcon.050541afd1cbdcda9522714bbbeb60dc.svg",
+    "static/media/CUPPIcon.svg": "/static/media/CUPPIcon.383a8618d4e852819b087e19e40d42db.svg",
+    "static/media/DPPIcon.svg": "/static/media/DPPIcon.63b0f4f7dd4c7c92a4a4e5dad9a4d2d2.svg",
+    "static/media/RainbowFlag.svg": "/static/media/RainbowFlag.4963f7814d36057968aa2542edec11d7.svg",
+    "static/media/NPPIcon.svg": "/static/media/NPPIcon.fe645cac0b0a0a99b2233fb969f04217.svg",
+    "static/media/TSPIcon.svg": "/static/media/TSPIcon.c9ad4e6ba58887d7a579b7969f281b25.svg",
+    "static/media/Balance.svg": "/static/media/Balance.ac774b735eda4655c8ad316f13a29782.svg",
+    "static/media/FlagOfUSA.svg": "/static/media/FlagOfUSA.e50f426ae1c4b4bbbb6edf17d2e716ea.svg",
+    "static/media/Factory.svg": "/static/media/Factory.69f4d83a430b7d146afec92632cea444.svg",
+    "static/media/RecyclingSymbol.svg": "/static/media/RecyclingSymbol.9607f59b20b33af556734c46e5276c9b.svg",
+    "static/media/DollarSign.svg": "/static/media/DollarSign.3c5585b53fdbb6716cc19c41e091b7b9.svg",
+    "index.html": "/index.html",
+    "static/media/KMTIcon.svg": "/static/media/KMTIcon.af70755b1fbca3fd6e2f145e6e08f6cb.svg",
+    "static/media/FlagOfPRC.svg": "/static/media/FlagOfPRC.2c26b200ae168e2664034c4dc7d09c3c.svg",
+    "static/media/SDPIcon.svg": "/static/media/SDPIcon.6ee7a1370a98dee4d5e72c5419ba5d7d.svg",
+    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
+    "main.d584a1d4.js.map": "/static/js/main.d584a1d4.js.map",
+    "787.47c85a54.chunk.js.map": "/static/js/787.47c85a54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.d584a1d4.js"
+  ]
+}
