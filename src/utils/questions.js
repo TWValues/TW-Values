@@ -252,7 +252,7 @@ const QUESTIONS = [
   {
     id: "q1001",
     effect: {
-      sovereignty: 10,
+      sovereignty: 15,
     }
   },
   {
@@ -283,7 +283,7 @@ const QUESTIONS = [
   {
     id: "q1103",
     effect: {
-      sovereignty: -10,
+      sovereignty: -15,
       us_china_relation: -10,
     }
   },
