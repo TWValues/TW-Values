@@ -36,8 +36,8 @@ const Result = () => {
   const sovereignty = searchParams.get('sovereignty')
   const us_china_relation = searchParams.get('us_china_relation')
 
-  const getIdeologyName = () => {
-    const ideologies = IDEOLOGIES.map((value) => {
+  const getIdeologyMatchScores = () => {
+    const ideologyScores = IDEOLOGIES.map((value) => {
       let distance = 0.0
       distance += Math.pow(Math.abs(value.state.economic - economic), 2)
       distance += Math.pow(Math.abs(value.state.societal - environmental), 1.5) // Treat environmental as societal
@@ -50,11 +50,19 @@ const Result = () => {
       }
     }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
-    return ideologies[0].id
+    return ideologyScores
+  }
+
+  const getBestMatchIdeologies = (ideologyScores) => {
+    const top3 = ideologyScores
+      .filter((value) => value.distance <= 20 * 20 * 4.5)
+      .slice(0, 3)
+
+    return top3.length > 0 ? top3 : ideologyScores.slice(0, 1)
   }
 
   const getPoliticalPartyMatchScores = () => {
-    const politicalParties = POLITICAL_PARTIES.map((value) => {
+    const politicalScores = POLITICAL_PARTIES.map((value) => {
       let distance = 0.0
       distance += Math.pow(Math.abs(value.state.economic - economic), 2)
       distance += Math.pow(Math.abs(value.state.environmental - environmental), 1.5)
@@ -68,12 +76,12 @@ const Result = () => {
       }
     }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
-    return politicalParties
+    return politicalScores
   }
 
   const getBestMatchPoliticalParties = (partyScores) => {
     const top3 = partyScores
-      .filter((value) => value.distance <= 2400)
+      .filter((value) => value.distance <= 20 * 20 * 6)
       .slice(0, 3)
 
     return top3.length > 0 ? top3 : partyScores.slice(0, 1)
@@ -113,9 +121,11 @@ const Result = () => {
           margin: '5px 10px 5px 10px',
         }}
         hoverable={true}>
-        <Title level={1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
-          {t(`quiz.result.ideologies.${getIdeologyName()}.name`)}
-        </Title>
+        {getBestMatchIdeologies(getIdeologyMatchScores()).map((value, index) =>
+          <Title key={index} level={index * 2 + 1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
+            {t(`quiz.result.ideologies.${value.id}.name`)}
+          </Title>
+        )}
       </Card>
       <Card
         title={t('quiz.result.political_parties.match')}
