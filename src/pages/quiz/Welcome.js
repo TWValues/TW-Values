@@ -13,6 +13,18 @@ const Welcome = () => {
   const navigate = useNavigate()
   const screens = Grid.useBreakpoint()
 
+  const getLayoutStyles = () => {
+    const styles = {
+      sm: { padding: '10px' },
+      md: { padding: '10px' },
+      lg: { padding: '20px' },
+      xl: { padding: '30px' },
+      xxl: { padding: '40px' },
+    }
+
+    return styles[getScreenSize(screens)]
+  }
+
   const getStartButtonStyles = () => {
     const styles = {
       sm: { width: '100%' },
@@ -30,7 +42,7 @@ const Welcome = () => {
       backgroundColor: 'white',
       display: 'flex',
       alignItems: 'center',
-      padding: '10px',
+      ...getLayoutStyles(),
     }}>
       <Title
         level={1}
