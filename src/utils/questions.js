@@ -208,6 +208,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0605",
+    effect: {
+      societal: 10,
+    }
+  },
+  {
     id: "q0700",
     effect: {
       societal: -10,
