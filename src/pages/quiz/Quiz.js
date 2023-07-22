@@ -121,6 +121,7 @@ const Quiz = () => {
         }}
         style={{
           width: '100%',
+          minHeight: '220px',
           fontSize: 'x-large',
           margin: '20px',
           whiteSpace: 'pre-line',
