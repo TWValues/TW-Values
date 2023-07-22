@@ -1,8 +1,9 @@
 
-import { Layout, Typography, Grid, Button } from 'antd'
+import { Layout, Typography, Grid, Button, Space } from 'antd'
 import { GithubOutlined } from '@ant-design/icons';
 import { Outlet, useNavigate } from 'react-router-dom'
 import getScreenSize from '../utils/getScreenSize'
+import packageInfo from '../../package.json'
 
 const { Header, Content, Footer } = Layout
 const { Title } = Typography
@@ -66,12 +67,26 @@ const Main = () => {
         <Title level={1} style={{ cursor: 'pointer', color: 'white', margin: 'auto 0 auto 0' }} onClick={() => { navigate('/') }}>
           TW Values
         </Title>
-        <Button
-          type='link'
-          href='https://github.com/TWValues/TW-Values'
-          target='_blank'
-          icon={<GithubOutlined style={{ color: 'black', fontSize: 'x-large' }} />}
-        />
+        <Space size={1}>
+          <Button
+            type='link'
+            href={`https://github.com/TWValues/TW-Values/tree/v${packageInfo.version}`}
+            target='_blank'
+            style={{
+              backgroundColor: 'transparent',
+              borderColor: 'transparent',
+              color: 'white',
+              fontSize: 'medium',
+            }}>
+            {`v${packageInfo.version}`}
+          </Button>
+          <Button
+            type='link'
+            href='https://github.com/TWValues/TW-Values'
+            target='_blank'
+            icon={<GithubOutlined style={{ color: 'white', fontSize: 'x-large' }} />}
+          />
+        </Space>
       </Header>
       <Content style=
         {{
