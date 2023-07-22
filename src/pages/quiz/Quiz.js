@@ -14,11 +14,11 @@ const Quiz = () => {
 
   const getButtonStyles = () => {
     const styles = {
-      sm: { width: '100%' },
-      md: { width: '60%' },
-      lg: { width: '50%' },
-      xl: { width: '40%' },
-      xxl: { width: '40%' },
+      sm: { width: '100%', height: '50px', fontSize: 'x-large' },
+      md: { width: '60%', height: '50px', fontSize: 'x-large' },
+      lg: { width: '50%', height: '40px', fontSize: 'large' },
+      xl: { width: '40%', height: '40px', fontSize: 'large' },
+      xxl: { width: '40%', height: '40px', fontSize: 'large' },
     }
 
     return styles[getScreenSize(screens)]
@@ -132,9 +132,7 @@ const Quiz = () => {
         borderColor: 'darkgreen',
         color: 'white',
         ...getButtonStyles(),
-        height: '40px',
         margin: '5px',
-        fontSize: 'large',
       }} onClick={() => {
         setChoice(1.0)
         moveToNextQuestion()
@@ -146,9 +144,7 @@ const Quiz = () => {
         borderColor: 'limegreen',
         color: 'white',
         ...getButtonStyles(),
-        height: '40px',
         margin: '5px',
-        fontSize: 'large',
       }} onClick={() => {
         setChoice(0.5)
         moveToNextQuestion()
@@ -160,9 +156,7 @@ const Quiz = () => {
         borderColor: 'gray',
         color: 'white',
         ...getButtonStyles(),
-        height: '40px',
         margin: '5px',
-        fontSize: 'large',
       }} onClick={() => {
         setChoice(0.0)
         moveToNextQuestion()
@@ -174,9 +168,7 @@ const Quiz = () => {
         borderColor: 'red',
         color: 'white',
         ...getButtonStyles(),
-        height: '40px',
         margin: '5px',
-        fontSize: 'large',
       }} onClick={() => {
         setChoice(-0.5)
         moveToNextQuestion()
@@ -188,9 +180,7 @@ const Quiz = () => {
         borderColor: 'darkred',
         color: 'white',
         ...getButtonStyles(),
-        height: '40px',
         margin: '5px',
-        fontSize: 'large',
       }} onClick={() => {
         setChoice(-1.0)
         moveToNextQuestion()
