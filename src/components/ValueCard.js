@@ -41,7 +41,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          <Image width={60} src={leftImage || ""} />
+          <Image width={60} src={leftImage || ""} preview={false} />
           <Title level={3} style={{ margin: '10px', color: leftColor, textAlign: 'center' }}>{leftTitle}</Title>
         </Layout>
         <Progress
@@ -100,7 +100,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          <Image width={60} src={rightImage || ""} />
+          <Image width={60} src={rightImage || ""} preview={false} />
           <Title level={3} style={{ margin: '10px', color: rightColor, textAlign: 'center' }}>{rightTitle}</Title>
         </Layout>
       </Layout>

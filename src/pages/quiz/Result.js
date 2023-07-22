@@ -156,7 +156,7 @@ const Result = () => {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-            <Image width={40 - 10 * index} src={value.icon} />
+            <Image width={40 - 10 * index} src={value.icon} preview={false} />
             <Title key={index} level={index * 2 + 1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
               {t(`quiz.result.political_parties.${value.id}.name`)}
             </Title>
