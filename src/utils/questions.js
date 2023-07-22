@@ -259,6 +259,7 @@ const QUESTIONS = [
     id: "q1001",
     effect: {
       sovereignty: 15,
+      diplomatic: -10,
     }
   },
   {
