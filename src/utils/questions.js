@@ -307,6 +307,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q1202",
+    effect: {
+      us_china_relation: 10,
+    }
+  },
+  {
     id: "q1300",
     effect: {
       us_china_relation: -5,
