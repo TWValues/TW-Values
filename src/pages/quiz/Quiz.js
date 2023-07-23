@@ -2,6 +2,7 @@ import { Layout, Card, Button, Grid } from 'antd'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
+import shuffle from '../../utils/shuffle'
 import getScreenSize from '../../utils/getScreenSize'
 import QUESTIONS from '../../utils/questions'
 
@@ -25,28 +26,7 @@ const Quiz = () => {
   }
 
   const questions = useMemo(() => {
-
-    // https://stackoverflow.com/a/2450976
-    const shuffle = (array) => {
-      let currentIndex = array.length, randomIndex
-
-      // While there remain elements to shuffle.
-      while (currentIndex !== 0) {
-
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex)
-        currentIndex--
-
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-          array[randomIndex], array[currentIndex]]
-      }
-
-      return array
-    }
-
-    shuffle(QUESTIONS)
-    return QUESTIONS
+    return shuffle(QUESTIONS)
   }, [])
 
   // eslint-disable-next-line no-unused-vars
