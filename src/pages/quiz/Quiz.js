@@ -59,11 +59,10 @@ const Quiz = () => {
             return array.reduce((accu, value) => accu + Math.abs(value))
           }
           const getPercentage = (bias, total) => 100 * (bias + total) / (2 * total)
-          const roundToDecimal = (percent) => Math.round(10 * percent) / 10
 
           const score = getScoreWithMultiplier(array)
           const maxScore = getAbsMaxScore(array)
-          return roundToDecimal(getPercentage(score, maxScore))
+          return Math.round((getPercentage(score, maxScore)))
         }
 
         return {

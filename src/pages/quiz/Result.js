@@ -88,16 +88,26 @@ const Result = () => {
   }
 
   const getCategory = (percent) => {
-    const threshold = [0, 10, 25, 40, 60, 75, 90]
-    let index = threshold.length - 1
-    while (index >= 0) {
-      if ((100.0 - percent) >= threshold[index]) {
-        return index
-      }
-      --index
+    if (percent <= 10) {
+      return 6
+    }
+    if (percent <= 25) {
+      return 5
+    }
+    if (percent <= 40) {
+      return 4
+    }
+    if (percent >= 60) {
+      return 2
+    }
+    if (percent >= 75) {
+      return 1
+    }
+    if (percent >= 90) {
+      return 0
     }
 
-    return 0
+    return 3
   }
 
   return (
