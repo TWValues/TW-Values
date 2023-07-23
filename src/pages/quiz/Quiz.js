@@ -62,7 +62,7 @@ const Quiz = () => {
 
           const score = getScoreWithMultiplier(array)
           const maxScore = getAbsMaxScore(array)
-          return Math.round((getPercentage(score, maxScore)))
+          return Math.round(getPercentage(score, maxScore))
         }
 
         return {
