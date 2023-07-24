@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
-import { Layout, Card, Typography, Image, Grid } from 'antd'
+import { Layout, Card, Typography, Image, Grid, Tag } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideologies'
@@ -172,6 +172,28 @@ const Result = () => {
             </Title>
           </Layout>))
         }
+      </Card>
+      <Card
+        title={t('quiz.result.tags.match')}
+        headStyle={{
+          backgroundColor: 'white',
+          color: 'black',
+          fontSize: 'x-large',
+          textAlign: 'center',
+        }}
+        style={{
+          backgroundColor: 'white',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          width: '100%',
+          margin: '5px 10px 5px 10px',
+        }}
+        hoverable={true}>{searchParams.get('tags').split(',').map((value) => (
+          <Tag style={{ padding: '5px', fontSize: 'large' }}>
+            {t(`quiz.result.tags.${value}`)}
+          </Tag>)
+        )}
       </Card>
       <ValueCard
         title={t('quiz.result.axes.economic.title')}

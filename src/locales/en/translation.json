@@ -152,7 +152,7 @@
         "description": "Taiwan is a province of 'People's Republic of China (PRC)'."
       },
       "q1101": {
-        "description": "'Republic of China (R.O.C)' is the sole legitimate government of China."
+        "description": "'Republic of China (R.O.C.)' is the sole legitimate government of China."
       },
       "q1102": {
         "description": "Use 'Chinese Taipei' to participate in international events is acceptable."
@@ -430,7 +430,7 @@
       },
       "political_parties": {
         "match": "Closest Match of Political Parties",
-        "kmp": {
+        "kmt": {
           "name": "KuoMinTang"
         },
         "dpp": {
@@ -454,6 +454,16 @@
         "sdp": {
           "name": "Social Democratic Party"
         }
+      },
+      "tags": {
+        "match": "Ideology Tags",
+        "roc_unification": "R.O.C. Unification",
+        "roc_independence": "R.O.C. Independence",
+        "tw_independence": "Taiwan Independence",
+        "prc_unification": "P.R.C. Unification",
+        "death_penalty_abolitionists": "Death Penalty Abolitionists",
+        "homophobia": "Homophobia",
+        "male_chauvinism": "Male Chauvinism"
       }
     }
   }

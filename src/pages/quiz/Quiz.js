@@ -65,6 +65,29 @@ const Quiz = () => {
           return Math.round(getPercentage(score, maxScore))
         }
 
+        const getTags = (array) => {
+          return array.reduce((accu, value, index) => {
+
+            const filter = (obj, predicate) =>
+              Object.keys(obj)
+                .filter(key => predicate(obj[key]))
+                .reduce((accu, key) => {
+                  accu[key] = obj[key]
+                  return accu
+                }, {})
+
+            if (choices[index] > 0.0) {
+              return { ...accu, ...filter(value || {}, value => value > 0.0) }
+            }
+
+            if (choices[index] < 0.0) {
+              return { ...accu, ...filter(value || {}, value => value < 0.0) }
+            }
+
+            return accu
+          })
+        }
+
         return {
           economic: getScore(questions.map((value) => value.effect.economic || 0.0)),
           environmental: getScore(questions.map((value) => value.effect.environmental || 0.0)),
@@ -73,6 +96,7 @@ const Quiz = () => {
           diplomatic: getScore(questions.map((value) => value.effect.diplomatic || 0.0)),
           sovereignty: getScore(questions.map((value) => value.effect.sovereignty || 0.0)),
           us_china_relation: getScore(questions.map((value) => value.effect.us_china_relation || 0.0)),
+          tags: Object.keys(getTags(questions.map((value) => value.effect.tags))).join(',')
         }
       }
 

@@ -140,7 +140,7 @@
         "description": "● 年輕漂亮的女生，適合坐櫃檯。\n● 女性同胞不化妝上街會嚇死人。\n● 女性超過30歲未結婚的比例太高是一種國安問題。"
       },
       "q1000": {
-        "description": "我國已經是主權獨立的國家。"
+        "description": "我國已經是主權獨立的國家，名為中華民國，與對岸互不隸屬。"
       },
       "q1001": {
         "description": "應立刻制定新憲法，宣布成立台灣共和國。"
@@ -454,6 +454,16 @@
         "sdp": {
           "name": "社會民主黨"
         }
+      },
+      "tags": {
+        "match": "意識形態標籤",
+        "roc_unification": "華統",
+        "roc_independence": "華獨",
+        "tw_independence": "台獨",
+        "prc_unification": "紅統",
+        "death_penalty_abolitionists": "廢死",
+        "homophobia": "恐同",
+        "male_chauvinism": "大男人沙文主義"
       }
     }
   }

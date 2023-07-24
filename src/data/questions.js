@@ -192,12 +192,20 @@ const QUESTIONS = [
     id: "q0602",
     effect: {
       societal: 10,
+
+      tags: {
+        homophobia: -1,
+      }
     }
   },
   {
     id: "q0603",
     effect: {
       societal: 10,
+
+      tags: {
+        death_penalty_abolitionists: 1,
+      }
     }
   },
   {
@@ -247,12 +255,20 @@ const QUESTIONS = [
     id: "q0705",
     effect: {
       societal: -10,
+
+      tags: {
+        male_chauvinism: 1,
+      }
     }
   },
   {
     id: "q1000",
     effect: {
       sovereignty: 10,
+
+      tags: {
+        roc_independence: 1,
+      }
     }
   },
   {
@@ -260,6 +276,10 @@ const QUESTIONS = [
     effect: {
       sovereignty: 15,
       diplomatic: -10,
+
+      tags: {
+        tw_independence: 1,
+      }
     }
   },
   {
@@ -279,6 +299,10 @@ const QUESTIONS = [
     id: "q1101",
     effect: {
       sovereignty: -10,
+
+      tags: {
+        roc_unification: 1,
+      }
     }
   },
   {
@@ -292,6 +316,10 @@ const QUESTIONS = [
     effect: {
       sovereignty: -15,
       us_china_relation: -10,
+
+      tags: {
+        prc_unification: 1,
+      }
     }
   },
   {
