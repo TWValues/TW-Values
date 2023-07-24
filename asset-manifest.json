@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TW-Values/static/css/main.073c9b0a.css",
-    "main.js": "/TW-Values/static/js/main.30faa4f0.js",
+    "main.js": "/TW-Values/static/js/main.46c8a178.js",
     "static/js/787.47c85a54.chunk.js": "/TW-Values/static/js/787.47c85a54.chunk.js",
     "static/media/ChinaTerritory.svg": "/TW-Values/static/media/ChinaTerritory.69ba5bdc4a5ff937e7d4261e15f0e3b5.svg",
     "static/media/FlagOfTWIndependence.svg": "/TW-Values/static/media/FlagOfTWIndependence.c736cdb9750f50710eab9132b58bbbd4.svg",
@@ -25,11 +25,11 @@
     "static/media/FlagOfPRC.svg": "/TW-Values/static/media/FlagOfPRC.2c26b200ae168e2664034c4dc7d09c3c.svg",
     "static/media/SDPIcon.svg": "/TW-Values/static/media/SDPIcon.6ee7a1370a98dee4d5e72c5419ba5d7d.svg",
     "main.073c9b0a.css.map": "/TW-Values/static/css/main.073c9b0a.css.map",
-    "main.30faa4f0.js.map": "/TW-Values/static/js/main.30faa4f0.js.map",
+    "main.46c8a178.js.map": "/TW-Values/static/js/main.46c8a178.js.map",
     "787.47c85a54.chunk.js.map": "/TW-Values/static/js/787.47c85a54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.30faa4f0.js"
+    "static/js/main.46c8a178.js"
   ]
 }
