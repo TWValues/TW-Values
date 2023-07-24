@@ -1,4 +1,4 @@
-import { Button, Divider, Layout, Typography, Grid } from 'antd'
+import { Button, Divider, Layout, Typography, Grid, Alert } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import getScreenSize from '../../utils/getScreenSize'
@@ -44,35 +44,46 @@ const Welcome = () => {
       alignItems: 'center',
       ...getLayoutStyles(),
     }}>
-      <Title
-        level={1}
-        style={{
+      <Layout style={{
+        backgroundColor: 'white',
+        display: 'flex',
+        alignItems: 'center',
+      }}>
+        <Title
+          level={1}
+          style={{
+            color: 'black',
+            padding: '10px',
+          }}>
+          {t('quiz.welcome.title')}
+        </Title>
+        <Text style={{
           color: 'black',
+          fontSize: 'x-large',
           padding: '10px',
         }}>
-        {t('quiz.welcome.title')}
-      </Title>
-      <Text style={{
-        color: 'black',
-        fontSize: 'x-large',
-        padding: '10px',
-      }}>
-        {t('quiz.welcome.content')}
-      </Text>
-      <Divider style={{ backgroundColor: 'black' }} />
-      <Button style={{
-        backgroundColor: 'dodgerblue',
-        borderColor: 'dodgerblue',
-        color: 'white',
-        ...getStartButtonStyles(),
-        height: '60px',
-        margin: '5px',
-        fontSize: 'x-large',
-      }} onClick={() => {
-        navigate('/quiz')
-      }}>
-        {t('quiz.welcome.start')}
-      </Button>
+          {t('quiz.welcome.content')}
+        </Text>
+        <Divider style={{ backgroundColor: 'black' }} />
+        <Button style={{
+          backgroundColor: 'dodgerblue',
+          borderColor: 'dodgerblue',
+          color: 'white',
+          ...getStartButtonStyles(),
+          height: '60px',
+          margin: '5px',
+          fontSize: 'x-large',
+        }} onClick={() => {
+          navigate('/quiz')
+        }}>
+          {t('quiz.welcome.start')}
+        </Button>
+      </Layout>
+      <Alert
+        message={t('quiz.welcome.privacy')}
+        type="info"
+        showIcon
+        style={{ margin: '20px' }} />
     </Layout>
   )
 }

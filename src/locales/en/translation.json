@@ -3,7 +3,8 @@
     "welcome": {
       "title": "TW Values",
       "content": "TW Values is a political quiz for taiwanese.",
-      "start": "Start Quiz!"
+      "start": "Start Quiz!",
+      "privacy": "Privacy Notice: The quiz is open source and will not collect or store any personal information."
     },
     "question_n_of_all": "Question {{index}} of {{all}}",
     "answers": {

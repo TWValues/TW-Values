@@ -3,7 +3,8 @@
     "welcome": {
       "title": "TW Values",
       "content": "TW Values 是參考自 8values 所製作的政治光譜測驗，為使測驗更貼近台灣民情，題目內容有針對台灣現況進行調整。",
-      "start": "開始測驗!"
+      "start": "開始測驗!",
+      "privacy": "隱私聲明：本測驗原始碼完全開源，絕對不會收集或是儲存任何個人資訊，請安心使用。"
     },
     "question_n_of_all": "題目 {{index}} 之 {{all}}",
     "answers": {
