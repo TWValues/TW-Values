@@ -44,7 +44,7 @@
         "description": "Those with a greater ability to pay should receive better healthcare."
       },
       "q0104": {
-        "description": "Whoever invented unpaid leave should get a Nobel Prize."
+        "description": "Whoever invented unpaid leave should win a Nobel Prize."
       },
       "q0200": {
         "description": "Climate change is currently one of the greatest threats to our way of life."
@@ -149,7 +149,7 @@
         "description": "Military spending is essential to protect our country."
       },
       "q1100": {
-        "description": "Taiwan is a province of 'People's Republic of China (PRC)'."
+        "description": "Taiwan is a province of 'People's Republic of China (P.R.C.)'."
       },
       "q1101": {
         "description": "'Republic of China (R.O.C.)' is the sole legitimate government of China."
@@ -158,10 +158,10 @@
         "description": "Use 'Chinese Taipei' to participate in international events is acceptable."
       },
       "q1103": {
-        "description": "Political negotiations with PRC should be carried out immediately to achieve national unity."
+        "description": "Political negotiations with P.R.C. should be carried out immediately to achieve national unity."
       },
       "q1200": {
-        "description": "We should stand with U.S. against China."
+        "description": "We should stand with U.S. against P.R.C."
       },
       "q1201": {
         "description": "A referendum should be held immediately to join the U.S. as the 51st state of them."
@@ -179,7 +179,7 @@
         "description": "We should sign Cross-strait peace agreement as soon as possible."
       },
       "q1303": {
-        "description": "It is better to keep peaceful relationship with China to avoid World War III."
+        "description": "It is better to keep peaceful relationship with P.R.C to avoid World War III."
       }
     },
     "result": {

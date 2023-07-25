@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
-import { Layout, Card, Typography, Image, Grid, Tag } from 'antd'
+import { Layout, Card, Typography, Image, Tag } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideologies'
@@ -26,7 +26,6 @@ const Result = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
-  const screens = Grid.useBreakpoint()
 
   const economic = searchParams.get('economic')
   const environmental = searchParams.get('environmental')
@@ -205,7 +204,6 @@ const Result = () => {
         rightColor='turquoise'
         percent={economic}
         leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(economic)}`)}
-        showColorBar={screens.md}
       />
       <ValueCard
         title={t('quiz.result.axes.environmental.title')}
@@ -217,7 +215,6 @@ const Result = () => {
         rightColor='dodgerblue'
         percent={environmental}
         leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(environmental)}`)}
-        showColorBar={screens.md}
       />
       <ValueCard
         title={t('quiz.result.axes.civil.title')}
@@ -229,7 +226,6 @@ const Result = () => {
         rightColor='red'
         percent={civil}
         leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(civil)}`)}
-        showColorBar={screens.md}
       />
       <ValueCard
         title={t('quiz.result.axes.societal.title')}
@@ -241,7 +237,6 @@ const Result = () => {
         rightColor='brown'
         percent={societal}
         leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(societal)}`)}
-        showColorBar={screens.md}
       />
       <ValueCard
         title={t('quiz.result.axes.sovereignty.title')}
@@ -253,7 +248,6 @@ const Result = () => {
         rightColor='black'
         percent={sovereignty}
         leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(sovereignty)}`)}
-        showColorBar={screens.md}
       />
       <ValueCard
         title={t('quiz.result.axes.us_china_relation.title')}
@@ -265,7 +259,6 @@ const Result = () => {
         rightColor='red'
         percent={us_china_relation}
         leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(us_china_relation)}`)}
-        showColorBar={screens.md}
       />
     </Layout>
   )

@@ -52,7 +52,7 @@ const Main = () => {
   return (
     <Layout style={{
       minHeight: '100vh',
-      minWidth: '360px',
+      minWidth: '440px',
       overflow: 'auto',
     }}>
       <Header style=

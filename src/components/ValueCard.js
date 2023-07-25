@@ -1,12 +1,40 @@
-import { Card, Typography, Progress, Layout, Image } from 'antd'
+import { Card, Typography, Progress, Layout, Image, Grid } from 'antd'
 import { useTranslation } from 'react-i18next'
+import getScreenSize from '../utils/getScreenSize'
 
-const { Title, Text } = Typography
+const { Text } = Typography
 
-const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle, showColorBar }) => {
+const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
 
   // eslint-disable-next-line no-unused-vars
   const [t, i18n] = useTranslation()
+  const screens = Grid.useBreakpoint()
+
+  const showColorBar = screens.md
+
+  const getGridTemplateColumnsStyle = () => {
+    const styles = {
+      sm: '20% 20% auto 20% 20%',
+      md: '16% 16% auto 16% 16%',
+      lg: '16% 16% auto 16% 16%',
+      xl: '16% 16% auto 16% 16%',
+      xxl: '14% 14% auto 14% 14%',
+    }
+
+    return styles[getScreenSize(screens)]
+  }
+
+  const getValueTextStyles = () => {
+    const styles = {
+      sm: { fontSize: 'x-small', margin: '2px' },
+      md: { fontSize: 'small', margin: '5px' },
+      lg: { fontSize: 'small', margin: '5px' },
+      xl: { fontSize: 'medium', margin: '5px' },
+      xxl: { fontSize: 'large', margin: '10px' },
+    }
+
+    return styles[getScreenSize(screens)]
+  }
 
   return (
     <Card
@@ -21,15 +49,15 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
         backgroundColor: 'white',
         width: '100%',
         fontSize: 'large',
-        margin: '5px 10px 5px 10px',
+        margin: '5px 5px 5px 5px',
       }}
       hoverable={true}>
       <Layout style={{
         backgroundColor: 'transparent',
-        display: 'flex',
-        flexDirection: 'row',
+        display: 'grid',
+        gridTemplateColumns: getGridTemplateColumnsStyle(),
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyItems: 'center',
         width: '100%',
       }}>
         <Layout style={{
@@ -40,7 +68,13 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           justifyContent: 'center',
         }}>
           <Image width={60} src={leftImage || ""} preview={false} />
-          <Title level={3} style={{ margin: '10px', color: leftColor, textAlign: 'center' }}>{leftTitle}</Title>
+          <Text style={{
+            color: leftColor,
+            textAlign: 'center',
+            ...getValueTextStyles()
+          }}>
+            {leftTitle}
+          </Text>
         </Layout>
         <Progress
           type='circle'
@@ -59,12 +93,11 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          width: showColorBar ? '40%' : '20%',
+          width: '100%',
           margin: '5px',
-          paddingBottom: showColorBar ? '20px' : '40px',
         }}>
           <Text style={{
-            fontSize: 'large',
+            ...getValueTextStyles(),
             color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
             textAlign: 'center',
             height: '20px',
@@ -78,7 +111,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
             strokeLinecap='square'
             strokeColor={leftColor}
             trailColor={rightColor}
-            style={{ margin: '10px' }}
+            style={{ margin: '5px', paddingBottom: '40px' }}
           />}
         </Layout>
         <Progress
@@ -99,7 +132,13 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           justifyContent: 'center',
         }}>
           <Image width={60} src={rightImage || ""} preview={false} />
-          <Title level={3} style={{ margin: '10px', color: rightColor, textAlign: 'center' }}>{rightTitle}</Title>
+          <Text style={{
+            color: rightColor,
+            textAlign: 'center',
+            ...getValueTextStyles()
+          }}>
+            {rightTitle}
+          </Text>
         </Layout>
       </Layout>
     </Card >
