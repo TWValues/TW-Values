@@ -1,7 +1,7 @@
 
 import './App.css'
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import Main from './pages/Main'
+import Main from './modules/main/Main'
 import Welcome from './pages/quiz/Welcome'
 import Quiz from './pages/quiz/Quiz'
 import Result from './pages/quiz/Result'

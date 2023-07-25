@@ -2,8 +2,8 @@
 import { Layout, Typography, Grid, Button, Space } from 'antd'
 import { GithubOutlined } from '@ant-design/icons';
 import { Outlet, useNavigate } from 'react-router-dom'
-import getScreenSize from '../utils/getScreenSize'
-import packageInfo from '../../package.json'
+import getScreenSize from '../../utils/getScreenSize'
+import packageInfo from '../../../package.json'
 
 const { Header, Content, Footer } = Layout
 const { Title } = Typography
