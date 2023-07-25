@@ -7,8 +7,7 @@ const { Title, Text } = Typography
 
 const Welcome = () => {
 
-  // eslint-disable-next-line no-unused-vars
-  const [t, i18n] = useTranslation()
+  const [t] = useTranslation()
 
   const navigate = useNavigate()
   const screens = Grid.useBreakpoint()

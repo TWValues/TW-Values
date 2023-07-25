@@ -24,8 +24,7 @@ const Result = () => {
 
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
-  // eslint-disable-next-line no-unused-vars
-  const [t, i18n] = useTranslation()
+  const [t] = useTranslation()
 
   const economic = searchParams.get('economic')
   const environmental = searchParams.get('environmental')

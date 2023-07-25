@@ -1,13 +1,10 @@
 import { Card, Typography, Progress, Layout, Image, Grid } from 'antd'
-import { useTranslation } from 'react-i18next'
 import getScreenSize from '../utils/getScreenSize'
 
 const { Text } = Typography
 
 const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
 
-  // eslint-disable-next-line no-unused-vars
-  const [t, i18n] = useTranslation()
   const screens = Grid.useBreakpoint()
 
   const showColorBar = screens.md

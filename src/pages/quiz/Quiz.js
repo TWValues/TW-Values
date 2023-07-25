@@ -8,8 +8,7 @@ import QUESTIONS from '../../data/questions'
 
 const Quiz = () => {
 
-  // eslint-disable-next-line no-unused-vars
-  const [t, i18n] = useTranslation()
+  const [t] = useTranslation()
   const navigate = useNavigate()
   const screens = Grid.useBreakpoint()
 
@@ -29,7 +28,6 @@ const Quiz = () => {
     return shuffle(QUESTIONS)
   }, [])
 
-  // eslint-disable-next-line no-unused-vars
   const [currentSelectedQuestionIndex, setCurrentSelectedQuestionIndex] = useState(0)
   const [choices, setChoices] = useState(new Array(questions.length).fill(0.0))
 
