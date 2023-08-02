@@ -14,6 +14,17 @@ const Header = () => {
   const [, i18n] = useTranslation()
   const screens = Grid.useBreakpoint()
 
+  const languages = [
+    {
+      key: 'zh-TW',
+      text: '繁',
+    },
+    {
+      key: 'en',
+      text: 'EN',
+    }
+  ]
+
   const getHeaderStyles = () => {
     const styles = {
       sm: { padding: '0 10px 0 10px' },
@@ -47,28 +58,19 @@ const Header = () => {
         TW Values
       </Title>
       <Space size={8}>
-        <Button
-          onClick={() => { i18n.changeLanguage('zh-TW') }}
-          style={{
-            backgroundColor: 'transparent',
-            borderColor: (i18n.language === 'zh-TW' ? 'transparent' : 'white'),
-            color: 'white',
-            fontSize: 'medium',
-            padding: '0 5px',
-          }}>
-          繁
-        </Button>
-        <Button
-          onClick={() => { i18n.changeLanguage('en') }}
-          style={{
-            backgroundColor: 'transparent',
-            borderColor: (i18n.language === 'en' ? 'transparent' : 'white'),
-            color: 'white',
-            fontSize: 'medium',
-            padding: '0 5px',
-          }}>
-          EN
-        </Button>
+        {languages.map((value) =>
+          <Button
+            onClick={() => { i18n.changeLanguage(value.key) }}
+            style={{
+              backgroundColor: 'transparent',
+              borderColor: (i18n.language === value.key ? 'transparent' : 'white'),
+              color: 'white',
+              fontSize: 'medium',
+              padding: '0 5px',
+            }}>
+            {value.text}
+          </Button>
+        )}
         <Button
           type='link'
           href={`https://github.com/TWValues/TW-Values/tree/v${packageInfo.version}`}
