@@ -13,11 +13,20 @@ const resources = {
   },
 }
 
+const loadLanguage = () => {
+  const language = localStorage.getItem('ui.language')
+  if (language === null) {
+    return 'zh-TW'
+  }
+
+  return language
+}
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'zh-TW',
+    lng: loadLanguage(),
     interpolation: {
       escapeValue: false
     },

@@ -25,6 +25,11 @@ const Header = () => {
     }
   ]
 
+  const setLanguage = (language) => {
+    localStorage.setItem('ui.language', language)
+    i18n.changeLanguage(language)
+  }
+
   const getHeaderStyles = () => {
     const styles = {
       sm: { padding: '0 10px 0 10px' },
@@ -60,7 +65,7 @@ const Header = () => {
       <Space size={8}>
         {languages.map((value) =>
           <Button
-            onClick={() => { i18n.changeLanguage(value.key) }}
+            onClick={() => { setLanguage(value.key) }}
             style={{
               backgroundColor: 'transparent',
               borderColor: (i18n.language === value.key ? 'transparent' : 'white'),
