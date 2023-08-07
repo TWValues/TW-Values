@@ -1,0 +1,470 @@
+﻿{
+  "quiz": {
+    "welcome": {
+      "title": "TW Values",
+      "content": "TW Values 是参考自 8values 所制作的政治光谱测验，为使测验更贴近台湾民情，题目内容有针对台湾现况进行调整。",
+      "start": "开始测验!",
+      "privacy": "隐私声明：本测验原始码完全开源，绝对不会收集或是储存任何个人信息，请安心使用。"
+    },
+    "question_n_of_all": "题目 {{index}} 之 {{all}}",
+    "answers": {
+      "strongly_agree": "强烈赞成",
+      "agree": "赞成",
+      "neutral": "中立",
+      "disagree": "反对",
+      "strongly_disagree": "强烈反对",
+      "back": "回到上一题"
+    },
+    "questions": {
+      "q0000": {
+        "description": "政府应该要介入经济活动来保护消费者。"
+      },
+      "q0001": {
+        "description": "应该对有钱人课更多的税来补贴收入较少的人们。"
+      },
+      "q0002": {
+        "description": "基础建设像是道路与电力设施应该由政府管理经营。"
+      },
+      "q0003": {
+        "description": "所有人都应该拥有受到优质教育的机会。\n（例如：学费补贴）"
+      },
+      "q0004": {
+        "description": "政府应该大幅增加《囤房税》的课税比重，以实现居住正义。"
+      },
+      "q0100": {
+        "description": "领低薪应当成做功德。"
+      },
+      "q0101": {
+        "description": "继承是一种合法的财富。"
+      },
+      "q0102": {
+        "description": "政府的干预是对于经济活动的一种威胁。"
+      },
+      "q0103": {
+        "description": "有钱人应该受到更好的医疗照护。"
+      },
+      "q0104": {
+        "description": "发明无薪假的人应该得诺贝尔奖。"
+      },
+      "q0200": {
+        "description": "气候变迁已经严重威胁到人类的生存。"
+      },
+      "q0201": {
+        "description": "为了追求环境保护而造成生活成本上涨是可接受的。"
+      },
+      "q0202": {
+        "description": "因人类行为而造成的物种灭绝是不可接受的。"
+      },
+      "q0203": {
+        "description": "应全力发展再生能源，即使会缺电也没关系。"
+      },
+      "q0300": {
+        "description": "为追求经济成长而造成污染是可接受的。"
+      },
+      "q0301": {
+        "description": "使用成本便宜的化石燃料是必要的。"
+      },
+      "q0302": {
+        "description": "对于鱼类捕捞不应该有任何配额限制。"
+      },
+      "q0400": {
+        "description": "安乐死应该合法化。"
+      },
+      "q0401": {
+        "description": "国家的存在是对个人自由的威胁。"
+      },
+      "q0402": {
+        "description": "集会游行不应该需要事先申请。"
+      },
+      "q0403": {
+        "description": "政府应该尊重多数民意的决定，即使该决定是错误的。"
+      },
+      "q0404": {
+        "description": "政治领袖们应可以作为文艺作品讽刺或丑化的对象。"
+      },
+      "q0405": {
+        "description": "毒品应该除罪化。"
+      },
+      "q0500": {
+        "description": "投票年龄不应该下修到18岁，因为年轻人不懂事。"
+      },
+      "q0501": {
+        "description": "政府应通过《数字中介服务法》来打击假讯息，即便有可能限制言论自由也没关系。"
+      },
+      "q0502": {
+        "description": "牺牲部份个人权益来防止恐怖攻击是可接受的。\n（例如：加强机场安检）"
+      },
+      "q0503": {
+        "description": "强人政治对领导国家更有利。"
+      },
+      "q0504": {
+        "description": "即便抗议的是政府的独裁，暴力也是不被允许的。"
+      },
+      "q0505": {
+        "description": "《太阳花运动》已经严重违反法律秩序，政府应该全力镇压。"
+      },
+      "q0600": {
+        "description": "我们应该相信现代医学，鄙弃传统医学。"
+      },
+      "q0601": {
+        "description": "宗教团体应该也要被征税。"
+      },
+      "q0602": {
+        "description": "同性婚姻应该合法化。"
+      },
+      "q0603": {
+        "description": "死刑应该被废除。"
+      },
+      "q0604": {
+        "description": "在国内居住的外国留学生、劳工应与本国公民享受同等待遇。\n（例如：可以使用健保）"
+      },
+      "q0605": {
+        "description": "我们过去的传统一点价值都没有。"
+      },
+      "q0700": {
+        "description": "小蒋（蒋经国）时期的社会比现在好多了。"
+      },
+      "q0701": {
+        "description": "通奸不应该除罪化。"
+      },
+      "q0702": {
+        "description": "未婚而发生性行为是不道德的。"
+      },
+      "q0703": {
+        "description": "堕胎应该在大部分或全部的情况下都被禁止。"
+      },
+      "q0704": {
+        "description": "性交易是非法的。"
+      },
+      "q0705": {
+        "description": "● 年轻漂亮的女生，适合坐柜台。\n● 女性同胞不化妆上街会吓死人。\n● 女性超过30岁未结婚的比例太高是一种国安问题。"
+      },
+      "q1000": {
+        "description": "我国已经是主权独立的国家，名为中华民国，与对岸互不隶属。"
+      },
+      "q1001": {
+        "description": "应立刻制定新宪法，宣布成立台湾共和国。"
+      },
+      "q1002": {
+        "description": "为应对邻国军事威胁，应延长兵役役期、提高军费支出。"
+      },
+      "q1100": {
+        "description": "台湾是中国自古以来神圣而不可分割的一部份。"
+      },
+      "q1101": {
+        "description": "三民主义统一中国。"
+      },
+      "q1102": {
+        "description": "Chinese Taipei（中华台北、中国台北）不是一种矮化我国主权的称呼。"
+      },
+      "q1103": {
+        "description": "应立刻与对岸进行政治谈判，以达成国家统一。"
+      },
+      "q1200": {
+        "description": "加入美日阵营，抗中保台。"
+      },
+      "q1201": {
+        "description": "应立刻举办公投加入美国，成为美国的第五十一州。"
+      },
+      "q1202": {
+        "description": "当台海发生战争，美军必定会驰援台湾。"
+      },
+      "q1300": {
+        "description": "两岸一家亲。"
+      },
+      "q1301": {
+        "description": "应重启服贸与货贸谈判，以便从中国获取更多经济利益。"
+      },
+      "q1302": {
+        "description": "应尽快签署两岸和平协议。"
+      },
+      "q1303": {
+        "description": "「台湾安全，人民有钱。」\n应与对岸保持良好关系，避免发生战争。"
+      }
+    },
+    "result": {
+      "axes": {
+        "economic": {
+          "title": "经济",
+          "equality": "平等",
+          "market": "市场",
+          "categories": {
+            "0": "共产主义",
+            "1": "社会主义",
+            "2": "偏向平等",
+            "3": "中间派",
+            "4": "偏向市场",
+            "5": "资本主义",
+            "6": "自由放任主义"
+          }
+        },
+        "environmental": {
+          "title": "环境",
+          "ecology": "生态",
+          "production": "生产",
+          "categories": {
+            "0": "极端环境保护主义",
+            "1": "环境保护主义",
+            "2": "偏向生态",
+            "3": "中间派",
+            "4": "偏向生产",
+            "5": "反环境保护主义",
+            "6": "反环境保护主义"
+          }
+        },
+        "civil": {
+          "title": "政治",
+          "authority": "威权",
+          "liberty": "自由",
+          "categories": {
+            "0": "无政府主义",
+            "1": "自由主义",
+            "2": "偏向自由",
+            "3": "温和派",
+            "4": "偏向国家",
+            "5": "威权主义",
+            "6": "极权主义"
+          }
+        },
+        "societal": {
+          "title": "社会",
+          "progress": "进步",
+          "tradition": "传统",
+          "categories": {
+            "0": "革命份子",
+            "1": "进步主义",
+            "2": "偏向进步",
+            "3": "中立派",
+            "4": "偏向保守",
+            "5": "保守主义",
+            "6": "反动份子"
+          }
+        },
+        "sovereignty": {
+          "title": "主权",
+          "independence": "独立",
+          "unification": "统一",
+          "categories": {
+            "0": "坚实的台独份子",
+            "1": "台独份子",
+            "2": "偏向独立",
+            "3": "中立派",
+            "4": "偏向统一",
+            "5": "中华民族拥护者",
+            "6": "坚实的中华民族拥护者"
+          }
+        },
+        "us_china_relation": {
+          "title": "美中",
+          "pro_american": "亲美",
+          "pro_chinese": "亲中",
+          "categories": {
+            "0": "亲美主义",
+            "1": "亲美",
+            "2": "亲美",
+            "3": "中立",
+            "4": "亲中",
+            "5": "亲中",
+            "6": "中国民族主义"
+          }
+        }
+      },
+      "ideologies": {
+        "match": "最接近的意识形态",
+        "anarcho_communism": {
+          "name": "无政府共产主义"
+        },
+        "libertarian_communism": {
+          "name": "自由意志共产主义"
+        },
+        "trotskyism": {
+          "name": "托洛斯基主义"
+        },
+        "marxism": {
+          "name": "马克思主义"
+        },
+        "de_leonism": {
+          "name": "德莱昂主义"
+        },
+        "leninism": {
+          "name": "列宁主义"
+        },
+        "stalinism_maoism": {
+          "name": "斯大林主义/毛泽东思想"
+        },
+        "religious_communism": {
+          "name": "宗教共产主义"
+        },
+        "state_socialism": {
+          "name": "国有社会主义"
+        },
+        "theocratic_socialism": {
+          "name": "神权社会主义"
+        },
+        "religious_socialism": {
+          "name": "宗教社会主义"
+        },
+        "democratic_socialism": {
+          "name": "民主社会主义"
+        },
+        "revolutionary_socialism": {
+          "name": "革命社会主义"
+        },
+        "libertarian_socialism": {
+          "name": "自由意志社会主义"
+        },
+        "anarcho_syndicalism": {
+          "name": "无政府工团主义"
+        },
+        "left_wing_populism": {
+          "name": "左翼民粹主义 "
+        },
+        "theocratic_distributism": {
+          "name": "神权分产主义"
+        },
+        "distributism": {
+          "name": "分产主义"
+        },
+        "social_liberalism": {
+          "name": "社会自由主义"
+        },
+        "christian_democracy": {
+          "name": "基督教民主主义"
+        },
+        "social_democracy": {
+          "name": "社会民主主义"
+        },
+        "progressivism": {
+          "name": "进步主义"
+        },
+        "anarcho_mutualism": {
+          "name": "无政府互利主义"
+        },
+        "national_totalitarianism": {
+          "name": "国家极权主义"
+        },
+        "global_totalitarianism": {
+          "name": "全球极权主义"
+        },
+        "technocracy": {
+          "name": "技术官僚主义"
+        },
+        "centrist": {
+          "name": "中间主义"
+        },
+        "liberalism": {
+          "name": "自由主义"
+        },
+        "religious_anarchism": {
+          "name": "宗教无政府主义"
+        },
+        "right_wing_populism": {
+          "name": "右翼民粹主义"
+        },
+        "moderate_conservatism": {
+          "name": "温和保守主义"
+        },
+        "reactionary": {
+          "name": "反动"
+        },
+        "social_libertarianism": {
+          "name": "社会自由意志主义"
+        },
+        "libertarianism": {
+          "name": "自由意志主义"
+        },
+        "anarcho_egoism": {
+          "name": "利己无政府主义"
+        },
+        "nazism": {
+          "name": "纳粹主义"
+        },
+        "autocracy": {
+          "name": "神权主义"
+        },
+        "fascism": {
+          "name": "法西斯主义"
+        },
+        "capitalist_fascism": {
+          "name": "法西斯资本主义"
+        },
+        "conservatism": {
+          "name": "保守主义"
+        },
+        "neo_liberalism": {
+          "name": "新自由主义"
+        },
+        "classical_liberalism": {
+          "name": "古典自由主义"
+        },
+        "authoritarian_capitalism": {
+          "name": "威权资本主义"
+        },
+        "state_capitalism": {
+          "name": "国家资本主义"
+        },
+        "neo_conservatism": {
+          "name": "新保守主义"
+        },
+        "fundamentalism": {
+          "name": "原教旨主义"
+        },
+        "libertarian_capitalism": {
+          "name": "自由资本主义"
+        },
+        "market_anarchism": {
+          "name": "利伯维尔场无政府主义"
+        },
+        "objectivism": {
+          "name": "客观主义"
+        },
+        "totalitarian_capitalism": {
+          "name": "极权资本主义"
+        },
+        "ultra_capitalism": {
+          "name": "超级资本主义"
+        },
+        "anarcho_capitalism": {
+          "name": "无政府资本主义"
+        }
+      },
+      "political_parties": {
+        "match": "理念最接近的政党",
+        "kmt": {
+          "name": "中国国民党"
+        },
+        "dpp": {
+          "name": "民主进步党"
+        },
+        "np": {
+          "name": "新党"
+        },
+        "npp": {
+          "name": "时代力量"
+        },
+        "tmd": {
+          "name": "台湾民众党"
+        },
+        "tsp": {
+          "name": "台湾基进党"
+        },
+        "cupp": {
+          "name": "中华统一促进党"
+        },
+        "sdp": {
+          "name": "社会民主党"
+        }
+      },
+      "tags": {
+        "match": "意识形态标签",
+        "roc_unification": "华统",
+        "roc_independence": "华独",
+        "tw_independence": "台独",
+        "prc_unification": "红统",
+        "death_penalty_abolitionists": "废死",
+        "homophobia": "恐同",
+        "male_chauvinism": "大男人沙文主义"
+      }
+    }
+  }
+}

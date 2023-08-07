@@ -20,6 +20,10 @@ const Header = () => {
       text: '繁',
     },
     {
+      key: 'zh-CN',
+      text: '简',
+    },
+    {
       key: 'en',
       text: 'EN',
     }
