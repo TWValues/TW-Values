@@ -3,7 +3,7 @@ import DPPIcon from '../assets/parties/DPPIcon.svg'
 import NPIcon from '../assets/parties/NPIcon.svg'
 import NPPIcon from '../assets/parties/NPPIcon.svg'
 import TSPIcon from '../assets/parties/TSPIcon.svg'
-import TMDIcon from '../assets/parties/TMDIcon.svg'
+import TPPIcon from '../assets/parties/TPPIcon.svg'
 import CUPPIcon from '../assets/parties/CUPPIcon.svg'
 import SDPIcon from '../assets/parties/SDPIcon.svg'
 
@@ -57,8 +57,8 @@ const POLITICAL_PARTIES = [
     }
   },
   {
-    id: "tmd",
-    icon: TMDIcon,
+    id: "tpp",
+    icon: TPPIcon,
     state: {
       economic: 50,
       environmental: 50,
