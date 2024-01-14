@@ -5,7 +5,6 @@ import NPPIcon from '../assets/parties/NPPIcon.svg'
 import TSPIcon from '../assets/parties/TSPIcon.svg'
 import TPPIcon from '../assets/parties/TPPIcon.svg'
 import CUPPIcon from '../assets/parties/CUPPIcon.svg'
-import SDPIcon from '../assets/parties/SDPIcon.svg'
 
 const POLITICAL_PARTIES = [
   {
@@ -90,18 +89,6 @@ const POLITICAL_PARTIES = [
       societal: 20,
       sovereignty: 10,
       us_china_relation: 10,
-    }
-  },
-  {
-    id: "sdp",
-    icon: SDPIcon,
-    state: {
-      economic: 80,
-      environmental: 75,
-      civil: 75,
-      societal: 80,
-      sovereignty: 65,
-      us_china_relation: 70,
     }
   },
 ]
