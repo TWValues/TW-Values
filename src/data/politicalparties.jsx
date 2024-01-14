@@ -59,12 +59,12 @@ const POLITICAL_PARTIES = [
     id: "tpp",
     icon: TPPIcon,
     state: {
-      economic: 50,
-      environmental: 50,
-      civil: 45,
-      societal: 40,
-      sovereignty: 45,
-      us_china_relation: 40,
+      economic: 45,
+      environmental: 45,
+      civil: 50,
+      societal: 45,
+      sovereignty: 50,
+      us_china_relation: 45,
     }
   },
   {
