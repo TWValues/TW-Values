@@ -18,7 +18,7 @@ import ChinaTerritory from '../../assets/values/ChinaTerritory.svg'
 import FlagOfUSA from '../../assets/values/FlagOfUSA.svg'
 import FlagOfPRC from '../../assets/values/FlagOfPRC.svg'
 
-const { Title } = Typography
+const { Title, Text } = Typography
 
 const Result = () => {
 
@@ -63,14 +63,17 @@ const Result = () => {
     const politicalScores = POLITICAL_PARTIES.map((value) => {
       let distance = 0.0
       distance += Math.pow(Math.abs(value.state.economic - economic), 2)
-      distance += Math.pow(Math.abs(value.state.environmental - environmental), 1.5)
+      distance += Math.pow(Math.abs(value.state.environmental - environmental), 2)
       distance += Math.pow(Math.abs(value.state.civil - civil), 2)
       distance += Math.pow(Math.abs(value.state.societal - societal), 2)
       distance += Math.pow(Math.abs(value.state.sovereignty - sovereignty), 2)
       distance += Math.pow(Math.abs(value.state.us_china_relation - us_china_relation), 2)
+      const threshold = 6 * 50 * 50;
+      let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
       return {
         ...value,
         distance: distance,
+        rate: rate,
       }
     }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
@@ -78,11 +81,7 @@ const Result = () => {
   }
 
   const getBestMatchPoliticalParties = (partyScores) => {
-    const top3 = partyScores
-      .filter((value) => value.distance <= 20 * 20 * 6)
-      .slice(0, 3)
-
-    return top3.length > 0 ? top3 : partyScores.slice(0, 1)
+    return partyScores.slice(0, 3)
   }
 
   const getCategory = (percent) => {
@@ -164,10 +163,23 @@ const Result = () => {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-            <Image width={40 - 10 * index} src={value.icon} preview={false} />
-            <Title key={index} level={index * 2 + 1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
+            <Image width={Math.max(20, 40 - 10 * index)} src={value.icon} preview={false} />
+            <Title
+              key={index} level={Math.min(5, index * 2 + 1)}
+              style={{
+                margin: '10px',
+                color: 'black',
+                textAlign: 'center',
+              }}>
               {t(`quiz.result.political_parties.${value.id}.name`)}
             </Title>
+            <Text
+              key={index}
+              style={{
+                color: 'crimson',
+                fontSize: `${Math.max(100, 140 - index * 20)}%`,
+                textAlign: 'center',
+              }}>{`${(value.rate * 100).toFixed(1)}%`}</Text>
           </Layout>))
         }
       </Card>
