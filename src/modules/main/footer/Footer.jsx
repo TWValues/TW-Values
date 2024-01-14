@@ -30,7 +30,7 @@ const Footer = () => {
         height: '40px',
         backgroundColor: 'crimson',
       }}>
-      <Title level={4} style={{ color: 'white', margin: 'auto 0 auto 0' }}>Copyright (c) 2023 TW Values</Title>
+      <Title level={4} style={{ color: 'white', margin: 'auto 0 auto 0' }}>Copyright (c) 2023-2024 TW Values</Title>
     </Layout.Footer >
   )
 }
