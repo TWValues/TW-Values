@@ -129,9 +129,27 @@ const Result = () => {
         }}
         hoverable={true}>
         {getBestMatchIdeologies(getIdeologyMatchScores()).map((value, index) =>
-          <Title key={index} level={index * 2 + 1} style={{ margin: '10px', color: 'black', textAlign: 'center' }}>
-            {t(`quiz.result.ideologies.${value.id}.name`)}
-          </Title>
+          <Layout
+            key={index}
+            style={{
+              backgroundColor: 'transparent',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+            <Text
+              key={index}
+              style={{
+                margin: '10px',
+                fontSize: `${Math.max(120, 180 - index * 30)}%`,
+                fontWeight: 'bold',
+                color: 'black',
+                textAlign: 'center',
+              }}>
+              {t(`quiz.result.ideologies.${value.id}.name`)}
+            </Text>
+          </Layout>
         )}
       </Card>
       <Card
@@ -163,21 +181,27 @@ const Result = () => {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-            <Image width={Math.max(20, 40 - 10 * index)} src={value.icon} preview={false} />
-            <Title
-              key={index} level={Math.min(5, index * 2 + 1)}
+            <Image
+              width={Math.max(16, 24 - 4 * index)}
+              src={value.icon}
+              preview={false}
+            />
+            <Text
+              key={index}
               style={{
                 margin: '10px',
+                fontSize: `${Math.max(100, 140 - index * 20)}%`,
+                fontWeight: 'bold',
                 color: 'black',
                 textAlign: 'center',
               }}>
               {t(`quiz.result.political_parties.${value.id}.name`)}
-            </Title>
+            </Text>
             <Text
               key={index}
               style={{
                 color: 'crimson',
-                fontSize: `${Math.max(100, 140 - index * 20)}%`,
+                fontSize: `${Math.max(60, 100 - index * 20)}%`,
                 textAlign: 'center',
               }}>{`${(value.rate * 100).toFixed(1)}%`}</Text>
           </Layout>))
