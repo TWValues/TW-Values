@@ -270,7 +270,7 @@
         }
       },
       "ideologies": {
-        "match": "Closest Match of Ideology",
+        "match": "Closest Match of Ideologies",
         "anarcho_communism": {
           "name": "Anarcho-Communism"
         },
