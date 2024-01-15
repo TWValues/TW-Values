@@ -94,14 +94,14 @@ const Result = () => {
     if (percent <= 40) {
       return 4
     }
-    if (percent >= 60) {
-      return 2
+    if (percent >= 90) {
+      return 0
     }
     if (percent >= 75) {
       return 1
     }
-    if (percent >= 90) {
-      return 0
+    if (percent >= 60) {
+      return 2
     }
 
     return 3
