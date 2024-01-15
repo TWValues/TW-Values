@@ -3,6 +3,7 @@
   "version": "0.7.0",
   "private": true,
   "homepage": "https://twvalues.github.io/TW-Values",
+  "type": "module",
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
     "@testing-library/jest-dom": "^5.16.5",
