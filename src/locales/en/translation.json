@@ -245,13 +245,13 @@
           "independence": "Independence",
           "unification": "Unification",
           "categories": {
-            "0": "Independence",
+            "0": "Firm Independence",
             "1": "Independence",
-            "2": "Independence",
+            "2": "Prefer Independence",
             "3": "Moderate",
-            "4": "Unification",
+            "4": "Prefer Unification",
             "5": "Unification",
-            "6": "Unification"
+            "6": "Firm Unification"
           }
         },
         "us_china_relation": {
