@@ -39,9 +39,8 @@ const Result = () => {
     const ideologyScores = IDEOLOGIES.map((value) => {
       let distance = 0.0
       distance += Math.pow(Math.abs(value.state.economic - economic), 2)
-      distance += Math.pow(Math.abs(value.state.societal - environmental), 1.5) // Treat environmental as societal
       distance += Math.pow(Math.abs(value.state.civil - civil), 2)
-      distance += Math.pow(Math.abs(value.state.societal - societal), 2)
+      distance += Math.pow(Math.abs(value.state.societal - (0.33 * environmental + 0.67 * societal)), 2)
       distance += Math.pow(Math.abs(value.state.diplomatic - diplomatic), 2)
       return {
         id: value.id,
@@ -54,7 +53,7 @@ const Result = () => {
 
   const getBestMatchIdeologies = (ideologyScores) => {
     const top3 = ideologyScores
-      .filter((value) => value.distance <= 20 * 20 * 4.5)
+      .filter((value) => value.distance <= 20 * 20 * 4)
       .slice(0, 3)
 
     return top3.length > 0 ? top3 : ideologyScores.slice(0, 1)
