@@ -82,7 +82,7 @@ const Result = () => {
   }
 
   const getBestMatchPoliticalParties = (partyScores) => {
-    return partyScores.slice(0, 3)
+    return partyScores
   }
 
   const getCategory = (percent) => {
