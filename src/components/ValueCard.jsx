@@ -66,6 +66,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
         }}>
           <Image width={60} src={leftImage || ""} preview={false} />
           <Text style={{
+            minWidth: '80px',
             color: leftColor,
             textAlign: 'center',
             ...getValueTextStyles()
@@ -80,7 +81,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           status='active'
           strokeColor={leftColor}
           trailColor='gray'
-          size='small'
+          size={50}
           style={{ margin: '5px' }}
         />
         <Layout style={{
@@ -97,6 +98,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
             ...getValueTextStyles(),
             color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
             textAlign: 'center',
+            minWidth: '72px',
             height: '20px',
           }}>
             {leaningsTitle}
@@ -118,7 +120,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           status='active'
           strokeColor={rightColor}
           trailColor='gray'
-          size='small'
+          size={50}
           style={{ margin: '5px' }}
         />
         <Layout style={{
@@ -130,6 +132,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
         }}>
           <Image width={60} src={rightImage || ""} preview={false} />
           <Text style={{
+            minWidth: '80px',
             color: rightColor,
             textAlign: 'center',
             ...getValueTextStyles()
