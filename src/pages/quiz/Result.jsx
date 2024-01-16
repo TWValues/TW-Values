@@ -1,6 +1,7 @@
 import { useSearchParams } from 'react-router-dom'
-import { Layout, Card, Typography, Image, Tag } from 'antd'
+import { Layout, Card, Typography, Image, Tag, Button } from 'antd'
 import { useTranslation } from 'react-i18next'
+import { LinkOutlined, LinkedinOutlined } from '@ant-design/icons'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideologies'
 import POLITICAL_PARTIES from '../../data/politicalparties'
@@ -18,7 +19,7 @@ import ChinaTerritory from '../../assets/values/ChinaTerritory.svg'
 import FlagOfUSA from '../../assets/values/FlagOfUSA.svg'
 import FlagOfPRC from '../../assets/values/FlagOfPRC.svg'
 
-const { Title, Text } = Typography
+const { Text } = Typography
 
 const Result = () => {
 
@@ -203,7 +204,17 @@ const Result = () => {
                 color: 'crimson',
                 fontSize: `${Math.max(60, 100 - index * 20)}%`,
                 textAlign: 'center',
-              }}>{`${(value.rate * 100).toFixed(1)}%`}</Text>
+              }}>
+              {`${(value.rate * 100).toFixed(1)}%`}
+            </Text>
+            <Button
+              type='link'
+              size='small'
+              icon={<LinkOutlined />}
+              href={t(`quiz.result.political_parties.${value.id}.link`)}
+              target='_blank'
+              style={{ margin: '2px' }}
+            />
           </Layout>))
         }
       </Card>

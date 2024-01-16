@@ -431,25 +431,32 @@
       "political_parties": {
         "match": "Closest Match of Political Parties",
         "kmt": {
-          "name": "KuoMinTang"
+          "name": "KuoMinTang",
+          "link": "https://en.wikipedia.org/wiki/Kuomintang"
         },
         "dpp": {
-          "name": "Democratic Progressive Party"
+          "name": "Democratic Progressive Party",
+          "link": "https://en.wikipedia.org/wiki/Democratic_Progressive_Party"
         },
         "np": {
-          "name": "New Party"
+          "name": "New Party",
+          "link": "https://en.wikipedia.org/wiki/New_Party_(Taiwan)"
         },
         "npp": {
-          "name": "New Power Party"
+          "name": "New Power Party",
+          "link": "https://en.wikipedia.org/wiki/New_Power_Party"
         },
         "tpp": {
-          "name": "Taiwan People Party"
+          "name": "Taiwan People's Party",
+          "link": "https://en.wikipedia.org/wiki/Taiwan_People%27s_Party"
         },
         "tsp": {
-          "name": "Taiwan Statebuilding Party"
+          "name": "Taiwan Statebuilding Party",
+          "link": "https://en.wikipedia.org/wiki/Taiwan_Statebuilding_Party"
         },
         "cupp": {
-          "name": "Chinese Unification Promotion Party"
+          "name": "Chinese Unification Promotion Party",
+          "link": "https://en.wikipedia.org/wiki/Chinese_Unification_Promotion_Party"
         }
       },
       "tags": {
