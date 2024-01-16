@@ -205,7 +205,7 @@ const Result = () => {
                 fontSize: `${Math.max(60, 100 - index * 20)}%`,
                 textAlign: 'center',
               }}>
-              {`${(value.rate * 100).toFixed(1)}%`}
+              {`${Math.round(value.rate * 100)}%`}
             </Text>
             <Button
               type='link'
