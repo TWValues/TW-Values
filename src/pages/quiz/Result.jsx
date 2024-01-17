@@ -126,8 +126,7 @@ const Result = () => {
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
-        }}
-        hoverable={true}>
+        }}>
         {getBestMatchIdeologies(getIdeologyMatchScores()).map((value, index) =>
           <Layout
             key={index}
@@ -168,8 +167,7 @@ const Result = () => {
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
-        }}
-        hoverable={true}>
+        }}>
         {getBestMatchPoliticalParties(getPoliticalPartyMatchScores())
           .map((value, index) =>
           (<Layout
@@ -232,8 +230,7 @@ const Result = () => {
           alignItems: 'center',
           width: '100%',
           margin: '5px 10px 5px 10px',
-        }}
-        hoverable={true}>
+        }}>
         {searchParams.get('tags').split(',').map((value) => {
           const link = t(`quiz.result.tags.data.${value}.link`)
           const name = t(`quiz.result.tags.data.${value}.name`)

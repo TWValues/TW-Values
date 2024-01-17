@@ -47,8 +47,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
         width: '100%',
         fontSize: 'large',
         margin: '5px 5px 5px 5px',
-      }}
-      hoverable={true}>
+      }}>
       <Layout style={{
         backgroundColor: 'transparent',
         display: 'grid',
