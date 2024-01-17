@@ -1,10 +1,10 @@
 
 import { Layout, Typography, Grid, Button, Space } from 'antd'
-import { GithubOutlined } from '@ant-design/icons';
+import { GithubOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import getScreenSize from '../../../utils/getScreenSize'
 import packageInfo from '../../../../package.json'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
 const { Title } = Typography
 

@@ -68,7 +68,7 @@ const Result = () => {
       distance += Math.pow(Math.abs(value.state.societal - societal), 2)
       distance += Math.pow(Math.abs(value.state.sovereignty - sovereignty), 2)
       distance += Math.pow(Math.abs(value.state.us_china_relation - us_china_relation), 2)
-      const threshold = 6 * 50 * 50;
+      const threshold = 6 * 50 * 50
       let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
       return {
         ...value,
