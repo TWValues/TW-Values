@@ -463,15 +463,37 @@
         }
       },
       "tags": {
-        "match": "意识形态标签",
-        "roc_unification": "华统",
-        "roc_independence": "华独",
-        "tw_independence": "台独",
-        "prc_unification": "红统",
-        "death_penalty_abolitionists": "废死",
-        "homophobia": "恐同",
-        "male_chauvinism": "大男人沙文主义",
-        "prostitution": "设置性交易专区"
+        "name": "意识形态标签",
+        "data": {
+          "roc_unification": {
+            "name": "华统",
+            "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%89%E6%B0%91%E4%B8%BB%E7%BE%A9%E7%B5%B1%E4%B8%80%E4%B8%AD%E5%9C%8B"
+          },
+          "roc_independence": {
+            "name": "华独",
+            "link": "https://zh.wikipedia.org/zh-cn/%E8%8F%AF%E7%8D%A8"
+          },
+          "tw_independence": {
+            "name": "台独",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%B0%E7%8D%A8_(%E8%A1%93%E8%AA%9E)"
+          },
+          "prc_unification": {
+            "name": "红统",
+            "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%80%E5%9B%BD%E4%B8%A4%E5%88%B6"
+          },
+          "death_penalty_abolitionists": {
+            "name": "废死",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%AD%BB%E5%88%91%E5%AD%98%E5%BB%A2%E5%95%8F%E9%A1%8C"
+          },
+          "homophobia": {
+            "name": "恐同",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%90%8C%E6%80%A7%E6%88%80%E6%81%90%E6%87%BC"
+          },
+          "male_chauvinism": {
+            "name": "男性沙文主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%A4%A7%E7%94%B7%E5%AD%90%E4%B8%BB%E4%B9%89"
+          }
+        }
       }
     }
   }

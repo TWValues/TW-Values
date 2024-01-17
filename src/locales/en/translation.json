@@ -463,15 +463,37 @@
         }
       },
       "tags": {
-        "match": "Ideology Tags",
-        "roc_unification": "R.O.C. Unification",
-        "roc_independence": "R.O.C. Independence",
-        "tw_independence": "Taiwan Independence",
-        "prc_unification": "P.R.C. Unification",
-        "death_penalty_abolitionists": "Death Penalty Abolitionists",
-        "homophobia": "Homophobia",
-        "male_chauvinism": "Male Chauvinism",
-        "prostitution": "Setup Prostitution Special Zones"
+        "name": "Ideology Tags",
+        "data": {
+          "roc_unification": {
+            "name": "R.O.C. Unification",
+            "link": ""
+          },
+          "roc_independence": {
+            "name": "R.O.C. Independence",
+            "link": ""
+          },
+          "tw_independence": {
+            "name": "Taiwan Independence",
+            "link": "https://en.wikipedia.org/wiki/Taiwan_independence_movement"
+          },
+          "prc_unification": {
+            "name": "P.R.C. Unification",
+            "link": "https://en.wikipedia.org/wiki/One_country,_two_systems"
+          },
+          "death_penalty_abolitionists": {
+            "name": "Death Penalty Abolitionists",
+            "link": ""
+          },
+          "homophobia": {
+            "name": "Homophobia",
+            "link": "https://en.wikipedia.org/wiki/Homophobia"
+          },
+          "male_chauvinism": {
+            "name": "Male Chauvinism",
+            "link": "https://en.wikipedia.org/wiki/Machismo"
+          }
+        }
       }
     }
   }

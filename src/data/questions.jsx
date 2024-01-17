@@ -249,10 +249,6 @@ const QUESTIONS = [
     id: "q0704",
     effect: {
       societal: -10,
-
-      tags: {
-        prostitution: -1,
-      }
     }
   },
   {

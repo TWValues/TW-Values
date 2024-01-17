@@ -218,7 +218,7 @@ const Result = () => {
         }
       </Card>
       <Card
-        title={t('quiz.result.tags.match')}
+        title={t('quiz.result.tags.name')}
         headStyle={{
           backgroundColor: 'white',
           color: 'black',
@@ -233,11 +233,14 @@ const Result = () => {
           width: '100%',
           margin: '5px 10px 5px 10px',
         }}
-        hoverable={true}>{searchParams.get('tags').split(',').map((value) => (
-          <Tag style={{ padding: '5px', fontSize: 'large' }}>
-            {t(`quiz.result.tags.${value}`)}
-          </Tag>)
-        )}
+        hoverable={true}>
+        {searchParams.get('tags').split(',').map((value) => {
+          const link = t(`quiz.result.tags.data.${value}.link`)
+          const name = t(`quiz.result.tags.data.${value}.name`)
+          return <Tag style={{ padding: '5px', fontSize: 'large' }}>
+            {link && link.length > 0 ? <a href={link} target='_blank'>{name}</a> : name}
+          </Tag>
+        })}
       </Card>
       <ValueCard
         title={t('quiz.result.axes.economic.title')}
