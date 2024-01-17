@@ -210,7 +210,7 @@ const Result = () => {
               icon={<LinkOutlined />}
               href={t(`quiz.result.political_parties.${value.id}.link`)}
               target='_blank'
-              style={{ margin: '2px' }}
+              style={{ margin: '1px' }}
             />
           </Layout>))
         }
@@ -234,9 +234,18 @@ const Result = () => {
         {searchParams.get('tags').split(',').map((value) => {
           const link = t(`quiz.result.tags.data.${value}.link`)
           const name = t(`quiz.result.tags.data.${value}.name`)
-          return <Tag style={{ padding: '5px', fontSize: 'large' }}>
-            {link && link.length > 0 ? <a href={link} target='_blank'>{name}</a> : name}
-          </Tag>
+          return (
+            <Tag>
+              <Text style={{ fontSize: 'medium' }}>{name}</Text>
+              {link && link.length > 0 &&
+                <Button
+                  type='link'
+                  size='small'
+                  icon={<LinkOutlined />}
+                  href={link}
+                  target='_blank'
+                />}
+            </Tag>)
         })}
       </Card>
       <ValueCard
