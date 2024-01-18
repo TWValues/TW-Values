@@ -460,6 +460,10 @@
         "cupp": {
           "name": "中华统一促进党",
           "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%AD%E8%8F%AF%E7%B5%B1%E4%B8%80%E4%BF%83%E9%80%B2%E9%BB%A8"
+        },
+        "gpt": {
+          "name": "台湾绿党",
+          "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%B0%E7%81%A3%E7%B6%A0%E9%BB%A8"
         }
       },
       "tags": {

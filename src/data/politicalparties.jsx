@@ -91,6 +91,18 @@ const POLITICAL_PARTIES = [
       us_china_relation: 10,
     }
   },
+  {
+    id: "gpt",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Green_Party_Taiwan_logo.png",
+    state: {
+      economic: 75,
+      environmental: 90,
+      civil: 75,
+      societal: 90,
+      sovereignty: 65,
+      us_china_relation: 70,
+    }
+  }
 ]
 
 export default POLITICAL_PARTIES

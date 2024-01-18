@@ -460,6 +460,10 @@
         "cupp": {
           "name": "Chinese Unification Promotion Party",
           "link": "https://en.wikipedia.org/wiki/Chinese_Unification_Promotion_Party"
+        },
+        "gpt": {
+          "name": "Green Party Taiwan",
+          "link": "https://en.wikipedia.org/wiki/Green_Party_Taiwan"
         }
       },
       "tags": {
