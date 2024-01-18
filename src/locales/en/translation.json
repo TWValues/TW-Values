@@ -273,197 +273,201 @@
         }
       },
       "ideologies": {
-        "match": "Closest Match of Ideologies",
-        "anarcho_communism": {
-          "name": "Anarcho-Communism"
-        },
-        "libertarian_communism": {
-          "name": "Libertarian Communism"
-        },
-        "trotskyism": {
-          "name": "Trotskyism"
-        },
-        "marxism": {
-          "name": "Marxism"
-        },
-        "de_leonism": {
-          "name": "De Leonism"
-        },
-        "leninism": {
-          "name": "Leninism"
-        },
-        "stalinism_maoism": {
-          "name": "Stalinism/Maoism"
-        },
-        "religious_communism": {
-          "name": "Religious Communism"
-        },
-        "state_socialism": {
-          "name": "State Socialism"
-        },
-        "theocratic_socialism": {
-          "name": "Theocratic Socialism"
-        },
-        "religious_socialism": {
-          "name": "Religious Socialism"
-        },
-        "democratic_socialism": {
-          "name": "Democratic Socialism"
-        },
-        "revolutionary_socialism": {
-          "name": "Revolutionary Socialism"
-        },
-        "libertarian_socialism": {
-          "name": "Libertarian Socialism"
-        },
-        "anarcho_syndicalism": {
-          "name": "Anarcho-Syndicalism"
-        },
-        "left_wing_populism": {
-          "name": "Left-Wing Populism"
-        },
-        "theocratic_distributism": {
-          "name": "Theocratic Distributism"
-        },
-        "distributism": {
-          "name": "Distributism"
-        },
-        "social_liberalism": {
-          "name": "Social Liberalism"
-        },
-        "christian_democracy": {
-          "name": "Christian Democracy"
-        },
-        "social_democracy": {
-          "name": "Social Democracy"
-        },
-        "progressivism": {
-          "name": "Progressivism"
-        },
-        "anarcho_mutualism": {
-          "name": "Anarcho-Mutualism"
-        },
-        "national_totalitarianism": {
-          "name": "National Totalitarianism"
-        },
-        "global_totalitarianism": {
-          "name": "Global Totalitarianism"
-        },
-        "technocracy": {
-          "name": "Technocracy"
-        },
-        "centrist": {
-          "name": "Centrist"
-        },
-        "liberalism": {
-          "name": "Liberalism"
-        },
-        "religious_anarchism": {
-          "name": "Religious Anarchism"
-        },
-        "right_wing_populism": {
-          "name": "Right-Wing Populism"
-        },
-        "moderate_conservatism": {
-          "name": "Moderate Conservatism"
-        },
-        "reactionary": {
-          "name": "Reactionary"
-        },
-        "social_libertarianism": {
-          "name": "Social Libertarianism"
-        },
-        "libertarianism": {
-          "name": "Libertarianism"
-        },
-        "anarcho_egoism": {
-          "name": "Anarcho-Egoism"
-        },
-        "nazism": {
-          "name": "Nazism"
-        },
-        "autocracy": {
-          "name": "Autocracy"
-        },
-        "fascism": {
-          "name": "Fascism"
-        },
-        "capitalist_fascism": {
-          "name": "Capitalist Fascism"
-        },
-        "conservatism": {
-          "name": "Conservatism"
-        },
-        "neo_liberalism": {
-          "name": "Neo-Liberalism"
-        },
-        "classical_liberalism": {
-          "name": "Classical Liberalism"
-        },
-        "authoritarian_capitalism": {
-          "name": "Authoritarian Capitalism"
-        },
-        "state_capitalism": {
-          "name": "State Capitalism"
-        },
-        "neo_conservatism": {
-          "name": "Neo-Conservatism"
-        },
-        "fundamentalism": {
-          "name": "Fundamentalism"
-        },
-        "libertarian_capitalism": {
-          "name": "Libertarian Capitalism"
-        },
-        "market_anarchism": {
-          "name": "Market Anarchism"
-        },
-        "objectivism": {
-          "name": "Objectivism"
-        },
-        "totalitarian_capitalism": {
-          "name": "Totalitarian Capitalism"
-        },
-        "ultra_capitalism": {
-          "name": "Ultra-Capitalism"
-        },
-        "anarcho_capitalism": {
-          "name": "Anarcho-Capitalism"
+        "name": "Closest Match of Ideologies",
+        "data": {
+          "anarcho_communism": {
+            "name": "Anarcho-Communism"
+          },
+          "libertarian_communism": {
+            "name": "Libertarian Communism"
+          },
+          "trotskyism": {
+            "name": "Trotskyism"
+          },
+          "marxism": {
+            "name": "Marxism"
+          },
+          "de_leonism": {
+            "name": "De Leonism"
+          },
+          "leninism": {
+            "name": "Leninism"
+          },
+          "stalinism_maoism": {
+            "name": "Stalinism/Maoism"
+          },
+          "religious_communism": {
+            "name": "Religious Communism"
+          },
+          "state_socialism": {
+            "name": "State Socialism"
+          },
+          "theocratic_socialism": {
+            "name": "Theocratic Socialism"
+          },
+          "religious_socialism": {
+            "name": "Religious Socialism"
+          },
+          "democratic_socialism": {
+            "name": "Democratic Socialism"
+          },
+          "revolutionary_socialism": {
+            "name": "Revolutionary Socialism"
+          },
+          "libertarian_socialism": {
+            "name": "Libertarian Socialism"
+          },
+          "anarcho_syndicalism": {
+            "name": "Anarcho-Syndicalism"
+          },
+          "left_wing_populism": {
+            "name": "Left-Wing Populism"
+          },
+          "theocratic_distributism": {
+            "name": "Theocratic Distributism"
+          },
+          "distributism": {
+            "name": "Distributism"
+          },
+          "social_liberalism": {
+            "name": "Social Liberalism"
+          },
+          "christian_democracy": {
+            "name": "Christian Democracy"
+          },
+          "social_democracy": {
+            "name": "Social Democracy"
+          },
+          "progressivism": {
+            "name": "Progressivism"
+          },
+          "anarcho_mutualism": {
+            "name": "Anarcho-Mutualism"
+          },
+          "national_totalitarianism": {
+            "name": "National Totalitarianism"
+          },
+          "global_totalitarianism": {
+            "name": "Global Totalitarianism"
+          },
+          "technocracy": {
+            "name": "Technocracy"
+          },
+          "centrist": {
+            "name": "Centrist"
+          },
+          "liberalism": {
+            "name": "Liberalism"
+          },
+          "religious_anarchism": {
+            "name": "Religious Anarchism"
+          },
+          "right_wing_populism": {
+            "name": "Right-Wing Populism"
+          },
+          "moderate_conservatism": {
+            "name": "Moderate Conservatism"
+          },
+          "reactionary": {
+            "name": "Reactionary"
+          },
+          "social_libertarianism": {
+            "name": "Social Libertarianism"
+          },
+          "libertarianism": {
+            "name": "Libertarianism"
+          },
+          "anarcho_egoism": {
+            "name": "Anarcho-Egoism"
+          },
+          "nazism": {
+            "name": "Nazism"
+          },
+          "autocracy": {
+            "name": "Autocracy"
+          },
+          "fascism": {
+            "name": "Fascism"
+          },
+          "capitalist_fascism": {
+            "name": "Capitalist Fascism"
+          },
+          "conservatism": {
+            "name": "Conservatism"
+          },
+          "neo_liberalism": {
+            "name": "Neo-Liberalism"
+          },
+          "classical_liberalism": {
+            "name": "Classical Liberalism"
+          },
+          "authoritarian_capitalism": {
+            "name": "Authoritarian Capitalism"
+          },
+          "state_capitalism": {
+            "name": "State Capitalism"
+          },
+          "neo_conservatism": {
+            "name": "Neo-Conservatism"
+          },
+          "fundamentalism": {
+            "name": "Fundamentalism"
+          },
+          "libertarian_capitalism": {
+            "name": "Libertarian Capitalism"
+          },
+          "market_anarchism": {
+            "name": "Market Anarchism"
+          },
+          "objectivism": {
+            "name": "Objectivism"
+          },
+          "totalitarian_capitalism": {
+            "name": "Totalitarian Capitalism"
+          },
+          "ultra_capitalism": {
+            "name": "Ultra-Capitalism"
+          },
+          "anarcho_capitalism": {
+            "name": "Anarcho-Capitalism"
+          }
         }
       },
       "political_parties": {
-        "match": "Closest Match of Political Parties",
-        "kmt": {
-          "name": "KuoMinTang",
-          "link": "https://en.wikipedia.org/wiki/Kuomintang"
-        },
-        "dpp": {
-          "name": "Democratic Progressive Party",
-          "link": "https://en.wikipedia.org/wiki/Democratic_Progressive_Party"
-        },
-        "np": {
-          "name": "New Party",
-          "link": "https://en.wikipedia.org/wiki/New_Party_(Taiwan)"
-        },
-        "npp": {
-          "name": "New Power Party",
-          "link": "https://en.wikipedia.org/wiki/New_Power_Party"
-        },
-        "tpp": {
-          "name": "Taiwan People's Party",
-          "link": "https://en.wikipedia.org/wiki/Taiwan_People%27s_Party"
-        },
-        "tsp": {
-          "name": "Taiwan Statebuilding Party",
-          "link": "https://en.wikipedia.org/wiki/Taiwan_Statebuilding_Party"
-        },
-        "cupp": {
-          "name": "Chinese Unification Promotion Party",
-          "link": "https://en.wikipedia.org/wiki/Chinese_Unification_Promotion_Party"
-        },
-        "gpt": {
-          "name": "Green Party Taiwan",
-          "link": "https://en.wikipedia.org/wiki/Green_Party_Taiwan"
+        "name": "Closest Match of Political Parties",
+        "data": {
+          "kmt": {
+            "name": "KuoMinTang",
+            "link": "https://en.wikipedia.org/wiki/Kuomintang"
+          },
+          "dpp": {
+            "name": "Democratic Progressive Party",
+            "link": "https://en.wikipedia.org/wiki/Democratic_Progressive_Party"
+          },
+          "np": {
+            "name": "New Party",
+            "link": "https://en.wikipedia.org/wiki/New_Party_(Taiwan)"
+          },
+          "npp": {
+            "name": "New Power Party",
+            "link": "https://en.wikipedia.org/wiki/New_Power_Party"
+          },
+          "tpp": {
+            "name": "Taiwan People's Party",
+            "link": "https://en.wikipedia.org/wiki/Taiwan_People%27s_Party"
+          },
+          "tsp": {
+            "name": "Taiwan Statebuilding Party",
+            "link": "https://en.wikipedia.org/wiki/Taiwan_Statebuilding_Party"
+          },
+          "cupp": {
+            "name": "Chinese Unification Promotion Party",
+            "link": "https://en.wikipedia.org/wiki/Chinese_Unification_Promotion_Party"
+          },
+          "gpt": {
+            "name": "Green Party Taiwan",
+            "link": "https://en.wikipedia.org/wiki/Green_Party_Taiwan"
+          }
         }
       },
       "tags": {

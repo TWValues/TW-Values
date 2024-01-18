@@ -273,197 +273,201 @@
         }
       },
       "ideologies": {
-        "match": "最接近的意識形態",
-        "anarcho_communism": {
-          "name": "無政府共產主義"
-        },
-        "libertarian_communism": {
-          "name": "自由意志共產主義"
-        },
-        "trotskyism": {
-          "name": "托洛斯基主義"
-        },
-        "marxism": {
-          "name": "馬克思主義"
-        },
-        "de_leonism": {
-          "name": "德萊昂主義"
-        },
-        "leninism": {
-          "name": "列寧主義"
-        },
-        "stalinism_maoism": {
-          "name": "史達林主義/毛澤東思想"
-        },
-        "religious_communism": {
-          "name": "宗教共產主義"
-        },
-        "state_socialism": {
-          "name": "國有社會主義"
-        },
-        "theocratic_socialism": {
-          "name": "神權社會主義"
-        },
-        "religious_socialism": {
-          "name": "宗教社會主義"
-        },
-        "democratic_socialism": {
-          "name": "民主社會主義"
-        },
-        "revolutionary_socialism": {
-          "name": "革命社會主義"
-        },
-        "libertarian_socialism": {
-          "name": "自由意志社會主義"
-        },
-        "anarcho_syndicalism": {
-          "name": "無政府工團主義"
-        },
-        "left_wing_populism": {
-          "name": "左翼民粹主義 "
-        },
-        "theocratic_distributism": {
-          "name": "神權分產主義"
-        },
-        "distributism": {
-          "name": "分產主義"
-        },
-        "social_liberalism": {
-          "name": "社會自由主義"
-        },
-        "christian_democracy": {
-          "name": "基督教民主主義"
-        },
-        "social_democracy": {
-          "name": "社會民主主義"
-        },
-        "progressivism": {
-          "name": "進步主義"
-        },
-        "anarcho_mutualism": {
-          "name": "無政府互利主義"
-        },
-        "national_totalitarianism": {
-          "name": "國家極權主義"
-        },
-        "global_totalitarianism": {
-          "name": "全球極權主義"
-        },
-        "technocracy": {
-          "name": "技術官僚主義"
-        },
-        "centrist": {
-          "name": "中間主義"
-        },
-        "liberalism": {
-          "name": "自由主義"
-        },
-        "religious_anarchism": {
-          "name": "宗教無政府主義"
-        },
-        "right_wing_populism": {
-          "name": "右翼民粹主義"
-        },
-        "moderate_conservatism": {
-          "name": "溫和保守主義"
-        },
-        "reactionary": {
-          "name": "反動"
-        },
-        "social_libertarianism": {
-          "name": "社會自由意志主義"
-        },
-        "libertarianism": {
-          "name": "自由意志主義"
-        },
-        "anarcho_egoism": {
-          "name": "利己無政府主義"
-        },
-        "nazism": {
-          "name": "納粹主義"
-        },
-        "autocracy": {
-          "name": "神權主義"
-        },
-        "fascism": {
-          "name": "法西斯主義"
-        },
-        "capitalist_fascism": {
-          "name": "法西斯資本主義"
-        },
-        "conservatism": {
-          "name": "保守主義"
-        },
-        "neo_liberalism": {
-          "name": "新自由主義"
-        },
-        "classical_liberalism": {
-          "name": "古典自由主義"
-        },
-        "authoritarian_capitalism": {
-          "name": "威權資本主義"
-        },
-        "state_capitalism": {
-          "name": "國家資本主義"
-        },
-        "neo_conservatism": {
-          "name": "新保守主義"
-        },
-        "fundamentalism": {
-          "name": "原教旨主義"
-        },
-        "libertarian_capitalism": {
-          "name": "自由資本主義"
-        },
-        "market_anarchism": {
-          "name": "自由市場無政府主義"
-        },
-        "objectivism": {
-          "name": "客觀主義"
-        },
-        "totalitarian_capitalism": {
-          "name": "極權資本主義"
-        },
-        "ultra_capitalism": {
-          "name": "超級資本主義"
-        },
-        "anarcho_capitalism": {
-          "name": "無政府資本主義"
+        "name": "最接近的意識形態",
+        "data": {
+          "anarcho_communism": {
+            "name": "無政府共產主義"
+          },
+          "libertarian_communism": {
+            "name": "自由意志共產主義"
+          },
+          "trotskyism": {
+            "name": "托洛斯基主義"
+          },
+          "marxism": {
+            "name": "馬克思主義"
+          },
+          "de_leonism": {
+            "name": "德萊昂主義"
+          },
+          "leninism": {
+            "name": "列寧主義"
+          },
+          "stalinism_maoism": {
+            "name": "史達林主義/毛澤東思想"
+          },
+          "religious_communism": {
+            "name": "宗教共產主義"
+          },
+          "state_socialism": {
+            "name": "國有社會主義"
+          },
+          "theocratic_socialism": {
+            "name": "神權社會主義"
+          },
+          "religious_socialism": {
+            "name": "宗教社會主義"
+          },
+          "democratic_socialism": {
+            "name": "民主社會主義"
+          },
+          "revolutionary_socialism": {
+            "name": "革命社會主義"
+          },
+          "libertarian_socialism": {
+            "name": "自由意志社會主義"
+          },
+          "anarcho_syndicalism": {
+            "name": "無政府工團主義"
+          },
+          "left_wing_populism": {
+            "name": "左翼民粹主義 "
+          },
+          "theocratic_distributism": {
+            "name": "神權分產主義"
+          },
+          "distributism": {
+            "name": "分產主義"
+          },
+          "social_liberalism": {
+            "name": "社會自由主義"
+          },
+          "christian_democracy": {
+            "name": "基督教民主主義"
+          },
+          "social_democracy": {
+            "name": "社會民主主義"
+          },
+          "progressivism": {
+            "name": "進步主義"
+          },
+          "anarcho_mutualism": {
+            "name": "無政府互利主義"
+          },
+          "national_totalitarianism": {
+            "name": "國家極權主義"
+          },
+          "global_totalitarianism": {
+            "name": "全球極權主義"
+          },
+          "technocracy": {
+            "name": "技術官僚主義"
+          },
+          "centrist": {
+            "name": "中間主義"
+          },
+          "liberalism": {
+            "name": "自由主義"
+          },
+          "religious_anarchism": {
+            "name": "宗教無政府主義"
+          },
+          "right_wing_populism": {
+            "name": "右翼民粹主義"
+          },
+          "moderate_conservatism": {
+            "name": "溫和保守主義"
+          },
+          "reactionary": {
+            "name": "反動"
+          },
+          "social_libertarianism": {
+            "name": "社會自由意志主義"
+          },
+          "libertarianism": {
+            "name": "自由意志主義"
+          },
+          "anarcho_egoism": {
+            "name": "利己無政府主義"
+          },
+          "nazism": {
+            "name": "納粹主義"
+          },
+          "autocracy": {
+            "name": "神權主義"
+          },
+          "fascism": {
+            "name": "法西斯主義"
+          },
+          "capitalist_fascism": {
+            "name": "法西斯資本主義"
+          },
+          "conservatism": {
+            "name": "保守主義"
+          },
+          "neo_liberalism": {
+            "name": "新自由主義"
+          },
+          "classical_liberalism": {
+            "name": "古典自由主義"
+          },
+          "authoritarian_capitalism": {
+            "name": "威權資本主義"
+          },
+          "state_capitalism": {
+            "name": "國家資本主義"
+          },
+          "neo_conservatism": {
+            "name": "新保守主義"
+          },
+          "fundamentalism": {
+            "name": "原教旨主義"
+          },
+          "libertarian_capitalism": {
+            "name": "自由資本主義"
+          },
+          "market_anarchism": {
+            "name": "自由市場無政府主義"
+          },
+          "objectivism": {
+            "name": "客觀主義"
+          },
+          "totalitarian_capitalism": {
+            "name": "極權資本主義"
+          },
+          "ultra_capitalism": {
+            "name": "超級資本主義"
+          },
+          "anarcho_capitalism": {
+            "name": "無政府資本主義"
+          }
         }
       },
       "political_parties": {
-        "match": "理念最接近的政黨",
-        "kmt": {
-          "name": "中國國民黨",
-          "link": "https://zh.wikipedia.org/zh-tw/%E4%B8%AD%E5%9C%8B%E5%9C%8B%E6%B0%91%E9%BB%A8"
-        },
-        "dpp": {
-          "name": "民主進步黨",
-          "link": "https://zh.wikipedia.org/zh-tw/%E6%B0%91%E4%B8%BB%E9%80%B2%E6%AD%A5%E9%BB%A8"
-        },
-        "np": {
-          "name": "新黨",
-          "link": "https://zh.wikipedia.org/zh-tw/%E6%96%B0%E9%BB%A8"
-        },
-        "npp": {
-          "name": "時代力量",
-          "link": "https://zh.wikipedia.org/zh-tw/%E6%99%82%E4%BB%A3%E5%8A%9B%E9%87%8F"
-        },
-        "tpp": {
-          "name": "台灣民眾黨",
-          "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E6%B0%91%E7%9C%BE%E9%BB%A8"
-        },
-        "tsp": {
-          "name": "台灣基進黨",
-          "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E5%9F%BA%E9%80%B2"
-        },
-        "cupp": {
-          "name": "中華統一促進黨",
-          "link": "https://zh.wikipedia.org/zh-tw/%E4%B8%AD%E8%8F%AF%E7%B5%B1%E4%B8%80%E4%BF%83%E9%80%B2%E9%BB%A8"
-        },
-        "gpt": {
-          "name": "台灣綠黨",
-          "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E7%B6%A0%E9%BB%A8"
+        "name": "理念最接近的政黨",
+        "data": {
+          "kmt": {
+            "name": "中國國民黨",
+            "link": "https://zh.wikipedia.org/zh-tw/%E4%B8%AD%E5%9C%8B%E5%9C%8B%E6%B0%91%E9%BB%A8"
+          },
+          "dpp": {
+            "name": "民主進步黨",
+            "link": "https://zh.wikipedia.org/zh-tw/%E6%B0%91%E4%B8%BB%E9%80%B2%E6%AD%A5%E9%BB%A8"
+          },
+          "np": {
+            "name": "新黨",
+            "link": "https://zh.wikipedia.org/zh-tw/%E6%96%B0%E9%BB%A8"
+          },
+          "npp": {
+            "name": "時代力量",
+            "link": "https://zh.wikipedia.org/zh-tw/%E6%99%82%E4%BB%A3%E5%8A%9B%E9%87%8F"
+          },
+          "tpp": {
+            "name": "台灣民眾黨",
+            "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E6%B0%91%E7%9C%BE%E9%BB%A8"
+          },
+          "tsp": {
+            "name": "台灣基進黨",
+            "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E5%9F%BA%E9%80%B2"
+          },
+          "cupp": {
+            "name": "中華統一促進黨",
+            "link": "https://zh.wikipedia.org/zh-tw/%E4%B8%AD%E8%8F%AF%E7%B5%B1%E4%B8%80%E4%BF%83%E9%80%B2%E9%BB%A8"
+          },
+          "gpt": {
+            "name": "台灣綠黨",
+            "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E7%B6%A0%E9%BB%A8"
+          }
         }
       },
       "tags": {

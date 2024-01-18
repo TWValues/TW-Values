@@ -118,7 +118,7 @@ const Result = () => {
       alignItems: 'center',
     }}>
       <Card
-        title={t('quiz.result.ideologies.match')}
+        title={t('quiz.result.ideologies.name')}
         headStyle={{
           backgroundColor: 'white',
           color: 'black',
@@ -152,13 +152,13 @@ const Result = () => {
                 color: 'black',
                 textAlign: 'center',
               }}>
-              {t(`quiz.result.ideologies.${value.id}.name`)}
+              {t(`quiz.result.ideologies.data.${value.id}.name`)}
             </Text>
           </Layout>
         )}
       </Card>
       <Card
-        title={t('quiz.result.political_parties.match')}
+        title={t('quiz.result.political_parties.name')}
         headStyle={{
           backgroundColor: 'white',
           color: 'black',
@@ -201,7 +201,7 @@ const Result = () => {
                 color: 'black',
                 textAlign: 'center',
               }}>
-              {t(`quiz.result.political_parties.${value.id}.name`)}
+              {t(`quiz.result.political_parties.data.${value.id}.name`)}
             </Text>
             <Text
               key={index}
@@ -216,7 +216,7 @@ const Result = () => {
               type='link'
               size='small'
               icon={<LinkOutlined />}
-              href={t(`quiz.result.political_parties.${value.id}.link`)}
+              href={t(`quiz.result.political_parties.data.${value.id}.link`)}
               target='_blank'
               style={{ margin: '1px' }}
             />
