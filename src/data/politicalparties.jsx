@@ -35,7 +35,7 @@ const POLITICAL_PARTIES = [
     id: "np",
     icon: NPIcon,
     state: {
-      economic: 60,
+      economic: 40,
       environmental: 40,
       civil: 35,
       societal: 25,
@@ -50,7 +50,7 @@ const POLITICAL_PARTIES = [
       economic: 75,
       environmental: 75,
       civil: 75,
-      societal: 80,
+      societal: 75,
       sovereignty: 75,
       us_china_relation: 70,
     }
@@ -75,7 +75,7 @@ const POLITICAL_PARTIES = [
       environmental: 50,
       civil: 75,
       societal: 60,
-      sovereignty: 90,
+      sovereignty: 80,
       us_china_relation: 80,
     }
   },
@@ -83,7 +83,7 @@ const POLITICAL_PARTIES = [
     id: "cupp",
     icon: CUPPIcon,
     state: {
-      economic: 80,
+      economic: 10,
       environmental: 20,
       civil: 10,
       societal: 20,
