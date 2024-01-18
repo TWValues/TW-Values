@@ -25,7 +25,11 @@ const Result = () => {
 
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
-  const [t] = useTranslation()
+  const [t, i18n] = useTranslation()
+
+  const isLanguage = (lang) => {
+    return i18n.language == lang
+  }
 
   const economic = searchParams.get('economic')
   const environmental = searchParams.get('environmental')
@@ -141,7 +145,9 @@ const Result = () => {
               key={index}
               style={{
                 margin: '10px',
-                fontSize: `${Math.max(120, 180 - index * 30)}%`,
+                fontSize: isLanguage('en') ?
+                  `${Math.max(100, 140 - index * 20)}%` :
+                  `${Math.max(120, 180 - index * 30)}%`,
                 fontWeight: 'bold',
                 color: 'black',
                 textAlign: 'center',
@@ -188,7 +194,9 @@ const Result = () => {
               key={index}
               style={{
                 margin: '10px',
-                fontSize: `${Math.max(100, 140 - index * 20)}%`,
+                fontSize: isLanguage('en') ?
+                  `${Math.max(100, 140 - index * 20)}%` :
+                  `${Math.max(120, 180 - index * 30)}%`,
                 fontWeight: 'bold',
                 color: 'black',
                 textAlign: 'center',
