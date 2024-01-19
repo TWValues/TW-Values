@@ -67,8 +67,9 @@ const Header = () => {
         TW Values
       </Title>
       <Space size={8}>
-        {languages.map((value) =>
+        {languages.map((value, index) =>
           <Button
+            key={index}
             onClick={() => { setLanguage(value.key) }}
             style={{
               backgroundColor: 'transparent',
