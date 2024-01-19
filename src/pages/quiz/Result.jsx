@@ -195,8 +195,8 @@ const Result = () => {
               style={{
                 margin: '10px',
                 fontSize: isLanguage('en') ?
-                  `${Math.max(100, 140 - index * 20)}%` :
-                  `${Math.max(120, 180 - index * 30)}%`,
+                  `${Math.max(90, 120 - index * 10)}%` :
+                  `${Math.max(100, 172 - index * 24)}%`,
                 fontWeight: 'bold',
                 color: 'black',
                 textAlign: 'center',
@@ -207,7 +207,7 @@ const Result = () => {
               key={index}
               style={{
                 color: 'crimson',
-                fontSize: `${Math.max(60, 100 - index * 20)}%`,
+                fontSize: `${Math.max(60, 108 - index * 16)}%`,
                 textAlign: 'center',
               }}>
               {`${Math.round(value.rate * 100)}%`}
