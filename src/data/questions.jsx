@@ -61,6 +61,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0105",
+    weight: {
+      economic: -10,
+    }
+  },
+  {
     id: "q0200",
     weight: {
       environmental: 10,
