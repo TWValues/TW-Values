@@ -478,30 +478,37 @@
         "data": {
           "roc_unification": {
             "name": "華統",
+            "description": "主張由中華民國來統一全中國，實行三民主義五權憲法。",
             "link": "https://zh.wikipedia.org/zh-tw/%E4%B8%89%E6%B0%91%E4%B8%BB%E7%BE%A9%E7%B5%B1%E4%B8%80%E4%B8%AD%E5%9C%8B"
           },
           "roc_independence": {
             "name": "華獨",
+            "description": "主張中華民國放棄大陸領土與主權，與中華人民共和國成為兩個完全獨立的國家。",
             "link": "https://zh.wikipedia.org/zh-tw/%E8%8F%AF%E7%8D%A8"
           },
           "tw_independence": {
             "name": "台獨",
+            "description": "主張制定新憲法成立台灣共和國，與中華人民共和國成為兩個完全獨立的國家。",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%8D%A8_(%E8%A1%93%E8%AA%9E)"
           },
           "prc_unification": {
             "name": "紅統",
+            "description": "支持台灣併入中華人民共和國，實施一國兩制。",
             "link": "https://zh.wikipedia.org/zh-tw/%E4%B8%80%E5%9B%BD%E4%B8%A4%E5%88%B6"
           },
           "death_penalty_abolitionists": {
             "name": "廢死",
+            "description": "廢除死刑，以無期徒刑或其他刑罰取代之。",
             "link": "https://zh.wikipedia.org/zh-tw/%E6%AD%BB%E5%88%91%E5%AD%98%E5%BB%A2%E5%95%8F%E9%A1%8C"
           },
           "homophobia": {
             "name": "恐同",
+            "description": "同性戀恐懼亦稱恐同或反同，是指對同性戀的排斥，包括涉及反感、鄙視、厭惡、仇恨、偏見和歧視，可能是基於恐懼，有時也涉及到受宗教信仰及社會文化的影響。",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%90%8C%E6%80%A7%E6%88%80%E6%81%90%E6%87%BC"
           },
           "male_chauvinism": {
             "name": "男性沙文主義",
+            "description": "又稱男性沙文主義、男性至上主義、男性優越主義或者大男人主義，是一種認為男尊女卑、男性必定優於女性，因此男性更應統治女性的意識形態。",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%A4%A7%E7%94%B7%E5%AD%90%E4%B8%BB%E4%B9%89"
           }
         }

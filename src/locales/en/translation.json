@@ -478,30 +478,37 @@
         "data": {
           "roc_unification": {
             "name": "R.O.C. Unification",
+            "description": "Republic of China retake Mainland China and be the sole legitimate government of China.",
             "link": ""
           },
           "roc_independence": {
             "name": "R.O.C. Independence",
+            "description": "Republic of China renounce China's territory and sovereignty and become two completely independent states with the People's Republic of China.",
             "link": ""
           },
           "tw_independence": {
             "name": "Taiwan Independence",
+            "description": "Taiwan Independence which advocates the formal declaration of an independent and sovereign Taiwanese state to replace Republic of China.",
             "link": "https://en.wikipedia.org/wiki/Taiwan_independence_movement"
           },
           "prc_unification": {
             "name": "P.R.C. Unification",
+            "description": "Taiwan becomes a province of People's Republic of China.",
             "link": "https://en.wikipedia.org/wiki/One_country,_two_systems"
           },
           "death_penalty_abolitionists": {
             "name": "Death Penalty Abolitionists",
+            "description": "Abolish the death penalty and replace it with life imprisonment or other punishments.",
             "link": ""
           },
           "homophobia": {
             "name": "Homophobia",
+            "description": "Homophobia encompasses a range of negative attitudes and feelings toward homosexuality or people who identify or are perceived as being lesbian, gay or bisexual. It has been defined as contempt, prejudice, aversion, hatred or antipathy, may be based on irrational fear and may sometimes be related to religious beliefs.",
             "link": "https://en.wikipedia.org/wiki/Homophobia"
           },
           "male_chauvinism": {
             "name": "Male Chauvinism",
+            "description": "Male prejudice against women; the belief that men are superior in terms of ability, intelligence, etc.",
             "link": "https://en.wikipedia.org/wiki/Machismo"
           }
         }

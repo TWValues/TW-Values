@@ -478,30 +478,37 @@
         "data": {
           "roc_unification": {
             "name": "华统",
+            "description": "主张由中华民国来同意全中国，实行三民主义五权宪法。",
             "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%89%E6%B0%91%E4%B8%BB%E7%BE%A9%E7%B5%B1%E4%B8%80%E4%B8%AD%E5%9C%8B"
           },
           "roc_independence": {
             "name": "华独",
+            "description": "主张中华民国放弃大陆领土与主权，与中华人民共和国成为两个完全独立的国家。",
             "link": "https://zh.wikipedia.org/zh-cn/%E8%8F%AF%E7%8D%A8"
           },
           "tw_independence": {
             "name": "台独",
+            "description": "主张制定新宪法成立台湾共和国，与中华人民共和国成为两个完全独立的国家。",
             "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%B0%E7%8D%A8_(%E8%A1%93%E8%AA%9E)"
           },
           "prc_unification": {
             "name": "红统",
+            "description": "支持台湾并入中华人民共和国，实行一国两制。",
             "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%80%E5%9B%BD%E4%B8%A4%E5%88%B6"
           },
           "death_penalty_abolitionists": {
             "name": "废死",
+            "description": "废除死刑，以终身监禁或其他刑罚取代之。",
             "link": "https://zh.wikipedia.org/zh-cn/%E6%AD%BB%E5%88%91%E5%AD%98%E5%BB%A2%E5%95%8F%E9%A1%8C"
           },
           "homophobia": {
             "name": "恐同",
+            "description": "同性恋恐惧亦称恐同或反同，是指对同性恋的排斥，包括涉及反感、鄙视、厌恶、仇恨、偏见和歧视，可能是基于恐惧，有时也涉及到受宗教信仰及社会文化的影响。",
             "link": "https://zh.wikipedia.org/zh-cn/%E5%90%8C%E6%80%A7%E6%88%80%E6%81%90%E6%87%BC"
           },
           "male_chauvinism": {
             "name": "男性沙文主义",
+            "description": "又称男性沙文主义、男性至上主义、男性优越主义或者大男人主义，是一种认为男尊女卑、男性必定优于女性，因此男性更应统治女性的意识形态。",
             "link": "https://zh.wikipedia.org/zh-cn/%E5%A4%A7%E7%94%B7%E5%AD%90%E4%B8%BB%E4%B9%89"
           }
         }

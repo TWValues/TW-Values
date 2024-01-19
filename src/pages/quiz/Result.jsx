@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
-import { Layout, Card, Typography, Image, Tag, Button } from 'antd'
+import { Layout, Card, Typography, Image, Tag, Button, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { LinkOutlined, LinkedinOutlined } from '@ant-design/icons'
 import ValueCard from '../../components/ValueCard'
@@ -240,20 +240,25 @@ const Result = () => {
           margin: '5px 10px 5px 10px',
         }}>
         {searchParams.get('tags').split(',').map((value) => {
-          const link = t(`quiz.result.tags.data.${value}.link`)
           const name = t(`quiz.result.tags.data.${value}.name`)
+          const description = t(`quiz.result.tags.data.${value}.description`)
+          const link = t(`quiz.result.tags.data.${value}.link`)
           return (
-            <Tag>
-              <Text style={{ fontSize: 'medium' }}>{name}</Text>
-              {link && link.length > 0 &&
-                <Button
-                  type='link'
-                  size='small'
-                  icon={<LinkOutlined />}
-                  href={link}
-                  target='_blank'
-                />}
-            </Tag>)
+            <Flex justify='start' align='center' style={{ marginTop: '10px', marginBottom: '10px' }}>
+              <Tag>
+                <Text style={{ fontSize: 'medium' }}>{name}</Text>
+                {link && link.length > 0 &&
+                  <Button
+                    type='link'
+                    size='small'
+                    icon={<LinkOutlined />}
+                    href={link}
+                    target='_blank'
+                  />}
+              </Tag>
+              <Text>{description}</Text>
+            </Flex>
+          )
         })}
       </Card>
       <ValueCard
