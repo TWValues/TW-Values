@@ -2,195 +2,195 @@
 const QUESTIONS = [
   {
     id: "q0000",
-    effect: {
+    weight: {
       economic: 10,
     }
   },
   {
     id: "q0001",
-    effect: {
+    weight: {
       economic: 10,
     }
   },
   {
     id: "q0002",
-    effect: {
+    weight: {
       economic: 10,
     }
   },
   {
     id: "q0003",
-    effect: {
+    weight: {
       economic: 10,
     }
   },
   {
     id: "q0004",
-    effect: {
+    weight: {
       economic: 10,
     }
   },
   {
     id: "q0100",
-    effect: {
+    weight: {
       economic: -10,
     }
   },
   {
     id: "q0101",
-    effect: {
+    weight: {
       economic: -10,
     }
   },
   {
     id: "q0102",
-    effect: {
+    weight: {
       economic: -10,
     }
   },
   {
     id: "q0103",
-    effect: {
+    weight: {
       economic: -10,
     }
   },
   {
     id: "q0104",
-    effect: {
+    weight: {
       economic: -10,
     }
   },
   {
     id: "q0200",
-    effect: {
+    weight: {
       environmental: 10,
     }
   },
   {
     id: "q0201",
-    effect: {
+    weight: {
       environmental: 10,
     }
   },
   {
     id: "q0202",
-    effect: {
+    weight: {
       environmental: 10,
     }
   },
   {
     id: "q0203",
-    effect: {
+    weight: {
       environmental: 10,
     }
   },
   {
     id: "q0300",
-    effect: {
+    weight: {
       environmental: -10,
     }
   },
   {
     id: "q0301",
-    effect: {
+    weight: {
       environmental: -10,
     }
   },
   {
     id: "q0302",
-    effect: {
+    weight: {
       environmental: -10,
     }
   },
   {
     id: "q0400",
-    effect: {
+    weight: {
       civil: 10,
     }
   },
   {
     id: "q0401",
-    effect: {
+    weight: {
       civil: 10,
     }
   },
   {
     id: "q0402",
-    effect: {
+    weight: {
       civil: 10,
     }
   },
   {
     id: "q0403",
-    effect: {
+    weight: {
       civil: 10,
     }
   },
   {
     id: "q0404",
-    effect: {
+    weight: {
       civil: 10,
     }
   },
   {
     id: "q0405",
-    effect: {
+    weight: {
       civil: 10,
     }
   },
   {
     id: "q0500",
-    effect: {
+    weight: {
       civil: -10,
     }
   },
   {
     id: "q0501",
-    effect: {
+    weight: {
       civil: -10,
     }
   },
   {
     id: "q0502",
-    effect: {
+    weight: {
       civil: -10,
     }
   },
   {
     id: "q0503",
-    effect: {
+    weight: {
       civil: -10,
     }
   },
   {
     id: "q0504",
-    effect: {
+    weight: {
       civil: -10,
       diplomatic: 5,
     }
   },
   {
     id: "q0505",
-    effect: {
+    weight: {
       civil: -10,
       diplomatic: -5,
     }
   },
   {
     id: "q0600",
-    effect: {
+    weight: {
       societal: 10,
     }
   },
   {
     id: "q0601",
-    effect: {
+    weight: {
       societal: 10,
     }
   },
   {
     id: "q0602",
-    effect: {
+    weight: {
       societal: 10,
 
       tags: {
@@ -200,7 +200,7 @@ const QUESTIONS = [
   },
   {
     id: "q0603",
-    effect: {
+    weight: {
       societal: 10,
 
       tags: {
@@ -210,50 +210,50 @@ const QUESTIONS = [
   },
   {
     id: "q0604",
-    effect: {
+    weight: {
       societal: 10,
       diplomatic: 5,
     }
   },
   {
     id: "q0605",
-    effect: {
+    weight: {
       societal: 10,
     }
   },
   {
     id: "q0700",
-    effect: {
+    weight: {
       societal: -10,
     }
   },
   {
     id: "q0701",
-    effect: {
+    weight: {
       societal: -10,
     }
   },
   {
     id: "q0702",
-    effect: {
+    weight: {
       societal: -10,
     }
   },
   {
     id: "q0703",
-    effect: {
+    weight: {
       societal: -10,
     }
   },
   {
     id: "q0704",
-    effect: {
+    weight: {
       societal: -10,
     }
   },
   {
     id: "q0705",
-    effect: {
+    weight: {
       societal: -10,
 
       tags: {
@@ -263,7 +263,7 @@ const QUESTIONS = [
   },
   {
     id: "q1000",
-    effect: {
+    weight: {
       sovereignty: 10,
 
       tags: {
@@ -273,7 +273,7 @@ const QUESTIONS = [
   },
   {
     id: "q1001",
-    effect: {
+    weight: {
       sovereignty: 15,
       diplomatic: -10,
 
@@ -284,20 +284,20 @@ const QUESTIONS = [
   },
   {
     id: "q1002",
-    effect: {
+    weight: {
       sovereignty: 10,
       diplomatic: -5,
     }
   },
   {
     id: "q1100",
-    effect: {
+    weight: {
       sovereignty: -10,
     }
   },
   {
     id: "q1101",
-    effect: {
+    weight: {
       sovereignty: -10,
 
       tags: {
@@ -307,13 +307,13 @@ const QUESTIONS = [
   },
   {
     id: "q1102",
-    effect: {
+    weight: {
       sovereignty: -10,
     }
   },
   {
     id: "q1103",
-    effect: {
+    weight: {
       sovereignty: -15,
       us_china_relation: -10,
 
@@ -324,53 +324,53 @@ const QUESTIONS = [
   },
   {
     id: "q1200",
-    effect: {
+    weight: {
       us_china_relation: 10,
       diplomatic: -5,
     }
   },
   {
     id: "q1201",
-    effect: {
+    weight: {
       us_china_relation: 10,
     }
   },
   {
     id: "q1202",
-    effect: {
+    weight: {
       us_china_relation: 10,
     }
   },
   {
     id: "q1203",
-    effect: {
+    weight: {
       us_china_relation: 5,
       diplomatic: -5,
     }
   },
   {
     id: "q1300",
-    effect: {
+    weight: {
       us_china_relation: -5,
       diplomatic: 5,
     }
   },
   {
     id: "q1301",
-    effect: {
+    weight: {
       us_china_relation: -10,
     }
   },
   {
     id: "q1302",
-    effect: {
+    weight: {
       us_china_relation: -10,
       diplomatic: 5,
     }
   },
   {
     id: "q1303",
-    effect: {
+    weight: {
       us_china_relation: -5,
       diplomatic: 5,
     }

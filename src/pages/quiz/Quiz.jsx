@@ -87,14 +87,14 @@ const Quiz = () => {
         }
 
         return {
-          economic: getScore(questions.map((value) => value.effect.economic || 0.0)),
-          environmental: getScore(questions.map((value) => value.effect.environmental || 0.0)),
-          civil: getScore(questions.map((value) => value.effect.civil || 0.0)),
-          societal: getScore(questions.map((value) => value.effect.societal || 0.0)),
-          diplomatic: getScore(questions.map((value) => value.effect.diplomatic || 0.0)),
-          sovereignty: getScore(questions.map((value) => value.effect.sovereignty || 0.0)),
-          us_china_relation: getScore(questions.map((value) => value.effect.us_china_relation || 0.0)),
-          tags: Object.keys(getTags(questions.map((value) => value.effect.tags))).join(',')
+          economic: getScore(questions.map((value) => value.weight.economic || 0.0)),
+          environmental: getScore(questions.map((value) => value.weight.environmental || 0.0)),
+          civil: getScore(questions.map((value) => value.weight.civil || 0.0)),
+          societal: getScore(questions.map((value) => value.weight.societal || 0.0)),
+          diplomatic: getScore(questions.map((value) => value.weight.diplomatic || 0.0)),
+          sovereignty: getScore(questions.map((value) => value.weight.sovereignty || 0.0)),
+          us_china_relation: getScore(questions.map((value) => value.weight.us_china_relation || 0.0)),
+          tags: Object.keys(getTags(questions.map((value) => value.weight.tags))).join(',')
         }
       }
 

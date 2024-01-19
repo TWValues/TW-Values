@@ -42,10 +42,10 @@ const Result = () => {
   const getIdeologyMatchScores = () => {
     const ideologyScores = IDEOLOGIES.map((value) => {
       let distance = 0.0
-      distance += Math.pow(Math.abs(value.state.economic - economic), 2)
-      distance += Math.pow(Math.abs(value.state.civil - civil), 2)
-      distance += Math.pow(Math.abs(value.state.societal - (0.33 * environmental + 0.67 * societal)), 2)
-      distance += Math.pow(Math.abs(value.state.diplomatic - diplomatic), 2)
+      distance += Math.pow(Math.abs(value.weight.economic - economic), 2)
+      distance += Math.pow(Math.abs(value.weight.civil - civil), 2)
+      distance += Math.pow(Math.abs(value.weight.societal - (0.33 * environmental + 0.67 * societal)), 2)
+      distance += Math.pow(Math.abs(value.weight.diplomatic - diplomatic), 2)
       return {
         id: value.id,
         distance: distance,
@@ -66,12 +66,12 @@ const Result = () => {
   const getPoliticalPartyMatchScores = () => {
     const politicalScores = POLITICAL_PARTIES.map((value) => {
       let distance = 0.0
-      distance += Math.pow(Math.abs(value.state.economic - economic), 2)
-      distance += Math.pow(Math.abs(value.state.environmental - environmental), 2)
-      distance += Math.pow(Math.abs(value.state.civil - civil), 2)
-      distance += Math.pow(Math.abs(value.state.societal - societal), 2)
-      distance += Math.pow(Math.abs(value.state.sovereignty - sovereignty), 2)
-      distance += Math.pow(Math.abs(value.state.us_china_relation - us_china_relation), 2)
+      distance += Math.pow(Math.abs(value.weight.economic - economic), 2)
+      distance += Math.pow(Math.abs(value.weight.environmental - environmental), 2)
+      distance += Math.pow(Math.abs(value.weight.civil - civil), 2)
+      distance += Math.pow(Math.abs(value.weight.societal - societal), 2)
+      distance += Math.pow(Math.abs(value.weight.sovereignty - sovereignty), 2)
+      distance += Math.pow(Math.abs(value.weight.us_china_relation - us_china_relation), 2)
       const threshold = 6 * 50 * 50
       let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
       return {

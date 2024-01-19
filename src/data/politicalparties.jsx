@@ -10,7 +10,7 @@ const POLITICAL_PARTIES = [
   {
     id: "kmt",
     icon: KMTIcon,
-    state: {
+    weight: {
       economic: 40,
       environmental: 40,
       civil: 40,
@@ -22,7 +22,7 @@ const POLITICAL_PARTIES = [
   {
     id: "dpp",
     icon: DPPIcon,
-    state: {
+    weight: {
       economic: 55,
       environmental: 60,
       civil: 55,
@@ -34,7 +34,7 @@ const POLITICAL_PARTIES = [
   {
     id: "np",
     icon: NPIcon,
-    state: {
+    weight: {
       economic: 40,
       environmental: 40,
       civil: 35,
@@ -46,7 +46,7 @@ const POLITICAL_PARTIES = [
   {
     id: "npp",
     icon: NPPIcon,
-    state: {
+    weight: {
       economic: 75,
       environmental: 75,
       civil: 75,
@@ -58,7 +58,7 @@ const POLITICAL_PARTIES = [
   {
     id: "tpp",
     icon: TPPIcon,
-    state: {
+    weight: {
       economic: 45,
       environmental: 45,
       civil: 50,
@@ -70,7 +70,7 @@ const POLITICAL_PARTIES = [
   {
     id: "tsp",
     icon: TSPIcon,
-    state: {
+    weight: {
       economic: 60,
       environmental: 50,
       civil: 75,
@@ -82,7 +82,7 @@ const POLITICAL_PARTIES = [
   {
     id: "cupp",
     icon: CUPPIcon,
-    state: {
+    weight: {
       economic: 10,
       environmental: 20,
       civil: 10,
@@ -94,7 +94,7 @@ const POLITICAL_PARTIES = [
   {
     id: "gpt",
     icon: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Green_Party_Taiwan_logo.png",
-    state: {
+    weight: {
       economic: 75,
       environmental: 90,
       civil: 75,

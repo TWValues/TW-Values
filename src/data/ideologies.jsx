@@ -2,7 +2,7 @@
 const IDEOLOGIES = [
   {
     id: "anarcho_communism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 50,
       civil: 100,
@@ -11,7 +11,7 @@ const IDEOLOGIES = [
   },
   {
     id: "libertarian_communism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 70,
       civil: 80,
@@ -20,7 +20,7 @@ const IDEOLOGIES = [
   },
   {
     id: "trotskyism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 100,
       civil: 60,
@@ -29,7 +29,7 @@ const IDEOLOGIES = [
   },
   {
     id: "marxism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 70,
       civil: 40,
@@ -38,7 +38,7 @@ const IDEOLOGIES = [
   },
   {
     id: "de_leonism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 30,
       civil: 30,
@@ -47,7 +47,7 @@ const IDEOLOGIES = [
   },
   {
     id: "leninism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 40,
       civil: 20,
@@ -56,7 +56,7 @@ const IDEOLOGIES = [
   },
   {
     id: "stalinism_maoism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 20,
       civil: 0,
@@ -65,7 +65,7 @@ const IDEOLOGIES = [
   },
   {
     id: "religious_communism",
-    state: {
+    weight: {
       economic: 100,
       diplomatic: 50,
       civil: 30,
@@ -74,7 +74,7 @@ const IDEOLOGIES = [
   },
   {
     id: "state_socialism",
-    state: {
+    weight: {
       economic: 80,
       diplomatic: 30,
       civil: 30,
@@ -83,7 +83,7 @@ const IDEOLOGIES = [
   },
   {
     id: "theocratic_socialism",
-    state: {
+    weight: {
       economic: 80,
       diplomatic: 50,
       civil: 30,
@@ -92,7 +92,7 @@ const IDEOLOGIES = [
   },
   {
     id: "religious_socialism",
-    state: {
+    weight: {
       economic: 80,
       diplomatic: 50,
       civil: 70,
@@ -101,7 +101,7 @@ const IDEOLOGIES = [
   },
   {
     id: "democratic_socialism",
-    state: {
+    weight: {
       economic: 80,
       diplomatic: 50,
       civil: 50,
@@ -110,7 +110,7 @@ const IDEOLOGIES = [
   },
   {
     id: "revolutionary_socialism",
-    state: {
+    weight: {
       economic: 80,
       diplomatic: 20,
       civil: 50,
@@ -119,7 +119,7 @@ const IDEOLOGIES = [
   },
   {
     id: "libertarian_socialism",
-    state: {
+    weight: {
       economic: 80,
       diplomatic: 80,
       civil: 80,
@@ -128,7 +128,7 @@ const IDEOLOGIES = [
   },
   {
     id: "anarcho_syndicalism",
-    state: {
+    weight: {
       economic: 80,
       diplomatic: 50,
       civil: 100,
@@ -137,7 +137,7 @@ const IDEOLOGIES = [
   },
   {
     id: "left_wing_populism",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 40,
       civil: 30,
@@ -146,7 +146,7 @@ const IDEOLOGIES = [
   },
   {
     id: "theocratic_distributism",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 40,
       civil: 30,
@@ -155,7 +155,7 @@ const IDEOLOGIES = [
   },
   {
     id: "distributism",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 50,
       civil: 50,
@@ -164,7 +164,7 @@ const IDEOLOGIES = [
   },
   {
     id: "social_liberalism",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 60,
       civil: 60,
@@ -173,7 +173,7 @@ const IDEOLOGIES = [
   },
   {
     id: "christian_democracy",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 60,
       civil: 50,
@@ -182,7 +182,7 @@ const IDEOLOGIES = [
   },
   {
     id: "social_democracy",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 70,
       civil: 60,
@@ -191,7 +191,7 @@ const IDEOLOGIES = [
   },
   {
     id: "progressivism",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 80,
       civil: 60,
@@ -200,7 +200,7 @@ const IDEOLOGIES = [
   },
   {
     id: "anarcho_mutualism",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 50,
       civil: 100,
@@ -209,7 +209,7 @@ const IDEOLOGIES = [
   },
   {
     id: "national_totalitarianism",
-    state: {
+    weight: {
       economic: 50,
       diplomatic: 20,
       civil: 0,
@@ -218,7 +218,7 @@ const IDEOLOGIES = [
   },
   {
     id: "global_totalitarianism",
-    state: {
+    weight: {
       economic: 50,
       diplomatic: 80,
       civil: 0,
@@ -227,7 +227,7 @@ const IDEOLOGIES = [
   },
   {
     id: "technocracy",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 60,
       civil: 20,
@@ -236,7 +236,7 @@ const IDEOLOGIES = [
   },
   {
     id: "centrist",
-    state: {
+    weight: {
       economic: 50,
       diplomatic: 50,
       civil: 50,
@@ -245,7 +245,7 @@ const IDEOLOGIES = [
   },
   {
     id: "liberalism",
-    state: {
+    weight: {
       economic: 50,
       diplomatic: 60,
       civil: 60,
@@ -254,7 +254,7 @@ const IDEOLOGIES = [
   },
   {
     id: "religious_anarchism",
-    state: {
+    weight: {
       economic: 50,
       diplomatic: 50,
       civil: 100,
@@ -263,7 +263,7 @@ const IDEOLOGIES = [
   },
   {
     id: "right_wing_populism",
-    state: {
+    weight: {
       economic: 40,
       diplomatic: 30,
       civil: 30,
@@ -272,7 +272,7 @@ const IDEOLOGIES = [
   },
   {
     id: "moderate_conservatism",
-    state: {
+    weight: {
       economic: 40,
       diplomatic: 40,
       civil: 50,
@@ -281,7 +281,7 @@ const IDEOLOGIES = [
   },
   {
     id: "reactionary",
-    state: {
+    weight: {
       economic: 40,
       diplomatic: 40,
       civil: 40,
@@ -290,7 +290,7 @@ const IDEOLOGIES = [
   },
   {
     id: "social_libertarianism",
-    state: {
+    weight: {
       economic: 60,
       diplomatic: 70,
       civil: 80,
@@ -299,7 +299,7 @@ const IDEOLOGIES = [
   },
   {
     id: "libertarianism",
-    state: {
+    weight: {
       economic: 40,
       diplomatic: 60,
       civil: 80,
@@ -308,7 +308,7 @@ const IDEOLOGIES = [
   },
   {
     id: "anarcho_egoism",
-    state: {
+    weight: {
       economic: 40,
       diplomatic: 50,
       civil: 100,
@@ -317,7 +317,7 @@ const IDEOLOGIES = [
   },
   {
     id: "nazism",
-    state: {
+    weight: {
       economic: 40,
       diplomatic: 0,
       civil: 0,
@@ -326,7 +326,7 @@ const IDEOLOGIES = [
   },
   {
     id: "autocracy",
-    state: {
+    weight: {
       economic: 50,
       diplomatic: 20,
       civil: 20,
@@ -335,7 +335,7 @@ const IDEOLOGIES = [
   },
   {
     id: "fascism",
-    state: {
+    weight: {
       economic: 40,
       diplomatic: 20,
       civil: 20,
@@ -344,7 +344,7 @@ const IDEOLOGIES = [
   },
   {
     id: "capitalist_fascism",
-    state: {
+    weight: {
       economic: 20,
       diplomatic: 20,
       civil: 20,
@@ -353,7 +353,7 @@ const IDEOLOGIES = [
   },
   {
     id: "conservatism",
-    state: {
+    weight: {
       economic: 30,
       diplomatic: 40,
       civil: 40,
@@ -362,7 +362,7 @@ const IDEOLOGIES = [
   },
   {
     id: "neo_liberalism",
-    state: {
+    weight: {
       economic: 30,
       diplomatic: 30,
       civil: 50,
@@ -371,7 +371,7 @@ const IDEOLOGIES = [
   },
   {
     id: "classical_liberalism",
-    state: {
+    weight: {
       economic: 30,
       diplomatic: 60,
       civil: 60,
@@ -380,7 +380,7 @@ const IDEOLOGIES = [
   },
   {
     id: "authoritarian_capitalism",
-    state: {
+    weight: {
       economic: 20,
       diplomatic: 30,
       civil: 20,
@@ -389,7 +389,7 @@ const IDEOLOGIES = [
   },
   {
     id: "state_capitalism",
-    state: {
+    weight: {
       economic: 20,
       diplomatic: 50,
       civil: 30,
@@ -398,7 +398,7 @@ const IDEOLOGIES = [
   },
   {
     id: "neo_conservatism",
-    state: {
+    weight: {
       economic: 20,
       diplomatic: 20,
       civil: 40,
@@ -407,7 +407,7 @@ const IDEOLOGIES = [
   },
   {
     id: "fundamentalism",
-    state: {
+    weight: {
       economic: 20,
       diplomatic: 30,
       civil: 30,
@@ -416,7 +416,7 @@ const IDEOLOGIES = [
   },
   {
     id: "libertarian_capitalism",
-    state: {
+    weight: {
       economic: 20,
       diplomatic: 50,
       civil: 80,
@@ -425,7 +425,7 @@ const IDEOLOGIES = [
   },
   {
     id: "market_anarchism",
-    state: {
+    weight: {
       economic: 20,
       diplomatic: 50,
       civil: 100,
@@ -434,7 +434,7 @@ const IDEOLOGIES = [
   },
   {
     id: "objectivism",
-    state: {
+    weight: {
       economic: 10,
       diplomatic: 50,
       civil: 90,
@@ -443,7 +443,7 @@ const IDEOLOGIES = [
   },
   {
     id: "totalitarian_capitalism",
-    state: {
+    weight: {
       economic: 0,
       diplomatic: 30,
       civil: 0,
@@ -452,7 +452,7 @@ const IDEOLOGIES = [
   },
   {
     id: "ultra_capitalism",
-    state: {
+    weight: {
       economic: 0,
       diplomatic: 40,
       civil: 50,
@@ -461,7 +461,7 @@ const IDEOLOGIES = [
   },
   {
     id: "anarcho_capitalism",
-    state: {
+    weight: {
       economic: 0,
       diplomatic: 50,
       civil: 100,
