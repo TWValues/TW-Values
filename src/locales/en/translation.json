@@ -212,11 +212,11 @@
           "ecology": "Ecology",
           "production": "Production",
           "categories": {
-            "0": "Radical environmentalism",
+            "0": "Radical Environmentalism",
             "1": "Environmentalism",
-            "2": "Prefer ecology",
+            "2": "Prefer Ecology",
             "3": "Centrist",
-            "4": "Prefer production",
+            "4": "Prefer Production",
             "5": "Anti-environmentalism",
             "6": "Anti-environmentalism"
           }
