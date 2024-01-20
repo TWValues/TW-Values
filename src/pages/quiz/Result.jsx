@@ -44,7 +44,7 @@ const Result = () => {
       let distance = 0.0
       distance += Math.pow(Math.abs(value.weight.economic - economic), 2)
       distance += Math.pow(Math.abs(value.weight.civil - civil), 2)
-      distance += Math.pow(Math.abs(value.weight.societal - (0.33 * environmental + 0.67 * societal)), 2)
+      distance += Math.pow(Math.abs(value.weight.societal - (0.25 * environmental + 0.75 * societal)), 2)
       distance += Math.pow(Math.abs(value.weight.diplomatic - diplomatic), 2)
       return {
         id: value.id,
