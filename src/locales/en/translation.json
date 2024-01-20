@@ -124,6 +124,9 @@
       "q0605": {
         "description": "Traditions are of no value on their own."
       },
+      "q0606": {
+        "description": "Women are also obliged to serve in the military to defend our country."
+      },
       "q0700": {
         "description": "Society was better many years ago than it is now."
       },
@@ -510,6 +513,11 @@
             "name": "Male Chauvinism",
             "description": "Male prejudice against women; the belief that men are superior in terms of ability, intelligence, etc.",
             "link": "https://en.wikipedia.org/wiki/Machismo"
+          },
+          "feminism_buffet": {
+            "name": "Feminism Buffet",
+            "description": "Women who reap the benefits of equality between men and women in the name of women's rights are unwilling to give up the dividends of patriarchy.",
+            "link": ""
           }
         }
       }

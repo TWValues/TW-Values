@@ -228,6 +228,16 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0606",
+    weight: {
+      societal: 10,
+
+      tags: {
+        feminism_buffet: -1,
+      }
+    }
+  },
+  {
     id: "q0700",
     weight: {
       societal: -10,
