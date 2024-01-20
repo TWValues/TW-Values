@@ -29,72 +29,66 @@ const Quiz = () => {
   }, [])
 
   const [currentSelectedQuestionIndex, setCurrentSelectedQuestionIndex] = useState(0)
-  const [choices, setChoices] = useState(new Array(questions.length).fill(0.0))
+  const [choices, setChoices] = useState(questions.reduce((accu, curr) => ({ ...accu, [curr.id]: 0.0 }), {}))
 
   const setChoice = (multiplier) => {
-    const newChoices = choices.map((value, index) => {
-      if (index === currentSelectedQuestionIndex) {
-        return multiplier
-      }
-      return value
-    })
-    setChoices(newChoices)
+    setChoices({ ...choices, [questions[currentSelectedQuestionIndex].id]: multiplier })
   }
 
   const moveToPrevQuestion = () => {
-    setCurrentSelectedQuestionIndex(currentSelectedQuestionIndex - 1)
+    if (currentSelectedQuestionIndex > 0) {
+      setCurrentSelectedQuestionIndex(currentSelectedQuestionIndex - 1)
+    }
   }
 
   const moveToNextQuestion = () => {
     if (currentSelectedQuestionIndex + 1 === questions.length) {
 
       const calculateScores = () => {
-        const getScore = (array) => {
-          const getScoreWithMultiplier = (array) => {
-            return array.reduce((accu, value, index) => accu + value * choices[index])
+        const getScore = (weights) => {
+          const getScoreWithMultiplier = (weights) => {
+            return weights.reduce((accu, value) => accu + value.weight * choices[value.id], 0.0)
           }
-          const getAbsMaxScore = (array) => {
-            return array.reduce((accu, value) => accu + Math.abs(value))
+          const getAbsMaxScore = (weights) => {
+            return weights.reduce((accu, value) => accu + Math.abs(value.weight), 0.0)
           }
           const getPercentage = (bias, total) => 100 * (bias + total) / (2 * total)
 
-          const score = getScoreWithMultiplier(array)
-          const maxScore = getAbsMaxScore(array)
+          const score = getScoreWithMultiplier(weights)
+          const maxScore = getAbsMaxScore(weights)
           return Math.round(getPercentage(score, maxScore))
         }
 
-        const getTags = (array) => {
-          return array.reduce((accu, value, index) => {
-
-            const filter = (obj, predicate) =>
-              Object.keys(obj)
-                .filter(key => predicate(obj[key]))
-                .reduce((accu, key) => {
-                  accu[key] = obj[key]
-                  return accu
-                }, {})
-
-            if (choices[index] > 0.0) {
-              return { ...accu, ...filter(value || {}, value => value > 0.0) }
+        const getTags = (weights) => {
+          return weights.reduce((accu, value) => {
+            if (choices[value.id] > 0.0) {
+              for (const [k, v] of Object.entries(value.tags || {})) {
+                if (v > 0.0) {
+                  accu.push(k)
+                }
+              }
             }
-
-            if (choices[index] < 0.0) {
-              return { ...accu, ...filter(value || {}, value => value < 0.0) }
+            if (choices[value.id] < 0.0) {
+              for (const [k, v] of Object.entries(value.tags || {})) {
+                if (v < 0.0) {
+                  accu.push(k)
+                }
+              }
             }
 
             return accu
-          })
+          }, [])
         }
 
         return {
-          economic: getScore(questions.map((value) => value.weight.economic || 0.0)),
-          environmental: getScore(questions.map((value) => value.weight.environmental || 0.0)),
-          civil: getScore(questions.map((value) => value.weight.civil || 0.0)),
-          societal: getScore(questions.map((value) => value.weight.societal || 0.0)),
-          diplomatic: getScore(questions.map((value) => value.weight.diplomatic || 0.0)),
-          sovereignty: getScore(questions.map((value) => value.weight.sovereignty || 0.0)),
-          us_china_relation: getScore(questions.map((value) => value.weight.us_china_relation || 0.0)),
-          tags: Object.keys(getTags(questions.map((value) => value.weight.tags))).join(',')
+          economic: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.economic || 0.0 }))),
+          environmental: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.environmental || 0.0 }))),
+          civil: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.civil || 0.0 }))),
+          societal: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.societal || 0.0 }))),
+          diplomatic: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.diplomatic || 0.0 }))),
+          sovereignty: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.sovereignty || 0.0 }))),
+          us_china_relation: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.us_china_relation || 0.0 }))),
+          tags: getTags(questions.map((value) => ({ id: value.id, tags: value.weight.tags }))).join(',')
         }
       }
 
