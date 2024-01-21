@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom'
 import { Layout, Card, Typography, Image, Tag, Button, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
-import { LinkOutlined, LinkedinOutlined } from '@ant-design/icons'
+import { LinkOutlined } from '@ant-design/icons'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideologies'
 import POLITICAL_PARTIES from '../../data/politicalparties'
@@ -109,6 +109,10 @@ const Result = () => {
     return 3
   }
 
+  const getSizeWithStep = (initial, stepSize, maxSteps, index) => {
+    return initial + stepSize * Math.min(Math.max(1, maxSteps) - 1, index)
+  }
+
   return (
     <Layout style={{
       backgroundColor: 'transparent',
@@ -143,8 +147,8 @@ const Result = () => {
               style={{
                 margin: '10px',
                 fontSize: isLanguage('en') ?
-                  `${Math.max(100, 140 - index * 20)}%` :
-                  `${Math.max(120, 180 - index * 30)}%`,
+                  `${getSizeWithStep(140, -20, 3, index)}%` :
+                  `${getSizeWithStep(180, -30, 3, index)}%`,
                 fontWeight: 'bold',
                 color: 'black',
                 textAlign: 'center',
@@ -172,51 +176,46 @@ const Result = () => {
           margin: '5px 10px 5px 10px',
         }}>
         {getPoliticalPartyMatchScores(weights)
-          .map((value, index) =>
-          (<Layout
-            key={`party.${value.id}`}
-            style={{
-              backgroundColor: 'transparent',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-            <Image
-              width={Math.max(16, 24 - 4 * index)}
-              src={value.icon}
-              preview={false}
-            />
-            <Text
-              style={{
-                margin: '10px',
-                fontSize: isLanguage('en') ?
-                  `${Math.max(90, 120 - index * 10)}%` :
-                  `${Math.max(100, 172 - index * 24)}%`,
-                fontWeight: 'bold',
-                color: 'black',
-                textAlign: 'center',
-              }}>
-              {t(`quiz.result.political_parties.data.${value.id}.name`)}
-            </Text>
-            <Text
-              style={{
-                color: 'crimson',
-                fontSize: `${Math.max(60, 108 - index * 16)}%`,
-                textAlign: 'center',
-              }}>
-              {`${Math.round(value.rate * 100)}%`}
-            </Text>
-            <Button
-              type='link'
-              size='small'
-              icon={<LinkOutlined />}
+          .map((value, index) => (
+            <a
+              key={`party.${value.id}`}
               href={t(`quiz.result.political_parties.data.${value.id}.link`)}
               target='_blank'
-              style={{ margin: '1px' }}
-            />
-          </Layout>))
-        }
+            >
+              <Flex
+                justify='center'
+                align='center'
+              >
+                <Image
+                  width={getSizeWithStep(24, -3, 4, index)}
+                  src={value.icon}
+                  preview={false}
+                />
+                <Text
+                  style={{
+                    margin: '10px',
+                    fontSize: isLanguage('en') ?
+                      `${getSizeWithStep(100, -8, 4, index)}%` :
+                      `${getSizeWithStep(140, -16, 4, index)}%`,
+                    fontWeight: 'bold',
+                    color: 'black',
+                    textAlign: 'center',
+                  }}>
+                  {t(`quiz.result.political_parties.data.${value.id}.name`)}
+                </Text>
+                <Text
+                  style={{
+                    color: 'crimson',
+                    fontSize: isLanguage('en') ?
+                      `${getSizeWithStep(100, -8, 4, index)}%` :
+                      `${getSizeWithStep(100, -8, 4, index)}%`,
+                    textAlign: 'center',
+                  }}>
+                  {`${Math.round(value.rate * 100)}%`}
+                </Text>
+              </Flex>
+            </a>
+          ))}
       </Card>
       <Card
         title={t('quiz.result.tags.name')}
