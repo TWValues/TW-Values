@@ -6,6 +6,62 @@ import shuffle from '../../utils/shuffle'
 import getScreenSize from '../../utils/getScreenSize'
 import QUESTIONS from '../../data/questions'
 
+export const calculateScores = (questions, choices) => {
+  const getScore = (weights) => {
+    const getScoreWithMultiplier = (weights) => {
+      return weights.reduce((accu, value) => accu + value.weight * choices[value.id], 0.0)
+    }
+    const getAbsMaxScore = (weights) => {
+      return weights.reduce((accu, value) => accu + Math.abs(value.weight), 0.0)
+    }
+    const getPercentage = (bias, total) => 100 * (bias + total) / (2 * total)
+
+    const score = getScoreWithMultiplier(weights)
+    const maxScore = getAbsMaxScore(weights)
+    return Math.round(getPercentage(score, maxScore))
+  }
+
+  const getTags = (weights) => {
+    return weights.reduce((accu, value) => {
+      if (choices[value.id] > 0.0) {
+        for (const [k, v] of Object.entries(value.tags || {})) {
+          if (v > 0.0) {
+            accu.push(k)
+          }
+        }
+      }
+      if (choices[value.id] < 0.0) {
+        for (const [k, v] of Object.entries(value.tags || {})) {
+          if (v < 0.0) {
+            accu.push(k)
+          }
+        }
+      }
+
+      return accu
+    }, [])
+  }
+
+  return {
+    economic: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.economic || 0.0 }))),
+    environmental: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.environmental || 0.0 }))),
+    civil: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.civil || 0.0 }))),
+    societal: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.societal || 0.0 }))),
+    diplomatic: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.diplomatic || 0.0 }))),
+    sovereignty: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.sovereignty || 0.0 }))),
+    us_china_relation: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.us_china_relation || 0.0 }))),
+    tags: getTags(questions.map((value) => ({ id: value.id, tags: value.weight.tags }))).join(',')
+  }
+}
+
+export const MULTIPLIER = {
+  sa: 1.0,
+  a: 0.5,
+  n: 0.0,
+  d: -0.5,
+  sd: -1.0,
+}
+
 const Quiz = () => {
 
   const [t] = useTranslation()
@@ -43,59 +99,10 @@ const Quiz = () => {
 
   const moveToNextQuestion = () => {
     if (currentSelectedQuestionIndex + 1 === questions.length) {
-
-      const calculateScores = () => {
-        const getScore = (weights) => {
-          const getScoreWithMultiplier = (weights) => {
-            return weights.reduce((accu, value) => accu + value.weight * choices[value.id], 0.0)
-          }
-          const getAbsMaxScore = (weights) => {
-            return weights.reduce((accu, value) => accu + Math.abs(value.weight), 0.0)
-          }
-          const getPercentage = (bias, total) => 100 * (bias + total) / (2 * total)
-
-          const score = getScoreWithMultiplier(weights)
-          const maxScore = getAbsMaxScore(weights)
-          return Math.round(getPercentage(score, maxScore))
-        }
-
-        const getTags = (weights) => {
-          return weights.reduce((accu, value) => {
-            if (choices[value.id] > 0.0) {
-              for (const [k, v] of Object.entries(value.tags || {})) {
-                if (v > 0.0) {
-                  accu.push(k)
-                }
-              }
-            }
-            if (choices[value.id] < 0.0) {
-              for (const [k, v] of Object.entries(value.tags || {})) {
-                if (v < 0.0) {
-                  accu.push(k)
-                }
-              }
-            }
-
-            return accu
-          }, [])
-        }
-
-        return {
-          economic: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.economic || 0.0 }))),
-          environmental: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.environmental || 0.0 }))),
-          civil: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.civil || 0.0 }))),
-          societal: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.societal || 0.0 }))),
-          diplomatic: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.diplomatic || 0.0 }))),
-          sovereignty: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.sovereignty || 0.0 }))),
-          us_china_relation: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.us_china_relation || 0.0 }))),
-          tags: getTags(questions.map((value) => ({ id: value.id, tags: value.weight.tags }))).join(',')
-        }
-      }
-
       navigate({
         pathname: '/result',
         search: createSearchParams({
-          ...calculateScores()
+          ...calculateScores(questions, choices)
         }).toString()
       })
     } else {
@@ -130,7 +137,7 @@ const Quiz = () => {
         ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
-        setChoice(1.0)
+        setChoice(MULTIPLIER.sa)
         moveToNextQuestion()
       }}>
         {t('quiz.answers.strongly_agree')}
@@ -142,7 +149,7 @@ const Quiz = () => {
         ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
-        setChoice(0.5)
+        setChoice(MULTIPLIER.a)
         moveToNextQuestion()
       }}>
         {t('quiz.answers.agree')}
@@ -154,7 +161,7 @@ const Quiz = () => {
         ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
-        setChoice(0.0)
+        setChoice(MULTIPLIER.n)
         moveToNextQuestion()
       }}>
         {t('quiz.answers.neutral')}
@@ -166,7 +173,7 @@ const Quiz = () => {
         ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
-        setChoice(-0.5)
+        setChoice(MULTIPLIER.d)
         moveToNextQuestion()
       }}>
         {t('quiz.answers.disagree')}
@@ -178,7 +185,7 @@ const Quiz = () => {
         ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
-        setChoice(-1.0)
+        setChoice(MULTIPLIER.sd)
         moveToNextQuestion()
       }}>
         {t('quiz.answers.strongly_disagree')}

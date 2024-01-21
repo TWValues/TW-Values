@@ -21,6 +21,43 @@ import FlagOfPRC from '../../assets/values/FlagOfPRC.svg'
 
 const { Text } = Typography
 
+const getIdeologyMatchScores = (weights) => {
+  const ideologyScores = IDEOLOGIES.map((value) => {
+    let distance = 0.0
+    distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
+    distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
+    distance += Math.pow(Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)), 2)
+    distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
+    return {
+      id: value.id,
+      distance: distance,
+    }
+  }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+
+  return ideologyScores
+}
+
+export const getPoliticalPartyMatchScores = (weights) => {
+  const politicalScores = POLITICAL_PARTIES.map((value) => {
+    let distance = 0.0
+    distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
+    distance += Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2)
+    distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
+    distance += Math.pow(Math.abs(value.weight.societal - weights.societal), 2)
+    distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
+    distance += Math.pow(Math.abs(value.weight.us_china_relation - weights.us_china_relation), 2)
+    const threshold = 6 * 50 * 50
+    let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
+    return {
+      ...value,
+      distance: distance,
+      rate: rate,
+    }
+  }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+
+  return politicalScores
+}
+
 const Result = () => {
 
   // eslint-disable-next-line no-unused-vars
@@ -31,28 +68,14 @@ const Result = () => {
     return i18n.language == lang
   }
 
-  const economic = searchParams.get('economic')
-  const environmental = searchParams.get('environmental')
-  const civil = searchParams.get('civil')
-  const societal = searchParams.get('societal')
-  const diplomatic = searchParams.get('diplomatic')
-  const sovereignty = searchParams.get('sovereignty')
-  const us_china_relation = searchParams.get('us_china_relation')
-
-  const getIdeologyMatchScores = () => {
-    const ideologyScores = IDEOLOGIES.map((value) => {
-      let distance = 0.0
-      distance += Math.pow(Math.abs(value.weight.economic - economic), 2)
-      distance += Math.pow(Math.abs(value.weight.civil - civil), 2)
-      distance += Math.pow(Math.abs(value.weight.societal - (0.25 * environmental + 0.75 * societal)), 2)
-      distance += Math.pow(Math.abs(value.weight.diplomatic - diplomatic), 2)
-      return {
-        id: value.id,
-        distance: distance,
-      }
-    }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
-
-    return ideologyScores
+  const weights = {
+    economic: searchParams.get('economic'),
+    environmental: searchParams.get('environmental'),
+    civil: searchParams.get('civil'),
+    societal: searchParams.get('societal'),
+    diplomatic: searchParams.get('diplomatic'),
+    sovereignty: searchParams.get('sovereignty'),
+    us_china_relation: searchParams.get('us_china_relation'),
   }
 
   const getBestMatchIdeologies = (ideologyScores) => {
@@ -61,31 +84,6 @@ const Result = () => {
       .slice(0, 3)
 
     return top3.length > 0 ? top3 : ideologyScores.slice(0, 1)
-  }
-
-  const getPoliticalPartyMatchScores = () => {
-    const politicalScores = POLITICAL_PARTIES.map((value) => {
-      let distance = 0.0
-      distance += Math.pow(Math.abs(value.weight.economic - economic), 2)
-      distance += Math.pow(Math.abs(value.weight.environmental - environmental), 2)
-      distance += Math.pow(Math.abs(value.weight.civil - civil), 2)
-      distance += Math.pow(Math.abs(value.weight.societal - societal), 2)
-      distance += Math.pow(Math.abs(value.weight.sovereignty - sovereignty), 2)
-      distance += Math.pow(Math.abs(value.weight.us_china_relation - us_china_relation), 2)
-      const threshold = 6 * 50 * 50
-      let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
-      return {
-        ...value,
-        distance: distance,
-        rate: rate,
-      }
-    }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
-
-    return politicalScores
-  }
-
-  const getBestMatchPoliticalParties = (partyScores) => {
-    return partyScores
   }
 
   const getCategory = (percent) => {
@@ -131,9 +129,9 @@ const Result = () => {
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
         }}>
-        {getBestMatchIdeologies(getIdeologyMatchScores()).map((value, index) =>
+        {getBestMatchIdeologies(getIdeologyMatchScores(weights)).map((value, index) =>
           <Layout
-            key={index}
+            key={`ideology.${value.id}`}
             style={{
               backgroundColor: 'transparent',
               display: 'flex',
@@ -142,7 +140,6 @@ const Result = () => {
               justifyContent: 'center'
             }}>
             <Text
-              key={index}
               style={{
                 margin: '10px',
                 fontSize: isLanguage('en') ?
@@ -174,10 +171,10 @@ const Result = () => {
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
         }}>
-        {getBestMatchPoliticalParties(getPoliticalPartyMatchScores())
+        {getPoliticalPartyMatchScores(weights)
           .map((value, index) =>
           (<Layout
-            key={index}
+            key={`party.${value.id}`}
             style={{
               backgroundColor: 'transparent',
               display: 'flex',
@@ -191,7 +188,6 @@ const Result = () => {
               preview={false}
             />
             <Text
-              key={index}
               style={{
                 margin: '10px',
                 fontSize: isLanguage('en') ?
@@ -204,7 +200,6 @@ const Result = () => {
               {t(`quiz.result.political_parties.data.${value.id}.name`)}
             </Text>
             <Text
-              key={index}
               style={{
                 color: 'crimson',
                 fontSize: `${Math.max(60, 108 - index * 16)}%`,
@@ -244,7 +239,11 @@ const Result = () => {
           const description = t(`quiz.result.tags.data.${value}.description`)
           const link = t(`quiz.result.tags.data.${value}.link`)
           return (
-            <Flex justify='start' align='center' style={{ marginTop: '10px', marginBottom: '10px' }}>
+            <Flex
+              key={`tags.${value}`}
+              justify='start'
+              align='center'
+              style={{ marginTop: '10px', marginBottom: '10px' }}>
               <Tag>
                 <Text style={{ fontSize: 'medium' }}>{name}</Text>
                 {link && link.length > 0 &&
@@ -269,8 +268,8 @@ const Result = () => {
         rightImage={DollarSign}
         leftColor='crimson'
         rightColor='turquoise'
-        percent={economic}
-        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(economic)}`)}
+        percent={weights.economic}
+        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.environmental.title')}
@@ -280,8 +279,8 @@ const Result = () => {
         rightImage={Factory}
         leftColor='forestgreen'
         rightColor='dodgerblue'
-        percent={environmental}
-        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(environmental)}`)}
+        percent={weights.environmental}
+        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.civil.title')}
@@ -291,8 +290,8 @@ const Result = () => {
         rightImage={Crown}
         leftColor='gold'
         rightColor='red'
-        percent={civil}
-        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(civil)}`)}
+        percent={weights.civil}
+        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.societal.title')}
@@ -302,8 +301,8 @@ const Result = () => {
         rightImage={Family}
         leftColor='magenta'
         rightColor='brown'
-        percent={societal}
-        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(societal)}`)}
+        percent={weights.societal}
+        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.sovereignty.title')}
@@ -313,8 +312,8 @@ const Result = () => {
         rightImage={ChinaTerritory}
         leftColor='green'
         rightColor='black'
-        percent={sovereignty}
-        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(sovereignty)}`)}
+        percent={weights.sovereignty}
+        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.us_china_relation.title')}
@@ -324,8 +323,8 @@ const Result = () => {
         rightImage={FlagOfPRC}
         leftColor='navy'
         rightColor='red'
-        percent={us_china_relation}
-        leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(us_china_relation)}`)}
+        percent={weights.us_china_relation}
+        leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(weights.us_china_relation)}`)}
       />
     </Layout>
   )

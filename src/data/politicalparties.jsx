@@ -23,11 +23,11 @@ const POLITICAL_PARTIES = [
     id: "dpp",
     icon: DPPIcon,
     weight: {
-      economic: 55,
+      economic: 60,
       environmental: 60,
       civil: 55,
-      societal: 55,
-      sovereignty: 65,
+      societal: 60,
+      sovereignty: 75,
       us_china_relation: 70,
     }
   },
@@ -59,12 +59,12 @@ const POLITICAL_PARTIES = [
     id: "tpp",
     icon: TPPIcon,
     weight: {
-      economic: 45,
+      economic: 50,
       environmental: 45,
       civil: 50,
       societal: 50,
-      sovereignty: 50,
-      us_china_relation: 45,
+      sovereignty: 45,
+      us_china_relation: 40,
     }
   },
   {
@@ -75,8 +75,8 @@ const POLITICAL_PARTIES = [
       environmental: 50,
       civil: 75,
       societal: 60,
-      sovereignty: 80,
-      us_china_relation: 80,
+      sovereignty: 75,
+      us_china_relation: 70,
     }
   },
   {

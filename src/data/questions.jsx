@@ -360,14 +360,14 @@ const QUESTIONS = [
   {
     id: "q1203",
     weight: {
-      us_china_relation: 5,
+      us_china_relation: 10,
       diplomatic: -5,
     }
   },
   {
     id: "q1300",
     weight: {
-      us_china_relation: -5,
+      us_china_relation: -10,
       diplomatic: 5,
     }
   },
@@ -387,7 +387,7 @@ const QUESTIONS = [
   {
     id: "q1303",
     weight: {
-      us_china_relation: -5,
+      us_china_relation: -10,
       diplomatic: 5,
     }
   },
