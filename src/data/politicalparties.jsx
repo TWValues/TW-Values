@@ -15,8 +15,8 @@ const POLITICAL_PARTIES = [
       environmental: 40,
       civil: 40,
       societal: 30,
-      sovereignty: 40,
-      us_china_relation: 35,
+      sovereignty: 35,
+      us_china_relation: 30,
     }
   },
   {
@@ -98,8 +98,8 @@ const POLITICAL_PARTIES = [
       economic: 75,
       environmental: 90,
       civil: 75,
-      societal: 90,
-      sovereignty: 65,
+      societal: 75,
+      sovereignty: 75,
       us_china_relation: 70,
     }
   }
