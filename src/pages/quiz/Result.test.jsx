@@ -62,7 +62,7 @@ test('kmt', () => {
         q1203: MULTIPLIER.d,
         q1300: MULTIPLIER.a,
         q1301: MULTIPLIER.a,
-        q1303: MULTIPLIER.a,
+        q1302: MULTIPLIER.a,
     }
 
     const weights = calculateScores(QUESTIONS, choices)
@@ -131,7 +131,7 @@ test('dpp', () => {
         q1203: MULTIPLIER.a,
         q1300: MULTIPLIER.d,
         q1301: MULTIPLIER.d,
-        q1303: MULTIPLIER.a,
+        q1302: MULTIPLIER.a,
     }
 
     const weights = calculateScores(QUESTIONS, choices)
@@ -200,7 +200,7 @@ test('npp', () => {
         q1203: MULTIPLIER.a,
         q1300: MULTIPLIER.d,
         q1301: MULTIPLIER.sd,
-        q1303: MULTIPLIER.a,
+        q1302: MULTIPLIER.a,
     }
 
     const weights = calculateScores(QUESTIONS, choices)
@@ -269,7 +269,7 @@ test('tpp', () => {
         q1203: MULTIPLIER.d,
         q1300: MULTIPLIER.a,
         q1301: MULTIPLIER.a,
-        q1303: MULTIPLIER.a,
+        q1302: MULTIPLIER.a,
     }
 
     const weights = calculateScores(QUESTIONS, choices)
@@ -338,7 +338,7 @@ test('gpt', () => {
         q1203: MULTIPLIER.n,
         q1300: MULTIPLIER.d,
         q1301: MULTIPLIER.n,
-        q1303: MULTIPLIER.a,
+        q1302: MULTIPLIER.a,
     }
 
     const weights = calculateScores(QUESTIONS, choices)
