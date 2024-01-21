@@ -1,7 +1,6 @@
 import { useSearchParams } from 'react-router-dom'
 import { Layout, Card, Typography, Image, Tag, Button, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
-import { LinkOutlined } from '@ant-design/icons'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideologies'
 import POLITICAL_PARTIES from '../../data/politicalparties'
@@ -243,18 +242,19 @@ const Result = () => {
               justify='start'
               align='center'
               style={{ marginTop: '10px', marginBottom: '10px' }}>
-              <Tag>
-                <Text style={{ fontSize: 'medium' }}>{name}</Text>
-                {link && link.length > 0 &&
-                  <Button
-                    type='link'
-                    size='small'
-                    icon={<LinkOutlined />}
-                    href={link}
-                    target='_blank'
-                  />}
-              </Tag>
-              <Text>{description}</Text>
+              <Button
+                size='small'
+                type='default'
+                href={link ? link : null}
+                target='_blank'
+                style={{
+                  margin: '4px',
+                  color: 'dodgerblue',
+                  fontWeight: 'bold',
+                }}>
+                {name}
+              </Button>
+              <Text style={{ margin: '4px' }}>{description}</Text>
             </Flex>
           )
         })}
