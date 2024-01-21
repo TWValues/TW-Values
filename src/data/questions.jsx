@@ -166,6 +166,7 @@ const QUESTIONS = [
     id: "q0503",
     weight: {
       civil: -10,
+      diplomatic: -5,
     }
   },
   {
