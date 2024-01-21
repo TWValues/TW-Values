@@ -339,6 +339,13 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q1104",
+    weight: {
+      sovereignty: -10,
+      us_china_relation: -10,
+    }
+  },
+  {
     id: "q1200",
     weight: {
       us_china_relation: 10,
@@ -377,13 +384,6 @@ const QUESTIONS = [
     weight: {
       sovereignty: -5,
       us_china_relation: -10,
-    }
-  },
-  {
-    id: "q1302",
-    weight: {
-      us_china_relation: -10,
-      diplomatic: 5,
     }
   },
   {

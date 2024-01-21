@@ -55,13 +55,13 @@ test('kmt', () => {
         q1101: MULTIPLIER.a,
         q1102: MULTIPLIER.a,
         q1103: MULTIPLIER.d,
+        q1104: MULTIPLIER.a,
         q1200: MULTIPLIER.d,
         q1201: MULTIPLIER.d,
         q1202: MULTIPLIER.d,
         q1203: MULTIPLIER.d,
         q1300: MULTIPLIER.a,
         q1301: MULTIPLIER.a,
-        q1302: MULTIPLIER.a,
         q1303: MULTIPLIER.a,
     }
 
@@ -124,13 +124,13 @@ test('dpp', () => {
         q1101: MULTIPLIER.d,
         q1102: MULTIPLIER.d,
         q1103: MULTIPLIER.d,
+        q1104: MULTIPLIER.d,
         q1200: MULTIPLIER.a,
         q1201: MULTIPLIER.a,
         q1202: MULTIPLIER.a,
         q1203: MULTIPLIER.a,
         q1300: MULTIPLIER.d,
         q1301: MULTIPLIER.d,
-        q1302: MULTIPLIER.d,
         q1303: MULTIPLIER.a,
     }
 
@@ -193,13 +193,13 @@ test('npp', () => {
         q1101: MULTIPLIER.sd,
         q1102: MULTIPLIER.d,
         q1103: MULTIPLIER.sd,
+        q1104: MULTIPLIER.sd,
         q1200: MULTIPLIER.a,
         q1201: MULTIPLIER.n,
         q1202: MULTIPLIER.a,
         q1203: MULTIPLIER.a,
         q1300: MULTIPLIER.d,
         q1301: MULTIPLIER.sd,
-        q1302: MULTIPLIER.sd,
         q1303: MULTIPLIER.a,
     }
 
@@ -262,13 +262,13 @@ test('tpp', () => {
         q1101: MULTIPLIER.n,
         q1102: MULTIPLIER.a,
         q1103: MULTIPLIER.d,
+        q1104: MULTIPLIER.d,
         q1200: MULTIPLIER.d,
         q1201: MULTIPLIER.d,
         q1202: MULTIPLIER.d,
         q1203: MULTIPLIER.d,
         q1300: MULTIPLIER.a,
         q1301: MULTIPLIER.a,
-        q1302: MULTIPLIER.d,
         q1303: MULTIPLIER.a,
     }
 
@@ -331,13 +331,13 @@ test('gpt', () => {
         q1101: MULTIPLIER.d,
         q1102: MULTIPLIER.d,
         q1103: MULTIPLIER.d,
+        q1104: MULTIPLIER.d,
         q1200: MULTIPLIER.a,
         q1201: MULTIPLIER.a,
         q1202: MULTIPLIER.a,
         q1203: MULTIPLIER.n,
         q1300: MULTIPLIER.d,
         q1301: MULTIPLIER.n,
-        q1302: MULTIPLIER.d,
         q1303: MULTIPLIER.a,
     }
 
