@@ -1,5 +1,4 @@
 
-import './App.css'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Main from './modules/main/Main'
 import Welcome from './pages/quiz/Welcome'
