@@ -1,15 +1,8 @@
-import KMTIcon from '../assets/parties/KMTIcon.svg'
-import DPPIcon from '../assets/parties/DPPIcon.svg'
-import NPIcon from '../assets/parties/NPIcon.svg'
-import NPPIcon from '../assets/parties/NPPIcon.svg'
-import TSPIcon from '../assets/parties/TSPIcon.svg'
-import TPPIcon from '../assets/parties/TPPIcon.svg'
-import CUPPIcon from '../assets/parties/CUPPIcon.svg'
 
 const POLITICAL_PARTIES = [
   {
     id: "kmt",
-    icon: KMTIcon,
+    icon: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Blue_Sky_White_Sun.png",
     weight: {
       economic: 40,
       environmental: 40,
@@ -21,7 +14,7 @@ const POLITICAL_PARTIES = [
   },
   {
     id: "dpp",
-    icon: DPPIcon,
+    icon: "https://upload.wikimedia.org/wikipedia/commons/1/16/Green_Island_with_White_Cross.svg",
     weight: {
       economic: 60,
       environmental: 60,
@@ -33,7 +26,7 @@ const POLITICAL_PARTIES = [
   },
   {
     id: "np",
-    icon: NPIcon,
+    icon: "https://upload.wikimedia.org/wikipedia/commons/3/32/LogoCNP.svg",
     weight: {
       economic: 40,
       environmental: 40,
@@ -45,7 +38,7 @@ const POLITICAL_PARTIES = [
   },
   {
     id: "npp",
-    icon: NPPIcon,
+    icon: "https://upload.wikimedia.org/wikipedia/commons/2/29/Black_Lik_Gold_Circle.svg",
     weight: {
       economic: 75,
       environmental: 75,
@@ -57,7 +50,7 @@ const POLITICAL_PARTIES = [
   },
   {
     id: "tpp",
-    icon: TPPIcon,
+    icon: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_Taiwan_People%27s_Party_2019_Logo_Only.svg",
     weight: {
       economic: 50,
       environmental: 45,
@@ -69,7 +62,7 @@ const POLITICAL_PARTIES = [
   },
   {
     id: "tsp",
-    icon: TSPIcon,
+    icon: "https://upload.wikimedia.org/wikipedia/commons/7/77/Daijish%C5%8D_in_brown.svg",
     weight: {
       economic: 60,
       environmental: 50,
@@ -81,7 +74,7 @@ const POLITICAL_PARTIES = [
   },
   {
     id: "cupp",
-    icon: CUPPIcon,
+    icon: "https://upload.wikimedia.org/wikipedia/zh/6/66/China_unify_party_logo.gif",
     weight: {
       economic: 10,
       environmental: 20,
