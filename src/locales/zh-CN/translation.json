@@ -282,70 +282,88 @@
         "name": "最接近的意识形态",
         "data": {
           "anarcho_communism": {
-            "name": "无政府共产主义"
+            "name": "无政府共产主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E7%84%A1%E6%94%BF%E5%BA%9C%E5%85%B1%E7%94%A2%E4%B8%BB%E7%BE%A9"
           },
           "libertarian_communism": {
             "name": "自由意志共产主义"
           },
           "trotskyism": {
-            "name": "托洛斯基主义"
+            "name": "托洛斯基主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%89%98%E6%B4%9B%E8%8C%A8%E5%9F%BA%E4%B8%BB%E4%B9%89"
           },
           "marxism": {
-            "name": "马克思主义"
+            "name": "马克思主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89"
           },
           "de_leonism": {
-            "name": "德莱昂主义"
+            "name": "德莱昂主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%BE%B7%E8%8E%B1%E6%98%82%E4%B8%BB%E4%B9%89"
           },
           "leninism": {
-            "name": "列宁主义"
+            "name": "列宁主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%88%97%E5%AE%81%E4%B8%BB%E4%B9%89"
           },
           "stalinism_maoism": {
-            "name": "斯大林主义/毛泽东思想"
+            "name": "斯大林主义/毛泽东思想",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%96%AF%E5%A4%A7%E6%9E%97%E4%B8%BB%E4%B9%89"
           },
           "religious_communism": {
             "name": "宗教共产主义"
           },
           "state_socialism": {
-            "name": "国有社会主义"
+            "name": "国有社会主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%9C%8B%E6%9C%89%E7%A4%BE%E6%9C%83%E4%B8%BB%E7%BE%A9"
           },
           "theocratic_socialism": {
             "name": "神权社会主义"
           },
           "religious_socialism": {
-            "name": "宗教社会主义"
+            "name": "宗教社会主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%AE%97%E6%95%99%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89"
           },
           "democratic_socialism": {
-            "name": "民主社会主义"
+            "name": "民主社会主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%B0%91%E4%B8%BB%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89"
           },
           "revolutionary_socialism": {
-            "name": "革命社会主义"
+            "name": "革命社会主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E9%9D%A9%E5%91%BD%E7%A4%BE%E6%9C%83%E4%B8%BB%E7%BE%A9"
           },
           "libertarian_socialism": {
-            "name": "自由意志社会主义"
+            "name": "自由意志社会主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E6%84%8F%E5%BF%97%E7%A4%BE%E6%9C%83%E4%B8%BB%E7%BE%A9"
           },
           "anarcho_syndicalism": {
-            "name": "无政府工团主义"
+            "name": "无政府工团主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%97%A0%E6%94%BF%E5%BA%9C%E5%B7%A5%E5%9B%A2%E4%B8%BB%E4%B9%89"
           },
           "left_wing_populism": {
-            "name": "左翼民粹主义 "
+            "name": "左翼民粹主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%B7%A6%E7%BF%BC%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9"
           },
           "theocratic_distributism": {
             "name": "神权分产主义"
           },
           "distributism": {
-            "name": "分产主义"
+            "name": "分产主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%88%86%E4%BA%A7%E4%B8%BB%E4%B9%89"
           },
           "social_liberalism": {
-            "name": "社会自由主义"
+            "name": "社会自由主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E7%A4%BE%E4%BC%9A%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89"
           },
           "christian_democracy": {
-            "name": "基督教民主主义"
+            "name": "基督教民主主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%9F%BA%E7%9D%A3%E6%95%99%E6%B0%91%E4%B8%BB%E4%B8%BB%E7%BE%A9"
           },
           "social_democracy": {
-            "name": "社会民主主义"
+            "name": "社会民主主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E7%A4%BE%E6%9C%83%E6%B0%91%E4%B8%BB%E4%B8%BB%E7%BE%A9"
           },
           "progressivism": {
-            "name": "进步主义"
+            "name": "进步主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E9%80%B2%E6%AD%A5%E4%B8%BB%E7%BE%A9"
           },
           "anarcho_mutualism": {
             "name": "无政府互利主义"
@@ -357,76 +375,95 @@
             "name": "全球极权主义"
           },
           "technocracy": {
-            "name": "技术官僚主义"
+            "name": "技术官僚主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%93%E5%AE%B6%E7%BB%9F%E6%B2%BB"
           },
           "centrist": {
-            "name": "中间主义"
+            "name": "中间主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%AD%E9%97%B4%E4%B8%BB%E4%B9%89"
           },
           "liberalism": {
-            "name": "自由主义"
+            "name": "自由主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89"
           },
           "religious_anarchism": {
             "name": "宗教无政府主义"
           },
           "right_wing_populism": {
-            "name": "右翼民粹主义"
+            "name": "右翼民粹主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%B3%E7%BF%BC%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9"
           },
           "moderate_conservatism": {
             "name": "温和保守主义"
           },
           "reactionary": {
-            "name": "反动"
+            "name": "反动",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%8D%E5%8A%A8"
           },
           "social_libertarianism": {
             "name": "社会自由意志主义"
           },
           "libertarianism": {
-            "name": "自由意志主义"
+            "name": "自由意志主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E6%84%8F%E5%BF%97%E4%B8%BB%E7%BE%A9"
           },
           "anarcho_egoism": {
-            "name": "利己无政府主义"
+            "name": "利己无政府主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%88%A9%E5%B7%B1%E6%97%A0%E6%94%BF%E5%BA%9C%E4%B8%BB%E4%B9%89"
           },
           "nazism": {
-            "name": "纳粹主义"
+            "name": "纳粹主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E7%BA%B3%E7%B2%B9%E4%B8%BB%E4%B9%89"
           },
           "autocracy": {
-            "name": "神权主义"
+            "name": "独裁",
+            "link": "https://zh.wikipedia.org/zh-cn/%E7%8B%AC%E8%A3%81"
           },
           "fascism": {
-            "name": "法西斯主义"
+            "name": "法西斯主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%B3%95%E8%A5%BF%E6%96%AF%E4%B8%BB%E4%B9%89"
           },
           "capitalist_fascism": {
             "name": "法西斯资本主义"
           },
           "conservatism": {
-            "name": "保守主义"
+            "name": "保守主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E4%BF%9D%E5%AE%88%E4%B8%BB%E4%B9%89"
           },
           "neo_liberalism": {
-            "name": "新自由主义"
+            "name": "新自由主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%96%B0%E8%87%AA%E7%94%B1%E4%B8%BB%E7%BE%A9"
           },
           "classical_liberalism": {
-            "name": "古典自由主义"
+            "name": "古典自由主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%A4%E5%85%B8%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89"
           },
           "authoritarian_capitalism": {
-            "name": "威权资本主义"
+            "name": "威权资本主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%A8%81%E6%9D%83%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89"
           },
           "state_capitalism": {
-            "name": "国家资本主义"
+            "name": "国家资本主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%9B%BD%E5%AE%B6%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89"
           },
           "neo_conservatism": {
-            "name": "新保守主义"
+            "name": "新保守主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%96%B0%E4%BF%9D%E5%AE%88%E4%B8%BB%E7%BE%A9"
           },
           "fundamentalism": {
-            "name": "原教旨主义"
+            "name": "原教旨主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%8E%9F%E6%95%99%E6%97%A8%E4%B8%BB%E7%BE%A9"
           },
           "libertarian_capitalism": {
-            "name": "自由资本主义"
+            "name": "自由意志资本主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%B3%E6%B4%BE%E8%87%AA%E7%94%B1%E6%84%8F%E5%BF%97%E4%B8%BB%E7%BE%A9"
           },
           "market_anarchism": {
             "name": "利伯维尔场无政府主义"
           },
           "objectivism": {
-            "name": "客观主义"
+            "name": "客观主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%AE%A2%E8%A7%80%E4%B8%BB%E7%BE%A9"
           },
           "totalitarian_capitalism": {
             "name": "极权资本主义"
@@ -435,7 +472,8 @@
             "name": "超级资本主义"
           },
           "anarcho_capitalism": {
-            "name": "无政府资本主义"
+            "name": "无政府资本主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E7%84%A1%E6%94%BF%E5%BA%9C%E8%B3%87%E6%9C%AC%E4%B8%BB%E7%BE%A9"
           }
         }
       },

@@ -282,70 +282,89 @@
         "name": "Closest Match of Ideologies",
         "data": {
           "anarcho_communism": {
-            "name": "Anarcho-Communism"
+            "name": "Anarcho-Communism",
+            "link": "https://en.wikipedia.org/wiki/Anarchist_communism"
           },
           "libertarian_communism": {
             "name": "Libertarian Communism"
           },
           "trotskyism": {
-            "name": "Trotskyism"
+            "name": "Trotskyism",
+            "link": "https://en.wikipedia.org/wiki/Trotskyism"
           },
           "marxism": {
-            "name": "Marxism"
+            "name": "Marxism",
+            "link": "https://en.wikipedia.org/wiki/Marxism"
           },
           "de_leonism": {
-            "name": "De Leonism"
+            "name": "De Leonism",
+            "link": "https://en.wikipedia.org/wiki/De_Leonism"
           },
           "leninism": {
-            "name": "Leninism"
+            "name": "Leninism",
+            "link": "https://en.wikipedia.org/wiki/Leninism"
           },
           "stalinism_maoism": {
-            "name": "Stalinism/Maoism"
+            "name": "Stalinism/Maoism",
+            "link": "https://en.wikipedia.org/wiki/Stalinism"
           },
           "religious_communism": {
-            "name": "Religious Communism"
+            "name": "Religious Communism",
+            "link": "https://en.wikipedia.org/wiki/Religious_communism"
           },
           "state_socialism": {
-            "name": "State Socialism"
+            "name": "State Socialism",
+            "link": "https://en.wikipedia.org/wiki/State_socialism"
           },
           "theocratic_socialism": {
             "name": "Theocratic Socialism"
           },
           "religious_socialism": {
-            "name": "Religious Socialism"
+            "name": "Religious Socialism",
+            "link": "https://en.wikipedia.org/wiki/Religious_socialism"
           },
           "democratic_socialism": {
-            "name": "Democratic Socialism"
+            "name": "Democratic Socialism",
+            "link": "https://en.wikipedia.org/wiki/Democratic_socialism"
           },
           "revolutionary_socialism": {
-            "name": "Revolutionary Socialism"
+            "name": "Revolutionary Socialism",
+            "link": "https://en.wikipedia.org/wiki/Revolutionary_socialism"
           },
           "libertarian_socialism": {
-            "name": "Libertarian Socialism"
+            "name": "Libertarian Socialism",
+            "link": "https://en.wikipedia.org/wiki/Libertarian_socialism"
           },
           "anarcho_syndicalism": {
-            "name": "Anarcho-Syndicalism"
+            "name": "Anarcho-Syndicalism",
+            "link": "https://en.wikipedia.org/wiki/Anarcho-syndicalism"
           },
           "left_wing_populism": {
-            "name": "Left-Wing Populism"
+            "name": "Left-Wing Populism",
+            "link": "https://en.wikipedia.org/wiki/Left-wing_populism"
           },
           "theocratic_distributism": {
             "name": "Theocratic Distributism"
           },
           "distributism": {
-            "name": "Distributism"
+            "name": "Distributism",
+            "link": "https://en.wikipedia.org/wiki/Distributism"
           },
           "social_liberalism": {
-            "name": "Social Liberalism"
+            "name": "Social Liberalism",
+            "link": "https://en.wikipedia.org/wiki/Social_liberalism"
           },
           "christian_democracy": {
-            "name": "Christian Democracy"
+            "name": "Christian Democracy",
+            "link": "https://en.wikipedia.org/wiki/Christian_democracy"
           },
           "social_democracy": {
-            "name": "Social Democracy"
+            "name": "Social Democracy",
+            "link": "https://en.wikipedia.org/wiki/Social_democracy"
           },
           "progressivism": {
-            "name": "Progressivism"
+            "name": "Progressivism",
+            "link": "https://en.wikipedia.org/wiki/Progressivismhttps://en.wikipedia.org/wiki/Progressivism"
           },
           "anarcho_mutualism": {
             "name": "Anarcho-Mutualism"
@@ -357,76 +376,98 @@
             "name": "Global Totalitarianism"
           },
           "technocracy": {
-            "name": "Technocracy"
+            "name": "Technocracy",
+            "link": "https://en.wikipedia.org/wiki/Technocracy"
           },
           "centrist": {
-            "name": "Centrist"
+            "name": "Centrist",
+            "link": "https://en.wikipedia.org/wiki/Centrism"
           },
           "liberalism": {
-            "name": "Liberalism"
+            "name": "Liberalism",
+            "link": "https://en.wikipedia.org/wiki/Liberalism"
           },
           "religious_anarchism": {
             "name": "Religious Anarchism"
           },
           "right_wing_populism": {
-            "name": "Right-Wing Populism"
+            "name": "Right-Wing Populism",
+            "link": "https://en.wikipedia.org/wiki/Right-wing_populism"
           },
           "moderate_conservatism": {
-            "name": "Moderate Conservatism"
+            "name": "Moderate Conservatism",
+            "link": "https://en.wikipedia.org/wiki/Moderate_conservatism"
           },
           "reactionary": {
-            "name": "Reactionary"
+            "name": "Reactionary",
+            "link": "https://en.wikipedia.org/wiki/Reactionary"
           },
           "social_libertarianism": {
-            "name": "Social Libertarianism"
+            "name": "Social Libertarianism",
+            "link": "https://en.wikipedia.org/wiki/Left-libertarianism"
           },
           "libertarianism": {
-            "name": "Libertarianism"
+            "name": "Libertarianism",
+            "link": "https://en.wikipedia.org/wiki/Libertarianism"
           },
           "anarcho_egoism": {
-            "name": "Anarcho-Egoism"
+            "name": "Anarcho-Egoism",
+            "link": "https://en.wikipedia.org/wiki/Egoist_anarchism"
           },
           "nazism": {
-            "name": "Nazism"
+            "name": "Nazism",
+            "link": "https://en.wikipedia.org/wiki/Nazism"
           },
           "autocracy": {
-            "name": "Autocracy"
+            "name": "Autocracy",
+            "link": "https://en.wikipedia.org/wiki/Autocracy"
           },
           "fascism": {
-            "name": "Fascism"
+            "name": "Fascism",
+            "link": "https://en.wikipedia.org/wiki/Fascism"
           },
           "capitalist_fascism": {
             "name": "Capitalist Fascism"
           },
           "conservatism": {
-            "name": "Conservatism"
+            "name": "Conservatism",
+            "link": "https://en.wikipedia.org/wiki/Conservatism"
           },
           "neo_liberalism": {
-            "name": "Neo-Liberalism"
+            "name": "Neo-Liberalism",
+            "link": "https://en.wikipedia.org/wiki/Neoliberalism"
           },
           "classical_liberalism": {
-            "name": "Classical Liberalism"
+            "name": "Classical Liberalism",
+            "link": "https://en.wikipedia.org/wiki/Classical_liberalism"
           },
           "authoritarian_capitalism": {
-            "name": "Authoritarian Capitalism"
+            "name": "Authoritarian Capitalism",
+            "link": "https://en.wikipedia.org/wiki/Authoritarian_capitalism"
           },
           "state_capitalism": {
-            "name": "State Capitalism"
+            "name": "State Capitalism",
+            "link": "https://en.wikipedia.org/wiki/State_capitalism"
           },
           "neo_conservatism": {
-            "name": "Neo-Conservatism"
+            "name": "Neo-Conservatism",
+            "link": "https://en.wikipedia.org/wiki/Neoconservatism"
           },
           "fundamentalism": {
-            "name": "Fundamentalism"
+            "name": "Fundamentalism",
+            "link": "https://en.wikipedia.org/wiki/Fundamentalism"
           },
           "libertarian_capitalism": {
-            "name": "Libertarian Capitalism"
+            "name": "Libertarian Capitalism",
+            "link": "https://en.wikipedia.org/wiki/Right-libertarianism"
           },
           "market_anarchism": {
-            "name": "Market Anarchism"
+            "name": "Market Anarchism",
+            "link": "https://en.wikipedia.org/wiki/Market_anarchism"
           },
           "objectivism": {
-            "name": "Objectivism"
+            "name": "Objectivism",
+            "link": "https://en.wikipedia.org/wiki/Objectivism"
           },
           "totalitarian_capitalism": {
             "name": "Totalitarian Capitalism"
@@ -435,7 +476,8 @@
             "name": "Ultra-Capitalism"
           },
           "anarcho_capitalism": {
-            "name": "Anarcho-Capitalism"
+            "name": "Anarcho-Capitalism",
+            "link": "https://en.wikipedia.org/wiki/Anarcho-capitalism"
           }
         }
       },

@@ -132,30 +132,44 @@ const Result = () => {
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
         }}>
-        {getBestMatchIdeologies(getIdeologyMatchScores(weights)).map((value, index) =>
-          <Layout
-            key={`ideology.${value.id}`}
-            style={{
-              backgroundColor: 'transparent',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-            <Text
+        {getBestMatchIdeologies(getIdeologyMatchScores(weights)).map((value, index) => {
+          const linkRC = `quiz.result.ideologies.data.${value.id}.link`
+          const link = i18n.exists(linkRC) ? t(linkRC) : null
+          const inner = () => (
+            <Layout
               style={{
-                margin: '10px',
-                fontSize: isLanguage('en') ?
-                  `${getSizeWithStep(140, -20, 3, index)}%` :
-                  `${getSizeWithStep(180, -30, 3, index)}%`,
-                fontWeight: 'bold',
-                color: 'black',
-                textAlign: 'center',
+                backgroundColor: 'transparent',
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}>
-              {t(`quiz.result.ideologies.data.${value.id}.name`)}
-            </Text>
-          </Layout>
-        )}
+              <Text
+                style={{
+                  margin: '10px',
+                  fontSize: isLanguage('en') ?
+                    `${getSizeWithStep(140, -16, 3, index)}%` :
+                    `${getSizeWithStep(180, -24, 3, index)}%`,
+                  fontWeight: 'bold',
+                  color: 'black',
+                  textAlign: 'center',
+                }}>
+                {t(`quiz.result.ideologies.data.${value.id}.name`)}
+              </Text>
+            </Layout>
+          )
+          return link && link.length > 0 ?
+            <a
+              key={`ideology.${value.id}`}
+              href={link}
+              target='_blank'
+            >
+              {inner()}
+            </a> :
+            <div key={`ideology.${value.id}`}>
+              {inner()}
+            </div>
+        })}
       </Card>
       <Card
         title={t('quiz.result.political_parties.name')}
