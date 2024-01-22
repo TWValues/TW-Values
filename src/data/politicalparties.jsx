@@ -25,6 +25,18 @@ const POLITICAL_PARTIES = [
     }
   },
   {
+    id: "tsu",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Taiwan_orange.svg",
+    weight: {
+      economic: 40,
+      environmental: 40,
+      civil: 50,
+      societal: 40,
+      sovereignty: 75,
+      us_china_relation: 70,
+    }
+  },
+  {
     id: "np",
     icon: "https://upload.wikimedia.org/wikipedia/commons/3/32/LogoCNP.svg",
     weight: {
