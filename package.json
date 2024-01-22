@@ -6,9 +6,6 @@
   "type": "module",
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@vitejs/plugin-react": "^4.2.1",
     "antd": "^5.7.0",
     "i18next": "^23.2.11",
