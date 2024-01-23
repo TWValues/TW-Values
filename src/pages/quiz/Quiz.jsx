@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../../utils/shuffle'
 import getScreenSize from '../../utils/getScreenSize'
-import QUESTIONS from '../../data/questions'
+import QUESTIONS from '../../data/question'
 
 export const calculateScores = (questions, choices) => {
   const getScore = (weights) => {

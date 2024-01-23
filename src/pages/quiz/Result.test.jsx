@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest'
 import { calculateScores, MULTIPLIER } from './Quiz'
 import { getPoliticalPartyMatchScores } from './Result'
-import QUESTIONS from '../../data/questions'
+import QUESTIONS from '../../data/question'
 
 test('kmt', () => {
   const choices = {
