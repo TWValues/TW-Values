@@ -315,8 +315,6 @@ const QUESTIONS = [
   {
     id: "q1101",
     weight: {
-      sovereignty: 0,
-
       tags: {
         roc_unification: 1,
       }
