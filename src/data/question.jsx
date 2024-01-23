@@ -302,6 +302,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0901",
+    weight: {
+      diplomatic: -weights.p100,
+    }
+  },
+  {
     id: "q1000",
     weight: {
       sovereignty: weights.p100,
