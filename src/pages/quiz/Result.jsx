@@ -7,10 +7,12 @@ import POLITICAL_PARTIES from '../../data/politicalparty'
 
 import Balance from '../../assets/values/Balance.svg'
 import DollarSign from '../../assets/values/DollarSign.svg'
-import RecyclingSymbol from '../../assets/values/RecyclingSymbol.svg'
-import Factory from '../../assets/values/Factory.svg'
+import Globe from '../../assets/values/Globe.svg'
+import Flag from '../../assets/values/Flag.svg'
 import Liberty from '../../assets/values/Liberty.svg'
 import Crown from '../../assets/values/Crown.svg'
+import RecyclingSymbol from '../../assets/values/RecyclingSymbol.svg'
+import Factory from '../../assets/values/Factory.svg'
 import RainbowFlag from '../../assets/values/RainbowFlag.svg'
 import Family from '../../assets/values/Family.svg'
 import FlagOfTWIndependence from '../../assets/values/FlagOfTWIndependence.svg'
@@ -285,15 +287,15 @@ const Result = () => {
         leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
       />
       <ValueCard
-        title={t('quiz.result.axes.environmental.title')}
-        leftTitle={t('quiz.result.axes.environmental.ecology')}
-        rightTitle={t('quiz.result.axes.environmental.production')}
-        leftImage={RecyclingSymbol}
-        rightImage={Factory}
-        leftColor='forestgreen'
-        rightColor='dodgerblue'
-        percent={weights.environmental}
-        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
+        title={t('quiz.result.axes.diplomatic.title')}
+        leftTitle={t('quiz.result.axes.diplomatic.globe')}
+        rightTitle={t('quiz.result.axes.diplomatic.nation')}
+        leftImage={Globe}
+        rightImage={Flag}
+        leftColor='royalblue'
+        rightColor='orange'
+        percent={weights.diplomatic}
+        leaningsTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.civil.title')}
@@ -305,6 +307,17 @@ const Result = () => {
         rightColor='red'
         percent={weights.civil}
         leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
+      />
+      <ValueCard
+        title={t('quiz.result.axes.environmental.title')}
+        leftTitle={t('quiz.result.axes.environmental.ecology')}
+        rightTitle={t('quiz.result.axes.environmental.production')}
+        leftImage={RecyclingSymbol}
+        rightImage={Factory}
+        leftColor='forestgreen'
+        rightColor='saddlebrown'
+        percent={weights.environmental}
+        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.societal.title')}

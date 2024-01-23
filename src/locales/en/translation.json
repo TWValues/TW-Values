@@ -216,6 +216,20 @@
             "6": "Laissez-Faire"
           }
         },
+        "diplomatic": {
+          "title": "Diplomatic",
+          "globe": "Globe",
+          "nation": "Nation",
+          "categories": {
+            "0": "Cosmopolitan",
+            "1": "Internationalist",
+            "2": "Peaceful",
+            "3": "Balanced",
+            "4": "Patriotic",
+            "5": "Nationalist",
+            "6": "Chauvinist"
+          }
+        },
         "environmental": {
           "title": "Environmental",
           "ecology": "Ecology",
