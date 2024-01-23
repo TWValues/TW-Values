@@ -222,13 +222,13 @@ const QUESTIONS = [
     }
   },
   {
-    id: "q0605",
+    id: "q0604",
     weight: {
       societal: weights.p100,
     }
   },
   {
-    id: "q0606",
+    id: "q0605",
     weight: {
       societal: weights.p100,
       sovereignty: weights.p050,
