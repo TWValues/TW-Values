@@ -290,6 +290,13 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0900",
+    weight: {
+      economic: -weights.p050,
+      diplomatic: -weights.p100,
+    }
+  },
+  {
     id: "q1000",
     weight: {
       sovereignty: weights.p100,
