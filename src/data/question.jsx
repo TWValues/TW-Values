@@ -289,6 +289,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0801",
+    weight: {
+      diplomatic: weights.p100,
+    }
+  },
+  {
     id: "q0900",
     weight: {
       economic: -weights.p050,
