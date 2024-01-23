@@ -118,9 +118,6 @@
       "q0603": {
         "description": "Death penalty should be abolished."
       },
-      "q0604": {
-        "description": "Governments should be as concerned about foreigners as they are about their own citizens."
-      },
       "q0605": {
         "description": "Traditions are of no value on their own."
       },
@@ -144,6 +141,9 @@
       },
       "q0705": {
         "description": "- Young and beautiful girls, suitable for being counter staff.\n- It is scary for women to go out on the street without makeup.\n- Too many unmarried women are a national security concern."
+      },
+      "q0800": {
+        "description": "Governments should be as concerned about foreigners as they are about their own citizens."
       },
       "q0900": {
         "description": "International aid is a waste of money."

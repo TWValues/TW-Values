@@ -222,13 +222,6 @@ const QUESTIONS = [
     }
   },
   {
-    id: "q0604",
-    weight: {
-      societal: weights.p100,
-      diplomatic: weights.p050,
-    }
-  },
-  {
     id: "q0605",
     weight: {
       societal: weights.p100,
@@ -287,6 +280,12 @@ const QUESTIONS = [
       tags: {
         male_chauvinism: 1,
       }
+    }
+  },
+  {
+    id: "q0800",
+    weight: {
+      diplomatic: weights.p100,
     }
   },
   {
