@@ -297,8 +297,8 @@ const QUESTIONS = [
   {
     id: "q0900",
     weight: {
-      economic: -weights.p050,
       diplomatic: -weights.p100,
+      economic: -weights.p050,
     }
   },
   {

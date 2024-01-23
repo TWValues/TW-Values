@@ -230,20 +230,6 @@
             "6": "Chauvinist"
           }
         },
-        "environmental": {
-          "title": "Environmental",
-          "ecology": "Ecology",
-          "production": "Production",
-          "categories": {
-            "0": "Radical Environmentalism",
-            "1": "Environmentalism",
-            "2": "Prefer Ecology",
-            "3": "Centrist",
-            "4": "Prefer Production",
-            "5": "Anti-environmentalism",
-            "6": "Anti-environmentalism"
-          }
-        },
         "civil": {
           "title": "Civil",
           "authority": "Authority",
@@ -256,6 +242,20 @@
             "4": "Statist",
             "5": "Authoritarian",
             "6": "Totalitarian"
+          }
+        },
+        "environmental": {
+          "title": "Environmental",
+          "ecology": "Ecology",
+          "production": "Production",
+          "categories": {
+            "0": "Radical Environmentalism",
+            "1": "Environmentalism",
+            "2": "Prefer Ecology",
+            "3": "Centrist",
+            "4": "Prefer Production",
+            "5": "Anti-environmentalism",
+            "6": "Anti-environmentalism"
           }
         },
         "societal": {

@@ -26,9 +26,9 @@ const getIdeologyMatchScores = (weights) => {
   const ideologyScores = IDEOLOGIES.map((value) => {
     let distance = 0.0
     distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
+    distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
     distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
     distance += Math.pow(Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)), 2)
-    distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
     return {
       id: value.id,
       distance: distance,
@@ -42,8 +42,8 @@ export const getPoliticalPartyMatchScores = (weights) => {
   const politicalScores = POLITICAL_PARTIES.map((value) => {
     let distance = 0.0
     distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
-    distance += Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2)
     distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
+    distance += Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2)
     distance += Math.pow(Math.abs(value.weight.societal - weights.societal), 2)
     distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
     distance += Math.pow(Math.abs(value.weight.us_china_relation - weights.us_china_relation), 2)
@@ -71,10 +71,10 @@ const Result = () => {
 
   const weights = {
     economic: searchParams.get('economic'),
-    environmental: searchParams.get('environmental'),
-    civil: searchParams.get('civil'),
-    societal: searchParams.get('societal'),
     diplomatic: searchParams.get('diplomatic'),
+    civil: searchParams.get('civil'),
+    environmental: searchParams.get('environmental'),
+    societal: searchParams.get('societal'),
     sovereignty: searchParams.get('sovereignty'),
     us_china_relation: searchParams.get('us_china_relation'),
   }
