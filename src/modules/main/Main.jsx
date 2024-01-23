@@ -40,7 +40,7 @@ const Main = () => {
         <Outlet />
       </Content>
       <Footer />
-    </Layout >
+    </Layout>
   )
 }
 
