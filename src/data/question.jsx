@@ -1,204 +1,210 @@
 
+const weights = {
+  p150: 24,
+  p100: 16,
+  p075: 12,
+  p050: 8,
+}
+
 const QUESTIONS = [
   {
     id: "q0000",
     weight: {
-      economic: 10,
+      economic: weights.p100,
     }
   },
   {
     id: "q0001",
     weight: {
-      economic: 10,
+      economic: weights.p100,
     }
   },
   {
     id: "q0002",
     weight: {
-      economic: 10,
+      economic: weights.p100,
     }
   },
   {
     id: "q0003",
     weight: {
-      economic: 10,
+      economic: weights.p100,
     }
   },
   {
     id: "q0004",
     weight: {
-      economic: 10,
+      economic: weights.p100,
     }
   },
   {
     id: "q0100",
     weight: {
-      economic: -10,
+      economic: -weights.p100,
     }
   },
   {
     id: "q0101",
     weight: {
-      economic: -10,
+      economic: -weights.p100,
     }
   },
   {
     id: "q0102",
     weight: {
-      economic: -10,
+      economic: -weights.p100,
     }
   },
   {
     id: "q0103",
     weight: {
-      economic: -10,
+      economic: -weights.p100,
     }
   },
   {
     id: "q0104",
     weight: {
-      economic: -10,
+      economic: -weights.p100,
     }
   },
   {
     id: "q0105",
     weight: {
-      economic: -10,
+      economic: -weights.p100,
     }
   },
   {
     id: "q0200",
     weight: {
-      environmental: 10,
+      environmental: weights.p100,
     }
   },
   {
     id: "q0201",
     weight: {
-      environmental: 10,
+      environmental: weights.p100,
     }
   },
   {
     id: "q0202",
     weight: {
-      environmental: 10,
+      environmental: weights.p100,
     }
   },
   {
     id: "q0203",
     weight: {
-      environmental: 10,
+      environmental: weights.p100,
     }
   },
   {
     id: "q0300",
     weight: {
-      environmental: -10,
+      environmental: -weights.p100,
     }
   },
   {
     id: "q0301",
     weight: {
-      environmental: -10,
+      environmental: -weights.p100,
     }
   },
   {
     id: "q0302",
     weight: {
-      environmental: -10,
+      environmental: -weights.p100,
     }
   },
   {
     id: "q0400",
     weight: {
-      civil: 10,
+      civil: weights.p100,
+      societal: weights.p050,
     }
   },
   {
     id: "q0401",
     weight: {
-      civil: 10,
+      civil: weights.p100,
     }
   },
   {
     id: "q0402",
     weight: {
-      civil: 10,
+      civil: weights.p100,
     }
   },
   {
     id: "q0403",
     weight: {
-      civil: 10,
+      civil: weights.p100,
     }
   },
   {
     id: "q0404",
     weight: {
-      civil: 10,
+      civil: weights.p100,
     }
   },
   {
     id: "q0405",
     weight: {
-      civil: 10,
+      civil: weights.p100,
     }
   },
   {
     id: "q0500",
     weight: {
-      civil: -10,
+      civil: -weights.p100,
     }
   },
   {
     id: "q0501",
     weight: {
-      civil: -10,
+      civil: -weights.p100,
     }
   },
   {
     id: "q0502",
     weight: {
-      civil: -10,
+      civil: -weights.p100,
     }
   },
   {
     id: "q0503",
     weight: {
-      civil: -10,
-      diplomatic: -5,
+      civil: -weights.p100,
+      diplomatic: -weights.p050,
     }
   },
   {
     id: "q0504",
     weight: {
-      civil: -10,
-      diplomatic: 5,
+      civil: -weights.p100,
     }
   },
   {
     id: "q0505",
     weight: {
-      civil: -10,
-      diplomatic: -5,
+      civil: -weights.p100,
     }
   },
   {
     id: "q0600",
     weight: {
-      societal: 10,
+      societal: weights.p100,
     }
   },
   {
     id: "q0601",
     weight: {
-      societal: 10,
+      societal: weights.p100,
     }
   },
   {
     id: "q0602",
     weight: {
-      societal: 10,
+      societal: weights.p100,
 
       tags: {
         homophobia: -1,
@@ -208,7 +214,7 @@ const QUESTIONS = [
   {
     id: "q0603",
     weight: {
-      societal: 10,
+      societal: weights.p100,
 
       tags: {
         death_penalty_abolitionists: 1,
@@ -218,20 +224,21 @@ const QUESTIONS = [
   {
     id: "q0604",
     weight: {
-      societal: 10,
-      diplomatic: 5,
+      societal: weights.p100,
+      diplomatic: weights.p050,
     }
   },
   {
     id: "q0605",
     weight: {
-      societal: 10,
+      societal: weights.p100,
     }
   },
   {
     id: "q0606",
     weight: {
-      societal: 10,
+      societal: weights.p100,
+      sovereignty: weights.p050,
 
       tags: {
         feminism_buffet: -1,
@@ -241,37 +248,41 @@ const QUESTIONS = [
   {
     id: "q0700",
     weight: {
-      societal: -10,
+      societal: -weights.p100,
+      civil: -weights.p050,
     }
   },
   {
     id: "q0701",
     weight: {
-      societal: -10,
+      societal: -weights.p100,
+      civil: -weights.p050,
     }
   },
   {
     id: "q0702",
     weight: {
-      societal: -10,
+      societal: -weights.p100,
     }
   },
   {
     id: "q0703",
     weight: {
-      societal: -10,
+      societal: -weights.p100,
+      civil: -weights.p050,
     }
   },
   {
     id: "q0704",
     weight: {
-      societal: -10,
+      societal: -weights.p100,
+      civil: -weights.p050,
     }
   },
   {
     id: "q0705",
     weight: {
-      societal: -10,
+      societal: -weights.p100,
 
       tags: {
         male_chauvinism: 1,
@@ -281,7 +292,7 @@ const QUESTIONS = [
   {
     id: "q1000",
     weight: {
-      sovereignty: 10,
+      sovereignty: weights.p100,
 
       tags: {
         roc_independence: 1,
@@ -291,8 +302,8 @@ const QUESTIONS = [
   {
     id: "q1001",
     weight: {
-      sovereignty: 15,
-      diplomatic: -10,
+      sovereignty: weights.p150,
+      diplomatic: -weights.p100,
 
       tags: {
         tw_independence: 1,
@@ -302,19 +313,21 @@ const QUESTIONS = [
   {
     id: "q1002",
     weight: {
-      sovereignty: 10,
-      diplomatic: -5,
+      sovereignty: weights.p150,
+      diplomatic: -weights.p050,
     }
   },
   {
     id: "q1100",
     weight: {
-      sovereignty: -5,
+      sovereignty: -weights.p075,
     }
   },
   {
     id: "q1101",
     weight: {
+      sovereignty: -weights.p100,
+
       tags: {
         roc_unification: 1,
       }
@@ -323,14 +336,14 @@ const QUESTIONS = [
   {
     id: "q1102",
     weight: {
-      sovereignty: -10,
+      sovereignty: -weights.p075,
     }
   },
   {
     id: "q1103",
     weight: {
-      sovereignty: -15,
-      us_china_relation: -10,
+      sovereignty: -weights.p150,
+      us_china_relation: -weights.p100,
 
       tags: {
         prc_unification: 1,
@@ -340,56 +353,56 @@ const QUESTIONS = [
   {
     id: "q1104",
     weight: {
-      sovereignty: -10,
-      us_china_relation: -10,
+      sovereignty: -weights.p100,
+      us_china_relation: -weights.p100,
     }
   },
   {
     id: "q1200",
     weight: {
-      us_china_relation: 10,
+      us_china_relation: weights.p100,
       diplomatic: -5,
     }
   },
   {
     id: "q1201",
     weight: {
-      us_china_relation: 10,
+      us_china_relation: weights.p100,
     }
   },
   {
     id: "q1202",
     weight: {
-      us_china_relation: 10,
+      us_china_relation: weights.p100,
     }
   },
   {
     id: "q1203",
     weight: {
-      sovereignty: 5,
-      us_china_relation: 10,
-      diplomatic: -5,
+      sovereignty: weights.p050,
+      us_china_relation: weights.p100,
+      diplomatic: -weights.p050,
     }
   },
   {
     id: "q1300",
     weight: {
-      us_china_relation: -10,
-      diplomatic: 5,
+      us_china_relation: -weights.p100,
+      diplomatic: weights.p050,
     }
   },
   {
     id: "q1301",
     weight: {
-      sovereignty: -5,
-      us_china_relation: -10,
+      sovereignty: -weights.p050,
+      us_china_relation: -weights.p100,
     }
   },
   {
     id: "q1302",
     weight: {
-      us_china_relation: -10,
-      diplomatic: 5,
+      us_china_relation: -weights.p075,
+      diplomatic: weights.p050,
     }
   },
 ]
