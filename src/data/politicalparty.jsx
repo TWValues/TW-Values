@@ -57,7 +57,7 @@ const POLITICAL_PARTIES = [
       civil: 75,
       societal: 75,
       sovereignty: 75,
-      us_china_relation: 70,
+      us_china_relation: 75,
     }
   },
   {
@@ -66,7 +66,7 @@ const POLITICAL_PARTIES = [
     weight: {
       economic: 50,
       environmental: 45,
-      civil: 50,
+      civil: 45,
       societal: 50,
       sovereignty: 45,
       us_china_relation: 40,
@@ -105,7 +105,7 @@ const POLITICAL_PARTIES = [
       civil: 75,
       societal: 75,
       sovereignty: 75,
-      us_china_relation: 70,
+      us_china_relation: 65,
     }
   }
 ]
