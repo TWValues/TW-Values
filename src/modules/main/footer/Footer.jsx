@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { Layout, Typography, Grid } from 'antd'
 import getScreenSize from '../../../utils/getScreenSize'
 

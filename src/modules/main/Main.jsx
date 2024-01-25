@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { Layout, Grid } from 'antd'
 import { Outlet } from 'react-router-dom'
 import Header from './header/Header'

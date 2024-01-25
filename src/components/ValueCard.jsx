@@ -1,3 +1,4 @@
+import React from 'react'
 import { Card, Typography, Progress, Layout, Image, Grid } from 'antd'
 import getScreenSize from '../utils/getScreenSize'
 

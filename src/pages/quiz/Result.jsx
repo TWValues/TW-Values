@@ -1,5 +1,6 @@
+import React from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Layout, Card, Typography, Image, Tag, Button, Flex } from 'antd'
+import { Layout, Card, Typography, Image, Button, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideology'
@@ -165,6 +166,7 @@ const Result = () => {
               key={`ideology.${value.id}`}
               href={link}
               target='_blank'
+              rel='noreferrer'
             >
               {inner()}
             </a> :
@@ -196,6 +198,7 @@ const Result = () => {
               key={`party.${value.id}`}
               href={t(`quiz.result.political_parties.data.${value.id}.link`)}
               target='_blank'
+              rel='noreferrer'
             >
               <Flex
                 justify='center'

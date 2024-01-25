@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { Layout, Typography, Grid, Button, Space } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
