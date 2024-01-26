@@ -30,9 +30,12 @@ const getIdeologyMatchScores = (weights) => {
     distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
     distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
     distance += Math.pow(Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)), 2)
+    const threshold = 4 * 50 * 50
+    let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
     return {
       id: value.id,
       distance: distance,
+      rate: rate,
     }
   }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
@@ -139,27 +142,33 @@ const Result = () => {
           const linkRC = `quiz.result.ideologies.data.${value.id}.link`
           const link = i18n.exists(linkRC) ? t(linkRC) : null
           const inner = () => (
-            <Layout
-              style={{
-                backgroundColor: 'transparent',
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
+            <Flex
+              justify='center'
+              align='center'
+            >
               <Text
                 style={{
                   margin: '10px',
                   fontSize: isLanguage('en') ?
-                    `${getSizeWithStep(140, -16, 3, index)}%` :
-                    `${getSizeWithStep(180, -24, 3, index)}%`,
+                    `${getSizeWithStep(100, -8, 4, index)}%` :
+                    `${getSizeWithStep(140, -16, 4, index)}%`,
                   fontWeight: 'bold',
                   color: 'black',
                   textAlign: 'center',
                 }}>
                 {t(`quiz.result.ideologies.data.${value.id}.name`)}
               </Text>
-            </Layout>
+              <Text
+                style={{
+                  color: 'crimson',
+                  fontSize: isLanguage('en') ?
+                    `${getSizeWithStep(100, -8, 4, index)}%` :
+                    `${getSizeWithStep(100, -8, 4, index)}%`,
+                  textAlign: 'center',
+                }}>
+                {`${Math.round(value.rate * 100)}%`}
+              </Text>
+            </Flex>
           )
           return link && link.length > 0 ?
             <a
