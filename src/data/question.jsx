@@ -336,6 +336,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q1003",
+    weight: {
+      sovereignty: weights.p100,
+    }
+  },
+  {
     id: "q1100",
     weight: {
       sovereignty: -weights.p075,
@@ -347,12 +353,6 @@ const QUESTIONS = [
       tags: {
         roc_unification: 1,
       }
-    }
-  },
-  {
-    id: "q1102",
-    weight: {
-      sovereignty: -weights.p075,
     }
   },
   {
