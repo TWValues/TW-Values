@@ -350,14 +350,6 @@ const QUESTIONS = [
   {
     id: "q1101",
     weight: {
-      tags: {
-        roc_unification: 1,
-      }
-    }
-  },
-  {
-    id: "q1103",
-    weight: {
       sovereignty: -weights.p150,
       us_china_relation: -weights.p100,
 
@@ -367,10 +359,18 @@ const QUESTIONS = [
     }
   },
   {
-    id: "q1104",
+    id: "q1102",
     weight: {
       sovereignty: -weights.p100,
       us_china_relation: -weights.p100,
+    }
+  },
+  {
+    id: "q1103",
+    weight: {
+      tags: {
+        roc_unification: 1,
+      }
     }
   },
   {

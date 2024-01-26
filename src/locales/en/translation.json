@@ -170,13 +170,13 @@
         "description": "Taiwan is a province of People's Republic of China (P.R.C.)."
       },
       "q1101": {
-        "description": "Republic of China (R.O.C.) is the sole legitimate government of China."
-      },
-      "q1103": {
         "description": "Political negotiations with P.R.C. should be carried out immediately to achieve national unification."
       },
-      "q1104": {
+      "q1102": {
         "description": "The government should sign cross-strait peace agreement with P.R.C. as soon as possible."
+      },
+      "q1103": {
+        "description": "Republic of China (R.O.C.) is the sole legitimate government of China."
       },
       "q1200": {
         "description": "The government should stand with U.S. against P.R.C."
