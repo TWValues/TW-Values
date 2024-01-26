@@ -362,7 +362,7 @@ const QUESTIONS = [
     id: "q1102",
     weight: {
       sovereignty: -weights.p100,
-      us_china_relation: -weights.p100,
+      us_china_relation: -weights.p075,
     }
   },
   {

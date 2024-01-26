@@ -2,6 +2,25 @@ import { expect, test } from 'vitest'
 import { calculateScores, MULTIPLIER } from './Quiz'
 import { getPoliticalPartyMatchScores } from './Result'
 import QUESTIONS from '../../data/question'
+import POLITICAL_PARTIES from '../../data/politicalparty'
+
+const checkWeights = (weights, partyId) => {
+  const getParty = (id) => POLITICAL_PARTIES.filter(value => value.id == id)[0]
+  const party = getParty(partyId)
+  const threshold = 5
+  expect(weights.economic).toBeGreaterThanOrEqual(party.weight.economic - threshold)
+  expect(weights.economic).toBeLessThanOrEqual(party.weight.economic + threshold)
+  expect(weights.civil).toBeGreaterThanOrEqual(party.weight.civil - threshold)
+  expect(weights.civil).toBeLessThanOrEqual(party.weight.civil + threshold)
+  expect(weights.environmental).toBeGreaterThanOrEqual(party.weight.environmental - threshold)
+  expect(weights.environmental).toBeLessThanOrEqual(party.weight.environmental + threshold)
+  expect(weights.societal).toBeGreaterThanOrEqual(party.weight.societal - threshold)
+  expect(weights.societal).toBeLessThanOrEqual(party.weight.societal + threshold)
+  expect(weights.sovereignty).toBeGreaterThanOrEqual(party.weight.sovereignty - threshold)
+  expect(weights.sovereignty).toBeLessThanOrEqual(party.weight.sovereignty + threshold)
+  expect(weights.us_china_relation).toBeGreaterThanOrEqual(party.weight.us_china_relation - threshold)
+  expect(weights.us_china_relation).toBeLessThanOrEqual(party.weight.us_china_relation + threshold)
+}
 
 test('kmt', () => {
   const choices = {
@@ -51,7 +70,7 @@ test('kmt', () => {
     q0801: MULTIPLIER.a,
     q0900: MULTIPLIER.d,
     q0901: MULTIPLIER.n,
-    q1000: MULTIPLIER.d,
+    q1000: MULTIPLIER.n,
     q1001: MULTIPLIER.sd,
     q1002: MULTIPLIER.d,
     q1003: MULTIPLIER.d,
@@ -69,6 +88,7 @@ test('kmt', () => {
   }
 
   const weights = calculateScores(QUESTIONS, choices)
+  checkWeights(weights, 'kmt')
   const match = getPoliticalPartyMatchScores(weights)
   const party = match.at(0)
   expect(party.id).toEqual('kmt')
@@ -141,6 +161,7 @@ test('dpp', () => {
   }
 
   const weights = calculateScores(QUESTIONS, choices)
+  checkWeights(weights, 'dpp')
   const match = getPoliticalPartyMatchScores(weights)
   const party = match.at(0)
   expect(party.id).toEqual('dpp')
@@ -213,6 +234,7 @@ test('npp', () => {
   }
 
   const weights = calculateScores(QUESTIONS, choices)
+  checkWeights(weights, 'npp')
   const match = getPoliticalPartyMatchScores(weights)
   const party = match.at(0)
   expect(party.id).toEqual('npp')
@@ -285,6 +307,7 @@ test('tpp', () => {
   }
 
   const weights = calculateScores(QUESTIONS, choices)
+  checkWeights(weights, 'tpp')
   const match = getPoliticalPartyMatchScores(weights)
   const party = match.at(0)
   expect(party.id).toEqual('tpp')
@@ -310,7 +333,7 @@ test('gpt', () => {
     q0203: MULTIPLIER.a,
     q0300: MULTIPLIER.sd,
     q0301: MULTIPLIER.sd,
-    q0302: MULTIPLIER.sd,
+    q0302: MULTIPLIER.d,
     q0400: MULTIPLIER.a,
     q0401: MULTIPLIER.d,
     q0402: MULTIPLIER.a,
@@ -357,6 +380,7 @@ test('gpt', () => {
   }
 
   const weights = calculateScores(QUESTIONS, choices)
+  checkWeights(weights, 'gpt')
   const match = getPoliticalPartyMatchScores(weights)
   const party = match.at(0)
   expect(party.id).toEqual('gpt')
