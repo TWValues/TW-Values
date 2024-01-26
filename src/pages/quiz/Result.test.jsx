@@ -333,7 +333,7 @@ test('gpt', () => {
     q0701: MULTIPLIER.d,
     q0702: MULTIPLIER.d,
     q0703: MULTIPLIER.d,
-    q0704: MULTIPLIER.n,
+    q0704: MULTIPLIER.d,
     q0705: MULTIPLIER.d,
     q0800: MULTIPLIER.a,
     q0801: MULTIPLIER.a,
