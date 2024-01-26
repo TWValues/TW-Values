@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Card, Typography, Image, Button, Flex } from 'antd'
+import { Card, Typography, Image, Button, Flex, Switch } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideology'
@@ -68,6 +68,8 @@ const Result = () => {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
   const [t, i18n] = useTranslation()
+  const [expandIdeology, setExpandIdeology] = useState(false, [])
+  const [expandParty, setExpandParty] = useState(false, [])
 
   const isLanguage = (lang) => {
     return i18n.language == lang
@@ -83,12 +85,8 @@ const Result = () => {
     us_china_relation: searchParams.get('us_china_relation'),
   }
 
-  const getBestMatchIdeologies = (ideologyScores) => {
-    const top3 = ideologyScores
-      .filter((value) => value.distance <= 20 * 20 * 4)
-      .slice(0, 3)
-
-    return top3.length > 0 ? top3 : ideologyScores.slice(0, 1)
+  const getTopScores = (scores, all, count) => {
+    return all ? scores : scores.slice(0, Math.min(scores.length, count));
   }
 
   const getCategory = (percent) => {
@@ -129,18 +127,17 @@ const Result = () => {
       <Card
         title={t('quiz.result.ideologies.name')}
         headStyle={{
-          backgroundColor: 'white',
-          color: 'black',
           fontSize: 'x-large',
           textAlign: 'center',
         }}
         style={{
-          backgroundColor: 'white',
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
-        }}>
-        {getBestMatchIdeologies(getIdeologyMatchScores(weights)).map((value, index) => {
+        }}
+        extra={<Switch onChange={(checked) => { setExpandIdeology(checked) }} />}
+      >
+        {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
           const linkRC = `quiz.result.ideologies.data.${value.id}.link`
           const link = i18n.exists(linkRC) ? t(linkRC) : null
           const inner = () => (
@@ -189,62 +186,57 @@ const Result = () => {
       <Card
         title={t('quiz.result.political_parties.name')}
         headStyle={{
-          backgroundColor: 'white',
-          color: 'black',
           fontSize: 'x-large',
           textAlign: 'center',
         }}
         style={{
-          backgroundColor: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
-        }}>
-        {getPoliticalPartyMatchScores(weights)
-          .map((value, index) => (
-            <a
-              key={`party.${value.id}`}
-              href={t(`quiz.result.political_parties.data.${value.id}.link`)}
-              target='_blank'
-              rel='noreferrer'
+        }}
+        extra={<Switch onChange={(checked) => { setExpandParty(checked) }} />}
+      >
+        {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => (
+          <a
+            key={`party.${value.id}`}
+            href={t(`quiz.result.political_parties.data.${value.id}.link`)}
+            target='_blank'
+            rel='noreferrer'
+          >
+            <Flex
+              justify='center'
+              align='center'
             >
-              <Flex
-                justify='center'
-                align='center'
-              >
-                <Image
-                  width={getSizeWithStep(24, -3, 4, index)}
-                  src={value.icon}
-                  preview={false}
-                />
-                <Text
-                  style={{
-                    margin: '10px',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(140, -16, 4, index)}%`,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    textAlign: 'center',
-                  }}>
-                  {t(`quiz.result.political_parties.data.${value.id}.name`)}
-                </Text>
-                <Text
-                  style={{
-                    color: 'crimson',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(100, -8, 4, index)}%`,
-                    textAlign: 'center',
-                  }}>
-                  {`${Math.round(value.rate * 100)}%`}
-                </Text>
-              </Flex>
-            </a>
-          ))}
+              <Image
+                width={getSizeWithStep(24, -3, 4, index)}
+                src={value.icon}
+                preview={false}
+              />
+              <Text
+                style={{
+                  margin: '10px',
+                  fontSize: isLanguage('en') ?
+                    `${getSizeWithStep(100, -8, 4, index)}%` :
+                    `${getSizeWithStep(140, -16, 4, index)}%`,
+                  fontWeight: 'bold',
+                  color: 'black',
+                  textAlign: 'center',
+                }}>
+                {t(`quiz.result.political_parties.data.${value.id}.name`)}
+              </Text>
+              <Text
+                style={{
+                  color: 'crimson',
+                  fontSize: isLanguage('en') ?
+                    `${getSizeWithStep(100, -8, 4, index)}%` :
+                    `${getSizeWithStep(100, -8, 4, index)}%`,
+                  textAlign: 'center',
+                }}>
+                {`${Math.round(value.rate * 100)}%`}
+              </Text>
+            </Flex>
+          </a>
+        ))}
       </Card>
       <Card
         title={t('quiz.result.tags.name')}
