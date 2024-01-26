@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Layout, Card, Typography, Image, Button, Flex } from 'antd'
+import { Card, Typography, Image, Button, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideology'
@@ -119,11 +119,13 @@ const Result = () => {
   }
 
   return (
-    <Layout style={{
-      backgroundColor: 'transparent',
-      display: 'flex',
-      alignItems: 'center',
-    }}>
+    <Flex
+      vertical={true}
+      align='center'
+      style={{
+        width: '100%'
+      }}
+    >
       <Card
         title={t('quiz.result.ideologies.name')}
         headStyle={{
@@ -364,7 +366,7 @@ const Result = () => {
         percent={weights.us_china_relation}
         leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(weights.us_china_relation)}`)}
       />
-    </Layout>
+    </Flex>
   )
 }
 
