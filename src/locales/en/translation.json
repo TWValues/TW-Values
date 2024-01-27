@@ -50,25 +50,16 @@
         "description": "The budget should not be spent on unprofitable public works, even if part of the population needs them."
       },
       "q0200": {
-        "description": "Climate change is currently one of the greatest threats to our way of life."
+        "description": "Governments should be as concerned about foreigners as they are about their own citizens."
       },
       "q0201": {
-        "description": "It is acceptable to increase the cost of living in pursuit of environmental protection."
-      },
-      "q0202": {
-        "description": "The extinction of species due to human actions is unacceptable."
-      },
-      "q0203": {
-        "description": "The development of renewable energy is of paramount importance."
+        "description": "Governments should be accountable to the international community."
       },
       "q0300": {
-        "description": "It is acceptable to have environmental pollution in pursuit of economic growth."
+        "description": "International aid is a waste of money."
       },
       "q0301": {
-        "description": "The use of cheap fossil fuels is necessary."
-      },
-      "q0302": {
-        "description": "There should not be any quotas on fishing."
+        "description": "Regardless of political opinions, it is important to side with your country."
       },
       "q0400": {
         "description": "Physician-assisted suicide should be legal."
@@ -143,16 +134,25 @@
         "description": "- Young and beautiful girls, suitable for being counter staff.\n- It is scary for women to go out on the street without makeup.\n- Too many unmarried women are a national security concern."
       },
       "q0800": {
-        "description": "Governments should be as concerned about foreigners as they are about their own citizens."
+        "description": "Climate change is currently one of the greatest threats to our way of life."
       },
       "q0801": {
-        "description": "Governments should be accountable to the international community."
+        "description": "It is acceptable to increase the cost of living in pursuit of environmental protection."
+      },
+      "q0802": {
+        "description": "The extinction of species due to human actions is unacceptable."
+      },
+      "q0803": {
+        "description": "The development of renewable energy is of paramount importance."
       },
       "q0900": {
-        "description": "International aid is a waste of money."
+        "description": "It is acceptable to have environmental pollution in pursuit of economic growth."
       },
       "q0901": {
-        "description": "Regardless of political opinions, it is important to side with your country."
+        "description": "The use of cheap fossil fuels is necessary."
+      },
+      "q0902": {
+        "description": "There should not be any quotas on fishing."
       },
       "q1000": {
         "description": "Our nation is already a sovereign and independent country."

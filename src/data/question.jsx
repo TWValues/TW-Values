@@ -76,43 +76,26 @@ const QUESTIONS = [
   {
     id: "q0200",
     weight: {
-      environmental: weights.p100,
+      diplomatic: weights.p100,
     }
   },
   {
     id: "q0201",
     weight: {
-      environmental: weights.p100,
-    }
-  },
-  {
-    id: "q0202",
-    weight: {
-      environmental: weights.p100,
-    }
-  },
-  {
-    id: "q0203",
-    weight: {
-      environmental: weights.p100,
+      diplomatic: weights.p100,
     }
   },
   {
     id: "q0300",
     weight: {
-      environmental: -weights.p100,
+      diplomatic: -weights.p100,
+      economic: -weights.p050,
     }
   },
   {
     id: "q0301",
     weight: {
-      environmental: -weights.p100,
-    }
-  },
-  {
-    id: "q0302",
-    weight: {
-      environmental: -weights.p100,
+      diplomatic: -weights.p100,
     }
   },
   {
@@ -285,26 +268,43 @@ const QUESTIONS = [
   {
     id: "q0800",
     weight: {
-      diplomatic: weights.p100,
+      environmental: weights.p100,
     }
   },
   {
     id: "q0801",
     weight: {
-      diplomatic: weights.p100,
+      environmental: weights.p100,
+    }
+  },
+  {
+    id: "q0802",
+    weight: {
+      environmental: weights.p100,
+    }
+  },
+  {
+    id: "q0803",
+    weight: {
+      environmental: weights.p100,
     }
   },
   {
     id: "q0900",
     weight: {
-      diplomatic: -weights.p100,
-      economic: -weights.p050,
+      environmental: -weights.p100,
     }
   },
   {
     id: "q0901",
     weight: {
-      diplomatic: -weights.p100,
+      environmental: -weights.p100,
+    }
+  },
+  {
+    id: "q0902",
+    weight: {
+      environmental: -weights.p100,
     }
   },
   {
