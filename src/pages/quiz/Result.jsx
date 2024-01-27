@@ -23,6 +23,17 @@ import FlagOfPRC from '../../assets/values/FlagOfPRC.svg'
 
 const { Text } = Typography
 
+const getMatchRate = (distance, lower, upper) => {
+  // 0 ---- lower ---- upper
+  // |- 90%+ -|- 90% - 0% -|
+
+  if (distance <= lower) {
+    return 0.90 + 0.10 * Math.max(0, lower - distance) / lower
+  }
+
+  return 0.90 * Math.pow(1 - (Math.min(distance, upper) - lower) / (upper - lower), 2)
+}
+
 const getIdeologyMatchScores = (weights) => {
   const ideologyScores = IDEOLOGIES.map((value) => {
     let distance = 0.0
@@ -30,12 +41,10 @@ const getIdeologyMatchScores = (weights) => {
     distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
     distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
     distance += Math.pow(Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)), 2)
-    const threshold = 4 * 50 * 50
-    let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
     return {
       id: value.id,
       distance: distance,
-      rate: rate,
+      rate: getMatchRate(distance, 4 * 10 * 10, 4 * 50 * 50),
     }
   }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
@@ -51,12 +60,10 @@ export const getPoliticalPartyMatchScores = (weights) => {
     distance += Math.pow(Math.abs(value.weight.societal - weights.societal), 2)
     distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
     distance += Math.pow(Math.abs(value.weight.us_china_relation - weights.us_china_relation), 2)
-    const threshold = 6 * 50 * 50
-    let rate = Math.pow(Math.max(0, threshold - distance) / threshold, 2)
     return {
       ...value,
       distance: distance,
-      rate: rate,
+      rate: getMatchRate(distance, 6 * 10 * 10, 6 * 50 * 50),
     }
   }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
 
