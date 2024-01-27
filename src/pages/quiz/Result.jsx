@@ -129,13 +129,20 @@ const Result = () => {
         headStyle={{
           fontSize: 'x-large',
           textAlign: 'center',
+          paddingLeft: '60px',
         }}
         style={{
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
         }}
-        extra={<Switch onChange={(checked) => { setExpandIdeology(checked) }} />}
+        extra={<Switch
+          unCheckedChildren='3'
+          checkedChildren='∞'
+          size='small'
+          onChange={(checked) => { setExpandIdeology(checked) }}
+          style={{ backgroundColor: expandIdeology ? 'crimson' : 'gray' }}
+        />}
       >
         <Row>
           {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
@@ -196,13 +203,20 @@ const Result = () => {
         headStyle={{
           fontSize: 'x-large',
           textAlign: 'center',
+          paddingLeft: '60px',
         }}
         style={{
           width: '100%',
           fontSize: 'large',
           margin: '5px 10px 5px 10px',
         }}
-        extra={<Switch onChange={(checked) => { setExpandParty(checked) }} />}
+        extra={<Switch
+          unCheckedChildren='3'
+          checkedChildren='∞'
+          size='small'
+          onChange={(checked) => { setExpandParty(checked) }}
+          style={{ backgroundColor: expandParty ? 'crimson' : 'gray' }}
+        />}
       >
         <Row>
           {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => (
