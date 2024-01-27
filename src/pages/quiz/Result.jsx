@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Card, Typography, Image, Button, Flex, Switch } from 'antd'
+import { Card, Typography, Image, Button, Flex, Switch, Row, Col } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideology'
@@ -137,51 +137,59 @@ const Result = () => {
         }}
         extra={<Switch onChange={(checked) => { setExpandIdeology(checked) }} />}
       >
-        {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
-          const linkRC = `quiz.result.ideologies.data.${value.id}.link`
-          const link = i18n.exists(linkRC) ? t(linkRC) : null
-          const inner = () => (
-            <Flex
-              justify='center'
-              align='center'
-            >
-              <Text
-                style={{
-                  margin: '10px',
-                  fontSize: isLanguage('en') ?
-                    `${getSizeWithStep(100, -8, 4, index)}%` :
-                    `${getSizeWithStep(140, -16, 4, index)}%`,
-                  fontWeight: 'bold',
-                  color: 'black',
-                  textAlign: 'center',
-                }}>
-                {t(`quiz.result.ideologies.data.${value.id}.name`)}
-              </Text>
-              <Text
-                style={{
-                  color: 'crimson',
-                  fontSize: isLanguage('en') ?
-                    `${getSizeWithStep(100, -8, 4, index)}%` :
-                    `${getSizeWithStep(100, -8, 4, index)}%`,
-                  textAlign: 'center',
-                }}>
-                {`${Math.round(value.rate * 100)}%`}
-              </Text>
-            </Flex>
-          )
-          return link && link.length > 0 ?
-            <a
-              key={`ideology.${value.id}`}
-              href={link}
-              target='_blank'
-              rel='noreferrer'
-            >
-              {inner()}
-            </a> :
-            <div key={`ideology.${value.id}`}>
-              {inner()}
-            </div>
-        })}
+        <Row>
+          {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
+            const linkRC = `quiz.result.ideologies.data.${value.id}.link`
+            const link = i18n.exists(linkRC) ? t(linkRC) : null
+            const getInner = () => (
+              <Flex
+                justify='center'
+                align='center'
+              >
+                <Text
+                  style={{
+                    margin: '10px',
+                    fontSize: isLanguage('en') ?
+                      `${getSizeWithStep(100, -8, 4, index)}%` :
+                      `${getSizeWithStep(140, -16, 4, index)}%`,
+                    fontWeight: 'bold',
+                    color: 'black',
+                    textAlign: 'center',
+                  }}>
+                  {t(`quiz.result.ideologies.data.${value.id}.name`)}
+                </Text>
+                <Text
+                  style={{
+                    color: 'crimson',
+                    fontSize: isLanguage('en') ?
+                      `${getSizeWithStep(100, -8, 4, index)}%` :
+                      `${getSizeWithStep(100, -8, 4, index)}%`,
+                    textAlign: 'center',
+                  }}>
+                  {`${Math.round(value.rate * 100)}%`}
+                </Text>
+              </Flex>
+            )
+            const wrapLink = (componet) => {
+              return link && link.length > 0 ?
+                <a href={link} target='_blank' rel='noreferrer'>{componet}</a> :
+                componet
+            }
+            return (
+              <Col
+                key={`ideology.${value.id}`}
+                xs={24}
+                sm={24}
+                md={index < 3 ? 24 : 12}
+                lg={index < 3 ? 24 : 12}
+                xl={index < 3 ? 24 : 8}
+                xxl={index < 3 ? 24 : 8}
+              >
+                {wrapLink(getInner())}
+              </Col>
+            )
+          })}
+        </Row>
       </Card>
       <Card
         title={t('quiz.result.political_parties.name')}
@@ -196,47 +204,58 @@ const Result = () => {
         }}
         extra={<Switch onChange={(checked) => { setExpandParty(checked) }} />}
       >
-        {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => (
-          <a
-            key={`party.${value.id}`}
-            href={t(`quiz.result.political_parties.data.${value.id}.link`)}
-            target='_blank'
-            rel='noreferrer'
-          >
-            <Flex
-              justify='center'
-              align='center'
+        <Row>
+          {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => (
+            <Col
+              key={`party.${value.id}`}
+              xs={24}
+              sm={24}
+              md={index < 3 ? 24 : 12}
+              lg={index < 3 ? 24 : 12}
+              xl={index < 3 ? 24 : 8}
+              xxl={index < 3 ? 24 : 8}
             >
-              <Image
-                width={getSizeWithStep(24, -3, 4, index)}
-                src={value.icon}
-                preview={false}
-              />
-              <Text
-                style={{
-                  margin: '10px',
-                  fontSize: isLanguage('en') ?
-                    `${getSizeWithStep(100, -8, 4, index)}%` :
-                    `${getSizeWithStep(140, -16, 4, index)}%`,
-                  fontWeight: 'bold',
-                  color: 'black',
-                  textAlign: 'center',
-                }}>
-                {t(`quiz.result.political_parties.data.${value.id}.name`)}
-              </Text>
-              <Text
-                style={{
-                  color: 'crimson',
-                  fontSize: isLanguage('en') ?
-                    `${getSizeWithStep(100, -8, 4, index)}%` :
-                    `${getSizeWithStep(100, -8, 4, index)}%`,
-                  textAlign: 'center',
-                }}>
-                {`${Math.round(value.rate * 100)}%`}
-              </Text>
-            </Flex>
-          </a>
-        ))}
+              <a
+                href={t(`quiz.result.political_parties.data.${value.id}.link`)}
+                target='_blank'
+                rel='noreferrer'
+              >
+                <Flex
+                  justify='center'
+                  align='center'
+                >
+                  <Image
+                    width={getSizeWithStep(24, -3, 4, index)}
+                    src={value.icon}
+                    preview={false}
+                  />
+                  <Text
+                    style={{
+                      margin: '10px',
+                      fontSize: isLanguage('en') ?
+                        `${getSizeWithStep(100, -8, 4, index)}%` :
+                        `${getSizeWithStep(140, -16, 4, index)}%`,
+                      fontWeight: 'bold',
+                      color: 'black',
+                      textAlign: 'center',
+                    }}>
+                    {t(`quiz.result.political_parties.data.${value.id}.name`)}
+                  </Text>
+                  <Text
+                    style={{
+                      color: 'crimson',
+                      fontSize: isLanguage('en') ?
+                        `${getSizeWithStep(100, -8, 4, index)}%` :
+                        `${getSizeWithStep(100, -8, 4, index)}%`,
+                      textAlign: 'center',
+                    }}>
+                    {`${Math.round(value.rate * 100)}%`}
+                  </Text>
+                </Flex>
+              </a>
+            </Col>
+          ))}
+        </Row>
       </Card>
       <Card
         title={t('quiz.result.tags.name')}
