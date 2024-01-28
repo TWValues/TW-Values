@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideology'
 import POLITICAL_PARTIES from '../../data/politicalparty'
+import IDEOLOGY_TAGS from '../../data/ideology_tag'
 
 import Balance from '../../assets/values/Balance.svg'
 import DollarSign from '../../assets/values/DollarSign.svg'
@@ -77,6 +78,7 @@ const Result = () => {
   const [t, i18n] = useTranslation()
   const [expandIdeology, setExpandIdeology] = useState(false, [])
   const [expandParty, setExpandParty] = useState(false, [])
+  const [expandTags, setExpandTags] = useState(false, [])
 
   const isLanguage = (lang) => {
     return i18n.language == lang
@@ -92,8 +94,17 @@ const Result = () => {
     us_china_relation: searchParams.get('us_china_relation'),
   }
 
+  const matchedTags = new Set(searchParams.get('tags').split(','))
+
   const getTopScores = (scores, all, count) => {
     return all ? scores : scores.slice(0, Math.min(scores.length, count));
+  }
+
+  const getMatchTags = (tags, all) => {
+    if (all) {
+      return tags.sort((lhs, rhs) => matchedTags.has(lhs.id) ? -1 : matchedTags.has(rhs.id) ? 1 : 0)
+    }
+    return tags.filter((value) => matchedTags.has(value.id))
   }
 
   const getCategory = (percent) => {
@@ -148,7 +159,7 @@ const Result = () => {
           checkedChildren='∞'
           size='small'
           onChange={(checked) => { setExpandIdeology(checked) }}
-          style={{ backgroundColor: expandIdeology ? 'crimson' : 'gray' }}
+          style={{ backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue' }}
         />}
       >
         <Row>
@@ -222,7 +233,7 @@ const Result = () => {
           checkedChildren='∞'
           size='small'
           onChange={(checked) => { setExpandParty(checked) }}
-          style={{ backgroundColor: expandParty ? 'crimson' : 'gray' }}
+          style={{ backgroundColor: expandParty ? 'crimson' : 'dodgerblue' }}
         />}
       >
         <Row>
@@ -281,29 +292,32 @@ const Result = () => {
       <Card
         title={t('quiz.result.tags.name')}
         headStyle={{
-          backgroundColor: 'white',
-          color: 'black',
           fontSize: 'x-large',
           textAlign: 'center',
         }}
         style={{
           backgroundColor: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
           width: '100%',
           margin: '5px 10px 5px 10px',
-        }}>
-        {searchParams.get('tags').split(',').map((value) => {
-          const name = t(`quiz.result.tags.data.${value}.name`)
-          const description = t(`quiz.result.tags.data.${value}.description`)
-          const link = t(`quiz.result.tags.data.${value}.link`)
+        }}
+        extra={<Switch
+          unCheckedChildren='M'
+          checkedChildren='∞'
+          size='small'
+          onChange={(checked) => { setExpandTags(checked) }}
+          style={{ backgroundColor: expandTags ? 'crimson' : 'dodgerblue' }}
+        />}
+      >
+        {getMatchTags(IDEOLOGY_TAGS, expandTags).map((value) => {
+          const name = t(`quiz.result.tags.data.${value.id}.name`)
+          const description = t(`quiz.result.tags.data.${value.id}.description`)
+          const link = t(`quiz.result.tags.data.${value.id}.link`)
           return (
             <Flex
-              key={`tags.${value}`}
+              key={`tags.${value.id}`}
               justify='start'
               align='center'
-              style={{ marginTop: '10px', marginBottom: '10px' }}>
+              style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}>
               <Button
                 size='small'
                 type='default'
@@ -311,12 +325,17 @@ const Result = () => {
                 target='_blank'
                 style={{
                   margin: '4px',
-                  color: 'dodgerblue',
+                  color: matchedTags.has(value.id) ? 'dodgerblue' : 'gray',
                   fontWeight: 'bold',
                 }}>
                 {name}
               </Button>
-              <Text style={{ margin: '4px' }}>{description}</Text>
+              <Text style={{
+                margin: '4px',
+                color: matchedTags.has(value.id) ? 'black' : 'gray',
+              }}>
+                {description}
+              </Text>
             </Flex>
           )
         })}
