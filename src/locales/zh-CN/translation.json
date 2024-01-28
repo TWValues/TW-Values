@@ -302,7 +302,7 @@
         }
       },
       "ideologies": {
-        "name": "最接近的意识形态",
+        "name": "意识形态",
         "data": {
           "anarcho_communism": {
             "name": "无政府共产主义",
@@ -501,7 +501,7 @@
         }
       },
       "political_parties": {
-        "name": "理念最接近的政党",
+        "name": "政党",
         "data": {
           "kmt": {
             "name": "中国国民党",

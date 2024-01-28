@@ -302,7 +302,7 @@
         }
       },
       "ideologies": {
-        "name": "Closest Match of Ideologies",
+        "name": "Ideologies",
         "data": {
           "anarcho_communism": {
             "name": "Anarcho-Communism",
@@ -505,7 +505,7 @@
         }
       },
       "political_parties": {
-        "name": "Closest Match of Political Parties",
+        "name": "Political Parties",
         "data": {
           "kmt": {
             "name": "KuoMinTang",

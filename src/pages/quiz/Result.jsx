@@ -147,12 +147,10 @@ const Result = () => {
         headStyle={{
           fontSize: 'x-large',
           textAlign: 'center',
-          paddingLeft: '60px',
+          margin: '0px 5px 0px 50px',
         }}
         style={{
           width: '100%',
-          fontSize: 'large',
-          margin: '5px 10px 5px 10px',
         }}
         extra={<Switch
           unCheckedChildren='3'
@@ -221,12 +219,10 @@ const Result = () => {
         headStyle={{
           fontSize: 'x-large',
           textAlign: 'center',
-          paddingLeft: '60px',
+          margin: '0px 5px 0px 50px',
         }}
         style={{
           width: '100%',
-          fontSize: 'large',
-          margin: '5px 10px 5px 10px',
         }}
         extra={<Switch
           unCheckedChildren='3'
@@ -294,11 +290,10 @@ const Result = () => {
         headStyle={{
           fontSize: 'x-large',
           textAlign: 'center',
+          margin: '0px 5px 0px 50px',
         }}
         style={{
-          backgroundColor: 'white',
           width: '100%',
-          margin: '5px 10px 5px 10px',
         }}
         extra={<Switch
           unCheckedChildren='M'

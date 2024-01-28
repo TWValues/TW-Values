@@ -302,7 +302,7 @@
         }
       },
       "ideologies": {
-        "name": "最接近的意識形態",
+        "name": "意識形態",
         "data": {
           "anarcho_communism": {
             "name": "無政府共產主義",
@@ -501,7 +501,7 @@
         }
       },
       "political_parties": {
-        "name": "理念最接近的政黨",
+        "name": "政黨",
         "data": {
           "kmt": {
             "name": "中國國民黨",
