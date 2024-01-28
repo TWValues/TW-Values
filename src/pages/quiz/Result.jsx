@@ -102,7 +102,17 @@ const Result = () => {
 
   const getMatchTags = (tags, all) => {
     if (all) {
-      return tags.sort((lhs, rhs) => matchedTags.has(lhs.id) ? -1 : matchedTags.has(rhs.id) ? 1 : 0)
+      return tags.sort((lhs, rhs) => {
+        const l = matchedTags.has(lhs.id)
+        const r = matchedTags.has(rhs.id)
+        if (l && !r) {
+          return -1
+        }
+        if (!l && r) {
+          return 1
+        }
+        return 0
+      })
     }
     return tags.filter((value) => matchedTags.has(value.id))
   }
