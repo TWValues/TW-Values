@@ -99,6 +99,12 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0302",
+    weight: {
+      diplomatic: -weights.p100,
+    }
+  },
+  {
     id: "q0400",
     weight: {
       civil: weights.p100,
