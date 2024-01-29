@@ -1,11 +1,13 @@
 import React from 'react'
 import { Card, Typography, Progress, Layout, Image, Grid, Flex } from 'antd'
 import getScreenSize from '../utils/getScreenSize'
+import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography
 
 const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
 
+  const { i18n } = useTranslation()
   const screens = Grid.useBreakpoint()
 
   const showColorBar = screens.md
@@ -23,15 +25,23 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
   }
 
   const getValueTextStyles = () => {
-    const styles = {
-      sm: { fontSize: 'x-small', margin: '5px 2px' },
-      md: { fontSize: 'small', margin: '8px 5px' },
-      lg: { fontSize: 'small', margin: '8px 5px' },
-      xl: { fontSize: 'medium', margin: '8px 5px' },
-      xxl: { fontSize: 'large', margin: '15px 10px' },
+    if (i18n.language == 'en') {
+      return {
+        sm: { fontSize: 'x-small', margin: '5px 2px' },
+        md: { fontSize: 'small', margin: '8px 5px' },
+        lg: { fontSize: 'small', margin: '8px 5px' },
+        xl: { fontSize: 'medium', margin: '8px 5px' },
+        xxl: { fontSize: 'large', margin: '15px 10px' },
+      }[getScreenSize(screens)]
     }
 
-    return styles[getScreenSize(screens)]
+    return {
+      sm: { fontSize: 'medium', margin: '5px 2px' },
+      md: { fontSize: 'medium', margin: '8px 5px' },
+      lg: { fontSize: 'medium', margin: '8px 5px' },
+      xl: { fontSize: 'medium', margin: '8px 5px' },
+      xxl: { fontSize: 'large', margin: '15px 10px' },
+    }[getScreenSize(screens)]
   }
 
   return (
@@ -66,6 +76,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
             }}
           />
           <Text style={{
+            minWidth: '80px',
             color: leftColor,
             textAlign: 'center',
             ...getValueTextStyles()
@@ -135,6 +146,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
             }}
           />
           <Text style={{
+            minWidth: '80px',
             color: rightColor,
             textAlign: 'center',
             ...getValueTextStyles()
