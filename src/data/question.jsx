@@ -383,7 +383,6 @@ const QUESTIONS = [
     id: "q1200",
     weight: {
       us_vs_china: weights.p100,
-      diplomatic: -5,
     }
   },
   {
