@@ -97,7 +97,7 @@ const Result = () => {
   const matchedTags = new Set(searchParams.get('tags').split(','))
 
   const getTopScores = (scores, all, count) => {
-    return all ? scores : scores.slice(0, Math.min(scores.length, count));
+    return all ? scores : scores.slice(0, Math.min(scores.length, count))
   }
 
   const getMatchTags = (tags, all) => {
