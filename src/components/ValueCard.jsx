@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Typography, Progress, Layout, Image, Grid } from 'antd'
+import { Card, Typography, Progress, Layout, Image, Grid, Flex } from 'antd'
 import getScreenSize from '../utils/getScreenSize'
 
 const { Text } = Typography
@@ -24,11 +24,11 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
 
   const getValueTextStyles = () => {
     const styles = {
-      sm: { fontSize: 'x-small', margin: '2px' },
-      md: { fontSize: 'small', margin: '5px' },
-      lg: { fontSize: 'small', margin: '5px' },
-      xl: { fontSize: 'medium', margin: '5px' },
-      xxl: { fontSize: 'large', margin: '10px' },
+      sm: { fontSize: 'x-small', margin: '5px 2px' },
+      md: { fontSize: 'small', margin: '8px 5px' },
+      lg: { fontSize: 'small', margin: '8px 5px' },
+      xl: { fontSize: 'medium', margin: '8px 5px' },
+      xxl: { fontSize: 'large', margin: '15px 10px' },
     }
 
     return styles[getScreenSize(screens)]
@@ -38,16 +38,11 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
     <Card
       title={title}
       headStyle={{
-        backgroundColor: 'white',
-        color: 'black',
         fontSize: 'x-large',
         textAlign: 'center',
       }}
       style={{
-        backgroundColor: 'white',
         width: '100%',
-        fontSize: 'large',
-        margin: '5px 5px 5px 5px',
       }}>
       <Layout style={{
         backgroundColor: 'transparent',
@@ -57,23 +52,27 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
         justifyItems: 'center',
         width: '100%',
       }}>
-        <Layout style={{
-          backgroundColor: 'transparent',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <Image width={60} src={leftImage || ""} preview={false} />
+        <Flex
+          vertical={true}
+          justify='center'
+          align='center'
+        >
+          <Image
+            width={60}
+            src={leftImage || ""}
+            preview={false}
+            style={{
+              padding: '5px'
+            }}
+          />
           <Text style={{
-            minWidth: '80px',
             color: leftColor,
             textAlign: 'center',
             ...getValueTextStyles()
           }}>
             {leftTitle}
           </Text>
-        </Layout>
+        </Flex>
         <Progress
           type='circle'
           percent={percent}
@@ -84,16 +83,15 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           size={50}
           style={{ margin: '5px' }}
         />
-        <Layout style={{
-          backgroundColor: 'transparent',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          width: '100%',
-          margin: '5px',
-        }}>
+        <Flex
+          vertical={true}
+          justify='center'
+          align='center'
+          style={{
+            width: '100%',
+            marginBottom: showColorBar ? '10px' : '0px',
+          }}
+        >
           <Text style={{
             ...getValueTextStyles(),
             color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
@@ -112,7 +110,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
             trailColor={rightColor}
             style={{ margin: '5px', paddingBottom: '40px' }}
           />}
-        </Layout>
+        </Flex>
         <Progress
           type='circle'
           percent={100 - percent}
@@ -123,25 +121,29 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
           size={50}
           style={{ margin: '5px' }}
         />
-        <Layout style={{
-          backgroundColor: 'transparent',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <Image width={60} src={rightImage || ""} preview={false} />
+        <Flex
+          vertical={true}
+          justify='center'
+          align='center'
+        >
+          <Image
+            width={60}
+            src={rightImage || ""}
+            preview={false}
+            style={{
+              padding: '5px'
+            }}
+          />
           <Text style={{
-            minWidth: '80px',
             color: rightColor,
             textAlign: 'center',
             ...getValueTextStyles()
           }}>
             {rightTitle}
           </Text>
-        </Layout>
+        </Flex>
       </Layout>
-    </Card >
+    </Card>
   )
 }
 
