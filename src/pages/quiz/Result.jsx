@@ -60,7 +60,7 @@ export const getPoliticalPartyMatchScores = (weights) => {
     distance += Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2)
     distance += Math.pow(Math.abs(value.weight.societal - weights.societal), 2)
     distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
-    distance += Math.pow(Math.abs(value.weight.us_china_relation - weights.us_china_relation), 2)
+    distance += Math.pow(Math.abs(value.weight.us_vs_china - weights.us_vs_china), 2)
     return {
       ...value,
       distance: distance,
@@ -91,7 +91,7 @@ const Result = () => {
     environmental: searchParams.get('environmental'),
     societal: searchParams.get('societal'),
     sovereignty: searchParams.get('sovereignty'),
-    us_china_relation: searchParams.get('us_china_relation'),
+    us_vs_china: searchParams.get('us_vs_china'),
   }
 
   const matchedTags = new Set(searchParams.get('tags').split(','))
@@ -412,15 +412,15 @@ const Result = () => {
         leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
       />
       <ValueCard
-        title={t('quiz.result.axes.us_china_relation.title')}
-        leftTitle={t('quiz.result.axes.us_china_relation.pro_american')}
-        rightTitle={t('quiz.result.axes.us_china_relation.pro_chinese')}
+        title={t('quiz.result.axes.us_vs_china.title')}
+        leftTitle={t('quiz.result.axes.us_vs_china.pro_american')}
+        rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese')}
         leftImage={FlagOfUSA}
         rightImage={FlagOfPRC}
         leftColor='navy'
         rightColor='red'
-        percent={weights.us_china_relation}
-        leaningsTitle={t(`quiz.result.axes.us_china_relation.categories.${getCategory(weights.us_china_relation)}`)}
+        percent={weights.us_vs_china}
+        leaningsTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
       />
     </Flex>
   )

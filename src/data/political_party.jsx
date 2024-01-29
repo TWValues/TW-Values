@@ -9,7 +9,7 @@ const POLITICAL_PARTIES = [
       civil: 40,
       societal: 30,
       sovereignty: 35,
-      us_china_relation: 30,
+      us_vs_china: 30,
     }
   },
   {
@@ -21,7 +21,7 @@ const POLITICAL_PARTIES = [
       civil: 55,
       societal: 60,
       sovereignty: 75,
-      us_china_relation: 70,
+      us_vs_china: 70,
     }
   },
   {
@@ -33,7 +33,7 @@ const POLITICAL_PARTIES = [
       civil: 50,
       societal: 40,
       sovereignty: 75,
-      us_china_relation: 70,
+      us_vs_china: 70,
     }
   },
   {
@@ -45,7 +45,7 @@ const POLITICAL_PARTIES = [
       civil: 35,
       societal: 25,
       sovereignty: 20,
-      us_china_relation: 20,
+      us_vs_china: 20,
     }
   },
   {
@@ -57,7 +57,7 @@ const POLITICAL_PARTIES = [
       civil: 75,
       societal: 75,
       sovereignty: 75,
-      us_china_relation: 75,
+      us_vs_china: 75,
     }
   },
   {
@@ -69,7 +69,7 @@ const POLITICAL_PARTIES = [
       civil: 45,
       societal: 50,
       sovereignty: 45,
-      us_china_relation: 40,
+      us_vs_china: 40,
     }
   },
   {
@@ -81,7 +81,7 @@ const POLITICAL_PARTIES = [
       civil: 75,
       societal: 60,
       sovereignty: 75,
-      us_china_relation: 70,
+      us_vs_china: 70,
     }
   },
   {
@@ -93,7 +93,7 @@ const POLITICAL_PARTIES = [
       civil: 10,
       societal: 20,
       sovereignty: 10,
-      us_china_relation: 10,
+      us_vs_china: 10,
     }
   },
   {
@@ -105,7 +105,7 @@ const POLITICAL_PARTIES = [
       civil: 75,
       societal: 75,
       sovereignty: 75,
-      us_china_relation: 65,
+      us_vs_china: 65,
     }
   }
 ]

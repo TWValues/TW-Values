@@ -357,7 +357,7 @@ const QUESTIONS = [
     id: "q1101",
     weight: {
       sovereignty: -weights.p150,
-      us_china_relation: -weights.p100,
+      us_vs_china: -weights.p100,
 
       tags: {
         prc_unification: 1,
@@ -368,7 +368,7 @@ const QUESTIONS = [
     id: "q1102",
     weight: {
       sovereignty: -weights.p100,
-      us_china_relation: -weights.p075,
+      us_vs_china: -weights.p075,
     }
   },
   {
@@ -382,34 +382,34 @@ const QUESTIONS = [
   {
     id: "q1200",
     weight: {
-      us_china_relation: weights.p100,
+      us_vs_china: weights.p100,
       diplomatic: -5,
     }
   },
   {
     id: "q1201",
     weight: {
-      us_china_relation: weights.p100,
+      us_vs_china: weights.p100,
     }
   },
   {
     id: "q1202",
     weight: {
-      us_china_relation: weights.p100,
+      us_vs_china: weights.p100,
     }
   },
   {
     id: "q1203",
     weight: {
       sovereignty: weights.p050,
-      us_china_relation: weights.p100,
+      us_vs_china: weights.p100,
       diplomatic: -weights.p050,
     }
   },
   {
     id: "q1300",
     weight: {
-      us_china_relation: -weights.p100,
+      us_vs_china: -weights.p100,
       diplomatic: weights.p050,
     }
   },
@@ -417,13 +417,13 @@ const QUESTIONS = [
     id: "q1301",
     weight: {
       sovereignty: -weights.p050,
-      us_china_relation: -weights.p100,
+      us_vs_china: -weights.p100,
     }
   },
   {
     id: "q1302",
     weight: {
-      us_china_relation: -weights.p075,
+      us_vs_china: -weights.p075,
       diplomatic: weights.p050,
     }
   },

@@ -50,7 +50,7 @@ export const calculateScores = (questions, choices) => {
     societal: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.societal || 0.0 }))),
     diplomatic: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.diplomatic || 0.0 }))),
     sovereignty: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.sovereignty || 0.0 }))),
-    us_china_relation: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.us_china_relation || 0.0 }))),
+    us_vs_china: getScore(questions.map((value) => ({ id: value.id, weight: value.weight.us_vs_china || 0.0 }))),
     tags: getTags(questions.map((value) => ({ id: value.id, tags: value.weight.tags }))).join(',')
   }
 }

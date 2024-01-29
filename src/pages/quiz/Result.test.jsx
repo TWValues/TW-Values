@@ -18,8 +18,8 @@ const checkWeights = (weights, partyId) => {
   expect(weights.societal).toBeLessThanOrEqual(party.weight.societal + threshold)
   expect(weights.sovereignty).toBeGreaterThanOrEqual(party.weight.sovereignty - threshold)
   expect(weights.sovereignty).toBeLessThanOrEqual(party.weight.sovereignty + threshold)
-  expect(weights.us_china_relation).toBeGreaterThanOrEqual(party.weight.us_china_relation - threshold)
-  expect(weights.us_china_relation).toBeLessThanOrEqual(party.weight.us_china_relation + threshold)
+  expect(weights.us_vs_china).toBeGreaterThanOrEqual(party.weight.us_vs_china - threshold)
+  expect(weights.us_vs_china).toBeLessThanOrEqual(party.weight.us_vs_china + threshold)
 }
 
 test('kmt', () => {
