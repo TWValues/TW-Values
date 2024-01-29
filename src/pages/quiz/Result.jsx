@@ -4,7 +4,7 @@ import { Card, Typography, Image, Button, Flex, Switch, Row, Col } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideology'
-import POLITICAL_PARTIES from '../../data/politicalparty'
+import POLITICAL_PARTIES from '../../data/political_party'
 import IDEOLOGY_TAGS from '../../data/ideology_tag'
 
 import Balance from '../../assets/values/Balance.svg'
