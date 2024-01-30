@@ -9,6 +9,10 @@ TW Values is a political quiz that helps users to explore their political ideolo
   
 ```
 npm start
+
+npm run test # run test
+
+npm run lint # run eslint
 ```
 
 * Build & Deploy

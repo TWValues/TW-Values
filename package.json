@@ -21,8 +21,9 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
     "test": "vitest",
+    "lint": "npx eslint ./src",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
