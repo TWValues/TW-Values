@@ -73,11 +73,11 @@ const Quiz = () => {
 
   const getButtonStyles = () => {
     const styles = {
-      sm: { width: '90%', height: '40px', margin: '5px', fontSize: 'large' },
-      md: { width: '60%', height: '40px', margin: '5px', fontSize: 'large' },
-      lg: { width: '40%', height: '40px', margin: '5px', fontSize: 'large' },
-      xl: { width: '30%', height: '40px', margin: '5px', fontSize: 'large' },
-      xxl: { width: '30%', height: '40px', margin: '5px', fontSize: 'large' },
+      sm: { width: '80%', height: '40px', margin: '8px', fontSize: 'large' },
+      md: { width: '60%', height: '40px', margin: '8px', fontSize: 'large' },
+      lg: { width: '40%', height: '40px', margin: '8px', fontSize: 'large' },
+      xl: { width: '30%', height: '40px', margin: '8px', fontSize: 'large' },
+      xxl: { width: '30%', height: '40px', margin: '8px', fontSize: 'large' },
     }
 
     return styles[getScreenSize(screens)]
@@ -131,12 +131,12 @@ const Quiz = () => {
             }}
             bodyStyle={{
               fontSize: 'x-large',
-              margin: '20px',
               whiteSpace: 'pre-line',
             }}
             style={{
               width: '100%',
               minHeight: '220px',
+              margin: '30px',
             }}>
             {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
           </Card>
