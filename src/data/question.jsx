@@ -86,6 +86,13 @@ const QUESTIONS = [
     }
   },
   {
+    id: "q0202",
+    weight: {
+      diplomatic: weights.p050,
+      sovereignty: -weights.p050,
+    }
+  },
+  {
     id: "q0300",
     weight: {
       diplomatic: -weights.p100,
@@ -107,7 +114,7 @@ const QUESTIONS = [
   {
     id: "q0303",
     weight: {
-      diplomatic: -weights.p100,
+      diplomatic: -weights.p050,
       sovereignty: weights.p050,
     }
   },
@@ -412,16 +419,9 @@ const QUESTIONS = [
     }
   },
   {
-    id: "q1301",
-    weight: {
-      sovereignty: -weights.p050,
-      us_vs_china: -weights.p100,
-    }
-  },
-  {
     id: "q1302",
     weight: {
-      us_vs_china: -weights.p075,
+      us_vs_china: -weights.p050,
       diplomatic: weights.p050,
     }
   },

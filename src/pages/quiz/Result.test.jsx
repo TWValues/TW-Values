@@ -37,6 +37,7 @@ test('kmt', () => {
     q0105: MULTIPLIER.d,
     q0200: MULTIPLIER.a,
     q0201: MULTIPLIER.a,
+    q0202: MULTIPLIER.a,
     q0300: MULTIPLIER.d,
     q0301: MULTIPLIER.n,
     q0302: MULTIPLIER.n,
@@ -84,7 +85,6 @@ test('kmt', () => {
     q1201: MULTIPLIER.d,
     q1202: MULTIPLIER.d,
     q1300: MULTIPLIER.a,
-    q1301: MULTIPLIER.a,
     q1302: MULTIPLIER.a,
   }
 
@@ -111,6 +111,7 @@ test('dpp', () => {
     q0105: MULTIPLIER.d,
     q0200: MULTIPLIER.a,
     q0201: MULTIPLIER.a,
+    q0202: MULTIPLIER.d,
     q0300: MULTIPLIER.d,
     q0301: MULTIPLIER.n,
     q0302: MULTIPLIER.n,
@@ -158,7 +159,6 @@ test('dpp', () => {
     q1201: MULTIPLIER.a,
     q1202: MULTIPLIER.a,
     q1300: MULTIPLIER.d,
-    q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.a,
   }
 
@@ -185,6 +185,7 @@ test('npp', () => {
     q0105: MULTIPLIER.d,
     q0200: MULTIPLIER.a,
     q0201: MULTIPLIER.a,
+    q0202: MULTIPLIER.sd,
     q0300: MULTIPLIER.d,
     q0301: MULTIPLIER.n,
     q0302: MULTIPLIER.n,
@@ -232,7 +233,6 @@ test('npp', () => {
     q1201: MULTIPLIER.a,
     q1202: MULTIPLIER.a,
     q1300: MULTIPLIER.d,
-    q1301: MULTIPLIER.sd,
     q1302: MULTIPLIER.a,
   }
 
@@ -259,6 +259,7 @@ test('tpp', () => {
     q0105: MULTIPLIER.sa,
     q0200: MULTIPLIER.a,
     q0201: MULTIPLIER.a,
+    q0202: MULTIPLIER.a,
     q0300: MULTIPLIER.d,
     q0301: MULTIPLIER.n,
     q0302: MULTIPLIER.n,
@@ -306,7 +307,6 @@ test('tpp', () => {
     q1201: MULTIPLIER.d,
     q1202: MULTIPLIER.d,
     q1300: MULTIPLIER.a,
-    q1301: MULTIPLIER.a,
     q1302: MULTIPLIER.a,
   }
 
@@ -333,6 +333,7 @@ test('gpt', () => {
     q0105: MULTIPLIER.d,
     q0200: MULTIPLIER.a,
     q0201: MULTIPLIER.a,
+    q0202: MULTIPLIER.n,
     q0300: MULTIPLIER.d,
     q0301: MULTIPLIER.n,
     q0302: MULTIPLIER.n,
@@ -380,7 +381,6 @@ test('gpt', () => {
     q1201: MULTIPLIER.a,
     q1202: MULTIPLIER.a,
     q1300: MULTIPLIER.d,
-    q1301: MULTIPLIER.n,
     q1302: MULTIPLIER.a,
   }
 
