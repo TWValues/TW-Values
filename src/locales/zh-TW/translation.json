@@ -10,7 +10,9 @@
     "answers": {
       "completely_agree": "強烈贊成",
       "agree": "贊成",
+      "slightly_agree": "有點贊成",
       "neutral": "中立",
+      "slightly_disagree": "有點反對",
       "disagree": "反對",
       "completely_disagree": "強烈反對",
       "back": "回到上一題"

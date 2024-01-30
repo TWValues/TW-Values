@@ -58,7 +58,9 @@ export const calculateScores = (questions, choices) => {
 export const MULTIPLIER = {
   ca: 1.0,
   a: 0.5,
+  sa: 0.25,
   n: 0.0,
+  sd: -0.25,
   d: -0.5,
   cd: -1.0,
 }
@@ -71,11 +73,11 @@ const Quiz = () => {
 
   const getButtonStyles = () => {
     const styles = {
-      sm: { width: '100%', height: '50px', fontSize: 'x-large' },
-      md: { width: '60%', height: '50px', fontSize: 'x-large' },
-      lg: { width: '50%', height: '40px', fontSize: 'large' },
-      xl: { width: '40%', height: '40px', fontSize: 'large' },
-      xxl: { width: '40%', height: '40px', fontSize: 'large' },
+      sm: { width: '90%', height: '40px', margin: '5px', fontSize: 'large' },
+      md: { width: '60%', height: '40px', margin: '5px', fontSize: 'large' },
+      lg: { width: '40%', height: '40px', margin: '5px', fontSize: 'large' },
+      xl: { width: '30%', height: '40px', margin: '5px', fontSize: 'large' },
+      xxl: { width: '30%', height: '40px', margin: '5px', fontSize: 'large' },
     }
 
     return styles[getScreenSize(screens)]
@@ -114,6 +116,7 @@ const Quiz = () => {
   return (
     <Layout style={{
       backgroundColor: 'transparent',
+      border: '0',
       display: 'flex',
       alignItems: 'center',
     }}>
@@ -122,21 +125,22 @@ const Quiz = () => {
         headStyle={{
           fontSize: 'xx-large',
         }}
-        style={{
-          width: '100%',
-          minHeight: '220px',
+        bodyStyle={{
           fontSize: 'x-large',
           margin: '20px',
           whiteSpace: 'pre-line',
+        }}
+        style={{
+          width: '100%',
+          minHeight: '220px',
         }}>
         {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
       </Card>
       <Button style={{
         backgroundColor: 'darkgreen',
-        borderColor: 'darkgreen',
+        border: '0',
         color: 'white',
         ...getButtonStyles(),
-        margin: '5px',
       }} onClick={() => {
         setChoice(MULTIPLIER.ca)
         moveToNextQuestion()
@@ -145,10 +149,9 @@ const Quiz = () => {
       </Button>
       <Button style={{
         backgroundColor: 'limegreen',
-        borderColor: 'limegreen',
+        border: '0',
         color: 'white',
         ...getButtonStyles(),
-        margin: '5px',
       }} onClick={() => {
         setChoice(MULTIPLIER.a)
         moveToNextQuestion()
@@ -156,11 +159,21 @@ const Quiz = () => {
         {t('quiz.answers.agree')}
       </Button>
       <Button style={{
-        backgroundColor: 'gray',
-        borderColor: 'gray',
+        backgroundColor: 'chartreuse',
+        border: '0',
         color: 'white',
         ...getButtonStyles(),
-        margin: '5px',
+      }} onClick={() => {
+        setChoice(MULTIPLIER.sa)
+        moveToNextQuestion()
+      }}>
+        {t('quiz.answers.slightly_agree')}
+      </Button>
+      <Button style={{
+        backgroundColor: 'gray',
+        border: '0',
+        color: 'white',
+        ...getButtonStyles(),
       }} onClick={() => {
         setChoice(MULTIPLIER.n)
         moveToNextQuestion()
@@ -168,11 +181,21 @@ const Quiz = () => {
         {t('quiz.answers.neutral')}
       </Button>
       <Button style={{
-        backgroundColor: 'red',
-        borderColor: 'red',
+        backgroundColor: 'crimson',
+        border: '0',
         color: 'white',
         ...getButtonStyles(),
-        margin: '5px',
+      }} onClick={() => {
+        setChoice(MULTIPLIER.sd)
+        moveToNextQuestion()
+      }}>
+        {t('quiz.answers.slightly_disagree')}
+      </Button>
+      <Button style={{
+        backgroundColor: 'red',
+        border: '0',
+        color: 'white',
+        ...getButtonStyles(),
       }} onClick={() => {
         setChoice(MULTIPLIER.d)
         moveToNextQuestion()
@@ -181,10 +204,9 @@ const Quiz = () => {
       </Button>
       <Button style={{
         backgroundColor: 'darkred',
-        borderColor: 'darkred',
+        border: '0',
         color: 'white',
         ...getButtonStyles(),
-        margin: '5px',
       }} onClick={() => {
         setChoice(MULTIPLIER.cd)
         moveToNextQuestion()
@@ -196,7 +218,6 @@ const Quiz = () => {
         borderColor: 'gray',
         color: 'gray',
         ...getButtonStyles(),
-        margin: '5px',
       }} onClick={() => {
         moveToPrevQuestion()
       }} disabled={currentSelectedQuestionIndex === 0}>

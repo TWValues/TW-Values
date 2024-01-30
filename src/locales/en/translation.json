@@ -10,7 +10,9 @@
     "answers": {
       "completely_agree": "Completely Agree",
       "agree": "Agree",
+      "slightly_agree": "Slightly Agree",
       "neutral": "Neutral",
+      "slightly_disagree": "Slightly Disagree",
       "disagree": "Disagree",
       "completely_disagree": "Completely Disagree",
       "back": "Back"
