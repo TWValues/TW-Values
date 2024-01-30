@@ -8,11 +8,11 @@
     },
     "question_n_of_all": "题目 {{index}} 之 {{all}}",
     "answers": {
-      "strongly_agree": "强烈赞成",
+      "completely_agree": "强烈赞成",
       "agree": "赞成",
       "neutral": "中立",
       "disagree": "反对",
-      "strongly_disagree": "强烈反对",
+      "completely_disagree": "强烈反对",
       "back": "回到上一题"
     },
     "questions": {

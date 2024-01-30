@@ -8,11 +8,11 @@
     },
     "question_n_of_all": "Question {{index}} of {{all}}",
     "answers": {
-      "strongly_agree": "Strongly Agree",
+      "completely_agree": "Completely Agree",
       "agree": "Agree",
       "neutral": "Neutral",
       "disagree": "Disagree",
-      "strongly_disagree": "Strongly Disagree",
+      "completely_disagree": "Completely Disagree",
       "back": "Back"
     },
     "questions": {

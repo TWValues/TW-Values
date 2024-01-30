@@ -56,11 +56,11 @@ export const calculateScores = (questions, choices) => {
 }
 
 export const MULTIPLIER = {
-  sa: 1.0,
+  ca: 1.0,
   a: 0.5,
   n: 0.0,
   d: -0.5,
-  sd: -1.0,
+  cd: -1.0,
 }
 
 const Quiz = () => {
@@ -138,10 +138,10 @@ const Quiz = () => {
         ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
-        setChoice(MULTIPLIER.sa)
+        setChoice(MULTIPLIER.ca)
         moveToNextQuestion()
       }}>
-        {t('quiz.answers.strongly_agree')}
+        {t('quiz.answers.completely_agree')}
       </Button>
       <Button style={{
         backgroundColor: 'limegreen',
@@ -186,10 +186,10 @@ const Quiz = () => {
         ...getButtonStyles(),
         margin: '5px',
       }} onClick={() => {
-        setChoice(MULTIPLIER.sd)
+        setChoice(MULTIPLIER.cd)
         moveToNextQuestion()
       }}>
-        {t('quiz.answers.strongly_disagree')}
+        {t('quiz.answers.completely_disagree')}
       </Button>
       <Button style={{
         backgroundColor: 'transparent',
