@@ -399,10 +399,12 @@
             "name": "Anarcho-Mutualism"
           },
           "national_totalitarianism": {
-            "name": "National Totalitarianism"
+            "name": "National Totalitarianism",
+            "link": "https://en.wikipedia.org/wiki/Totalitarianism"
           },
           "global_totalitarianism": {
-            "name": "Global Totalitarianism"
+            "name": "Global Totalitarianism",
+            "link": "https://en.wikipedia.org/wiki/Totalitarianism"
           },
           "technocracy": {
             "name": "Technocracy",

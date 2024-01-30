@@ -398,10 +398,12 @@
             "name": "无政府互利主义"
           },
           "national_totalitarianism": {
-            "name": "国家极权主义"
+            "name": "国家极权主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%A5%B5%E6%AC%8A%E4%B8%BB%E7%BE%A9"
           },
           "global_totalitarianism": {
-            "name": "全球极权主义"
+            "name": "全球极权主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E6%A5%B5%E6%AC%8A%E4%B8%BB%E7%BE%A9"
           },
           "technocracy": {
             "name": "技术官僚主义",
