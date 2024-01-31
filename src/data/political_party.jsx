@@ -40,8 +40,8 @@ const POLITICAL_PARTIES = [
     id: "np",
     icon: "https://upload.wikimedia.org/wikipedia/commons/3/32/LogoCNP.svg",
     weight: {
-      economic: 40,
-      environmental: 40,
+      economic: 35,
+      environmental: 35,
       civil: 35,
       societal: 25,
       sovereignty: 20,
