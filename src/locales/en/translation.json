@@ -210,7 +210,7 @@
     },
     "result": {
       "api_error": {
-        "description": "Sorry, your test result is outdated and incompatible with current version. Please do the test again.",
+        "description": "Sorry, your test result is incompatible with current version. Please do the test again.",
         "index": "Go to index page"
       },
       "axes": {
