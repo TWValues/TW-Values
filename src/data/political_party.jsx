@@ -5,11 +5,11 @@ const POLITICAL_PARTIES = [
     icon: "https://upload.wikimedia.org/wikipedia/commons/d/dc/Blue_Sky_White_Sun.png",
     weight: {
       economic: 40,
-      environmental: 40,
+      environmental: 35,
       civil: 40,
       societal: 30,
       sovereignty: 35,
-      us_vs_china: 30,
+      us_vs_china: 35,
     }
   },
   {
@@ -54,10 +54,10 @@ const POLITICAL_PARTIES = [
     weight: {
       economic: 75,
       environmental: 75,
-      civil: 75,
+      civil: 70,
       societal: 75,
       sovereignty: 75,
-      us_vs_china: 75,
+      us_vs_china: 70,
     }
   },
   {
@@ -67,7 +67,7 @@ const POLITICAL_PARTIES = [
       economic: 50,
       environmental: 45,
       civil: 45,
-      societal: 50,
+      societal: 45,
       sovereignty: 45,
       us_vs_china: 40,
     }
@@ -100,7 +100,7 @@ const POLITICAL_PARTIES = [
     id: "gpt",
     icon: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Green_Party_Taiwan_logo.png",
     weight: {
-      economic: 75,
+      economic: 70,
       environmental: 90,
       civil: 75,
       societal: 75,

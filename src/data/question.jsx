@@ -88,7 +88,7 @@ const QUESTIONS = [
   {
     id: "q0202",
     weight: {
-      diplomatic: WEIGHTS.p050,
+      diplomatic: WEIGHTS.p075,
       sovereignty: -WEIGHTS.p050,
     }
   },
@@ -121,8 +121,7 @@ const QUESTIONS = [
   {
     id: "q0303",
     weight: {
-      diplomatic: -WEIGHTS.p050,
-      sovereignty: WEIGHTS.p050,
+      diplomatic: -WEIGHTS.p100,
     }
   },
   {
