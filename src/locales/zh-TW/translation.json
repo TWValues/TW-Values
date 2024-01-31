@@ -556,12 +556,12 @@
         "data": {
           "roc_unification": {
             "name": "華統",
-            "description": "主張由中華民國來統一全中國，實行三民主義五權憲法。",
+            "description": "主張反攻大陸，解救大陸同胞於水深火熱之中，由中華民國來統一全中國，並實行三民主義五權憲法。",
             "link": "https://zh.wikipedia.org/zh-tw/%E4%B8%89%E6%B0%91%E4%B8%BB%E7%BE%A9%E7%B5%B1%E4%B8%80%E4%B8%AD%E5%9C%8B"
           },
           "roc_independence": {
             "name": "華獨",
-            "description": "主張中華民國放棄大陸領土與主權，與中華人民共和國成為兩個完全獨立的國家。",
+            "description": "主張中華民國放棄大陸領土與主權並承認北京分裂勢力為獨立國家。",
             "link": "https://zh.wikipedia.org/zh-tw/%E8%8F%AF%E7%8D%A8"
           },
           "tw_independence": {
