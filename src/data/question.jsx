@@ -215,20 +215,18 @@ const QUESTIONS = [
     id: "q0602",
     weight: {
       societal: WEIGHTS.p100,
-
-      tags: {
-        homophobia: -1,
-      }
+    },
+    tag: {
+      homophobia: -1,
     }
   },
   {
     id: "q0603",
     weight: {
       societal: WEIGHTS.p100,
-
-      tags: {
-        death_penalty_abolitionists: 1,
-      }
+    },
+    tag: {
+      death_penalty_abolitionists: 1,
     }
   },
   {
@@ -242,10 +240,9 @@ const QUESTIONS = [
     weight: {
       societal: WEIGHTS.p100,
       sovereignty: WEIGHTS.p050,
-
-      tags: {
-        feminism_buffet: -1,
-      }
+    },
+    tag: {
+      feminism_buffet: -1,
     }
   },
   {
@@ -286,10 +283,9 @@ const QUESTIONS = [
     id: "q0705",
     weight: {
       societal: -WEIGHTS.p100,
-
-      tags: {
-        male_chauvinism: 1,
-      }
+    },
+    tag: {
+      male_chauvinism: 1,
     }
   },
   {
@@ -338,10 +334,9 @@ const QUESTIONS = [
     id: "q1000",
     weight: {
       sovereignty: WEIGHTS.p100,
-
-      tags: {
-        roc_independence: 1,
-      }
+    },
+    tag: {
+      roc_independence: 1,
     }
   },
   {
@@ -349,10 +344,9 @@ const QUESTIONS = [
     weight: {
       sovereignty: WEIGHTS.p150,
       diplomatic: -WEIGHTS.p100,
-
-      tags: {
-        tw_independence: 1,
-      }
+    },
+    tag: {
+      tw_independence: 1,
     }
   },
   {
@@ -379,10 +373,9 @@ const QUESTIONS = [
     weight: {
       sovereignty: -WEIGHTS.p150,
       us_vs_china: -WEIGHTS.p100,
-
-      tags: {
-        prc_unification: 1,
-      }
+    },
+    tag: {
+      prc_unification: 1,
     }
   },
   {
@@ -395,9 +388,9 @@ const QUESTIONS = [
   {
     id: "q1103",
     weight: {
-      tags: {
-        roc_unification: 1,
-      }
+    },
+    tag: {
+      roc_unification: 1,
     }
   },
   {
