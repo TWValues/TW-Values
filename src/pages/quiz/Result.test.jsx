@@ -5,6 +5,7 @@ import QUESTIONS from '../../data/question'
 import POLITICAL_PARTIES from '../../data/political_party'
 
 const checkWeights = (weights, partyId) => {
+  console.log(weights)
   const getParty = (id) => POLITICAL_PARTIES.filter(value => value.id == id)[0]
   const party = getParty(partyId)
   const threshold = 5
@@ -86,7 +87,7 @@ test('kmt', () => {
     q1201: MULTIPLIER.d,
     q1202: MULTIPLIER.d,
     q1300: MULTIPLIER.a,
-    q1302: MULTIPLIER.a,
+    q1301: MULTIPLIER.n,
   }
 
   const weights = calculateScores(QUESTIONS, choices)
@@ -160,7 +161,7 @@ test('dpp', () => {
     q1201: MULTIPLIER.a,
     q1202: MULTIPLIER.a,
     q1300: MULTIPLIER.d,
-    q1302: MULTIPLIER.a,
+    q1301: MULTIPLIER.d,
   }
 
   const weights = calculateScores(QUESTIONS, choices)
@@ -234,7 +235,7 @@ test('np', () => {
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.cd,
     q1300: MULTIPLIER.a,
-    q1302: MULTIPLIER.a,
+    q1301: MULTIPLIER.n,
   }
 
   const weights = calculateScores(QUESTIONS, choices)
@@ -308,7 +309,7 @@ test('npp', () => {
     q1201: MULTIPLIER.a,
     q1202: MULTIPLIER.a,
     q1300: MULTIPLIER.d,
-    q1302: MULTIPLIER.a,
+    q1301: MULTIPLIER.d,
   }
 
   const weights = calculateScores(QUESTIONS, choices)
@@ -382,7 +383,7 @@ test('tpp', () => {
     q1201: MULTIPLIER.d,
     q1202: MULTIPLIER.d,
     q1300: MULTIPLIER.a,
-    q1302: MULTIPLIER.a,
+    q1301: MULTIPLIER.n,
   }
 
   const weights = calculateScores(QUESTIONS, choices)
@@ -456,7 +457,7 @@ test('gpt', () => {
     q1201: MULTIPLIER.a,
     q1202: MULTIPLIER.a,
     q1300: MULTIPLIER.d,
-    q1302: MULTIPLIER.a,
+    q1301: MULTIPLIER.d,
   }
 
   const weights = calculateScores(QUESTIONS, choices)

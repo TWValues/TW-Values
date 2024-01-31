@@ -418,10 +418,10 @@ const QUESTIONS = [
     }
   },
   {
-    id: "q1302",
+    id: "q1301",
     weight: {
-      us_vs_china: -WEIGHTS.p050,
-      diplomatic: WEIGHTS.p050,
+      us_vs_china: -WEIGHTS.p100,
+      diplomatic: -WEIGHTS.p050,
     }
   },
 ]

@@ -21,7 +21,7 @@ const POLITICAL_PARTIES = [
       civil: 55,
       societal: 60,
       sovereignty: 75,
-      us_vs_china: 70,
+      us_vs_china: 75,
     }
   },
   {
@@ -57,7 +57,7 @@ const POLITICAL_PARTIES = [
       civil: 70,
       societal: 75,
       sovereignty: 75,
-      us_vs_china: 70,
+      us_vs_china: 75,
     }
   },
   {
@@ -105,7 +105,7 @@ const POLITICAL_PARTIES = [
       civil: 75,
       societal: 75,
       sovereignty: 75,
-      us_vs_china: 70,
+      us_vs_china: 75,
     }
   }
 ]
