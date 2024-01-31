@@ -35,7 +35,7 @@ const Main = () => {
           display: 'flex',
           alignItems: 'center',
           ...getContentStyles(),
-          backgroundColor: 'ghostwhite',
+          backgroundColor: '#202020',
         }}>
         <Outlet />
       </Content>

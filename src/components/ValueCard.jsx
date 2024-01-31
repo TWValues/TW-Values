@@ -5,7 +5,17 @@ import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography
 
-const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftColor, rightColor, percent, leaningsTitle }) => {
+const ValueCard = (
+  { title,
+    leftTitle,
+    rightTitle,
+    leftImage,
+    rightImage,
+    leftColor,
+    rightColor,
+    percent,
+    leaningsTitle
+  }) => {
 
   const { i18n } = useTranslation()
   const screens = Grid.useBreakpoint()
@@ -53,6 +63,7 @@ const ValueCard = ({ title, leftTitle, rightTitle, leftImage, rightImage, leftCo
       }}
       style={{
         width: '100%',
+        backgroundColor: 'gainsboro',
       }}>
       <Layout style={{
         backgroundColor: 'transparent',

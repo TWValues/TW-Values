@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Card, Button, Grid } from 'antd'
+import { Flex, Card, Button, Grid } from 'antd'
 import { useMemo, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
@@ -72,16 +72,34 @@ const Quiz = () => {
   const navigate = useNavigate()
   const screens = Grid.useBreakpoint()
 
-  const getButtonStyles = () => {
+  const getCardStyles = () => {
     const styles = {
-      sm: { width: '80%', height: '40px', margin: '8px', fontSize: 'large' },
-      md: { width: '60%', height: '40px', margin: '8px', fontSize: 'large' },
-      lg: { width: '40%', height: '40px', margin: '8px', fontSize: 'large' },
-      xl: { width: '30%', height: '40px', margin: '8px', fontSize: 'large' },
-      xxl: { width: '30%', height: '40px', margin: '8px', fontSize: 'large' },
+      sm: { width: '100%' },
+      md: { width: '100%' },
+      lg: { width: '90%' },
+      xl: { width: '80%' },
+      xxl: { width: '80%' },
     }
 
     return styles[getScreenSize(screens)]
+  }
+
+  const getButtonLayoutStyles = () => {
+    const styles = {
+      sm: { width: '90%' },
+      md: { width: '60%' },
+      lg: { width: '40%' },
+      xl: { width: '30%' },
+      xxl: { width: '30%' },
+    }
+
+    return styles[getScreenSize(screens)]
+  }
+
+  const getButtonStyles = () => {
+    return {
+      height: '40px', margin: '8px', fontSize: 'large', borderRadius: '20px',
+    }
   }
 
   const questions = useMemo(() => {
@@ -118,12 +136,14 @@ const Quiz = () => {
   }, [currentSelectedQuestionIndex])
 
   return (
-    <Layout style={{
-      backgroundColor: 'transparent',
-      border: '0',
-      display: 'flex',
-      alignItems: 'center',
-    }}>
+    <Flex
+      vertical={true}
+      justify='center'
+      align='center'
+      style={{
+        backgroundColor: 'transparent',
+        width: '100%',
+      }}>
       {currentSelectedQuestionIndex < questions.length &&
         <>
           <Card
@@ -136,102 +156,123 @@ const Quiz = () => {
               whiteSpace: 'pre-line',
             }}
             style={{
-              width: '100%',
               minHeight: '220px',
-              margin: '30px',
+              margin: '20px',
+              backgroundColor: 'gainsboro',
+              ...getCardStyles(),
             }}>
             {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
           </Card>
-          <Button style={{
-            backgroundColor: 'darkgreen',
-            border: '0',
-            color: 'white',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            setChoice(MULTIPLIER.ca)
-            moveToNextQuestion()
-          }}>
-            {t('quiz.answers.completely_agree')}
-          </Button>
-          <Button style={{
-            backgroundColor: 'limegreen',
-            border: '0',
-            color: 'white',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            setChoice(MULTIPLIER.a)
-            moveToNextQuestion()
-          }}>
-            {t('quiz.answers.agree')}
-          </Button>
-          <Button style={{
-            backgroundColor: 'chartreuse',
-            border: '0',
-            color: 'white',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            setChoice(MULTIPLIER.sa)
-            moveToNextQuestion()
-          }}>
-            {t('quiz.answers.slightly_agree')}
-          </Button>
-          <Button style={{
-            backgroundColor: 'gray',
-            border: '0',
-            color: 'white',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            setChoice(MULTIPLIER.n)
-            moveToNextQuestion()
-          }}>
-            {t('quiz.answers.neutral')}
-          </Button>
-          <Button style={{
-            backgroundColor: 'crimson',
-            border: '0',
-            color: 'white',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            setChoice(MULTIPLIER.sd)
-            moveToNextQuestion()
-          }}>
-            {t('quiz.answers.slightly_disagree')}
-          </Button>
-          <Button style={{
-            backgroundColor: 'red',
-            border: '0',
-            color: 'white',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            setChoice(MULTIPLIER.d)
-            moveToNextQuestion()
-          }}>
-            {t('quiz.answers.disagree')}
-          </Button>
-          <Button style={{
-            backgroundColor: 'darkred',
-            border: '0',
-            color: 'white',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            setChoice(MULTIPLIER.cd)
-            moveToNextQuestion()
-          }}>
-            {t('quiz.answers.completely_disagree')}
-          </Button>
-          <Button style={{
-            backgroundColor: 'transparent',
-            borderColor: 'gray',
-            color: 'gray',
-            ...getButtonStyles(),
-          }} onClick={() => {
-            moveToPrevQuestion()
-          }} disabled={currentSelectedQuestionIndex === 0}>
-            {t('quiz.answers.back')}
-          </Button>
+          <Flex
+            vertical={true}
+            justify='center'
+            align='center'
+            style={{
+              backgroundColor: 'gainsboro',
+              padding: '20px',
+              borderRadius: '20px',
+              ...getButtonLayoutStyles(),
+            }}
+          >
+            <Button style={{
+              width: '100%',
+              backgroundColor: 'darkgreen',
+              border: '0',
+              color: 'white',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              setChoice(MULTIPLIER.ca)
+              moveToNextQuestion()
+            }}>
+              {t('quiz.answers.completely_agree')}
+            </Button>
+            <Button style={{
+              width: '85%',
+              backgroundColor: 'limegreen',
+              border: '0',
+              color: 'white',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              setChoice(MULTIPLIER.a)
+              moveToNextQuestion()
+            }}>
+              {t('quiz.answers.agree')}
+            </Button>
+            <Button style={{
+              width: '70%',
+              backgroundColor: 'chartreuse',
+              border: '0',
+              color: 'white',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              setChoice(MULTIPLIER.sa)
+              moveToNextQuestion()
+            }}>
+              {t('quiz.answers.slightly_agree')}
+            </Button>
+            <Button style={{
+              width: '55%',
+              backgroundColor: 'gray',
+              border: '0',
+              color: 'white',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              setChoice(MULTIPLIER.n)
+              moveToNextQuestion()
+            }}>
+              {t('quiz.answers.neutral')}
+            </Button>
+            <Button style={{
+              width: '70%',
+              backgroundColor: 'crimson',
+              border: '0',
+              color: 'white',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              setChoice(MULTIPLIER.sd)
+              moveToNextQuestion()
+            }}>
+              {t('quiz.answers.slightly_disagree')}
+            </Button>
+            <Button style={{
+              width: '85%',
+              backgroundColor: 'red',
+              border: '0',
+              color: 'white',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              setChoice(MULTIPLIER.d)
+              moveToNextQuestion()
+            }}>
+              {t('quiz.answers.disagree')}
+            </Button>
+            <Button style={{
+              width: '100%',
+              backgroundColor: 'darkred',
+              border: '0',
+              color: 'white',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              setChoice(MULTIPLIER.cd)
+              moveToNextQuestion()
+            }}>
+              {t('quiz.answers.completely_disagree')}
+            </Button>
+            <Button style={{
+              width: '55%',
+              backgroundColor: 'transparent',
+              borderColor: 'gray',
+              color: 'gray',
+              ...getButtonStyles(),
+            }} onClick={() => {
+              moveToPrevQuestion()
+            }} disabled={currentSelectedQuestionIndex === 0}>
+              {t('quiz.answers.back')}
+            </Button>
+          </Flex>
         </>
       }
-    </Layout>
+    </Flex>
   )
 }
 

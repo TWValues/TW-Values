@@ -166,6 +166,8 @@ const Result = () => {
             }}
             style={{
               width: '100%',
+              margin: '10px',
+              backgroundColor: 'gainsboro',
             }}
             extra={<Switch
               unCheckedChildren='3'
@@ -238,6 +240,8 @@ const Result = () => {
             }}
             style={{
               width: '100%',
+              margin: '10px',
+              backgroundColor: 'gainsboro',
             }}
             extra={<Switch
               unCheckedChildren='3'
@@ -309,6 +313,8 @@ const Result = () => {
             }}
             style={{
               width: '100%',
+              margin: '10px',
+              backgroundColor: 'gainsboro',
             }}
             extra={<Switch
               unCheckedChildren='M'
@@ -335,7 +341,8 @@ const Result = () => {
                     target='_blank'
                     style={{
                       margin: '4px',
-                      color: matchedTags.has(value.id) ? 'dodgerblue' : 'gray',
+                      color: matchedTags.has(value.id) ? 'white' : 'gray',
+                      backgroundColor: matchedTags.has(value.id) ? 'dodgerblue' : 'white',
                       fontWeight: 'bold',
                     }}>
                     {name}
@@ -350,96 +357,110 @@ const Result = () => {
               )
             })}
           </Card>
-          <ValueCard
-            title={t('quiz.result.axes.economic.title')}
-            leftTitle={t('quiz.result.axes.economic.equality')}
-            rightTitle={t('quiz.result.axes.economic.efficiency')}
-            leftImage={Balance}
-            rightImage={DollarSign}
-            leftColor='crimson'
-            rightColor='turquoise'
-            percent={weights.economic}
-            leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
-          />
-          <ValueCard
-            title={t('quiz.result.axes.diplomatic.title')}
-            leftTitle={t('quiz.result.axes.diplomatic.globe')}
-            rightTitle={t('quiz.result.axes.diplomatic.nation')}
-            leftImage={Globe}
-            rightImage={Flag}
-            leftColor='royalblue'
-            rightColor='orange'
-            percent={weights.diplomatic}
-            leaningsTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
-          />
-          <ValueCard
-            title={t('quiz.result.axes.civil.title')}
-            leftTitle={t('quiz.result.axes.civil.liberty')}
-            rightTitle={t('quiz.result.axes.civil.authority')}
-            leftImage={Liberty}
-            rightImage={Crown}
-            leftColor='gold'
-            rightColor='red'
-            percent={weights.civil}
-            leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
-          />
-          <ValueCard
-            title={t('quiz.result.axes.environmental.title')}
-            leftTitle={t('quiz.result.axes.environmental.ecology')}
-            rightTitle={t('quiz.result.axes.environmental.production')}
-            leftImage={RecyclingSymbol}
-            rightImage={Factory}
-            leftColor='forestgreen'
-            rightColor='saddlebrown'
-            percent={weights.environmental}
-            leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
-          />
-          <ValueCard
-            title={t('quiz.result.axes.societal.title')}
-            leftTitle={t('quiz.result.axes.societal.progress')}
-            rightTitle={t('quiz.result.axes.societal.tradition')}
-            leftImage={RainbowFlag}
-            rightImage={Family}
-            leftColor='magenta'
-            rightColor='brown'
-            percent={weights.societal}
-            leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
-          />
-          <ValueCard
-            title={t('quiz.result.axes.sovereignty.title')}
-            leftTitle={t('quiz.result.axes.sovereignty.independence')}
-            rightTitle={t('quiz.result.axes.sovereignty.unification')}
-            leftImage={FlagOfTWIndependence}
-            rightImage={ChinaTerritory}
-            leftColor='green'
-            rightColor='black'
-            percent={weights.sovereignty}
-            leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
-          />
-          <ValueCard
-            title={t('quiz.result.axes.us_vs_china.title')}
-            leftTitle={t('quiz.result.axes.us_vs_china.pro_american')}
-            rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese')}
-            leftImage={FlagOfUSA}
-            rightImage={FlagOfPRC}
-            leftColor='navy'
-            rightColor='red'
-            percent={weights.us_vs_china}
-            leaningsTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
-          />
+          <Flex
+            vertical={true}
+            justify='center'
+            align='center'
+            gap={20}
+            style={{
+              width: '100%',
+              backgroundColor: 'transparent',
+              margin: '10px',
+            }}>
+            <ValueCard
+              title={t('quiz.result.axes.economic.title')}
+              leftTitle={t('quiz.result.axes.economic.equality')}
+              rightTitle={t('quiz.result.axes.economic.efficiency')}
+              leftImage={Balance}
+              rightImage={DollarSign}
+              leftColor='crimson'
+              rightColor='mediumslateblue'
+              percent={weights.economic}
+              leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
+            />
+            <ValueCard
+              title={t('quiz.result.axes.diplomatic.title')}
+              leftTitle={t('quiz.result.axes.diplomatic.globe')}
+              rightTitle={t('quiz.result.axes.diplomatic.nation')}
+              leftImage={Globe}
+              rightImage={Flag}
+              leftColor='royalblue'
+              rightColor='orange'
+              percent={weights.diplomatic}
+              leaningsTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
+            />
+            <ValueCard
+              title={t('quiz.result.axes.civil.title')}
+              leftTitle={t('quiz.result.axes.civil.liberty')}
+              rightTitle={t('quiz.result.axes.civil.authority')}
+              leftImage={Liberty}
+              rightImage={Crown}
+              leftColor='#F0F000'
+              rightColor='red'
+              percent={weights.civil}
+              leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
+            />
+            <ValueCard
+              title={t('quiz.result.axes.environmental.title')}
+              leftTitle={t('quiz.result.axes.environmental.ecology')}
+              rightTitle={t('quiz.result.axes.environmental.production')}
+              leftImage={RecyclingSymbol}
+              rightImage={Factory}
+              leftColor='forestgreen'
+              rightColor='saddlebrown'
+              percent={weights.environmental}
+              leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
+            />
+            <ValueCard
+              title={t('quiz.result.axes.societal.title')}
+              leftTitle={t('quiz.result.axes.societal.progress')}
+              rightTitle={t('quiz.result.axes.societal.tradition')}
+              leftImage={RainbowFlag}
+              rightImage={Family}
+              leftColor='magenta'
+              rightColor='brown'
+              percent={weights.societal}
+              leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
+            />
+            <ValueCard
+              title={t('quiz.result.axes.sovereignty.title')}
+              leftTitle={t('quiz.result.axes.sovereignty.independence')}
+              rightTitle={t('quiz.result.axes.sovereignty.unification')}
+              leftImage={FlagOfTWIndependence}
+              rightImage={ChinaTerritory}
+              leftColor='green'
+              rightColor='black'
+              percent={weights.sovereignty}
+              leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
+            />
+            <ValueCard
+              title={t('quiz.result.axes.us_vs_china.title')}
+              leftTitle={t('quiz.result.axes.us_vs_china.pro_american')}
+              rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese')}
+              leftImage={FlagOfUSA}
+              rightImage={FlagOfPRC}
+              leftColor='navy'
+              rightColor='red'
+              percent={weights.us_vs_china}
+              leaningsTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
+            />
+          </Flex>
         </Flex>
         :
         <Flex
           vertical={true}
           align='center'
           style={{
-            width: '100%'
+            width: '100%',
+            borderRadius: '20px',
+            backgroundColor: 'gainsboro',
           }}
         >
           <Title
             level={4}
             style={{
-              margin: '10px',
+              margin: '40px',
+              color: 'red',
             }}>
             {t(`quiz.result.api_error.description`)}
           </Title>
@@ -447,7 +468,8 @@ const Result = () => {
             href='/'
             style={{
               height: 'auto',
-              margin: '10px',
+              margin: '40px',
+              borderRadius: '20px',
               fontSize: 'large',
               fontWeight: 'bold',
               textAlign: 'center',
