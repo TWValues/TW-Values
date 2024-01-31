@@ -42,7 +42,7 @@ const POLITICAL_PARTIES = [
     weight: {
       economic: 35,
       environmental: 35,
-      civil: 35,
+      civil: 30,
       societal: 25,
       sovereignty: 20,
       us_vs_china: 20,

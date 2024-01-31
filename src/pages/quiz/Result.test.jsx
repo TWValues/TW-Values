@@ -5,10 +5,9 @@ import QUESTIONS from '../../data/question'
 import POLITICAL_PARTIES from '../../data/political_party'
 
 const checkWeights = (weights, partyId) => {
-  console.log(weights)
   const getParty = (id) => POLITICAL_PARTIES.filter(value => value.id == id)[0]
   const party = getParty(partyId)
-  const threshold = 5
+  const threshold = 3
   expect(weights.economic).toBeGreaterThanOrEqual(party.weight.economic - threshold)
   expect(weights.economic).toBeLessThanOrEqual(party.weight.economic + threshold)
   expect(weights.civil).toBeGreaterThanOrEqual(party.weight.civil - threshold)
@@ -60,9 +59,9 @@ test('kmt', () => {
     q0601: MULTIPLIER.d,
     q0602: MULTIPLIER.cd,
     q0603: MULTIPLIER.cd,
-    q0604: MULTIPLIER.cd,
+    q0604: MULTIPLIER.d,
     q0605: MULTIPLIER.d,
-    q0700: MULTIPLIER.ca,
+    q0700: MULTIPLIER.a,
     q0701: MULTIPLIER.a,
     q0702: MULTIPLIER.a,
     q0703: MULTIPLIER.n,
