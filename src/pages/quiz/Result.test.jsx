@@ -91,8 +91,7 @@ test('kmt', () => {
 
   const weights = calculateScores(QUESTIONS, choices)
   checkWeights(weights, 'kmt')
-  const match = getPoliticalPartyMatchScores(weights)
-  const party = match.at(0)
+  const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('kmt')
   expect(party.rate).toBeGreaterThanOrEqual(0.95)
 })
@@ -166,8 +165,7 @@ test('dpp', () => {
 
   const weights = calculateScores(QUESTIONS, choices)
   checkWeights(weights, 'dpp')
-  const match = getPoliticalPartyMatchScores(weights)
-  const party = match.at(0)
+  const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('dpp')
   expect(party.rate).toBeGreaterThanOrEqual(0.95)
 })
@@ -241,8 +239,7 @@ test('npp', () => {
 
   const weights = calculateScores(QUESTIONS, choices)
   checkWeights(weights, 'npp')
-  const match = getPoliticalPartyMatchScores(weights)
-  const party = match.at(0)
+  const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('npp')
   expect(party.rate).toBeGreaterThanOrEqual(0.95)
 })
@@ -316,8 +313,7 @@ test('tpp', () => {
 
   const weights = calculateScores(QUESTIONS, choices)
   checkWeights(weights, 'tpp')
-  const match = getPoliticalPartyMatchScores(weights)
-  const party = match.at(0)
+  const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('tpp')
   expect(party.rate).toBeGreaterThanOrEqual(0.95)
 })
@@ -391,8 +387,7 @@ test('gpt', () => {
 
   const weights = calculateScores(QUESTIONS, choices)
   checkWeights(weights, 'gpt')
-  const match = getPoliticalPartyMatchScores(weights)
-  const party = match.at(0)
+  const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('gpt')
   expect(party.rate).toBeGreaterThanOrEqual(0.95)
 })
