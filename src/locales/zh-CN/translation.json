@@ -209,6 +209,10 @@
       }
     },
     "result": {
+      "api_error": {
+        "description": "抱歉，您的测试结果已经过期并且与目前版本不相容，请重新进行测试。",
+        "index": "回到主页"
+      },
       "axes": {
         "economic": {
           "title": "经济",

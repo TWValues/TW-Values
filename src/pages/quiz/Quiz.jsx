@@ -6,6 +6,7 @@ import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../../utils/shuffle'
 import getScreenSize from '../../utils/getScreenSize'
 import QUESTIONS from '../../data/question'
+import { API_VERSION_KEY, API_VERSION_VALUE } from '../../utils/apiVersion'
 
 export const calculateScores = (questions, choices) => {
   const getScore = (props) => {
@@ -109,6 +110,7 @@ const Quiz = () => {
       navigate({
         pathname: '/result',
         search: createSearchParams({
+          [API_VERSION_KEY]: API_VERSION_VALUE,
           ...calculateScores(questions, choices)
         }).toString()
       })

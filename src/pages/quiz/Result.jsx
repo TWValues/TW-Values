@@ -6,6 +6,7 @@ import ValueCard from '../../components/ValueCard'
 import IDEOLOGIES from '../../data/ideology'
 import POLITICAL_PARTIES from '../../data/political_party'
 import IDEOLOGY_TAGS from '../../data/ideology_tag'
+import { API_VERSION_KEY, API_VERSION_VALUE } from '../../utils/apiVersion'
 
 import Balance from '../../assets/values/Balance.svg'
 import DollarSign from '../../assets/values/DollarSign.svg'
@@ -22,7 +23,7 @@ import ChinaTerritory from '../../assets/values/ChinaTerritory.svg'
 import FlagOfUSA from '../../assets/values/FlagOfUSA.svg'
 import FlagOfPRC from '../../assets/values/FlagOfPRC.svg'
 
-const { Text } = Typography
+const { Text, Title } = Typography
 
 const getMatchRate = (distance, lower, upper) => {
   // 0 ---- lower ---- upper
@@ -83,6 +84,8 @@ const Result = () => {
   const isLanguage = (lang) => {
     return i18n.language == lang
   }
+
+  const isApiVersionOK = searchParams.get(API_VERSION_KEY) == API_VERSION_VALUE
 
   const weights = {
     economic: searchParams.get('economic'),
@@ -145,284 +148,315 @@ const Result = () => {
   }
 
   return (
-    <Flex
-      vertical={true}
-      align='center'
-      style={{
-        width: '100%'
-      }}
-    >
-      <Card
-        title={t('quiz.result.ideologies.name')}
-        headStyle={{
-          fontSize: 'x-large',
-          textAlign: 'center',
-          margin: '0px 5px 0px 50px',
-        }}
-        style={{
-          width: '100%',
-        }}
-        extra={<Switch
-          unCheckedChildren='3'
-          checkedChildren='∞'
-          size='small'
-          onChange={(checked) => { setExpandIdeology(checked) }}
-          style={{ backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue' }}
-        />}
-      >
-        <Row>
-          {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
-            const linkRC = `quiz.result.ideologies.data.${value.id}.link`
-            const link = i18n.exists(linkRC) ? t(linkRC) : null
-            const getInner = () => (
-              <Flex
-                justify='center'
-                align='center'
-              >
-                <Text
-                  style={{
-                    margin: '10px',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(140, -16, 4, index)}%`,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    textAlign: 'center',
-                  }}>
-                  {t(`quiz.result.ideologies.data.${value.id}.name`)}
-                </Text>
-                <Text
-                  style={{
-                    color: 'crimson',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(100, -8, 4, index)}%`,
-                    textAlign: 'center',
-                  }}>
-                  {`${Math.round(value.rate * 100)}%`}
-                </Text>
-              </Flex>
-            )
-            const wrapLink = (componet) => {
-              return link && link.length > 0 ?
-                <a href={link} target='_blank' rel='noreferrer'>{componet}</a> :
-                componet
-            }
-            return (
-              <Col
-                key={`ideology.${value.id}`}
-                xs={24}
-                sm={24}
-                md={index < 3 ? 24 : 12}
-                lg={index < 3 ? 24 : 12}
-                xl={index < 3 ? 24 : 8}
-                xxl={index < 3 ? 24 : 8}
-              >
-                {wrapLink(getInner())}
-              </Col>
-            )
-          })}
-        </Row>
-      </Card>
-      <Card
-        title={t('quiz.result.political_parties.name')}
-        headStyle={{
-          fontSize: 'x-large',
-          textAlign: 'center',
-          margin: '0px 5px 0px 50px',
-        }}
-        style={{
-          width: '100%',
-        }}
-        extra={<Switch
-          unCheckedChildren='3'
-          checkedChildren='∞'
-          size='small'
-          onChange={(checked) => { setExpandParty(checked) }}
-          style={{ backgroundColor: expandParty ? 'crimson' : 'dodgerblue' }}
-        />}
-      >
-        <Row>
-          {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => (
-            <Col
-              key={`party.${value.id}`}
-              xs={24}
-              sm={24}
-              md={index < 3 ? 24 : 12}
-              lg={index < 3 ? 24 : 12}
-              xl={index < 3 ? 24 : 8}
-              xxl={index < 3 ? 24 : 8}
-            >
-              <a
-                href={t(`quiz.result.political_parties.data.${value.id}.link`)}
-                target='_blank'
-                rel='noreferrer'
-              >
-                <Flex
-                  justify='center'
-                  align='center'
+    <>
+      {isApiVersionOK ?
+        <Flex
+          vertical={true}
+          align='center'
+          style={{
+            width: '100%'
+          }}
+        >
+          <Card
+            title={t('quiz.result.ideologies.name')}
+            headStyle={{
+              fontSize: 'x-large',
+              textAlign: 'center',
+              margin: '0px 5px 0px 50px',
+            }}
+            style={{
+              width: '100%',
+            }}
+            extra={<Switch
+              unCheckedChildren='3'
+              checkedChildren='∞'
+              size='small'
+              onChange={(checked) => { setExpandIdeology(checked) }}
+              style={{ backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue' }}
+            />}
+          >
+            <Row>
+              {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
+                const linkRC = `quiz.result.ideologies.data.${value.id}.link`
+                const link = i18n.exists(linkRC) ? t(linkRC) : null
+                const getInner = () => (
+                  <Flex
+                    justify='center'
+                    align='center'
+                  >
+                    <Text
+                      style={{
+                        margin: '10px',
+                        fontSize: isLanguage('en') ?
+                          `${getSizeWithStep(100, -8, 4, index)}%` :
+                          `${getSizeWithStep(140, -16, 4, index)}%`,
+                        fontWeight: 'bold',
+                        color: 'black',
+                        textAlign: 'center',
+                      }}>
+                      {t(`quiz.result.ideologies.data.${value.id}.name`)}
+                    </Text>
+                    <Text
+                      style={{
+                        color: 'crimson',
+                        fontSize: isLanguage('en') ?
+                          `${getSizeWithStep(100, -8, 4, index)}%` :
+                          `${getSizeWithStep(100, -8, 4, index)}%`,
+                        textAlign: 'center',
+                      }}>
+                      {`${Math.round(value.rate * 100)}%`}
+                    </Text>
+                  </Flex>
+                )
+                const wrapLink = (componet) => {
+                  return link && link.length > 0 ?
+                    <a href={link} target='_blank' rel='noreferrer'>{componet}</a> :
+                    componet
+                }
+                return (
+                  <Col
+                    key={`ideology.${value.id}`}
+                    xs={24}
+                    sm={24}
+                    md={index < 3 ? 24 : 12}
+                    lg={index < 3 ? 24 : 12}
+                    xl={index < 3 ? 24 : 8}
+                    xxl={index < 3 ? 24 : 8}
+                  >
+                    {wrapLink(getInner())}
+                  </Col>
+                )
+              })}
+            </Row>
+          </Card>
+          <Card
+            title={t('quiz.result.political_parties.name')}
+            headStyle={{
+              fontSize: 'x-large',
+              textAlign: 'center',
+              margin: '0px 5px 0px 50px',
+            }}
+            style={{
+              width: '100%',
+            }}
+            extra={<Switch
+              unCheckedChildren='3'
+              checkedChildren='∞'
+              size='small'
+              onChange={(checked) => { setExpandParty(checked) }}
+              style={{ backgroundColor: expandParty ? 'crimson' : 'dodgerblue' }}
+            />}
+          >
+            <Row>
+              {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => (
+                <Col
+                  key={`party.${value.id}`}
+                  xs={24}
+                  sm={24}
+                  md={index < 3 ? 24 : 12}
+                  lg={index < 3 ? 24 : 12}
+                  xl={index < 3 ? 24 : 8}
+                  xxl={index < 3 ? 24 : 8}
                 >
-                  <Image
-                    width={getSizeWithStep(24, -3, 4, index)}
-                    src={value.icon}
-                    preview={false}
-                  />
-                  <Text
+                  <a
+                    href={t(`quiz.result.political_parties.data.${value.id}.link`)}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <Flex
+                      justify='center'
+                      align='center'
+                    >
+                      <Image
+                        width={getSizeWithStep(24, -3, 4, index)}
+                        src={value.icon}
+                        preview={false}
+                      />
+                      <Text
+                        style={{
+                          margin: '10px',
+                          fontSize: isLanguage('en') ?
+                            `${getSizeWithStep(100, -8, 4, index)}%` :
+                            `${getSizeWithStep(140, -16, 4, index)}%`,
+                          fontWeight: 'bold',
+                          color: 'black',
+                          textAlign: 'center',
+                        }}>
+                        {t(`quiz.result.political_parties.data.${value.id}.name`)}
+                      </Text>
+                      <Text
+                        style={{
+                          color: 'crimson',
+                          fontSize: isLanguage('en') ?
+                            `${getSizeWithStep(100, -8, 4, index)}%` :
+                            `${getSizeWithStep(100, -8, 4, index)}%`,
+                          textAlign: 'center',
+                        }}>
+                        {`${Math.round(value.rate * 100)}%`}
+                      </Text>
+                    </Flex>
+                  </a>
+                </Col>
+              ))}
+            </Row>
+          </Card>
+          <Card
+            title={t('quiz.result.tags.name')}
+            headStyle={{
+              fontSize: 'x-large',
+              textAlign: 'center',
+              margin: '0px 5px 0px 50px',
+            }}
+            style={{
+              width: '100%',
+            }}
+            extra={<Switch
+              unCheckedChildren='M'
+              checkedChildren='∞'
+              size='small'
+              onChange={(checked) => { setExpandTags(checked) }}
+              style={{ backgroundColor: expandTags ? 'crimson' : 'dodgerblue' }}
+            />}
+          >
+            {getMatchTags(IDEOLOGY_TAGS, expandTags).map((value) => {
+              const name = t(`quiz.result.tags.data.${value.id}.name`)
+              const description = t(`quiz.result.tags.data.${value.id}.description`)
+              const link = t(`quiz.result.tags.data.${value.id}.link`)
+              return (
+                <Flex
+                  key={`tags.${value.id}`}
+                  justify='start'
+                  align='center'
+                  style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}>
+                  <Button
+                    size='small'
+                    type='default'
+                    href={link ? link : null}
+                    target='_blank'
                     style={{
-                      margin: '10px',
-                      fontSize: isLanguage('en') ?
-                        `${getSizeWithStep(100, -8, 4, index)}%` :
-                        `${getSizeWithStep(140, -16, 4, index)}%`,
+                      margin: '4px',
+                      color: matchedTags.has(value.id) ? 'dodgerblue' : 'gray',
                       fontWeight: 'bold',
-                      color: 'black',
-                      textAlign: 'center',
                     }}>
-                    {t(`quiz.result.political_parties.data.${value.id}.name`)}
-                  </Text>
-                  <Text
-                    style={{
-                      color: 'crimson',
-                      fontSize: isLanguage('en') ?
-                        `${getSizeWithStep(100, -8, 4, index)}%` :
-                        `${getSizeWithStep(100, -8, 4, index)}%`,
-                      textAlign: 'center',
-                    }}>
-                    {`${Math.round(value.rate * 100)}%`}
+                    {name}
+                  </Button>
+                  <Text style={{
+                    margin: '4px',
+                    color: matchedTags.has(value.id) ? 'black' : 'gray',
+                  }}>
+                    {description}
                   </Text>
                 </Flex>
-              </a>
-            </Col>
-          ))}
-        </Row>
-      </Card>
-      <Card
-        title={t('quiz.result.tags.name')}
-        headStyle={{
-          fontSize: 'x-large',
-          textAlign: 'center',
-          margin: '0px 5px 0px 50px',
-        }}
-        style={{
-          width: '100%',
-        }}
-        extra={<Switch
-          unCheckedChildren='M'
-          checkedChildren='∞'
-          size='small'
-          onChange={(checked) => { setExpandTags(checked) }}
-          style={{ backgroundColor: expandTags ? 'crimson' : 'dodgerblue' }}
-        />}
-      >
-        {getMatchTags(IDEOLOGY_TAGS, expandTags).map((value) => {
-          const name = t(`quiz.result.tags.data.${value.id}.name`)
-          const description = t(`quiz.result.tags.data.${value.id}.description`)
-          const link = t(`quiz.result.tags.data.${value.id}.link`)
-          return (
-            <Flex
-              key={`tags.${value.id}`}
-              justify='start'
-              align='center'
-              style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}>
-              <Button
-                size='small'
-                type='default'
-                href={link ? link : null}
-                target='_blank'
-                style={{
-                  margin: '4px',
-                  color: matchedTags.has(value.id) ? 'dodgerblue' : 'gray',
-                  fontWeight: 'bold',
-                }}>
-                {name}
-              </Button>
-              <Text style={{
-                margin: '4px',
-                color: matchedTags.has(value.id) ? 'black' : 'gray',
-              }}>
-                {description}
-              </Text>
-            </Flex>
-          )
-        })}
-      </Card>
-      <ValueCard
-        title={t('quiz.result.axes.economic.title')}
-        leftTitle={t('quiz.result.axes.economic.equality')}
-        rightTitle={t('quiz.result.axes.economic.efficiency')}
-        leftImage={Balance}
-        rightImage={DollarSign}
-        leftColor='crimson'
-        rightColor='turquoise'
-        percent={weights.economic}
-        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.diplomatic.title')}
-        leftTitle={t('quiz.result.axes.diplomatic.globe')}
-        rightTitle={t('quiz.result.axes.diplomatic.nation')}
-        leftImage={Globe}
-        rightImage={Flag}
-        leftColor='royalblue'
-        rightColor='orange'
-        percent={weights.diplomatic}
-        leaningsTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.civil.title')}
-        leftTitle={t('quiz.result.axes.civil.liberty')}
-        rightTitle={t('quiz.result.axes.civil.authority')}
-        leftImage={Liberty}
-        rightImage={Crown}
-        leftColor='gold'
-        rightColor='red'
-        percent={weights.civil}
-        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.environmental.title')}
-        leftTitle={t('quiz.result.axes.environmental.ecology')}
-        rightTitle={t('quiz.result.axes.environmental.production')}
-        leftImage={RecyclingSymbol}
-        rightImage={Factory}
-        leftColor='forestgreen'
-        rightColor='saddlebrown'
-        percent={weights.environmental}
-        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.societal.title')}
-        leftTitle={t('quiz.result.axes.societal.progress')}
-        rightTitle={t('quiz.result.axes.societal.tradition')}
-        leftImage={RainbowFlag}
-        rightImage={Family}
-        leftColor='magenta'
-        rightColor='brown'
-        percent={weights.societal}
-        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.sovereignty.title')}
-        leftTitle={t('quiz.result.axes.sovereignty.independence')}
-        rightTitle={t('quiz.result.axes.sovereignty.unification')}
-        leftImage={FlagOfTWIndependence}
-        rightImage={ChinaTerritory}
-        leftColor='green'
-        rightColor='black'
-        percent={weights.sovereignty}
-        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.us_vs_china.title')}
-        leftTitle={t('quiz.result.axes.us_vs_china.pro_american')}
-        rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese')}
-        leftImage={FlagOfUSA}
-        rightImage={FlagOfPRC}
-        leftColor='navy'
-        rightColor='red'
-        percent={weights.us_vs_china}
-        leaningsTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
-      />
-    </Flex>
+              )
+            })}
+          </Card>
+          <ValueCard
+            title={t('quiz.result.axes.economic.title')}
+            leftTitle={t('quiz.result.axes.economic.equality')}
+            rightTitle={t('quiz.result.axes.economic.efficiency')}
+            leftImage={Balance}
+            rightImage={DollarSign}
+            leftColor='crimson'
+            rightColor='turquoise'
+            percent={weights.economic}
+            leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.diplomatic.title')}
+            leftTitle={t('quiz.result.axes.diplomatic.globe')}
+            rightTitle={t('quiz.result.axes.diplomatic.nation')}
+            leftImage={Globe}
+            rightImage={Flag}
+            leftColor='royalblue'
+            rightColor='orange'
+            percent={weights.diplomatic}
+            leaningsTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.civil.title')}
+            leftTitle={t('quiz.result.axes.civil.liberty')}
+            rightTitle={t('quiz.result.axes.civil.authority')}
+            leftImage={Liberty}
+            rightImage={Crown}
+            leftColor='gold'
+            rightColor='red'
+            percent={weights.civil}
+            leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.environmental.title')}
+            leftTitle={t('quiz.result.axes.environmental.ecology')}
+            rightTitle={t('quiz.result.axes.environmental.production')}
+            leftImage={RecyclingSymbol}
+            rightImage={Factory}
+            leftColor='forestgreen'
+            rightColor='saddlebrown'
+            percent={weights.environmental}
+            leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.societal.title')}
+            leftTitle={t('quiz.result.axes.societal.progress')}
+            rightTitle={t('quiz.result.axes.societal.tradition')}
+            leftImage={RainbowFlag}
+            rightImage={Family}
+            leftColor='magenta'
+            rightColor='brown'
+            percent={weights.societal}
+            leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.sovereignty.title')}
+            leftTitle={t('quiz.result.axes.sovereignty.independence')}
+            rightTitle={t('quiz.result.axes.sovereignty.unification')}
+            leftImage={FlagOfTWIndependence}
+            rightImage={ChinaTerritory}
+            leftColor='green'
+            rightColor='black'
+            percent={weights.sovereignty}
+            leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.us_vs_china.title')}
+            leftTitle={t('quiz.result.axes.us_vs_china.pro_american')}
+            rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese')}
+            leftImage={FlagOfUSA}
+            rightImage={FlagOfPRC}
+            leftColor='navy'
+            rightColor='red'
+            percent={weights.us_vs_china}
+            leaningsTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
+          />
+        </Flex>
+        :
+        <Flex
+          vertical={true}
+          align='center'
+          style={{
+            width: '100%'
+          }}
+        >
+          <Title
+            level={4}
+            style={{
+              margin: '10px',
+            }}>
+            {t(`quiz.result.api_error.description`)}
+          </Title>
+          <Button
+            href='/'
+            style={{
+              height: 'auto',
+              margin: '10px',
+              fontSize: 'large',
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            {t(`quiz.result.api_error.index`)}
+          </Button>
+        </Flex>
+      }
+    </>
   )
 }
 
