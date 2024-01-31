@@ -1,11 +1,13 @@
 import React from 'react'
 import { Layout, Typography, Grid } from 'antd'
 import getScreenSize from '../../../utils/getScreenSize'
+import { useNavigate } from 'react-router-dom'
 
 const { Title } = Typography
 
 const Footer = () => {
 
+  const navigate = useNavigate()
   const screens = Grid.useBreakpoint()
 
   const getFooterStyles = () => {
@@ -24,13 +26,24 @@ const Footer = () => {
     <Layout.Footer style=
       {{
         display: 'flex',
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'end',
+        justifyContent: 'space-between',
         ...getFooterStyles(),
         height: '40px',
         backgroundColor: 'crimson',
       }}>
-      <Title level={4} style={{ color: 'white', margin: 'auto 0 auto 0' }}>Copyright (c) 2023-2024 TW Values</Title>
+      <Title
+        level={5}
+        style={{
+          cursor: 'pointer',
+          color: 'white',
+          margin: 'auto 0 auto 0',
+        }}
+        onClick={() => { navigate('/') }}>
+        TW Values
+      </Title>
+      <Title level={5} style={{ color: 'white', margin: 'auto 0 auto 0' }}>Copyright (c) 2023-2024 TW Values</Title>
     </Layout.Footer >
   )
 }
