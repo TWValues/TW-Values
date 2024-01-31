@@ -213,13 +213,13 @@
         "economic": {
           "title": "Economic",
           "equality": "Equality",
-          "market": "Market",
+          "efficiency": "Efficiency",
           "categories": {
             "0": "Communist",
             "1": "Socialist",
             "2": "Social",
             "3": "Centrist",
-            "4": "Market",
+            "4": "Efficient",
             "5": "Capitalist",
             "6": "Laissez-Faire"
           }

@@ -348,7 +348,7 @@ const Result = () => {
       <ValueCard
         title={t('quiz.result.axes.economic.title')}
         leftTitle={t('quiz.result.axes.economic.equality')}
-        rightTitle={t('quiz.result.axes.economic.market')}
+        rightTitle={t('quiz.result.axes.economic.efficiency')}
         leftImage={Balance}
         rightImage={DollarSign}
         leftColor='crimson'
