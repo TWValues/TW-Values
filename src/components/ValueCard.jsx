@@ -32,9 +32,9 @@ const ValueCard = (
     }
 
     return {
-      sm: { fontSize: 'x-small', minWidth: '80px', margin: '2px 2px' },
-      md: { fontSize: 'small', minWidth: '100px', margin: '5px 5px' },
-      lg: { fontSize: 'medium', minWidth: '100px', margin: '5px 5px' },
+      sm: { fontSize: 'medium', minWidth: '80px', margin: '2px 2px' },
+      md: { fontSize: 'medium', minWidth: '80px', margin: '5px 5px' },
+      lg: { fontSize: 'medium', minWidth: '80px', margin: '5px 5px' },
       xl: { fontSize: 'large', minWidth: '120px', margin: '8px 8px' },
       xxl: { fontSize: 'large', minWidth: '120px', margin: '8px 8px' },
     }[getScreenSize(screens)]
