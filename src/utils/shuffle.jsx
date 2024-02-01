@@ -1,6 +1,5 @@
 const shuffle = (array) => {
   for (let i = 0; i < array.length; ++i) {
-
     let idx = Math.floor(Math.random() * array.length)
     idx = Math.min(idx, array.length - 1)
     idx = Math.max(idx, 0)

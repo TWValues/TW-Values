@@ -9,10 +9,10 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Main />}>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/result" element={<Result />} />
+        <Route path='/' element={<Main />}>
+          <Route path='/' element={<Welcome />} />
+          <Route path='/quiz' element={<Quiz />} />
+          <Route path='/result' element={<Result />} />
         </Route>
       </Routes>
     </HashRouter>

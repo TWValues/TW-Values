@@ -5,18 +5,17 @@ import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography
 
-const ValueCard = (
-  { title,
-    leftTitle,
-    rightTitle,
-    leftImage,
-    rightImage,
-    leftColor,
-    rightColor,
-    percent,
-    descriptionTitle,
-  }) => {
-
+const ValueCard = ({
+  title,
+  leftTitle,
+  rightTitle,
+  leftImage,
+  rightImage,
+  leftColor,
+  rightColor,
+  percent,
+  descriptionTitle,
+}) => {
   const { i18n } = useTranslation()
   const screens = Grid.useBreakpoint()
 
@@ -70,7 +69,8 @@ const ValueCard = (
       style={{
         width: '100%',
         backgroundColor: 'gainsboro',
-      }}>
+      }}
+    >
       <Flex
         vertical={false}
         justify='center'
@@ -79,29 +79,28 @@ const ValueCard = (
           width: '100%',
           maxWidth: '720px',
           margin: 'auto',
-        }}>
-        <Flex
-          vertical={true}
-          justify='center'
-          align='center'
-        >
+        }}
+      >
+        <Flex vertical={true} justify='center' align='center'>
           <Image
             width={60}
-            src={leftImage || ""}
+            src={leftImage || ''}
             preview={false}
             style={{
-              padding: '5px'
+              padding: '5px',
             }}
           />
-          <Text style={{
-            color: leftColor,
-            textAlign: 'center',
-            ...getValueTextStyles()
-          }}>
+          <Text
+            style={{
+              color: leftColor,
+              textAlign: 'center',
+              ...getValueTextStyles(),
+            }}
+          >
             {leftTitle}
           </Text>
         </Flex>
-        {screens.md ?
+        {screens.md ? (
           <Flex
             vertical={true}
             justify='center'
@@ -119,21 +118,27 @@ const ValueCard = (
                 width: '100%',
               }}
             >
-              <Text style={{
-                margin: '5px'
-              }}>
+              <Text
+                style={{
+                  margin: '5px',
+                }}
+              >
                 {`${percent} %`}
               </Text>
-              <Text style={{
-                ...getdescriptionTitleStyles(),
-                color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
-                textAlign: 'center',
-              }}>
+              <Text
+                style={{
+                  ...getdescriptionTitleStyles(),
+                  color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
+                  textAlign: 'center',
+                }}
+              >
                 {descriptionTitle}
               </Text>
-              <Text style={{
-                margin: '5px'
-              }}>
+              <Text
+                style={{
+                  margin: '5px',
+                }}
+              >
                 {`${100 - percent} %`}
               </Text>
             </Flex>
@@ -149,7 +154,7 @@ const ValueCard = (
               }}
             />
           </Flex>
-          :
+        ) : (
           <Flex
             vertical={false}
             justify='space-between'
@@ -168,11 +173,13 @@ const ValueCard = (
               size={50}
               style={{ margin: '5px' }}
             />
-            <Text style={{
-              ...getdescriptionTitleStyles(),
-              color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
-              textAlign: 'center',
-            }}>
+            <Text
+              style={{
+                ...getdescriptionTitleStyles(),
+                color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
+                textAlign: 'center',
+              }}
+            >
               {descriptionTitle}
             </Text>
             <Progress
@@ -186,25 +193,23 @@ const ValueCard = (
               style={{ margin: '5px' }}
             />
           </Flex>
-        }
-        <Flex
-          vertical={true}
-          justify='center'
-          align='center'
-        >
+        )}
+        <Flex vertical={true} justify='center' align='center'>
           <Image
             width={60}
-            src={rightImage || ""}
+            src={rightImage || ''}
             preview={false}
             style={{
-              padding: '5px'
+              padding: '5px',
             }}
           />
-          <Text style={{
-            color: rightColor,
-            textAlign: 'center',
-            ...getValueTextStyles()
-          }}>
+          <Text
+            style={{
+              color: rightColor,
+              textAlign: 'center',
+              ...getValueTextStyles(),
+            }}
+          >
             {rightTitle}
           </Text>
         </Flex>

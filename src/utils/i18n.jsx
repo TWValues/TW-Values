@@ -7,14 +7,14 @@ import translationZhCn from '../locales/zh-CN/translation.json'
 
 const resources = {
   en: {
-    translation: translationEN
+    translation: translationEN,
   },
   'zh-TW': {
-    translation: translationZhTw
+    translation: translationZhTw,
   },
   'zh-CN': {
-    translation: translationZhCn
-  }
+    translation: translationZhCn,
+  },
 }
 
 const loadLanguage = () => {
@@ -26,17 +26,15 @@ const loadLanguage = () => {
   return language
 }
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: loadLanguage(),
-    interpolation: {
-      escapeValue: false
-    },
-    react: {
-      useSuspense: true,
-    }
-  })
+i18n.use(initReactI18next).init({
+  resources,
+  lng: loadLanguage(),
+  interpolation: {
+    escapeValue: false,
+  },
+  react: {
+    useSuspense: true,
+  },
+})
 
 export default i18n

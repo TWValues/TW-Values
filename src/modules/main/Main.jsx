@@ -8,7 +8,6 @@ import getScreenSize from '../../utils/getScreenSize'
 const { Content } = Layout
 
 const Main = () => {
-
   const screens = Grid.useBreakpoint()
 
   const getContentStyles = () => {
@@ -24,19 +23,22 @@ const Main = () => {
   }
 
   return (
-    <Layout style={{
-      minHeight: '100vh',
-      minWidth: '460px',
-      overflow: 'auto',
-    }}>
+    <Layout
+      style={{
+        minHeight: '100vh',
+        minWidth: '460px',
+        overflow: 'auto',
+      }}
+    >
       <Header />
-      <Content style=
-        {{
+      <Content
+        style={{
           display: 'flex',
           alignItems: 'center',
           ...getContentStyles(),
           backgroundColor: '#202020',
-        }}>
+        }}
+      >
         <Outlet />
       </Content>
       <Footer />

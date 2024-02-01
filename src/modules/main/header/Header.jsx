@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next'
 const { Title } = Typography
 
 const Header = () => {
-
   const navigate = useNavigate()
   const [, i18n] = useTranslation()
   const screens = Grid.useBreakpoint()
@@ -26,7 +25,7 @@ const Header = () => {
     {
       key: 'en',
       text: 'EN',
-    }
+    },
   ]
 
   const setLanguage = (language) => {
@@ -47,15 +46,16 @@ const Header = () => {
   }
 
   return (
-    <Layout.Header style=
-      {{
+    <Layout.Header
+      style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         ...getHeaderStyles(),
         height: '60px',
         backgroundColor: 'crimson',
-      }}>
+      }}
+    >
       <Title
         level={1}
         style={{
@@ -63,24 +63,30 @@ const Header = () => {
           color: 'white',
           margin: 'auto 0 auto 0',
         }}
-        onClick={() => { navigate('/') }}>
+        onClick={() => {
+          navigate('/')
+        }}
+      >
         TW Values
       </Title>
       <Space size={8}>
-        {languages.map((value, index) =>
+        {languages.map((value, index) => (
           <Button
             key={index}
-            onClick={() => { setLanguage(value.key) }}
+            onClick={() => {
+              setLanguage(value.key)
+            }}
             style={{
               backgroundColor: 'transparent',
-              borderColor: (i18n.language === value.key ? 'transparent' : 'white'),
+              borderColor: i18n.language === value.key ? 'transparent' : 'white',
               color: 'white',
               fontSize: 'medium',
               padding: '0 5px',
-            }}>
+            }}
+          >
             {value.text}
           </Button>
-        )}
+        ))}
         <Button
           type='link'
           href={`https://github.com/TWValues/TW-Values/tree/v${packageInfo.version}`}
@@ -90,7 +96,8 @@ const Header = () => {
             borderColor: 'transparent',
             color: 'white',
             fontSize: 'medium',
-          }}>
+          }}
+        >
           {`v${packageInfo.version}`}
         </Button>
         <Button
@@ -100,7 +107,8 @@ const Header = () => {
           icon={<GithubOutlined style={{ color: 'white', fontSize: 'x-large' }} />}
         />
       </Space>
-    </Layout.Header>)
+    </Layout.Header>
+  )
 }
 
 export default Header

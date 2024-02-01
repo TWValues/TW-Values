@@ -30,10 +30,10 @@ const getMatchRate = (distance, lower, upper) => {
   // |- 90%+ -|- 90% - 0% -|
 
   if (distance <= lower) {
-    return 0.90 + 0.10 * Math.max(0, lower - distance) / lower
+    return 0.9 + (0.1 * Math.max(0, lower - distance)) / lower
   }
 
-  return 0.90 * Math.pow(1 - (Math.min(distance, upper) - lower) / (upper - lower), 2)
+  return 0.9 * Math.pow(1 - (Math.min(distance, upper) - lower) / (upper - lower), 2)
 }
 
 const getIdeologyMatchScores = (weights) => {
@@ -48,7 +48,7 @@ const getIdeologyMatchScores = (weights) => {
       distance: distance,
       rate: getMatchRate(distance, 4 * 10 * 10, 4 * 50 * 50),
     }
-  }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+  }).sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
 
   return ideologyScores
 }
@@ -67,13 +67,12 @@ export const getPoliticalPartyMatchScores = (weights) => {
       distance: distance,
       rate: getMatchRate(distance, 6 * 10 * 10, 6 * 50 * 50),
     }
-  }).sort((lhs, rhs) => lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0)
+  }).sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
 
   return politicalScores
 }
 
 const Result = () => {
-
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
   const [t, i18n] = useTranslation()
@@ -148,36 +147,40 @@ const Result = () => {
   }
 
   if (!isApiVersionOK) {
-    return (<Flex
-      vertical={true}
-      align='center'
-      style={{
-        width: '100%',
-        borderRadius: '20px',
-        backgroundColor: 'gainsboro',
-      }}
-    >
-      <Title
-        level={4}
+    return (
+      <Flex
+        vertical={true}
+        align='center'
         style={{
-          margin: '40px',
-          color: 'red',
-        }}>
-        {t(`quiz.result.api_error.description`)}
-      </Title>
-      <Button
-        href='/'
-        style={{
-          height: 'auto',
-          margin: '40px',
+          width: '100%',
           borderRadius: '20px',
-          fontSize: 'large',
-          fontWeight: 'bold',
-          textAlign: 'center',
-        }}>
-        {t(`quiz.result.api_error.index`)}
-      </Button>
-    </Flex>)
+          backgroundColor: 'gainsboro',
+        }}
+      >
+        <Title
+          level={4}
+          style={{
+            margin: '40px',
+            color: 'red',
+          }}
+        >
+          {t(`quiz.result.api_error.description`)}
+        </Title>
+        <Button
+          href='/'
+          style={{
+            height: 'auto',
+            margin: '40px',
+            borderRadius: '20px',
+            fontSize: 'large',
+            fontWeight: 'bold',
+            textAlign: 'center',
+          }}
+        >
+          {t(`quiz.result.api_error.index`)}
+        </Button>
+      </Flex>
+    )
   }
 
   return (
@@ -202,54 +205,61 @@ const Result = () => {
           width: '100%',
           backgroundColor: 'gainsboro',
         }}
-        extra={<Switch
-          unCheckedChildren='3'
-          checkedChildren='∞'
-          size='small'
-          onChange={(checked) => { setExpandIdeology(checked) }}
-          style={{
-            backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue',
-            margin: '5px 20px',
-          }}
-        />}
+        extra={
+          <Switch
+            unCheckedChildren='3'
+            checkedChildren='∞'
+            size='small'
+            onChange={(checked) => {
+              setExpandIdeology(checked)
+            }}
+            style={{
+              backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue',
+              margin: '5px 20px',
+            }}
+          />
+        }
       >
         <Row>
           {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
             const linkRC = `quiz.result.ideologies.data.${value.id}.link`
             const link = i18n.exists(linkRC) ? t(linkRC) : null
             const createLabel = () => (
-              <Flex
-                justify='center'
-                align='center'
-              >
+              <Flex justify='center' align='center'>
                 <Text
                   style={{
                     margin: '10px',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(140, -16, 4, index)}%`,
+                    fontSize: isLanguage('en')
+                      ? `${getSizeWithStep(100, -8, 4, index)}%`
+                      : `${getSizeWithStep(140, -16, 4, index)}%`,
                     fontWeight: 'bold',
                     color: 'black',
                     textAlign: 'center',
-                  }}>
+                  }}
+                >
                   {t(`quiz.result.ideologies.data.${value.id}.name`)}
                 </Text>
                 <Text
                   style={{
                     color: 'crimson',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(100, -8, 4, index)}%`,
+                    fontSize: isLanguage('en')
+                      ? `${getSizeWithStep(100, -8, 4, index)}%`
+                      : `${getSizeWithStep(100, -8, 4, index)}%`,
                     textAlign: 'center',
-                  }}>
+                  }}
+                >
                   {`${Math.round(value.rate * 100)}%`}
                 </Text>
               </Flex>
             )
             const addLink = (componet) => {
-              return link && link.length > 0 ?
-                <a href={link} target='_blank' rel='noreferrer'>{componet}</a> :
+              return link && link.length > 0 ? (
+                <a href={link} target='_blank' rel='noreferrer'>
+                  {componet}
+                </a>
+              ) : (
                 componet
+              )
             }
             return (
               <Col
@@ -278,59 +288,62 @@ const Result = () => {
           width: '100%',
           backgroundColor: 'gainsboro',
         }}
-        extra={<Switch
-          unCheckedChildren='3'
-          checkedChildren='∞'
-          size='small'
-          onChange={(checked) => { setExpandParty(checked) }}
-          style={{
-            backgroundColor: expandParty ? 'crimson' : 'dodgerblue',
-            margin: '5px 20px',
-          }}
-        />}
+        extra={
+          <Switch
+            unCheckedChildren='3'
+            checkedChildren='∞'
+            size='small'
+            onChange={(checked) => {
+              setExpandParty(checked)
+            }}
+            style={{
+              backgroundColor: expandParty ? 'crimson' : 'dodgerblue',
+              margin: '5px 20px',
+            }}
+          />
+        }
       >
         <Row>
           {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => {
             const link = t(`quiz.result.political_parties.data.${value.id}.link`)
             const createLabel = () => (
-              <Flex
-                justify='center'
-                align='center'
-              >
-                <Image
-                  width={getSizeWithStep(24, -3, 4, index)}
-                  src={value.icon}
-                  preview={false}
-                />
+              <Flex justify='center' align='center'>
+                <Image width={getSizeWithStep(24, -3, 4, index)} src={value.icon} preview={false} />
                 <Text
                   style={{
                     margin: '10px',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(140, -16, 4, index)}%`,
+                    fontSize: isLanguage('en')
+                      ? `${getSizeWithStep(100, -8, 4, index)}%`
+                      : `${getSizeWithStep(140, -16, 4, index)}%`,
                     fontWeight: 'bold',
                     color: 'black',
                     textAlign: 'center',
-                  }}>
+                  }}
+                >
                   {t(`quiz.result.political_parties.data.${value.id}.name`)}
                 </Text>
                 <Text
                   style={{
                     color: 'crimson',
-                    fontSize: isLanguage('en') ?
-                      `${getSizeWithStep(100, -8, 4, index)}%` :
-                      `${getSizeWithStep(100, -8, 4, index)}%`,
+                    fontSize: isLanguage('en')
+                      ? `${getSizeWithStep(100, -8, 4, index)}%`
+                      : `${getSizeWithStep(100, -8, 4, index)}%`,
                     textAlign: 'center',
-                  }}>
+                  }}
+                >
                   {`${Math.round(value.rate * 100)}%`}
                 </Text>
               </Flex>
             )
 
             const addLink = (componet) => {
-              return link && link.length > 0 ?
-                <a href={link} target='_blank' rel='noreferrer'>{componet}</a> :
+              return link && link.length > 0 ? (
+                <a href={link} target='_blank' rel='noreferrer'>
+                  {componet}
+                </a>
+              ) : (
                 componet
+              )
             }
 
             return (
@@ -360,16 +373,20 @@ const Result = () => {
           width: '100%',
           backgroundColor: 'gainsboro',
         }}
-        extra={<Switch
-          unCheckedChildren='M'
-          checkedChildren='∞'
-          size='small'
-          onChange={(checked) => { setExpandTags(checked) }}
-          style={{
-            backgroundColor: expandTags ? 'crimson' : 'dodgerblue',
-            margin: '5px 20px',
-          }}
-        />}
+        extra={
+          <Switch
+            unCheckedChildren='M'
+            checkedChildren='∞'
+            size='small'
+            onChange={(checked) => {
+              setExpandTags(checked)
+            }}
+            style={{
+              backgroundColor: expandTags ? 'crimson' : 'dodgerblue',
+              margin: '5px 20px',
+            }}
+          />
+        }
       >
         {getMatchTags(IDEOLOGY_TAGS, expandTags).map((value) => {
           const name = t(`quiz.result.tags.data.${value.id}.name`)
@@ -380,7 +397,8 @@ const Result = () => {
               key={`tags.${value.id}`}
               justify='start'
               align='center'
-              style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}>
+              style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}
+            >
               <Button
                 size='small'
                 type='default'
@@ -391,13 +409,16 @@ const Result = () => {
                   color: matchedTags.has(value.id) ? 'white' : 'gray',
                   backgroundColor: matchedTags.has(value.id) ? 'dodgerblue' : 'white',
                   fontWeight: 'bold',
-                }}>
+                }}
+              >
                 {name}
               </Button>
-              <Text style={{
-                margin: '4px',
-                color: matchedTags.has(value.id) ? 'black' : 'gray',
-              }}>
+              <Text
+                style={{
+                  margin: '4px',
+                  color: matchedTags.has(value.id) ? 'black' : 'gray',
+                }}
+              >
                 {description}
               </Text>
             </Flex>

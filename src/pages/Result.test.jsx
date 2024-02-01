@@ -5,8 +5,7 @@ import QUESTIONS from '../data/question'
 import POLITICAL_PARTIES from '../data/political_party'
 
 const checkWeights = (weights, partyId) => {
-  if (partyId == 'lp') console.log(weights)
-  const getParty = (id) => POLITICAL_PARTIES.filter(value => value.id == id)[0]
+  const getParty = (id) => POLITICAL_PARTIES.filter((value) => value.id == id)[0]
   const party = getParty(partyId)
   const threshold = 3
   expect(weights.economic).toBeGreaterThanOrEqual(party.weight.economic - threshold)

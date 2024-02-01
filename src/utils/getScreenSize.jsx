@@ -1,4 +1,3 @@
-
 const getScreenSize = (screens) => {
   if (screens.xxl) {
     return 'xxl'

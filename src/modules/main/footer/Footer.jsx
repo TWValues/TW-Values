@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 const { Title } = Typography
 
 const Footer = () => {
-
   const navigate = useNavigate()
   const screens = Grid.useBreakpoint()
 
@@ -23,8 +22,8 @@ const Footer = () => {
   }
 
   return (
-    <Layout.Footer style=
-      {{
+    <Layout.Footer
+      style={{
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -32,7 +31,8 @@ const Footer = () => {
         ...getFooterStyles(),
         height: '40px',
         backgroundColor: 'crimson',
-      }}>
+      }}
+    >
       <Title
         level={5}
         style={{
@@ -40,11 +40,16 @@ const Footer = () => {
           color: 'white',
           margin: 'auto 0 auto 0',
         }}
-        onClick={() => { navigate('/') }}>
+        onClick={() => {
+          navigate('/')
+        }}
+      >
         TW Values
       </Title>
-      <Title level={5} style={{ color: 'white', margin: 'auto 0 auto 0' }}>Copyright (c) 2023-2024 TW Values</Title>
-    </Layout.Footer >
+      <Title level={5} style={{ color: 'white', margin: 'auto 0 auto 0' }}>
+        Copyright (c) 2023-2024 TW Values
+      </Title>
+    </Layout.Footer>
   )
 }
 
