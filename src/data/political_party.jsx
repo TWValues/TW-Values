@@ -13,6 +13,18 @@ const POLITICAL_PARTIES = [
     }
   },
   {
+    id: "lp",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Labor_Party_%28Taiwan%29_emblem.svg",
+    weight: {
+      economic: 85,
+      environmental: 50,
+      civil: 50,
+      societal: 55,
+      sovereignty: 15,
+      us_vs_china: 10,
+    }
+  },
+  {
     id: "dpp",
     icon: "https://upload.wikimedia.org/wikipedia/commons/1/16/Green_Island_with_White_Cross.svg",
     weight: {

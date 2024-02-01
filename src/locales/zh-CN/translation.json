@@ -521,6 +521,10 @@
             "name": "中国国民党",
             "link": "https://zh.wikipedia.org/zh-cn/%E4%B8%AD%E5%9C%8B%E5%9C%8B%E6%B0%91%E9%BB%A8"
           },
+          "lp": {
+            "name": "劳动党",
+            "link": "https://zh.wikipedia.org/zh-cn/%E5%8B%9E%E5%8B%95%E9%BB%A8_(%E8%87%BA%E7%81%A3)"
+          },
           "dpp": {
             "name": "民主进步党",
             "link": "https://zh.wikipedia.org/zh-cn/%E6%B0%91%E4%B8%BB%E9%80%B2%E6%AD%A5%E9%BB%A8"
