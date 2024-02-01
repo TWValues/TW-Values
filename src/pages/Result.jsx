@@ -406,7 +406,7 @@ const Result = () => {
         leftColor='crimson'
         rightColor='mediumslateblue'
         percent={weights.economic}
-        leaningsTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
+        descriptionTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.diplomatic.title')}
@@ -417,7 +417,7 @@ const Result = () => {
         leftColor='royalblue'
         rightColor='orange'
         percent={weights.diplomatic}
-        leaningsTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
+        descriptionTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.civil.title')}
@@ -428,7 +428,7 @@ const Result = () => {
         leftColor='#F0F000'
         rightColor='red'
         percent={weights.civil}
-        leaningsTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
+        descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.environmental.title')}
@@ -439,7 +439,7 @@ const Result = () => {
         leftColor='forestgreen'
         rightColor='saddlebrown'
         percent={weights.environmental}
-        leaningsTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
+        descriptionTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.societal.title')}
@@ -450,7 +450,7 @@ const Result = () => {
         leftColor='magenta'
         rightColor='brown'
         percent={weights.societal}
-        leaningsTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
+        descriptionTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.sovereignty.title')}
@@ -461,7 +461,7 @@ const Result = () => {
         leftColor='green'
         rightColor='black'
         percent={weights.sovereignty}
-        leaningsTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
+        descriptionTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
       />
       <ValueCard
         title={t('quiz.result.axes.us_vs_china.title')}
@@ -472,7 +472,7 @@ const Result = () => {
         leftColor='navy'
         rightColor='red'
         percent={weights.us_vs_china}
-        leaningsTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
+        descriptionTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
       />
     </Flex>
   )
