@@ -165,7 +165,7 @@ const Result = () => {
             headStyle={{
               fontSize: 'x-large',
               textAlign: 'center',
-              margin: '0px 5px 0px 50px',
+              padding: '0px 0px 0px 80px',
             }}
             style={{
               width: '100%',
@@ -176,7 +176,10 @@ const Result = () => {
               checkedChildren='∞'
               size='small'
               onChange={(checked) => { setExpandIdeology(checked) }}
-              style={{ backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue' }}
+              style={{
+                backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue',
+                margin: '5px 20px',
+              }}
             />}
           >
             <Row>
@@ -238,7 +241,7 @@ const Result = () => {
             headStyle={{
               fontSize: 'x-large',
               textAlign: 'center',
-              margin: '0px 5px 0px 50px',
+              padding: '0px 0px 0px 80px',
             }}
             style={{
               width: '100%',
@@ -249,7 +252,10 @@ const Result = () => {
               checkedChildren='∞'
               size='small'
               onChange={(checked) => { setExpandParty(checked) }}
-              style={{ backgroundColor: expandParty ? 'crimson' : 'dodgerblue' }}
+              style={{
+                backgroundColor: expandParty ? 'crimson' : 'dodgerblue',
+                margin: '5px 20px',
+              }}
             />}
           >
             <Row>
@@ -310,7 +316,7 @@ const Result = () => {
             headStyle={{
               fontSize: 'x-large',
               textAlign: 'center',
-              margin: '0px 5px 0px 50px',
+              padding: '0px 0px 0px 80px',
             }}
             style={{
               width: '100%',
@@ -321,7 +327,10 @@ const Result = () => {
               checkedChildren='∞'
               size='small'
               onChange={(checked) => { setExpandTags(checked) }}
-              style={{ backgroundColor: expandTags ? 'crimson' : 'dodgerblue' }}
+              style={{
+                backgroundColor: expandTags ? 'crimson' : 'dodgerblue',
+                margin: '5px 20px',
+              }}
             />}
           >
             {getMatchTags(IDEOLOGY_TAGS, expandTags).map((value) => {
