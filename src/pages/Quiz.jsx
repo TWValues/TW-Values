@@ -176,7 +176,7 @@ const Quiz = () => {
           >
             <Button style={{
               width: '100%',
-              backgroundColor: 'darkgreen',
+              backgroundColor: '#004000',
               border: '0',
               color: 'white',
               ...getButtonStyles(),
@@ -188,7 +188,7 @@ const Quiz = () => {
             </Button>
             <Button style={{
               width: '85%',
-              backgroundColor: 'limegreen',
+              backgroundColor: 'green',
               border: '0',
               color: 'white',
               ...getButtonStyles(),
@@ -200,7 +200,7 @@ const Quiz = () => {
             </Button>
             <Button style={{
               width: '70%',
-              backgroundColor: 'chartreuse',
+              backgroundColor: 'limegreen',
               border: '0',
               color: 'white',
               ...getButtonStyles(),
