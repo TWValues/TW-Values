@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Divider, Typography, Grid, Alert, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import getScreenSize from '../../utils/getScreenSize'
+import getScreenSize from '../utils/getScreenSize'
 
 const { Title, Text } = Typography
 

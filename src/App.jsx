@@ -1,9 +1,9 @@
 import React from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Main from './modules/main/Main'
-import Welcome from './pages/quiz/Welcome'
-import Quiz from './pages/quiz/Quiz'
-import Result from './pages/quiz/Result'
+import Welcome from './pages/Welcome'
+import Quiz from './pages/Quiz'
+import Result from './pages/Result'
 
 function App() {
   return (
