@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import ValueCard from '../components/ValueCard'
 import IDEOLOGIES from '../data/ideology'
 import POLITICAL_PARTIES from '../data/political_party'
-import IDEOLOGY_TAGS from '../data/ideology_tag'
+import { IDEOLOGY_TAGS } from '../data/ideology_tag'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 
 import Balance from '../assets/values/Balance.svg'

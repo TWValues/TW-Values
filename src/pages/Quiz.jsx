@@ -3,6 +3,7 @@ import { Flex, Card, Button } from 'antd'
 import { useMemo, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
+import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import shuffle from '../utils/shuffle'
 import useBreakpoint from '../utils/useBreakpoint'
 import QUESTIONS from '../data/question'
@@ -23,27 +24,6 @@ export const calculateScores = (questions, choices) => {
     return Math.round(getPercentage(score, maxScore))
   }
 
-  const getTags = (props) => {
-    return props.reduce((accu, value) => {
-      if (choices[value.id] > 0.0) {
-        for (const [k, v] of Object.entries(value.prop || {})) {
-          if (v > 0.0) {
-            accu.push(k)
-          }
-        }
-      }
-      if (choices[value.id] < 0.0) {
-        for (const [k, v] of Object.entries(value.prop || {})) {
-          if (v < 0.0) {
-            accu.push(k)
-          }
-        }
-      }
-
-      return accu
-    }, [])
-  }
-
   return {
     economic: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.economic || 0.0 }))),
     environmental: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.environmental || 0.0 }))),
@@ -52,7 +32,7 @@ export const calculateScores = (questions, choices) => {
     diplomatic: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.diplomatic || 0.0 }))),
     sovereignty: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.sovereignty || 0.0 }))),
     us_vs_china: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.us_vs_china || 0.0 }))),
-    tags: getTags(questions.map((value) => ({ id: value.id, prop: value.tag }))).join(','),
+    tags: getMatchedIdeologyTags(choices).join(','),
   }
 }
 
