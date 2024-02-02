@@ -90,10 +90,10 @@ const Quiz = () => {
     })[screens.size]
 
   const getButtonStyles = () => ({
-    height: '40px',
+    height: '36px',
     margin: '8px',
     fontSize: 'large',
-    borderRadius: '20px',
+    borderRadius: '18px',
   })
 
   const questions = useMemo(() => {
@@ -168,7 +168,7 @@ const Quiz = () => {
             align='center'
             style={{
               backgroundColor: 'gainsboro',
-              padding: '20px',
+              padding: '12px 24px',
               borderRadius: '20px',
               ...getButtonLayoutStyles(),
             }}
