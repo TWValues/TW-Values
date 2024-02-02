@@ -10,16 +10,16 @@ const { Title } = Typography
 
 const Header = () => {
   const navigate = useNavigate()
-  const [, i18n] = useTranslation()
+  const { i18n } = useTranslation()
   const screens = Grid.useBreakpoint()
 
   const languages = [
     {
-      key: 'zh-TW',
+      key: 'zhtw',
       text: '繁',
     },
     {
-      key: 'zh-CN',
+      key: 'zhcn',
       text: '简',
     },
     {

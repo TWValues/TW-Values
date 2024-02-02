@@ -67,7 +67,7 @@ export const MULTIPLIER = {
 }
 
 const Quiz = () => {
-  const [t] = useTranslation()
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const screens = Grid.useBreakpoint()
 

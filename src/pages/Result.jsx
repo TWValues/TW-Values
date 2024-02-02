@@ -75,7 +75,7 @@ export const getPoliticalPartyMatchScores = (weights) => {
 const Result = () => {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
-  const [t, i18n] = useTranslation()
+  const { t, i18n } = useTranslation()
   const [expandIdeology, setExpandIdeology] = useState(false, [])
   const [expandParty, setExpandParty] = useState(false, [])
   const [expandTags, setExpandTags] = useState(false, [])

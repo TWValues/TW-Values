@@ -1,26 +1,26 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import translationEN from '../locales/en/translation.json'
-import translationZhTw from '../locales/zh-TW/translation.json'
-import translationZhCn from '../locales/zh-CN/translation.json'
+import langEn from '../locales/en/translation.json'
+import langZhTw from '../locales/zh-TW/translation.json'
+import langZhCn from '../locales/zh-CN/translation.json'
 
 const resources = {
   en: {
-    translation: translationEN,
+    translation: langEn,
   },
-  'zh-TW': {
-    translation: translationZhTw,
+  zhtw: {
+    translation: langZhTw,
   },
-  'zh-CN': {
-    translation: translationZhCn,
+  zhcn: {
+    translation: langZhCn,
   },
 }
 
 const loadLanguage = () => {
   const language = localStorage.getItem('ui.language')
-  if (language === null || Object.keys(resources).indexOf(language) === -1) {
-    return 'zh-TW'
+  if (language === null || !(language in resources)) {
+    return 'zhtw'
   }
 
   return language

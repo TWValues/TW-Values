@@ -7,7 +7,7 @@ import getScreenSize from '../utils/getScreenSize'
 const { Title, Text } = Typography
 
 const Welcome = () => {
-  const [t] = useTranslation()
+  const { t } = useTranslation()
 
   const navigate = useNavigate()
   const screens = Grid.useBreakpoint()
