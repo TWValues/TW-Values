@@ -1,10 +1,10 @@
 import React from 'react'
-import { Flex, Card, Button, Grid } from 'antd'
+import { Flex, Card, Button } from 'antd'
 import { useMemo, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../utils/shuffle'
-import getScreenSize from '../utils/getScreenSize'
+import useBreakpoint from '../utils/useBreakpoint'
 import QUESTIONS from '../data/question'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 
@@ -69,40 +69,32 @@ export const MULTIPLIER = {
 const Quiz = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const screens = Grid.useBreakpoint()
+  const screens = useBreakpoint()
 
-  const getCardStyles = () => {
-    const styles = {
+  const getCardStyles = () =>
+    ({
       sm: { width: '100%' },
       md: { width: '100%' },
       lg: { width: '90%' },
       xl: { width: '80%' },
       xxl: { width: '80%' },
-    }
+    })[screens.size]
 
-    return styles[getScreenSize(screens)]
-  }
-
-  const getButtonLayoutStyles = () => {
-    const styles = {
+  const getButtonLayoutStyles = () =>
+    ({
       sm: { width: '90%' },
       md: { width: '60%' },
       lg: { width: '40%' },
       xl: { width: '30%' },
       xxl: { width: '30%' },
-    }
+    })[screens.size]
 
-    return styles[getScreenSize(screens)]
-  }
-
-  const getButtonStyles = () => {
-    return {
-      height: '40px',
-      margin: '8px',
-      fontSize: 'large',
-      borderRadius: '20px',
-    }
-  }
+  const getButtonStyles = () => ({
+    height: '40px',
+    margin: '8px',
+    fontSize: 'large',
+    borderRadius: '20px',
+  })
 
   const questions = useMemo(() => {
     return shuffle(QUESTIONS)

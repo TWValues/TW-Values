@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, Typography, Progress, Image, Grid, Flex } from 'antd'
-import getScreenSize from '../utils/getScreenSize'
+import { Card, Typography, Progress, Image, Flex } from 'antd'
+import useBreakpoint from '../utils/useBreakpoint'
 import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography
@@ -17,7 +17,7 @@ const ValueCard = ({
   descriptionTitle,
 }) => {
   const { i18n } = useTranslation()
-  const screens = Grid.useBreakpoint()
+  const screens = useBreakpoint()
 
   const getValueTextStyles = () => {
     if (i18n.language == 'en') {
@@ -27,7 +27,7 @@ const ValueCard = ({
         lg: { fontSize: 'small', minWidth: '100px', margin: '5px 5px' },
         xl: { fontSize: 'medium', minWidth: '120px', margin: '8px 8px' },
         xxl: { fontSize: 'medium', minWidth: '120px', margin: '8px 8px' },
-      }[getScreenSize(screens)]
+      }[screens.size]
     }
 
     return {
@@ -36,7 +36,7 @@ const ValueCard = ({
       lg: { fontSize: 'medium', minWidth: '80px', margin: '5px 5px' },
       xl: { fontSize: 'large', minWidth: '120px', margin: '8px 8px' },
       xxl: { fontSize: 'large', minWidth: '120px', margin: '8px 8px' },
-    }[getScreenSize(screens)]
+    }[screens.size]
   }
 
   const getdescriptionTitleStyles = () => {
@@ -47,7 +47,7 @@ const ValueCard = ({
         lg: { fontSize: 'small' },
         xl: { fontSize: 'medium' },
         xxl: { fontSize: 'medium' },
-      }[getScreenSize(screens)]
+      }[screens.size]
     }
 
     return {
@@ -56,7 +56,7 @@ const ValueCard = ({
       lg: { fontSize: 'medium' },
       xl: { fontSize: 'large' },
       xxl: { fontSize: 'large' },
-    }[getScreenSize(screens)]
+    }[screens.size]
   }
 
   return (

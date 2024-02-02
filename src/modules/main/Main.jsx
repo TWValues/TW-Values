@@ -1,26 +1,23 @@
 import React from 'react'
-import { Layout, Grid } from 'antd'
+import { Layout } from 'antd'
 import { Outlet } from 'react-router-dom'
 import Header from './header/Header'
 import Footer from './footer/Footer'
-import getScreenSize from '../../utils/getScreenSize'
+import useBreakpoint from '../../utils/useBreakpoint'
 
 const { Content } = Layout
 
 const Main = () => {
-  const screens = Grid.useBreakpoint()
+  const screens = useBreakpoint()
 
-  const getContentStyles = () => {
-    const styles = {
+  const getContentStyles = () =>
+    ({
       sm: { padding: '10px 10px 10px 10px' },
       md: { padding: '10px 20px 10px 20px' },
       lg: { padding: '10px 10% 10px 10%' },
       xl: { padding: '10px 15% 10px 15%' },
       xxl: { padding: '10px 20% 10px 20%' },
-    }
-
-    return styles[getScreenSize(screens)]
-  }
+    })[screens.size]
 
   return (
     <Layout

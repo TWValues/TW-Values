@@ -1,8 +1,8 @@
 import React from 'react'
-import { Layout, Typography, Grid, Button, Space } from 'antd'
+import { Layout, Typography, Button, Space } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
-import getScreenSize from '../../../utils/getScreenSize'
+import useBreakpoint from '../../../utils/useBreakpoint'
 import packageInfo from '../../../../package.json'
 import { useTranslation } from 'react-i18next'
 
@@ -11,7 +11,7 @@ const { Title } = Typography
 const Header = () => {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
-  const screens = Grid.useBreakpoint()
+  const screens = useBreakpoint()
 
   const languages = [
     {
@@ -33,17 +33,14 @@ const Header = () => {
     i18n.changeLanguage(language)
   }
 
-  const getHeaderStyles = () => {
-    const styles = {
+  const getHeaderStyles = () =>
+    ({
       sm: { padding: '0 10px 0 10px' },
       md: { padding: '0 20px 0 20px' },
       lg: { padding: '0 10% 0 10%' },
       xl: { padding: '0 15% 0 15%' },
       xxl: { padding: '0 20% 0 20%' },
-    }
-
-    return styles[getScreenSize(screens)]
-  }
+    })[screens.size]
 
   return (
     <Layout.Header

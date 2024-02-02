@@ -1,25 +1,22 @@
 import React from 'react'
-import { Layout, Typography, Grid } from 'antd'
-import getScreenSize from '../../../utils/getScreenSize'
+import { Layout, Typography } from 'antd'
+import useBreakpoint from '../../../utils/useBreakpoint'
 import { useNavigate } from 'react-router-dom'
 
 const { Title } = Typography
 
 const Footer = () => {
   const navigate = useNavigate()
-  const screens = Grid.useBreakpoint()
+  const screens = useBreakpoint()
 
-  const getFooterStyles = () => {
-    const styles = {
+  const getFooterStyles = () =>
+    ({
       sm: { padding: '0 10px 0 10px' },
       md: { padding: '0 20px 0 20px' },
       lg: { padding: '0 10% 0 10%' },
       xl: { padding: '0 15% 0 15%' },
       xxl: { padding: '0 20% 0 20%' },
-    }
-
-    return styles[getScreenSize(screens)]
-  }
+    })[screens.size]
 
   return (
     <Layout.Footer
