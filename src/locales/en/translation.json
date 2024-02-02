@@ -210,7 +210,7 @@
     },
     "result": {
       "api_error": {
-        "description": "Sorry, your test result is incompatible with current version. Please do the test again.",
+        "description": "Sorry, your result is incompatible with current version. Please do the quiz again.",
         "index": "Go to index page"
       },
       "axes": {
@@ -267,7 +267,7 @@
             "3": "Centrist",
             "4": "Prefer Production",
             "5": "Anti-environmentalism",
-            "6": "Anti-environmentalism"
+            "6": "Redical Anti-environmentalism"
           }
         },
         "societal": {
@@ -399,7 +399,7 @@
           },
           "progressivism": {
             "name": "Progressivism",
-            "link": "https://en.wikipedia.org/wiki/Progressivismhttps://en.wikipedia.org/wiki/Progressivism"
+            "link": "https://en.wikipedia.org/wiki/Progressivism"
           },
           "anarcho_mutualism": {
             "name": "Anarcho-Mutualism"
