@@ -321,7 +321,8 @@
             "link": "https://en.wikipedia.org/wiki/Anarchist_communism"
           },
           "libertarian_communism": {
-            "name": "Libertarian Communism"
+            "name": "Libertarian Communism",
+            "link": ""
           },
           "trotskyism": {
             "name": "Trotskyism",
@@ -352,7 +353,8 @@
             "link": "https://en.wikipedia.org/wiki/State_socialism"
           },
           "theocratic_socialism": {
-            "name": "Theocratic Socialism"
+            "name": "Theocratic Socialism",
+            "link": ""
           },
           "religious_socialism": {
             "name": "Religious Socialism",
@@ -379,7 +381,8 @@
             "link": "https://en.wikipedia.org/wiki/Left-wing_populism"
           },
           "theocratic_distributism": {
-            "name": "Theocratic Distributism"
+            "name": "Theocratic Distributism",
+            "link": ""
           },
           "distributism": {
             "name": "Distributism",
@@ -402,7 +405,8 @@
             "link": "https://en.wikipedia.org/wiki/Progressivism"
           },
           "anarcho_mutualism": {
-            "name": "Anarcho-Mutualism"
+            "name": "Anarcho-Mutualism",
+            "link": ""
           },
           "national_totalitarianism": {
             "name": "National Totalitarianism",
@@ -425,7 +429,8 @@
             "link": "https://en.wikipedia.org/wiki/Liberalism"
           },
           "religious_anarchism": {
-            "name": "Religious Anarchism"
+            "name": "Religious Anarchism",
+            "link": ""
           },
           "right_wing_populism": {
             "name": "Right-Wing Populism",
@@ -464,7 +469,8 @@
             "link": "https://en.wikipedia.org/wiki/Fascism"
           },
           "capitalist_fascism": {
-            "name": "Capitalist Fascism"
+            "name": "Capitalist Fascism",
+            "link": ""
           },
           "conservatism": {
             "name": "Conservatism",
@@ -507,10 +513,12 @@
             "link": "https://en.wikipedia.org/wiki/Objectivism"
           },
           "totalitarian_capitalism": {
-            "name": "Totalitarian Capitalism"
+            "name": "Totalitarian Capitalism",
+            "link": ""
           },
           "ultra_capitalism": {
-            "name": "Ultra-Capitalism"
+            "name": "Ultra-Capitalism",
+            "link": ""
           },
           "anarcho_capitalism": {
             "name": "Anarcho-Capitalism",

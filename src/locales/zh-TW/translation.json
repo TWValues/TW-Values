@@ -321,7 +321,8 @@
             "link": "https://zh.wikipedia.org/zh-tw/%E7%84%A1%E6%94%BF%E5%BA%9C%E5%85%B1%E7%94%A2%E4%B8%BB%E7%BE%A9"
           },
           "libertarian_communism": {
-            "name": "自由意志共產主義"
+            "name": "自由意志共產主義",
+            "link": ""
           },
           "trotskyism": {
             "name": "托洛斯基主義",
@@ -344,14 +345,16 @@
             "link": "https://zh.wikipedia.org/zh-tw/%E6%96%AF%E5%A4%A7%E6%9E%97%E4%B8%BB%E4%B9%89"
           },
           "religious_communism": {
-            "name": "宗教共產主義"
+            "name": "宗教共產主義",
+            "link": ""
           },
           "state_socialism": {
             "name": "國有社會主義",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%9C%8B%E6%9C%89%E7%A4%BE%E6%9C%83%E4%B8%BB%E7%BE%A9"
           },
           "theocratic_socialism": {
-            "name": "神權社會主義"
+            "name": "神權社會主義",
+            "link": ""
           },
           "religious_socialism": {
             "name": "宗教社會主義",
@@ -378,7 +381,8 @@
             "link": "https://zh.wikipedia.org/zh-tw/%E5%B7%A6%E7%BF%BC%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9"
           },
           "theocratic_distributism": {
-            "name": "神權分產主義"
+            "name": "神權分產主義",
+            "link": ""
           },
           "distributism": {
             "name": "分產主義",
@@ -401,7 +405,8 @@
             "link": "https://zh.wikipedia.org/zh-tw/%E9%80%B2%E6%AD%A5%E4%B8%BB%E7%BE%A9"
           },
           "anarcho_mutualism": {
-            "name": "無政府互利主義"
+            "name": "無政府互利主義",
+            "link": ""
           },
           "national_totalitarianism": {
             "name": "國家極權主義",
@@ -424,21 +429,24 @@
             "link": "https://zh.wikipedia.org/zh-tw/%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89"
           },
           "religious_anarchism": {
-            "name": "宗教無政府主義"
+            "name": "宗教無政府主義",
+            "link": ""
           },
           "right_wing_populism": {
             "name": "右翼民粹主義",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B3%E7%BF%BC%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9"
           },
           "moderate_conservatism": {
-            "name": "溫和保守主義"
+            "name": "溫和保守主義",
+            "link": ""
           },
           "reactionary": {
             "name": "反動",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%8D%E5%8A%A8"
           },
           "social_libertarianism": {
-            "name": "社會自由意志主義"
+            "name": "社會自由意志主義",
+            "link": ""
           },
           "libertarianism": {
             "name": "自由意志主義",
@@ -461,7 +469,8 @@
             "link": "https://zh.wikipedia.org/zh-tw/%E6%B3%95%E8%A5%BF%E6%96%AF%E4%B8%BB%E4%B9%89"
           },
           "capitalist_fascism": {
-            "name": "法西斯資本主義"
+            "name": "法西斯資本主義",
+            "link": ""
           },
           "conservatism": {
             "name": "保守主義",
@@ -496,17 +505,20 @@
             "link": "https://zh.wikipedia.org/zh-tw/%E5%8F%B3%E6%B4%BE%E8%87%AA%E7%94%B1%E6%84%8F%E5%BF%97%E4%B8%BB%E7%BE%A9"
           },
           "market_anarchism": {
-            "name": "自由市場無政府主義"
+            "name": "自由市場無政府主義",
+            "link": ""
           },
           "objectivism": {
             "name": "客觀主義",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%AE%A2%E8%A7%80%E4%B8%BB%E7%BE%A9"
           },
           "totalitarian_capitalism": {
-            "name": "極權資本主義"
+            "name": "極權資本主義",
+            "link": ""
           },
           "ultra_capitalism": {
-            "name": "超級資本主義"
+            "name": "超級資本主義",
+            "link": ""
           },
           "anarcho_capitalism": {
             "name": "無政府資本主義",
