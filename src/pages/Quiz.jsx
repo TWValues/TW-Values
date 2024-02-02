@@ -7,6 +7,7 @@ import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import shuffle from '../utils/shuffle'
 import useBreakpoint from '../utils/useBreakpoint'
 import QUESTIONS from '../data/question'
+import MULTIPLIER from '../utils/multiplier'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 
 export const calculateScores = (questions, choices) => {
@@ -34,16 +35,6 @@ export const calculateScores = (questions, choices) => {
     us_vs_china: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.us_vs_china || 0.0 }))),
     tags: getMatchedIdeologyTags(choices).join(','),
   }
-}
-
-export const MULTIPLIER = {
-  ca: 1.0,
-  a: 0.5,
-  sa: 0.25,
-  n: 0.0,
-  sd: -0.25,
-  d: -0.5,
-  cd: -1.0,
 }
 
 const Quiz = () => {
