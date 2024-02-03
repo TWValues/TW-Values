@@ -609,6 +609,11 @@
             "description": "又稱男性沙文主義、男性至上主義、男性優越主義或者大男人主義，是一種認為男尊女卑、男性必定優於女性，因此男性更應統治女性的意識形態。",
             "link": "https://zh.wikipedia.org/zh-tw/%E5%A4%A7%E7%94%B7%E5%AD%90%E4%B8%BB%E4%B9%89"
           },
+          "feminism": {
+            "name": "女性主義",
+            "description": "又譯女權主義，既是一套龐大的平權理論，也是一系列社會運動的總稱，其最終目的是建立一個對所有性別都平等的友善社會。",
+            "link": "https://zh.wikipedia.org/zh-tw/%E5%A5%B3%E6%80%A7%E4%B8%BB%E7%BE%A9"
+          },
           "feminism_buffet": {
             "name": "女權自助餐",
             "description": "意指那些以女權之名獲得男女平等帶來的利益的同時，又不願意放棄父權紅利的女性。",

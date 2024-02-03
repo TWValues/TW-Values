@@ -30,6 +30,17 @@ export const IDEOLOGY_TAGS = [
     predicate: (choices) => choices['q0705'] > MULTIPLIER.n,
   },
   {
+    id: 'feminism',
+    predicate: (choices) => {
+      let count = 0
+      count += choices['q0602'] > MULTIPLIER.n
+      count += choices['q0701'] < MULTIPLIER.n
+      count += choices['q0702'] < MULTIPLIER.n
+      count += choices['q0703'] < MULTIPLIER.n
+      return choices['q0605'] > MULTIPLIER.n && choices['q0705'] < MULTIPLIER.n && count >= 2
+    },
+  },
+  {
     id: 'feminism_buffet',
     predicate: (choices) => choices['q0605'] < MULTIPLIER.n,
   },

@@ -609,6 +609,11 @@
             "description": "Male prejudice against women; the belief that men are superior in terms of ability, intelligence, etc.",
             "link": "https://en.wikipedia.org/wiki/Machismo"
           },
+          "feminism": {
+            "name": "Feminism",
+            "description": "Feminism is a range of socio-political movements and ideologies that aim to define and establish the political, economic, personal, and social equality of the sexes.",
+            "link": "https://en.wikipedia.org/wiki/Feminism"
+          },
           "feminism_buffet": {
             "name": "Feminism Buffet",
             "description": "Women who reap the benefits of equality between men and women in the name of women's rights are unwilling to give up the dividends of patriarchy.",
