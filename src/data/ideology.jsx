@@ -117,6 +117,15 @@ const IDEOLOGIES = [
     },
   },
   {
+    id: 'liberal_socialism',
+    weight: {
+      economic: 80,
+      diplomatic: 70,
+      civil: 60,
+      societal: 80,
+    },
+  },
+  {
     id: 'libertarian_socialism',
     weight: {
       economic: 80,
