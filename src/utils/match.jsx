@@ -1,6 +1,5 @@
 import IDEOLOGIES from '../data/ideology'
 import POLITICAL_PARTIES from '../data/political_party'
-import { getMatchedIdeologyTags } from '../data/ideology_tag'
 
 export const getValueScores = (questions, choices) => {
   const getScore = (props) => {
@@ -25,7 +24,6 @@ export const getValueScores = (questions, choices) => {
     diplomatic: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.diplomatic || 0.0 }))),
     sovereignty: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.sovereignty || 0.0 }))),
     us_vs_china: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.us_vs_china || 0.0 }))),
-    tags: getMatchedIdeologyTags(choices).join(','),
   }
 }
 

@@ -6,6 +6,7 @@ import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../utils/shuffle'
 import useBreakpoint from '../utils/useBreakpoint'
 import QUESTIONS from '../data/question'
+import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import MULTIPLIER from '../utils/multiplier'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 import { getValueScores } from '../utils/match'
@@ -68,6 +69,7 @@ const Quiz = () => {
         search: createSearchParams({
           [API_VERSION_KEY]: API_VERSION_VALUE,
           ...getValueScores(questions, choices),
+          tags: getMatchedIdeologyTags(choices).join(','),
         }).toString(),
       })
     }
