@@ -3,39 +3,12 @@ import { Flex, Card, Button } from 'antd'
 import { useMemo, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
-import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import shuffle from '../utils/shuffle'
 import useBreakpoint from '../utils/useBreakpoint'
 import QUESTIONS from '../data/question'
 import MULTIPLIER from '../utils/multiplier'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
-
-export const calculateScores = (questions, choices) => {
-  const getScore = (props) => {
-    const getScoreWithMultiplier = (props) => {
-      return props.reduce((accu, value) => accu + value.prop * choices[value.id], 0.0)
-    }
-    const getAbsMaxScore = (props) => {
-      return props.reduce((accu, value) => accu + Math.abs(value.prop), 0.0)
-    }
-    const getPercentage = (bias, total) => (100 * (bias + total)) / (2 * total)
-
-    const score = getScoreWithMultiplier(props)
-    const maxScore = getAbsMaxScore(props)
-    return Math.round(getPercentage(score, maxScore))
-  }
-
-  return {
-    economic: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.economic || 0.0 }))),
-    environmental: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.environmental || 0.0 }))),
-    civil: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.civil || 0.0 }))),
-    societal: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.societal || 0.0 }))),
-    diplomatic: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.diplomatic || 0.0 }))),
-    sovereignty: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.sovereignty || 0.0 }))),
-    us_vs_china: getScore(questions.map((value) => ({ id: value.id, prop: value.weight.us_vs_china || 0.0 }))),
-    tags: getMatchedIdeologyTags(choices).join(','),
-  }
-}
+import { calculateScores } from '../utils/match'
 
 const Quiz = () => {
   const { t } = useTranslation()

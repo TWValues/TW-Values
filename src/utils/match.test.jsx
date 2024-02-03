@@ -1,9 +1,8 @@
 import { expect, test } from 'vitest'
-import { calculateScores } from './Quiz'
-import { getPoliticalPartyMatchScores } from './Result'
+import { calculateScores, getPoliticalPartyMatchScores } from './match'
 import QUESTIONS from '../data/question'
 import POLITICAL_PARTIES from '../data/political_party'
-import MULTIPLIER from '../utils/multiplier'
+import MULTIPLIER from './multiplier'
 
 const checkWeights = (weights, partyId) => {
   const getParty = (id) => POLITICAL_PARTIES.filter((value) => value.id == id)[0]
