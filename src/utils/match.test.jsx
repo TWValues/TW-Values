@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { calculateScores, getPoliticalPartyMatchScores } from './match'
+import { getValueScores, getPoliticalPartyMatchScores } from './match'
 import QUESTIONS from '../data/question'
 import POLITICAL_PARTIES from '../data/political_party'
 import MULTIPLIER from './multiplier'
@@ -89,7 +89,7 @@ test('kmt', () => {
     q1301: MULTIPLIER.n,
   }
 
-  const weights = calculateScores(QUESTIONS, choices)
+  const weights = getValueScores(QUESTIONS, choices)
   checkWeights(weights, 'kmt')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('kmt')
@@ -163,7 +163,7 @@ test('lp', () => {
     q1301: MULTIPLIER.a,
   }
 
-  const weights = calculateScores(QUESTIONS, choices)
+  const weights = getValueScores(QUESTIONS, choices)
   checkWeights(weights, 'lp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('lp')
@@ -237,7 +237,7 @@ test('dpp', () => {
     q1301: MULTIPLIER.d,
   }
 
-  const weights = calculateScores(QUESTIONS, choices)
+  const weights = getValueScores(QUESTIONS, choices)
   checkWeights(weights, 'dpp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('dpp')
@@ -311,7 +311,7 @@ test('np', () => {
     q1301: MULTIPLIER.n,
   }
 
-  const weights = calculateScores(QUESTIONS, choices)
+  const weights = getValueScores(QUESTIONS, choices)
   checkWeights(weights, 'np')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('np')
@@ -385,7 +385,7 @@ test('npp', () => {
     q1301: MULTIPLIER.d,
   }
 
-  const weights = calculateScores(QUESTIONS, choices)
+  const weights = getValueScores(QUESTIONS, choices)
   checkWeights(weights, 'npp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('npp')
@@ -459,7 +459,7 @@ test('tpp', () => {
     q1301: MULTIPLIER.n,
   }
 
-  const weights = calculateScores(QUESTIONS, choices)
+  const weights = getValueScores(QUESTIONS, choices)
   checkWeights(weights, 'tpp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('tpp')
@@ -533,7 +533,7 @@ test('gpt', () => {
     q1301: MULTIPLIER.d,
   }
 
-  const weights = calculateScores(QUESTIONS, choices)
+  const weights = getValueScores(QUESTIONS, choices)
   checkWeights(weights, 'gpt')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('gpt')

@@ -8,7 +8,7 @@ import useBreakpoint from '../utils/useBreakpoint'
 import QUESTIONS from '../data/question'
 import MULTIPLIER from '../utils/multiplier'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
-import { calculateScores } from '../utils/match'
+import { getValueScores } from '../utils/match'
 
 const Quiz = () => {
   const { t } = useTranslation()
@@ -67,7 +67,7 @@ const Quiz = () => {
         pathname: '/result',
         search: createSearchParams({
           [API_VERSION_KEY]: API_VERSION_VALUE,
-          ...calculateScores(questions, choices),
+          ...getValueScores(questions, choices),
         }).toString(),
       })
     }

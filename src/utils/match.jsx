@@ -2,7 +2,7 @@ import IDEOLOGIES from '../data/ideology'
 import POLITICAL_PARTIES from '../data/political_party'
 import { getMatchedIdeologyTags } from '../data/ideology_tag'
 
-export const calculateScores = (questions, choices) => {
+export const getValueScores = (questions, choices) => {
   const getScore = (props) => {
     const getScoreWithMultiplier = (props) => {
       return props.reduce((accu, value) => accu + value.prop * choices[value.id], 0.0)
