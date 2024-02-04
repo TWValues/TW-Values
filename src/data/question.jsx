@@ -163,7 +163,7 @@ const QUESTIONS = [
   {
     id: 'q0500',
     weight: {
-      civil: -WEIGHTS.p100,
+      civil: -WEIGHTS.p075,
     },
   },
   {
@@ -195,6 +195,12 @@ const QUESTIONS = [
     id: 'q0505',
     weight: {
       civil: -WEIGHTS.p100,
+    },
+  },
+  {
+    id: 'q0506',
+    weight: {
+      civil: -WEIGHTS.p075,
     },
   },
   {
