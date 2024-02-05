@@ -279,7 +279,7 @@ const IDEOLOGIES = [
     },
   },
   {
-    id: 'moderate_conservatism',
+    id: 'liberal_conservatism',
     weight: {
       economic: 40,
       diplomatic: 40,

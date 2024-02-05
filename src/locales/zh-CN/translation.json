@@ -443,9 +443,9 @@
             "name": "右翼民粹主义",
             "link": "https://zh.wikipedia.org/zh-cn/%E5%8F%B3%E7%BF%BC%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9"
           },
-          "moderate_conservatism": {
-            "name": "温和保守主义",
-            "link": ""
+          "liberal_conservatism": {
+            "name": "自由保守主义",
+            "link": "https://zh.wikipedia.org/zh-cn/%E8%87%AA%E7%94%B1%E4%BF%9D%E5%AE%88%E4%B8%BB%E7%BE%A9"
           },
           "reactionary": {
             "name": "反动",
