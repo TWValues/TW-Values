@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../utils/shuffle'
 import useBreakpoint from '../utils/useBreakpoint'
-import QUESTIONS from '../data/question'
+import { getQuestions } from '../data/question'
 import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import MULTIPLIER from '../utils/multiplier'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
@@ -42,7 +42,7 @@ const Quiz = () => {
   })
 
   const questions = useMemo(() => {
-    return shuffle(QUESTIONS)
+    return shuffle(getQuestions())
   }, [])
 
   const [currentSelectedQuestionIndex, setCurrentSelectedQuestionIndex] = useState(0)

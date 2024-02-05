@@ -5,7 +5,7 @@ const WEIGHTS = {
   p050: 8,
 }
 
-const QUESTIONS = [
+export const getQuestions = () => [
   {
     id: 'q0000',
     weight: {
@@ -405,5 +405,3 @@ const QUESTIONS = [
     },
   },
 ]
-
-export default QUESTIONS

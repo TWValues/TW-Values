@@ -1,4 +1,4 @@
-const POLITICAL_PARTIES = [
+export const getPoliticalParties = () => [
   {
     id: 'kmt',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Blue_Sky_White_Sun.png',
@@ -120,5 +120,3 @@ const POLITICAL_PARTIES = [
     },
   },
 ]
-
-export default POLITICAL_PARTIES

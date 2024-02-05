@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Card, Typography, Image, Button, Flex, Switch, Row, Col } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../components/ValueCard'
-import { IDEOLOGY_TAGS } from '../data/ideology_tag'
+import { getIdeologyTags } from '../data/ideology_tag'
 import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/match'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 
@@ -340,7 +340,7 @@ const Result = () => {
           />
         }
       >
-        {getMatchTags(IDEOLOGY_TAGS, expandTags).map((value) => {
+        {getMatchTags(getIdeologyTags(), expandTags).map((value) => {
           const name = t(`quiz.result.tags.data.${value.id}.name`)
           const description = t(`quiz.result.tags.data.${value.id}.description`)
           const link = t(`quiz.result.tags.data.${value.id}.link`)

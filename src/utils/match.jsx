@@ -1,5 +1,5 @@
-import IDEOLOGIES from '../data/ideology'
-import POLITICAL_PARTIES from '../data/political_party'
+import { getIdeologies } from '../data/ideology'
+import { getPoliticalParties } from '../data/political_party'
 
 export const getValueScores = (questions, choices) => {
   const getScore = (props) => {
@@ -39,37 +39,44 @@ const getMatchRate = (distance, lower, upper) => {
 }
 
 export const getIdeologyMatchScores = (weights) => {
-  const ideologyScores = IDEOLOGIES.map((value) => {
-    let distance = 0.0
-    distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
-    distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
-    distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
-    distance += Math.pow(Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)), 2)
-    return {
-      id: value.id,
-      distance: distance,
-      rate: getMatchRate(distance, 4 * 10 * 10, 4 * 50 * 50),
-    }
-  }).sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
+  const ideologyScores = getIdeologies()
+    .map((value) => {
+      let distance = 0.0
+      distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
+      distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
+      distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
+      distance += Math.pow(
+        Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)),
+        2,
+      )
+      return {
+        id: value.id,
+        distance: distance,
+        rate: getMatchRate(distance, 4 * 10 * 10, 4 * 50 * 50),
+      }
+    })
+    .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
 
   return ideologyScores
 }
 
 export const getPoliticalPartyMatchScores = (weights) => {
-  const politicalScores = POLITICAL_PARTIES.map((value) => {
-    let distance = 0.0
-    distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
-    distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
-    distance += Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2)
-    distance += Math.pow(Math.abs(value.weight.societal - weights.societal), 2)
-    distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
-    distance += Math.pow(Math.abs(value.weight.us_vs_china - weights.us_vs_china), 2)
-    return {
-      ...value,
-      distance: distance,
-      rate: getMatchRate(distance, 6 * 10 * 10, 6 * 50 * 50),
-    }
-  }).sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
+  const politicalScores = getPoliticalParties()
+    .map((value) => {
+      let distance = 0.0
+      distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
+      distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
+      distance += Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2)
+      distance += Math.pow(Math.abs(value.weight.societal - weights.societal), 2)
+      distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
+      distance += Math.pow(Math.abs(value.weight.us_vs_china - weights.us_vs_china), 2)
+      return {
+        ...value,
+        distance: distance,
+        rate: getMatchRate(distance, 6 * 10 * 10, 6 * 50 * 50),
+      }
+    })
+    .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
 
   return politicalScores
 }

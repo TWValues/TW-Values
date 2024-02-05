@@ -1,6 +1,6 @@
 import MULTIPLIER from '../utils/multiplier'
 
-export const IDEOLOGY_TAGS = [
+export const getIdeologyTags = () => [
   {
     id: 'roc_unification',
     predicate: (choices) => choices['q1103'] > MULTIPLIER.n,
@@ -56,4 +56,6 @@ export const IDEOLOGY_TAGS = [
 ]
 
 export const getMatchedIdeologyTags = (choices) =>
-  IDEOLOGY_TAGS.filter((value) => value.predicate(choices)).map((value) => value.id)
+  getIdeologyTags()
+    .filter((value) => value.predicate(choices))
+    .map((value) => value.id)

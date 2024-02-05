@@ -1,4 +1,4 @@
-const IDEOLOGIES = [
+export const getIdeologies = () => [
   {
     id: 'anarcho_communism',
     weight: {
@@ -477,5 +477,3 @@ const IDEOLOGIES = [
     },
   },
 ]
-
-export default IDEOLOGIES
