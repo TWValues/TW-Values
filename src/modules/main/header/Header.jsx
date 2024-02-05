@@ -42,6 +42,24 @@ const Header = () => {
       xxl: { padding: '0 20% 0 20%' },
     })[screens.size]
 
+  const getButtonStyles = () =>
+    ({
+      sm: { fontSize: 'small' },
+      md: { fontSize: 'medium' },
+      lg: { fontSize: 'medium' },
+      xl: { fontSize: 'medium' },
+      xxl: { fontSize: 'medium' },
+    })[screens.size]
+
+  const getRepoLinkStyles = () =>
+    ({
+      sm: { fontSize: 'large' },
+      md: { fontSize: 'x-large' },
+      lg: { fontSize: 'x-large' },
+      xl: { fontSize: 'x-large' },
+      xxl: { fontSize: 'x-large' },
+    })[screens.size]
+
   return (
     <Layout.Header
       style={{
@@ -77,8 +95,8 @@ const Header = () => {
               backgroundColor: 'transparent',
               borderColor: i18n.language === value.key ? 'transparent' : 'white',
               color: 'white',
-              fontSize: 'medium',
               padding: '0 5px',
+              ...getButtonStyles(),
             }}
           >
             {value.text}
@@ -92,7 +110,8 @@ const Header = () => {
             backgroundColor: 'transparent',
             borderColor: 'transparent',
             color: 'white',
-            fontSize: 'medium',
+            padding: '0 5px',
+            ...getButtonStyles(),
           }}
         >
           {`v${packageInfo.version}`}
@@ -101,7 +120,7 @@ const Header = () => {
           type='link'
           href='https://github.com/TWValues/TW-Values'
           target='_blank'
-          icon={<GithubOutlined style={{ color: 'white', fontSize: 'x-large' }} />}
+          icon={<GithubOutlined style={{ color: 'white', ...getRepoLinkStyles() }} />}
         />
       </Space>
     </Layout.Header>
