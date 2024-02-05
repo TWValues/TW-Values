@@ -405,7 +405,7 @@ const Result = () => {
         rightTitle={t('quiz.result.axes.civil.authority')}
         leftImage={Liberty}
         rightImage={Crown}
-        leftColor='#F0F000'
+        leftColor='yellow'
         rightColor='red'
         percent={weights.civil}
         descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
