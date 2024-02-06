@@ -54,7 +54,7 @@ export const getIdeologies = () => [
     },
   },
   {
-    id: 'stalinism_maoism',
+    id: 'stalinism',
     weight: {
       economic: 100,
       diplomatic: 20,
