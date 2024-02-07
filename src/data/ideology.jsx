@@ -329,7 +329,7 @@ export const getIdeologies = () => [
       economic: 40,
       diplomatic: 0,
       civil: 0,
-      societal: 5,
+      societal: 10,
     },
   },
   {
