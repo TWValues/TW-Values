@@ -18,8 +18,8 @@
   "scripts": {
     "start": "vite",
     "test": "vitest",
-    "lint": "eslint ./src",
-    "lint:fix": "eslint --fix ./src",
+    "lint:check": "eslint ./src",
+    "lint": "eslint --fix ./src",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
