@@ -148,10 +148,12 @@ const Result = () => {
     >
       <Card
         title={t('quiz.result.ideologies.name')}
-        headStyle={{
-          fontSize: 'x-large',
-          textAlign: 'center',
-          padding: '0px 0px 0px 80px',
+        styles={{
+          header: {
+            fontSize: 'x-large',
+            textAlign: 'center',
+            padding: '0px 0px 0px 80px',
+          },
         }}
         style={{
           width: '100%',
@@ -231,10 +233,12 @@ const Result = () => {
       </Card>
       <Card
         title={t('quiz.result.political_parties.name')}
-        headStyle={{
-          fontSize: 'x-large',
-          textAlign: 'center',
-          padding: '0px 0px 0px 80px',
+        styles={{
+          header: {
+            fontSize: 'x-large',
+            textAlign: 'center',
+            padding: '0px 0px 0px 80px',
+          },
         }}
         style={{
           width: '100%',
@@ -316,10 +320,12 @@ const Result = () => {
       </Card>
       <Card
         title={t('quiz.result.tags.name')}
-        headStyle={{
-          fontSize: 'x-large',
-          textAlign: 'center',
-          padding: '0px 0px 0px 80px',
+        styles={{
+          header: {
+            fontSize: 'x-large',
+            textAlign: 'center',
+            padding: '0px 0px 0px 80px',
+          },
         }}
         style={{
           width: '100%',

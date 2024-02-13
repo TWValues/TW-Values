@@ -62,9 +62,11 @@ const ValueCard = ({
   return (
     <Card
       title={title}
-      headStyle={{
-        fontSize: 'x-large',
-        textAlign: 'center',
+      styles={{
+        header: {
+          fontSize: 'x-large',
+          textAlign: 'center',
+        },
       }}
       style={{
         width: '100%',

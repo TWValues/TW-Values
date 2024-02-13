@@ -92,12 +92,14 @@ const Quiz = () => {
               index: currentSelectedQuestionIndex + 1,
               all: questions.length,
             })}
-            headStyle={{
-              fontSize: 'xx-large',
-            }}
-            bodyStyle={{
-              fontSize: 'x-large',
-              whiteSpace: 'pre-line',
+            styles={{
+              header: {
+                fontSize: 'xx-large',
+              },
+              body: {
+                fontSize: 'x-large',
+                whiteSpace: 'pre-line',
+              },
             }}
             style={{
               minHeight: '220px',
