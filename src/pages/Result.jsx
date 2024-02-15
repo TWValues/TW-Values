@@ -22,6 +22,7 @@ import FlagOfTWIndependence from '../assets/values/FlagOfTWIndependence.svg'
 import ChinaTerritory from '../assets/values/ChinaTerritory.svg'
 import FlagOfUSA from '../assets/values/FlagOfUSA.svg'
 import FlagOfPRC from '../assets/values/FlagOfPRC.svg'
+import { DiffFilled } from '@ant-design/icons'
 
 const { Text, Title } = Typography
 
@@ -108,6 +109,8 @@ const Result = () => {
       xl: '24px',
       xll: '24px',
     })[screens.size]
+
+  const getDiffColor = (diff) => (diff < 0.11 ? 'green' : diff < 0.21 ? 'orange' : 'red')
 
   if (!isApiVersionOK) {
     return (
@@ -204,7 +207,7 @@ const Result = () => {
               <Flex justify='center' align='center'>
                 <Text
                   style={{
-                    margin: '10px',
+                    margin: '8px',
                     fontSize: isLanguage('en')
                       ? `${getSizeWithStep(100, -8, 4, index)}%`
                       : `${getSizeWithStep(140, -16, 4, index)}%`,
@@ -215,16 +218,17 @@ const Result = () => {
                 >
                   {t(`quiz.result.ideologies.data.${value.id}.name`)}
                 </Text>
+                <DiffFilled style={{ margin: '3px', color: getDiffColor(value.diff) }} />
                 <Text
                   style={{
-                    color: 'crimson',
+                    color: getDiffColor(value.diff),
                     fontSize: isLanguage('en')
                       ? `${getSizeWithStep(100, -8, 4, index)}%`
                       : `${getSizeWithStep(100, -8, 4, index)}%`,
                     textAlign: 'center',
                   }}
                 >
-                  {`${Math.round(value.rate * 100)}%`}
+                  {`${Math.round(value.diff * 100)}%`}
                 </Text>
               </Flex>
             )
@@ -295,7 +299,7 @@ const Result = () => {
                 <Image width={getSizeWithStep(24, -3, 4, index)} src={value.icon} preview={false} />
                 <Text
                   style={{
-                    margin: '10px',
+                    margin: '8px',
                     fontSize: isLanguage('en')
                       ? `${getSizeWithStep(100, -8, 4, index)}%`
                       : `${getSizeWithStep(140, -16, 4, index)}%`,
@@ -306,16 +310,17 @@ const Result = () => {
                 >
                   {t(`quiz.result.political_parties.data.${value.id}.name`)}
                 </Text>
+                <DiffFilled style={{ margin: '3px', color: getDiffColor(value.diff) }} />
                 <Text
                   style={{
-                    color: 'crimson',
+                    color: getDiffColor(value.diff),
                     fontSize: isLanguage('en')
                       ? `${getSizeWithStep(100, -8, 4, index)}%`
                       : `${getSizeWithStep(100, -8, 4, index)}%`,
                     textAlign: 'center',
                   }}
                 >
-                  {`${Math.round(value.rate * 100)}%`}
+                  {`${Math.round(value.diff * 100)}%`}
                 </Text>
               </Flex>
             )

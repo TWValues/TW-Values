@@ -94,7 +94,7 @@ test('kmt', () => {
   checkWeights(weights, 'kmt')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('kmt')
-  expect(party.rate).toBeGreaterThanOrEqual(0.95)
+  expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
 test('lp', () => {
@@ -169,7 +169,7 @@ test('lp', () => {
   checkWeights(weights, 'lp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('lp')
-  expect(party.rate).toBeGreaterThanOrEqual(0.95)
+  expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
 test('dpp', () => {
@@ -244,7 +244,7 @@ test('dpp', () => {
   checkWeights(weights, 'dpp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('dpp')
-  expect(party.rate).toBeGreaterThanOrEqual(0.95)
+  expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
 test('np', () => {
@@ -319,7 +319,7 @@ test('np', () => {
   checkWeights(weights, 'np')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('np')
-  expect(party.rate).toBeGreaterThanOrEqual(0.95)
+  expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
 test('npp', () => {
@@ -394,7 +394,7 @@ test('npp', () => {
   checkWeights(weights, 'npp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('npp')
-  expect(party.rate).toBeGreaterThanOrEqual(0.95)
+  expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
 test('tpp', () => {
@@ -469,7 +469,7 @@ test('tpp', () => {
   checkWeights(weights, 'tpp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('tpp')
-  expect(party.rate).toBeGreaterThanOrEqual(0.95)
+  expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
 test('gpt', () => {
@@ -544,5 +544,5 @@ test('gpt', () => {
   checkWeights(weights, 'gpt')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('gpt')
-  expect(party.rate).toBeGreaterThanOrEqual(0.95)
+  expect(party.diff).toBeLessThanOrEqual(0.03)
 })

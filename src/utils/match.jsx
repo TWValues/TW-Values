@@ -27,17 +27,6 @@ export const getValueScores = (questions, choices) => {
   }
 }
 
-const getMatchRate = (distance, lower, upper) => {
-  // 0 ---- lower ---- upper
-  // |- 90%+ -|- 90% - 0% -|
-
-  if (distance <= lower) {
-    return 0.9 + (0.1 * Math.max(0, lower - distance)) / lower
-  }
-
-  return 0.9 * Math.pow(1 - (Math.min(distance, upper) - lower) / (upper - lower), 2)
-}
-
 export const getIdeologyMatchScores = (weights) => {
   const ideologyScores = getIdeologies()
     .map((value) => {
@@ -52,7 +41,7 @@ export const getIdeologyMatchScores = (weights) => {
       return {
         id: value.id,
         distance: distance,
-        rate: getMatchRate(distance, 4 * 10 * 10, 4 * 50 * 50),
+        diff: Math.sqrt(distance / 4.0) / 100.0,
       }
     })
     .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
@@ -73,7 +62,7 @@ export const getPoliticalPartyMatchScores = (weights) => {
       return {
         ...value,
         distance: distance,
-        rate: getMatchRate(distance, 6 * 10 * 10, 6 * 50 * 50),
+        diff: Math.sqrt(distance / 6.0) / 100.0,
       }
     })
     .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
