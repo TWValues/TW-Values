@@ -19,6 +19,8 @@ const ValueCard = ({
   const { i18n } = useTranslation()
   const screens = useBreakpoint()
 
+  const getColor = () => (percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black')
+
   const getValueTextStyles = () => {
     if (i18n.language == 'en') {
       return {
@@ -66,11 +68,23 @@ const ValueCard = ({
         header: {
           fontSize: 'x-large',
           textAlign: 'center',
+          borderBottom: `${getColor()} solid 4px`,
+        },
+        body: {
+          padding: {
+            sm: '10px',
+            md: '16px',
+            lg: '24px',
+            xl: '24px',
+            xll: '24px',
+          }[screens.size],
         },
       }}
       style={{
         width: '100%',
-        backgroundColor: 'gainsboro',
+        backgroundColor: 'white',
+        border: `${getColor()} solid 4px`,
+        borderRadius: '20px',
       }}
     >
       <Flex
@@ -89,7 +103,7 @@ const ValueCard = ({
             src={leftImage || ''}
             preview={false}
             style={{
-              padding: '5px',
+              padding: '4px',
             }}
           />
           <Text
@@ -130,7 +144,7 @@ const ValueCard = ({
               <Text
                 style={{
                   ...getdescriptionTitleStyles(),
-                  color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
+                  color: getColor(),
                   textAlign: 'center',
                 }}
               >
@@ -178,7 +192,7 @@ const ValueCard = ({
             <Text
               style={{
                 ...getdescriptionTitleStyles(),
-                color: percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black',
+                color: getColor(),
                 textAlign: 'center',
               }}
             >

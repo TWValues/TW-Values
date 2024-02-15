@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Card, Typography, Image, Button, Flex, Switch, Row, Col } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../components/ValueCard'
+import useBreakpoint from '../utils/useBreakpoint'
 import { getIdeologyTags } from '../data/ideology_tag'
 import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/match'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
@@ -28,6 +29,7 @@ const Result = () => {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
   const { t, i18n } = useTranslation()
+  const screens = useBreakpoint()
   const [expandIdeology, setExpandIdeology] = useState(false, [])
   const [expandParty, setExpandParty] = useState(false, [])
   const [expandTags, setExpandTags] = useState(false, [])
@@ -98,6 +100,15 @@ const Result = () => {
     return initial + stepSize * Math.min(Math.max(1, maxSteps) - 1, index)
   }
 
+  const getCardBodyPadding = () =>
+    ({
+      sm: '10px',
+      md: '16px',
+      lg: '24px',
+      xl: '24px',
+      xll: '24px',
+    })[screens.size]
+
   if (!isApiVersionOK) {
     return (
       <Flex
@@ -105,8 +116,9 @@ const Result = () => {
         align='center'
         style={{
           width: '100%',
+          backgroundColor: 'white',
+          border: 'black solid 4px',
           borderRadius: '20px',
-          backgroundColor: 'gainsboro',
         }}
       >
         <Title
@@ -144,6 +156,10 @@ const Result = () => {
       style={{
         width: '100%',
         margin: '10px',
+        backgroundColor: 'transparent',
+        border: 'crimson solid 4px',
+        borderRadius: '20px',
+        padding: '10px',
       }}
     >
       <Card
@@ -153,11 +169,17 @@ const Result = () => {
             fontSize: 'x-large',
             textAlign: 'center',
             padding: '0px 0px 0px 80px',
+            borderBottom: 'dodgerblue solid 4px',
+          },
+          body: {
+            padding: getCardBodyPadding(),
           },
         }}
         style={{
           width: '100%',
-          backgroundColor: 'gainsboro',
+          backgroundColor: 'white',
+          border: 'dodgerblue solid 4px',
+          borderRadius: '20px',
         }}
         extra={
           <Switch
@@ -238,11 +260,17 @@ const Result = () => {
             fontSize: 'x-large',
             textAlign: 'center',
             padding: '0px 0px 0px 80px',
+            borderBottom: 'tomato solid 4px',
+          },
+          body: {
+            padding: getCardBodyPadding(),
           },
         }}
         style={{
           width: '100%',
-          backgroundColor: 'gainsboro',
+          backgroundColor: 'white',
+          border: 'tomato solid 4px',
+          borderRadius: '20px',
         }}
         extra={
           <Switch
@@ -253,7 +281,7 @@ const Result = () => {
               setExpandParty(checked)
             }}
             style={{
-              backgroundColor: expandParty ? 'crimson' : 'dodgerblue',
+              backgroundColor: expandParty ? 'crimson' : 'tomato',
               margin: '5px 20px',
             }}
           />
@@ -325,11 +353,17 @@ const Result = () => {
             fontSize: 'x-large',
             textAlign: 'center',
             padding: '0px 0px 0px 80px',
+            borderBottom: 'greenyellow solid 4px',
+          },
+          body: {
+            padding: getCardBodyPadding(),
           },
         }}
         style={{
           width: '100%',
-          backgroundColor: 'gainsboro',
+          backgroundColor: 'white',
+          border: 'greenyellow solid 4px',
+          borderRadius: '20px',
         }}
         extra={
           <Switch
@@ -340,7 +374,7 @@ const Result = () => {
               setExpandTags(checked)
             }}
             style={{
-              backgroundColor: expandTags ? 'crimson' : 'dodgerblue',
+              backgroundColor: expandTags ? 'crimson' : 'greenyellow',
               margin: '5px 20px',
             }}
           />
@@ -401,7 +435,7 @@ const Result = () => {
         leftImage={Globe}
         rightImage={Flag}
         leftColor='royalblue'
-        rightColor='orange'
+        rightColor='darkorange'
         percent={weights.diplomatic}
         descriptionTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
       />
@@ -411,7 +445,7 @@ const Result = () => {
         rightTitle={t('quiz.result.axes.civil.authority')}
         leftImage={Liberty}
         rightImage={Crown}
-        leftColor='yellow'
+        leftColor='gold'
         rightColor='red'
         percent={weights.civil}
         descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
@@ -434,7 +468,7 @@ const Result = () => {
         leftImage={RainbowFlag}
         rightImage={Family}
         leftColor='magenta'
-        rightColor='brown'
+        rightColor='maroon'
         percent={weights.societal}
         descriptionTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
       />

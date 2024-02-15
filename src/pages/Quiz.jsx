@@ -81,8 +81,11 @@ const Quiz = () => {
       justify='center'
       align='center'
       style={{
-        backgroundColor: 'transparent',
+        backgroundColor: 'white',
+        border: 'crimson solid 4px',
+        borderRadius: '20px',
         width: '100%',
+        padding: '10px',
       }}
     >
       {currentSelectedQuestionIndex < questions.length && (
@@ -95,6 +98,7 @@ const Quiz = () => {
             styles={{
               header: {
                 fontSize: 'xx-large',
+                borderBottom: 'dodgerblue solid 4px',
               },
               body: {
                 fontSize: 'x-large',
@@ -104,7 +108,8 @@ const Quiz = () => {
             style={{
               minHeight: '220px',
               margin: '20px',
-              backgroundColor: 'gainsboro',
+              border: 'dodgerblue solid 4px',
+              borderRadius: '20px',
               ...getCardStyles(),
             }}
           >
@@ -115,7 +120,8 @@ const Quiz = () => {
             justify='center'
             align='center'
             style={{
-              backgroundColor: 'gainsboro',
+              backgroundColor: 'white',
+              border: 'black solid 4px',
               padding: '12px 24px',
               borderRadius: '20px',
               ...getButtonLayoutStyles(),

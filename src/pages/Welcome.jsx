@@ -36,7 +36,8 @@ const Welcome = () => {
       justify='center'
       align='center'
       style={{
-        backgroundColor: 'gainsboro',
+        backgroundColor: 'white',
+        border: 'crimson solid 4px',
         borderRadius: '20px',
         ...getLayoutStyles(),
       }}
@@ -59,7 +60,7 @@ const Welcome = () => {
       >
         {t('quiz.welcome.content')}
       </Text>
-      <Divider style={{ backgroundColor: 'black' }} />
+      <Divider style={{ backgroundColor: 'crimson' }} />
       <Button
         style={{
           backgroundColor: 'dodgerblue',
