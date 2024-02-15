@@ -1,10 +1,37 @@
 import React from 'react'
-import { Button, Divider, Typography, Alert, Flex } from 'antd'
+import { Divider, Typography, Alert, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import useBreakpoint from '../utils/useBreakpoint'
+import * as stylex from '@stylexjs/stylex'
 
 const { Title, Text } = Typography
+
+const buttonStyles = stylex.create({
+  base: {
+    fontSize: 'x-large',
+    margin: '5px',
+    height: '60px',
+    borderStyle: 'solid',
+    borderWidth: '3px',
+    borderRadius: '30px',
+    color: {
+      default: 'white',
+      ':hover': { '@media (hover: hover)': 'dodgerblue' },
+      ':active': 'dodgerblue',
+    },
+    backgroundColor: {
+      default: 'dodgerblue',
+      ':hover': { '@media (hover: hover)': 'white' },
+      ':active': 'white',
+    },
+    borderColor: {
+      default: 'dodgerblue',
+      ':hover': { '@media (hover: hover)': 'dodgerblue' },
+      ':active': 'dodgerblue',
+    },
+  },
+})
 
 const Welcome = () => {
   const { t } = useTranslation()
@@ -19,15 +46,6 @@ const Welcome = () => {
       lg: { padding: '20px' },
       xl: { padding: '30px' },
       xxl: { padding: '40px' },
-    })[screens.size]
-
-  const getStartButtonStyles = () =>
-    ({
-      sm: { width: '100%' },
-      md: { width: '60%' },
-      lg: { width: '50%' },
-      xl: { width: '40%' },
-      xxl: { width: '40%' },
     })[screens.size]
 
   return (
@@ -61,22 +79,23 @@ const Welcome = () => {
         {t('quiz.welcome.content')}
       </Text>
       <Divider style={{ backgroundColor: 'crimson' }} />
-      <Button
+      <button
+        {...stylex.props(buttonStyles.base)}
         style={{
-          backgroundColor: 'dodgerblue',
-          border: '0',
-          color: 'white',
-          ...getStartButtonStyles(),
-          height: '60px',
-          margin: '5px',
-          fontSize: 'x-large',
+          width: {
+            sm: '100%',
+            md: '60%',
+            lg: '50%',
+            xl: '40%',
+            xxl: '40%',
+          }[screens.size],
         }}
         onClick={() => {
           navigate('/quiz')
         }}
       >
         {t('quiz.welcome.start')}
-      </Button>
+      </button>
       <Alert message={t('quiz.welcome.privacy')} type='info' showIcon style={{ margin: '20px' }} />
     </Flex>
   )
