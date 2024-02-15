@@ -1,0 +1,87 @@
+
+@layer priority1, priority2, priority3, priority4;
+@layer priority1{
+.x16zck5j{margin:5px}
+.x1f8r7k0{margin:6px}
+}
+@layer priority2{
+.x1k40sjj{border-color:#004000}
+.x120uepz{border-color:crimson}
+.xusra0j{border-color:darkred}
+.x1y011xe{border-color:dodgerblue}
+.xzppbbw{border-color:gray}
+.x1bg2uv5{border-color:green}
+.xfi8w6l{border-color:limegreen}
+.x71xlcl{border-color:red}
+.x1nvupfo{border-color:white}
+.x1m3ak92{border-radius:20px}
+.x174e0gf{border-radius:30px}
+.x1y0btm7{border-style:solid}
+.x9r2w2z{border-width:3px}
+.x19b7oho:active{border-color:#004000}
+.x1jk8ig0:active{border-color:black}
+.x2g70cf:active{border-color:crimson}
+.x1aurdsm:active{border-color:darkred}
+.x117c0mp:active{border-color:gray}
+.xf7yueu:active{border-color:green}
+.x1o2m7i8:active{border-color:limegreen}
+.x19lfm6a:active{border-color:red}
+@media (pointer: fine){.x1kxzl52.x1kxzl52:hover{border-color:#004000}}
+@media (pointer: fine){.xrenkp0.xrenkp0:hover{border-color:black}}
+@media (pointer: fine){.xgl1eqo.xgl1eqo:hover{border-color:crimson}}
+@media (pointer: fine){.xae71uu.xae71uu:hover{border-color:darkred}}
+@media (hover: hover){.x1ebr3ia.x1ebr3ia:hover{border-color:dodgerblue}}
+@media (pointer: fine){.x1ymtr6h.x1ymtr6h:hover{border-color:gray}}
+@media (pointer: fine){.x1ddbq83.x1ddbq83:hover{border-color:green}}
+@media (pointer: fine){.x1ip647a.x1ip647a:hover{border-color:limegreen}}
+@media (pointer: fine){.xc2cfjo.xc2cfjo:hover{border-color:red}}
+@media (hover: hover){.xyvwys4.xyvwys4:active{border-color:dodgerblue}}
+}
+@layer priority3{
+.x6s0dn4{align-items:center}
+.xgh7i2h{background-color:#004000}
+.x42x0ya{background-color:black}
+.xskgvrd{background-color:crimson}
+.xixu7ty{background-color:darkred}
+.x1vgg7vs{background-color:dodgerblue}
+.x1cbl2y9{background-color:gray}
+.x1u857p9{background-color:green}
+.xesu2hl{background-color:limegreen}
+.xrkmrrc{background-color:red}
+.x1awj2ng{color:white}
+.x78zum5{display:flex}
+.xdt5ytf{flex-direction:column}
+.xcgtkfa{font-size:large}
+.xt0237e{font-size:x-large}
+.xl56j7k{justify-content:center}
+.x4u2hfz:active{background-color:white}
+.x2brx79:active{color:#004000}
+.x8nnhh1:active{color:black}
+.x1tzallk:active{color:crimson}
+.x1up30ld:active{color:darkred}
+.xqk8jxb:active{color:gray}
+.x1s7o1zc:active{color:green}
+.xhi5ub0:active{color:limegreen}
+.x96fq8s:active{color:red}
+@media (hover: hover){.xmrl4qd.xmrl4qd:hover{background-color:white}}
+@media (pointer: fine){.xo30pwf.xo30pwf:hover{background-color:white}}
+@media (pointer: fine){.xuc5uyh.xuc5uyh:hover{color:#004000}}
+@media (pointer: fine){.x1ywq5td.x1ywq5td:hover{color:black}}
+@media (pointer: fine){.x14pd9d7.x14pd9d7:hover{color:crimson}}
+@media (pointer: fine){.x1tzsxso.x1tzsxso:hover{color:darkred}}
+@media (hover: hover){.x2wxr8v.x2wxr8v:hover{color:dodgerblue}}
+@media (pointer: fine){.x1q364g7.x1q364g7:hover{color:gray}}
+@media (pointer: fine){.x921d23.x921d23:hover{color:green}}
+@media (pointer: fine){.x18hdcfm.x18hdcfm:hover{color:limegreen}}
+@media (pointer: fine){.xynlrxq.xynlrxq:hover{color:red}}
+@media (hover: hover){.x1cxzp58.x1cxzp58:active{background-color:white}}
+@media (hover: hover){.xf48bke.xf48bke:active{color:dodgerblue}}
+}
+@layer priority4{
+.x1vqgdyp{height:40px}
+.xng8ra{height:60px}
+.xh8yej3{width:100%}
+.x1kmanbg{width:55%}
+.x65xoit{width:70%}
+.x1f9tj09{width:85%}
+}
