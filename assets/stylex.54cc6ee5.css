@@ -1,0 +1,84 @@
+
+@layer priority1, priority2, priority3, priority4;
+@layer priority1{
+.x16zck5j{margin:5px}
+.x1f8r7k0{margin:6px}
+}
+@layer priority2{
+.x1k40sjj{border-color:#004000}
+.xub7v3z{border-color:black}
+.x120uepz{border-color:crimson}
+.xusra0j{border-color:darkred}
+.x1y011xe{border-color:dodgerblue}
+.xzppbbw{border-color:gray}
+.x1bg2uv5{border-color:green}
+.xfi8w6l{border-color:limegreen}
+.x71xlcl{border-color:red}
+.x1m3ak92{border-radius:20px}
+.x174e0gf{border-radius:30px}
+.x1y0btm7{border-style:solid}
+.x9r2w2z{border-width:3px}
+.x19b7oho:active{border-color:#004000}
+.x1jk8ig0:active{border-color:black}
+.x2g70cf:active{border-color:crimson}
+.x1aurdsm:active{border-color:darkred}
+.x5f13pb:active{border-color:dodgerblue}
+.x117c0mp:active{border-color:gray}
+.xf7yueu:active{border-color:green}
+.x1o2m7i8:active{border-color:limegreen}
+.x19lfm6a:active{border-color:red}
+@media (hover: hover){.x18hvxdk.x18hvxdk:hover{border-color:#004000}}
+@media (hover: hover){.x3svhbc.x3svhbc:hover{border-color:black}}
+@media (hover: hover){.xnont7w.xnont7w:hover{border-color:crimson}}
+@media (hover: hover){.x5tz1kj.x5tz1kj:hover{border-color:darkred}}
+@media (hover: hover){.x1ebr3ia.x1ebr3ia:hover{border-color:dodgerblue}}
+@media (hover: hover){.xqur13h.xqur13h:hover{border-color:gray}}
+@media (hover: hover){.x1khl93u.x1khl93u:hover{border-color:green}}
+@media (hover: hover){.x7z9xtl.x7z9xtl:hover{border-color:limegreen}}
+@media (hover: hover){.x10vgdvl.x10vgdvl:hover{border-color:red}}
+}
+@layer priority3{
+.xgh7i2h{background-color:#004000}
+.xskgvrd{background-color:crimson}
+.xixu7ty{background-color:darkred}
+.x1vgg7vs{background-color:dodgerblue}
+.x1cbl2y9{background-color:gray}
+.x1u857p9{background-color:green}
+.xesu2hl{background-color:limegreen}
+.xrkmrrc{background-color:red}
+.x12peec7{background-color:white}
+.x1mqxbix{color:black}
+.x1awj2ng{color:white}
+.xcgtkfa{font-size:large}
+.xt0237e{font-size:x-large}
+.xu7aawr:active{background-color:black}
+.x4u2hfz:active{background-color:white}
+.x2brx79:active{color:#004000}
+.x1tzallk:active{color:crimson}
+.x1up30ld:active{color:darkred}
+.x1vx81tn:active{color:dodgerblue}
+.xqk8jxb:active{color:gray}
+.x1s7o1zc:active{color:green}
+.xhi5ub0:active{color:limegreen}
+.x96fq8s:active{color:red}
+.x5o4zx0:active{color:white}
+@media (hover: hover){.xck7brd.xck7brd:hover{background-color:black}}
+@media (hover: hover){.xmrl4qd.xmrl4qd:hover{background-color:white}}
+@media (hover: hover){.x28fkg8.x28fkg8:hover{color:#004000}}
+@media (hover: hover){.x1bookls.x1bookls:hover{color:crimson}}
+@media (hover: hover){.x1nischr.x1nischr:hover{color:darkred}}
+@media (hover: hover){.x2wxr8v.x2wxr8v:hover{color:dodgerblue}}
+@media (hover: hover){.x2awh9x.x2awh9x:hover{color:gray}}
+@media (hover: hover){.xnvl49l.xnvl49l:hover{color:green}}
+@media (hover: hover){.xyr3upn.xyr3upn:hover{color:limegreen}}
+@media (hover: hover){.x1cuqhdd.x1cuqhdd:hover{color:red}}
+@media (hover: hover){.x11pa7gg.x11pa7gg:hover{color:white}}
+}
+@layer priority4{
+.x1vqgdyp{height:40px}
+.xng8ra{height:60px}
+.xh8yej3{width:100%}
+.x1kmanbg{width:55%}
+.x65xoit{width:70%}
+.x1f9tj09{width:85%}
+}
