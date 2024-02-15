@@ -2,7 +2,6 @@
   "name": "tw-values",
   "version": "0.30.1",
   "private": true,
-  "homepage": "https://twvalues.github.io/TW-Values",
   "type": "module",
   "dependencies": {
     "@ant-design/icons": "^5.1.4",

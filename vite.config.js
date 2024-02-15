@@ -4,7 +4,7 @@ import viteTsconfigPaths from 'vite-tsconfig-paths'
 import styleX from 'vite-plugin-stylex'
 
 export default defineConfig({
-  base: '/TW-Values',
+  base: '/TW-Values/',
   plugins: [react(), viteTsconfigPaths(), styleX()],
   server: {
     open: true,
