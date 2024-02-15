@@ -14,6 +14,10 @@ import * as stylex from '@stylexjs/stylex'
 
 const buttonStyles = stylex.create({
   base: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     fontSize: 'large',
     margin: '6px',
     height: '40px',
@@ -27,17 +31,17 @@ const buttonStyles = stylex.create({
     },
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': '#004000' },
+      ':hover': { '@media (pointer: fine)': '#004000' },
       ':active': '#004000',
     },
     backgroundColor: {
       default: '#004000',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: '#004000',
-      ':hover': { '@media (hover: hover)': '#004000' },
+      ':hover': { '@media (pointer: fine)': '#004000' },
       ':active': '#004000',
     },
   },
@@ -47,17 +51,17 @@ const buttonStyles = stylex.create({
     },
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'green' },
+      ':hover': { '@media (pointer: fine)': 'green' },
       ':active': 'green',
     },
     backgroundColor: {
       default: 'green',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: 'green',
-      ':hover': { '@media (hover: hover)': 'green' },
+      ':hover': { '@media (pointer: fine)': 'green' },
       ':active': 'green',
     },
   },
@@ -67,17 +71,17 @@ const buttonStyles = stylex.create({
     },
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'limegreen' },
+      ':hover': { '@media (pointer: fine)': 'limegreen' },
       ':active': 'limegreen',
     },
     backgroundColor: {
       default: 'limegreen',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: 'limegreen',
-      ':hover': { '@media (hover: hover)': 'limegreen' },
+      ':hover': { '@media (pointer: fine)': 'limegreen' },
       ':active': 'limegreen',
     },
   },
@@ -87,17 +91,17 @@ const buttonStyles = stylex.create({
     },
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'gray' },
+      ':hover': { '@media (pointer: fine)': 'gray' },
       ':active': 'gray',
     },
     backgroundColor: {
       default: 'gray',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: 'gray',
-      ':hover': { '@media (hover: hover)': 'gray' },
+      ':hover': { '@media (pointer: fine)': 'gray' },
       ':active': 'gray',
     },
   },
@@ -107,17 +111,17 @@ const buttonStyles = stylex.create({
     },
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'crimson' },
+      ':hover': { '@media (pointer: fine)': 'crimson' },
       ':active': 'crimson',
     },
     backgroundColor: {
       default: 'crimson',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: 'crimson',
-      ':hover': { '@media (hover: hover)': 'crimson' },
+      ':hover': { '@media (pointer: fine)': 'crimson' },
       ':active': 'crimson',
     },
   },
@@ -127,17 +131,17 @@ const buttonStyles = stylex.create({
     },
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'red' },
+      ':hover': { '@media (pointer: fine)': 'red' },
       ':active': 'red',
     },
     backgroundColor: {
       default: 'red',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: 'red',
-      ':hover': { '@media (hover: hover)': 'red' },
+      ':hover': { '@media (pointer: fine)': 'red' },
       ':active': 'red',
     },
   },
@@ -147,17 +151,17 @@ const buttonStyles = stylex.create({
     },
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'darkred' },
+      ':hover': { '@media (pointer: fine)': 'darkred' },
       ':active': 'darkred',
     },
     backgroundColor: {
       default: 'darkred',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: 'darkred',
-      ':hover': { '@media (hover: hover)': 'darkred' },
+      ':hover': { '@media (pointer: fine)': 'darkred' },
       ':active': 'darkred',
     },
   },
@@ -166,18 +170,18 @@ const buttonStyles = stylex.create({
       default: '55%',
     },
     color: {
-      default: 'black',
-      ':hover': { '@media (hover: hover)': 'white' },
-      ':active': 'white',
-    },
-    backgroundColor: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'black' },
+      ':hover': { '@media (pointer: fine)': 'black' },
       ':active': 'black',
     },
-    borderColor: {
+    backgroundColor: {
       default: 'black',
-      ':hover': { '@media (hover: hover)': 'black' },
+      ':hover': { '@media (pointer: fine)': 'white' },
+      ':active': 'white',
+    },
+    borderColor: {
+      default: 'white',
+      ':hover': { '@media (pointer: fine)': 'black' },
       ':active': 'black',
     },
   },
@@ -292,7 +296,7 @@ const Quiz = () => {
               ...getButtonLayoutStyles(),
             }}
           >
-            <button
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.stronglyAgree)}
               onClick={() => {
                 setChoice(MULTIPLIER.ca)
@@ -300,8 +304,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.completely_agree')}
-            </button>
-            <button
+            </div>
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.agree)}
               onClick={() => {
                 setChoice(MULTIPLIER.a)
@@ -309,8 +313,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.agree')}
-            </button>
-            <button
+            </div>
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.slightlyAgree)}
               onClick={() => {
                 setChoice(MULTIPLIER.sa)
@@ -318,8 +322,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.slightly_agree')}
-            </button>
-            <button
+            </div>
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.neutral)}
               onClick={() => {
                 setChoice(MULTIPLIER.n)
@@ -327,8 +331,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.neutral')}
-            </button>
-            <button
+            </div>
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.slightlyDisagree)}
               onClick={() => {
                 setChoice(MULTIPLIER.sd)
@@ -336,8 +340,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.slightly_disagree')}
-            </button>
-            <button
+            </div>
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.disagree)}
               onClick={() => {
                 setChoice(MULTIPLIER.d)
@@ -345,8 +349,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.disagree')}
-            </button>
-            <button
+            </div>
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.stronglyDisagree)}
               onClick={() => {
                 setChoice(MULTIPLIER.cd)
@@ -354,8 +358,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.completely_disagree')}
-            </button>
-            <button
+            </div>
+            <div
               {...stylex.props(buttonStyles.base, buttonStyles.back)}
               onClick={() => {
                 moveToPrevQuestion()
@@ -363,7 +367,7 @@ const Quiz = () => {
               disabled={currentSelectedQuestionIndex === 0}
             >
               {t('quiz.answers.back')}
-            </button>
+            </div>
           </Flex>
         </>
       )}

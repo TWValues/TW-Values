@@ -9,6 +9,10 @@ const { Title, Text } = Typography
 
 const buttonStyles = stylex.create({
   base: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     fontSize: 'x-large',
     margin: '5px',
     height: '60px',
@@ -17,17 +21,17 @@ const buttonStyles = stylex.create({
     borderRadius: '30px',
     color: {
       default: 'white',
-      ':hover': { '@media (hover: hover)': 'dodgerblue' },
+      ':hover': { '@media (pointer: fine)': 'dodgerblue' },
       ':active': 'dodgerblue',
     },
     backgroundColor: {
       default: 'dodgerblue',
-      ':hover': { '@media (hover: hover)': 'white' },
+      ':hover': { '@media (pointer: fine)': 'white' },
       ':active': 'white',
     },
     borderColor: {
       default: 'dodgerblue',
-      ':hover': { '@media (hover: hover)': 'dodgerblue' },
+      ':hover': { '@media (pointer: fine)': 'dodgerblue' },
       ':active': 'dodgerblue',
     },
   },
@@ -79,7 +83,7 @@ const Welcome = () => {
         {t('quiz.welcome.content')}
       </Text>
       <Divider style={{ backgroundColor: 'crimson' }} />
-      <button
+      <div
         {...stylex.props(buttonStyles.base)}
         style={{
           width: {
@@ -95,7 +99,7 @@ const Welcome = () => {
         }}
       >
         {t('quiz.welcome.start')}
-      </button>
+      </div>
       <Alert message={t('quiz.welcome.privacy')} type='info' showIcon style={{ margin: '20px' }} />
     </Flex>
   )
