@@ -6,7 +6,6 @@
 }
 @layer priority2{
 .x1k40sjj{border-color:#004000}
-.xub7v3z{border-color:black}
 .x120uepz{border-color:crimson}
 .xusra0j{border-color:darkred}
 .x1y011xe{border-color:dodgerblue}
@@ -14,19 +13,11 @@
 .x1bg2uv5{border-color:green}
 .xfi8w6l{border-color:limegreen}
 .x71xlcl{border-color:red}
+.x1nvupfo{border-color:white}
 .x1m3ak92{border-radius:20px}
 .x174e0gf{border-radius:30px}
 .x1y0btm7{border-style:solid}
 .x9r2w2z{border-width:3px}
-.x19b7oho:active{border-color:#004000}
-.x1jk8ig0:active{border-color:black}
-.x2g70cf:active{border-color:crimson}
-.x1aurdsm:active{border-color:darkred}
-.x5f13pb:active{border-color:dodgerblue}
-.x117c0mp:active{border-color:gray}
-.xf7yueu:active{border-color:green}
-.x1o2m7i8:active{border-color:limegreen}
-.x19lfm6a:active{border-color:red}
 @media (hover: hover){.x18hvxdk.x18hvxdk:hover{border-color:#004000}}
 @media (hover: hover){.x3svhbc.x3svhbc:hover{border-color:black}}
 @media (hover: hover){.xnont7w.xnont7w:hover{border-color:crimson}}
@@ -36,9 +27,19 @@
 @media (hover: hover){.x1khl93u.x1khl93u:hover{border-color:green}}
 @media (hover: hover){.x7z9xtl.x7z9xtl:hover{border-color:limegreen}}
 @media (hover: hover){.x10vgdvl.x10vgdvl:hover{border-color:red}}
+@media (hover: hover){.x15lzsiw.x15lzsiw:active{border-color:#004000}}
+@media (hover: hover){.xsgxb2i.xsgxb2i:active{border-color:black}}
+@media (hover: hover){.x19cozrn.x19cozrn:active{border-color:crimson}}
+@media (hover: hover){.xwpq3hg.xwpq3hg:active{border-color:darkred}}
+@media (hover: hover){.xyvwys4.xyvwys4:active{border-color:dodgerblue}}
+@media (hover: hover){.x10bk38u.x10bk38u:active{border-color:gray}}
+@media (hover: hover){.xv5byyh.xv5byyh:active{border-color:green}}
+@media (hover: hover){.x12927jz.x12927jz:active{border-color:limegreen}}
+@media (hover: hover){.x1or567i.x1or567i:active{border-color:red}}
 }
 @layer priority3{
 .xgh7i2h{background-color:#004000}
+.x42x0ya{background-color:black}
 .xskgvrd{background-color:crimson}
 .xixu7ty{background-color:darkred}
 .x1vgg7vs{background-color:dodgerblue}
@@ -46,25 +47,12 @@
 .x1u857p9{background-color:green}
 .xesu2hl{background-color:limegreen}
 .xrkmrrc{background-color:red}
-.x12peec7{background-color:white}
-.x1mqxbix{color:black}
 .x1awj2ng{color:white}
 .xcgtkfa{font-size:large}
 .xt0237e{font-size:x-large}
-.xu7aawr:active{background-color:black}
-.x4u2hfz:active{background-color:white}
-.x2brx79:active{color:#004000}
-.x1tzallk:active{color:crimson}
-.x1up30ld:active{color:darkred}
-.x1vx81tn:active{color:dodgerblue}
-.xqk8jxb:active{color:gray}
-.x1s7o1zc:active{color:green}
-.xhi5ub0:active{color:limegreen}
-.x96fq8s:active{color:red}
-.x5o4zx0:active{color:white}
-@media (hover: hover){.xck7brd.xck7brd:hover{background-color:black}}
 @media (hover: hover){.xmrl4qd.xmrl4qd:hover{background-color:white}}
 @media (hover: hover){.x28fkg8.x28fkg8:hover{color:#004000}}
+@media (hover: hover){.xfvrq3d.xfvrq3d:hover{color:black}}
 @media (hover: hover){.x1bookls.x1bookls:hover{color:crimson}}
 @media (hover: hover){.x1nischr.x1nischr:hover{color:darkred}}
 @media (hover: hover){.x2wxr8v.x2wxr8v:hover{color:dodgerblue}}
@@ -72,7 +60,16 @@
 @media (hover: hover){.xnvl49l.xnvl49l:hover{color:green}}
 @media (hover: hover){.xyr3upn.xyr3upn:hover{color:limegreen}}
 @media (hover: hover){.x1cuqhdd.x1cuqhdd:hover{color:red}}
-@media (hover: hover){.x11pa7gg.x11pa7gg:hover{color:white}}
+@media (hover: hover){.x1cxzp58.x1cxzp58:active{background-color:white}}
+@media (hover: hover){.xrdkvng.xrdkvng:active{color:#004000}}
+@media (hover: hover){.x1jrj7zd.x1jrj7zd:active{color:black}}
+@media (hover: hover){.x1ebj2y5.x1ebj2y5:active{color:crimson}}
+@media (hover: hover){.xcdgfqi.xcdgfqi:active{color:darkred}}
+@media (hover: hover){.xf48bke.xf48bke:active{color:dodgerblue}}
+@media (hover: hover){.xt2rqxk.xt2rqxk:active{color:gray}}
+@media (hover: hover){.x106oxtp.x106oxtp:active{color:green}}
+@media (hover: hover){.x14iupye.x14iupye:active{color:limegreen}}
+@media (hover: hover){.x11fwbmb.x11fwbmb:active{color:red}}
 }
 @layer priority4{
 .x1vqgdyp{height:40px}
