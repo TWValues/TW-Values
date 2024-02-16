@@ -252,15 +252,15 @@ const Quiz = () => {
               body: {
                 fontSize: 'x-large',
                 whiteSpace: 'pre-line',
+                minHeight: '180px',
               },
             }}
             style={{
-              minHeight: '220px',
               margin: '20px',
               border: 'dodgerblue solid 4px',
               borderRadius: '20px',
               width: '100%',
-              maxWidth: '640px',
+              maxWidth: '800px',
             }}
           >
             {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
