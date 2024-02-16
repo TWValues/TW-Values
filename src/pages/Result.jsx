@@ -173,7 +173,7 @@ const Result = () => {
       xll: '24px',
     })[screens.size]
 
-  const getDiffColor = (diff) => (diff < 0.11 ? 'green' : diff < 0.21 ? 'orange' : 'red')
+  const getDiffColor = (diff) => (diff <= 0.1 ? 'green' : diff <= 0.2 ? 'orange' : 'red')
 
   if (!isApiVersionOK) {
     return (
@@ -264,6 +264,7 @@ const Result = () => {
       >
         <Row>
           {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
+            const diff = value.diff.toFixed(2)
             const linkRC = `quiz.result.ideologies.data.${value.id}.link`
             const link = i18n.exists(linkRC) ? t(linkRC) : null
             const createLabel = () => (
@@ -281,17 +282,17 @@ const Result = () => {
                 >
                   {t(`quiz.result.ideologies.data.${value.id}.name`)}
                 </Text>
-                <DiffFilled style={{ margin: '3px', color: getDiffColor(value.diff) }} />
+                <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
                 <Text
                   style={{
-                    color: getDiffColor(value.diff),
+                    color: getDiffColor(diff),
                     fontSize: isLanguage('en')
                       ? `${getSizeWithStep(100, -8, 4, index)}%`
                       : `${getSizeWithStep(100, -8, 4, index)}%`,
                     textAlign: 'center',
                   }}
                 >
-                  {`${Math.round(value.diff * 100)}%`}
+                  {`${100 * diff}%`}
                 </Text>
               </>
             )
