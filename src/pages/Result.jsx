@@ -41,6 +41,54 @@ const linkStyles = stylex.create({
   },
 })
 
+const tagButtonStyles = stylex.create({
+  base: {
+    display: 'inline-block',
+    whiteSpace: 'nowrap',
+    borderRadius: '20px',
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    padding: '1px 12px',
+    margin: '0px 4px',
+  },
+  enabled: {
+    color: 'white',
+    backgroundColor: 'dodgerblue',
+    borderColor: 'dodgerblue',
+  },
+  enabledWithLink: {
+    color: {
+      default: 'white',
+      ':hover': { '@media (pointer: fine)': 'dodgerblue' },
+      ':active': 'dodgerblue',
+    },
+    backgroundColor: {
+      default: 'dodgerblue',
+      ':hover': { '@media (pointer: fine)': 'white' },
+      ':active': 'white',
+    },
+    borderColor: 'dodgerblue',
+  },
+  disabled: {
+    color: 'white',
+    backgroundColor: 'gray',
+    borderColor: 'gray',
+  },
+  disabledWithLink: {
+    color: {
+      default: 'white',
+      ':hover': { '@media (pointer: fine)': 'gray' },
+      ':active': 'gray',
+    },
+    backgroundColor: {
+      default: 'gray',
+      ':hover': { '@media (pointer: fine)': 'white' },
+      ':active': 'white',
+    },
+    borderColor: 'gray',
+  },
+})
+
 const Result = () => {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
@@ -408,6 +456,23 @@ const Result = () => {
           const name = t(`quiz.result.tags.data.${value.id}.name`)
           const description = t(`quiz.result.tags.data.${value.id}.description`)
           const link = t(`quiz.result.tags.data.${value.id}.link`)
+          const hasLink = link && link.length > 0
+          const createLabel = () => (
+            <div
+              {...stylex.props(
+                tagButtonStyles.base,
+                matchedTags.has(value.id)
+                  ? hasLink
+                    ? tagButtonStyles.enabledWithLink
+                    : tagButtonStyles.enabled
+                  : hasLink
+                    ? tagButtonStyles.disabledWithLink
+                    : tagButtonStyles.disabled,
+              )}
+            >
+              {name}
+            </div>
+          )
           return (
             <Flex
               key={`tags.${value.id}`}
@@ -415,20 +480,13 @@ const Result = () => {
               align='center'
               style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}
             >
-              <Button
-                size='small'
-                type='default'
-                href={link ? link : null}
-                target='_blank'
-                style={{
-                  margin: '4px',
-                  color: matchedTags.has(value.id) ? 'white' : 'gray',
-                  backgroundColor: matchedTags.has(value.id) ? 'dodgerblue' : 'white',
-                  fontWeight: 'bold',
-                }}
-              >
-                {name}
-              </Button>
+              {hasLink ? (
+                <a href={link} target='_blank' rel='noreferrer'>
+                  {createLabel()}
+                </a>
+              ) : (
+                createLabel()
+              )}
               <Text
                 style={{
                   margin: '4px',
