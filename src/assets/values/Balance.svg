@@ -1,1 +1,14 @@
-<svg fill="#DC143C" height="256px" width="256px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 455.00 455.00" xml:space="preserve" stroke="#DC143C" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="2.73"></g><g id="SVGRepo_iconCarrier"> <g> <polygon points="150.618,395 130.5,455 324.5,455 304.382,395 "></polygon> <path d="M0,260c0,37.555,30.669,68,68.5,68c37.832,0,68.5-30.445,68.5-68H0z"></path> <path d="M318,260c0,37.555,30.669,68,68.5,68c37.832,0,68.5-30.445,68.5-68H318z"></path> <path d="M68.5,148.477L103.012,230h32.577l-44.45-105H212.5v240h30V125h121.362l-44.45,105h32.577l34.511-81.523L421.011,230 h32.578l-57.15-135H242.5V55.977c8.964-5.188,15-14.874,15-25.977c0-16.569-13.431-30-30-30s-30,13.431-30,30 c0,11.102,6.036,20.789,15,25.977V95H58.561L1.411,230h32.578L68.5,148.477z"></path> </g> </g></svg>
+<svg fill="#DC143C" height="256px" width="256px" version="1.1" id="Layer_1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 455.00 455.00" xml:space="preserve" stroke="#DC143C" transform="matrix(1, 0, 0, 1, 0, 0)">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="2.73"></g>
+  <g id="SVGRepo_iconCarrier">
+    <g>
+      <polygon points="150.618,395 130.5,455 324.5,455 304.382,395 "></polygon>
+      <path d="M0,260c0,37.555,30.669,68,68.5,68c37.832,0,68.5-30.445,68.5-68H0z"></path>
+      <path d="M318,260c0,37.555,30.669,68,68.5,68c37.832,0,68.5-30.445,68.5-68H318z"></path>
+      <path d="M68.5,148.477L103.012,230h32.577l-44.45-105H212.5v240h30V125h121.362l-44.45,105h32.577l34.511-81.523L421.011,230 h32.578l-57.15-135H242.5V55.977c8.964-5.188,15-14.874,15-25.977c0-16.569-13.431-30-30-30s-30,13.431-30,30 c0,11.102,6.036,20.789,15,25.977V95H58.561L1.411,230h32.578L68.5,148.477z"></path>
+    </g>
+  </g>
+</svg>
