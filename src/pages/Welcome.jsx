@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider, Typography, Alert, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import useBreakpoint from '../utils/useBreakpoint'
+import { useBreakpoint, getContentMaxWidth } from '../utils/useBreakpoint'
 import * as stylex from '@stylexjs/stylex'
 
 const { Title, Text } = Typography
@@ -43,15 +43,6 @@ const Welcome = () => {
   const navigate = useNavigate()
   const screens = useBreakpoint()
 
-  const getLayoutStyles = () =>
-    ({
-      sm: { padding: '10px' },
-      md: { padding: '10px' },
-      lg: { padding: '20px' },
-      xl: { padding: '30px' },
-      xxl: { padding: '40px' },
-    })[screens.size]
-
   return (
     <Flex
       vertical={true}
@@ -61,7 +52,10 @@ const Welcome = () => {
         backgroundColor: 'white',
         border: 'crimson solid 4px',
         borderRadius: '20px',
-        ...getLayoutStyles(),
+        ...getContentMaxWidth(),
+        width: '100%',
+        margin: '20px auto',
+        padding: '40px',
       }}
     >
       <Title

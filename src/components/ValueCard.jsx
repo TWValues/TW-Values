@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Typography, Progress, Image, Flex } from 'antd'
-import useBreakpoint from '../utils/useBreakpoint'
+import { useBreakpoint } from '../utils/useBreakpoint'
 import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography

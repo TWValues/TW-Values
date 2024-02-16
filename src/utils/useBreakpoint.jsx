@@ -1,6 +1,6 @@
 import { Grid } from 'antd'
 
-const useBreakpoint = () => {
+export const useBreakpoint = () => {
   const screens = Grid.useBreakpoint()
 
   if (screens.xxl) {
@@ -18,4 +18,22 @@ const useBreakpoint = () => {
   return { ...screens, size: 'sm' }
 }
 
-export default useBreakpoint
+export const getHeaderFooterMaxWidth = () => {
+  return {
+    sm: { maxWidth: '1080px' },
+    md: { maxWidth: '1080px' },
+    lg: { maxWidth: '1080px' },
+    xl: { maxWidth: '1080px' },
+    xxl: { maxWidth: '1080px' },
+  }[useBreakpoint().size]
+}
+
+export const getContentMaxWidth = () => {
+  return {
+    sm: { maxWidth: '960px' },
+    md: { maxWidth: '960px' },
+    lg: { maxWidth: '960px' },
+    xl: { maxWidth: '960px' },
+    xxl: { maxWidth: '960px' },
+  }[useBreakpoint().size]
+}

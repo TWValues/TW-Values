@@ -4,6 +4,7 @@ import { useMemo, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../utils/shuffle'
+import { getContentMaxWidth } from '../utils/useBreakpoint'
 import { getQuestions } from '../data/question'
 import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import MULTIPLIER from '../utils/multiplier'
@@ -233,7 +234,9 @@ const Quiz = () => {
         backgroundColor: 'white',
         border: 'crimson solid 4px',
         borderRadius: '20px',
+        ...getContentMaxWidth(),
         width: '100%',
+        margin: '20px auto',
         padding: '10px',
       }}
     >

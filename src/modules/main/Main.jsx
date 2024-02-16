@@ -3,7 +3,6 @@ import { Layout } from 'antd'
 import { Outlet } from 'react-router-dom'
 import Header from './header/Header'
 import Footer from './footer/Footer'
-import useBreakpoint from '../../utils/useBreakpoint'
 import { reduceWithDelimiter } from '../../utils/range'
 
 import bg1 from '../../assets/background/background-1.webp'
@@ -17,17 +16,6 @@ const Main = () => {
     backgroundImages.map(() => 0),
     [],
   )
-
-  const screens = useBreakpoint()
-
-  const getContentStyles = () =>
-    ({
-      sm: { padding: '10px 10px 10px 10px' },
-      md: { padding: '10px 20px 10px 20px' },
-      lg: { padding: '10px 10% 10px 10%' },
-      xl: { padding: '10px 15% 10px 15%' },
-      xxl: { padding: '10px 20% 10px 20%' },
-    })[screens.size]
 
   useEffect(() => {
     window.addEventListener('scroll', (ev) => {
@@ -54,7 +42,7 @@ const Main = () => {
           backgroundRepeat: 'repeat',
           backgroundPositionY: reduceWithDelimiter(bgPositionY, ','),
           transition: 'all 0.25s ease-out 0s',
-          ...getContentStyles(),
+          width: '100%',
         }}
       >
         <Outlet />

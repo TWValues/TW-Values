@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Card, Typography, Image, Button, Flex, Switch, Row, Col } from 'antd'
 import { useTranslation } from 'react-i18next'
 import ValueCard from '../components/ValueCard'
-import useBreakpoint from '../utils/useBreakpoint'
+import { useBreakpoint, getContentMaxWidth } from '../utils/useBreakpoint'
 import { getIdeologyTags } from '../data/ideology_tag'
 import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/match'
 import { getValueConstant } from '../utils/color'
@@ -206,12 +206,13 @@ const Result = () => {
       align='center'
       gap={20}
       style={{
-        width: '100%',
-        margin: '10px',
         backgroundColor: 'transparent',
         border: 'crimson solid 4px',
         borderRadius: '20px',
-        padding: '10px',
+        ...getContentMaxWidth(),
+        width: '100%',
+        margin: '20px',
+        padding: '5px',
       }}
     >
       <Card
