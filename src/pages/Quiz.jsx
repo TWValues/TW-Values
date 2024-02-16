@@ -4,7 +4,6 @@ import { useMemo, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../utils/shuffle'
-import useBreakpoint from '../utils/useBreakpoint'
 import { getQuestions } from '../data/question'
 import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import MULTIPLIER from '../utils/multiplier'
@@ -190,25 +189,6 @@ const buttonStyles = stylex.create({
 const Quiz = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const screens = useBreakpoint()
-
-  const getCardStyles = () =>
-    ({
-      sm: { width: '100%' },
-      md: { width: '100%' },
-      lg: { width: '90%' },
-      xl: { width: '80%' },
-      xxl: { width: '80%' },
-    })[screens.size]
-
-  const getButtonLayoutStyles = () =>
-    ({
-      sm: { width: '90%' },
-      md: { width: '60%' },
-      lg: { width: '40%' },
-      xl: { width: '30%' },
-      xxl: { width: '30%' },
-    })[screens.size]
 
   const questions = useMemo(() => {
     return shuffle(getQuestions())
@@ -279,7 +259,8 @@ const Quiz = () => {
               margin: '20px',
               border: 'dodgerblue solid 4px',
               borderRadius: '20px',
-              ...getCardStyles(),
+              width: '100%',
+              maxWidth: '640px',
             }}
           >
             {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
@@ -293,7 +274,8 @@ const Quiz = () => {
               border: 'black solid 4px',
               padding: '12px 24px',
               borderRadius: '20px',
-              ...getButtonLayoutStyles(),
+              width: '100%',
+              maxWidth: '360px',
             }}
           >
             <div
