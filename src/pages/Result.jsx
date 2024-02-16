@@ -6,22 +6,8 @@ import ValueCard from '../components/ValueCard'
 import useBreakpoint from '../utils/useBreakpoint'
 import { getIdeologyTags } from '../data/ideology_tag'
 import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/match'
+import { getValueConstant } from '../utils/color'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
-
-import Balance from '../assets/values/Balance.svg'
-import DollarSign from '../assets/values/DollarSign.svg'
-import Globe from '../assets/values/Globe.svg'
-import Flag from '../assets/values/Flag.svg'
-import Liberty from '../assets/values/Liberty.svg'
-import Crown from '../assets/values/Crown.svg'
-import RecyclingSymbol from '../assets/values/RecyclingSymbol.svg'
-import Factory from '../assets/values/Factory.svg'
-import RainbowFlag from '../assets/values/RainbowFlag.svg'
-import Family from '../assets/values/Family.svg'
-import FlagOfTWIndependence from '../assets/values/FlagOfTWIndependence.svg'
-import ChinaTerritory from '../assets/values/ChinaTerritory.svg'
-import FlagOfUSA from '../assets/values/FlagOfUSA.svg'
-import FlagOfPRC from '../assets/values/FlagOfPRC.svg'
 import { DiffFilled } from '@ant-design/icons'
 import * as stylex from '@stylexjs/stylex'
 
@@ -504,10 +490,10 @@ const Result = () => {
         title={t('quiz.result.axes.economic.title')}
         leftTitle={t('quiz.result.axes.economic.equality')}
         rightTitle={t('quiz.result.axes.economic.efficiency')}
-        leftImage={Balance}
-        rightImage={DollarSign}
-        leftColor='crimson'
-        rightColor='mediumslateblue'
+        leftImage={getValueConstant().equality.image}
+        rightImage={getValueConstant().efficiency.image}
+        leftColor={getValueConstant().equality.color}
+        rightColor={getValueConstant().efficiency.color}
         percent={weights.economic}
         descriptionTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
       />
@@ -515,10 +501,10 @@ const Result = () => {
         title={t('quiz.result.axes.diplomatic.title')}
         leftTitle={t('quiz.result.axes.diplomatic.globe')}
         rightTitle={t('quiz.result.axes.diplomatic.nation')}
-        leftImage={Globe}
-        rightImage={Flag}
-        leftColor='royalblue'
-        rightColor='darkorange'
+        leftImage={getValueConstant().globe.image}
+        rightImage={getValueConstant().nation.image}
+        leftColor={getValueConstant().globe.color}
+        rightColor={getValueConstant().nation.color}
         percent={weights.diplomatic}
         descriptionTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
       />
@@ -526,10 +512,10 @@ const Result = () => {
         title={t('quiz.result.axes.civil.title')}
         leftTitle={t('quiz.result.axes.civil.liberty')}
         rightTitle={t('quiz.result.axes.civil.authority')}
-        leftImage={Liberty}
-        rightImage={Crown}
-        leftColor='gold'
-        rightColor='red'
+        leftImage={getValueConstant().liberty.image}
+        rightImage={getValueConstant().authority.image}
+        leftColor={getValueConstant().liberty.color}
+        rightColor={getValueConstant().authority.color}
         percent={weights.civil}
         descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
       />
@@ -537,10 +523,10 @@ const Result = () => {
         title={t('quiz.result.axes.environmental.title')}
         leftTitle={t('quiz.result.axes.environmental.ecology')}
         rightTitle={t('quiz.result.axes.environmental.production')}
-        leftImage={RecyclingSymbol}
-        rightImage={Factory}
-        leftColor='forestgreen'
-        rightColor='saddlebrown'
+        leftImage={getValueConstant().ecology.image}
+        rightImage={getValueConstant().production.image}
+        leftColor={getValueConstant().ecology.color}
+        rightColor={getValueConstant().production.color}
         percent={weights.environmental}
         descriptionTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
       />
@@ -548,10 +534,10 @@ const Result = () => {
         title={t('quiz.result.axes.societal.title')}
         leftTitle={t('quiz.result.axes.societal.progress')}
         rightTitle={t('quiz.result.axes.societal.tradition')}
-        leftImage={RainbowFlag}
-        rightImage={Family}
-        leftColor='magenta'
-        rightColor='maroon'
+        leftImage={getValueConstant().progress.image}
+        rightImage={getValueConstant().tradition.image}
+        leftColor={getValueConstant().progress.color}
+        rightColor={getValueConstant().tradition.color}
         percent={weights.societal}
         descriptionTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
       />
@@ -559,10 +545,10 @@ const Result = () => {
         title={t('quiz.result.axes.sovereignty.title')}
         leftTitle={t('quiz.result.axes.sovereignty.independence')}
         rightTitle={t('quiz.result.axes.sovereignty.unification')}
-        leftImage={FlagOfTWIndependence}
-        rightImage={ChinaTerritory}
-        leftColor='green'
-        rightColor='black'
+        leftImage={getValueConstant().independence.image}
+        rightImage={getValueConstant().unification.image}
+        leftColor={getValueConstant().independence.color}
+        rightColor={getValueConstant().unification.color}
         percent={weights.sovereignty}
         descriptionTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
       />
@@ -570,10 +556,10 @@ const Result = () => {
         title={t('quiz.result.axes.us_vs_china.title')}
         leftTitle={t('quiz.result.axes.us_vs_china.pro_american')}
         rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese')}
-        leftImage={FlagOfUSA}
-        rightImage={FlagOfPRC}
-        leftColor='navy'
-        rightColor='red'
+        leftImage={getValueConstant().pro_american.image}
+        rightImage={getValueConstant().pro_chinese.image}
+        leftColor={getValueConstant().pro_american.color}
+        rightColor={getValueConstant().pro_chinese.color}
         percent={weights.us_vs_china}
         descriptionTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
       />
