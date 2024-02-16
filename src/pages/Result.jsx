@@ -23,8 +23,23 @@ import ChinaTerritory from '../assets/values/ChinaTerritory.svg'
 import FlagOfUSA from '../assets/values/FlagOfUSA.svg'
 import FlagOfPRC from '../assets/values/FlagOfPRC.svg'
 import { DiffFilled } from '@ant-design/icons'
+import * as stylex from '@stylexjs/stylex'
 
 const { Text, Title } = Typography
+
+const linkStyles = stylex.create({
+  base: {
+    padding: '10px 20px',
+    borderRadius: '24px',
+  },
+  link: {
+    backgroundColor: {
+      default: 'transparent',
+      ':hover': { '@media (pointer: fine)': 'aqua' },
+      ':active': 'aqua',
+    },
+  },
+})
 
 const Result = () => {
   // eslint-disable-next-line no-unused-vars
@@ -204,7 +219,7 @@ const Result = () => {
             const linkRC = `quiz.result.ideologies.data.${value.id}.link`
             const link = i18n.exists(linkRC) ? t(linkRC) : null
             const createLabel = () => (
-              <Flex justify='center' align='center'>
+              <>
                 <Text
                   style={{
                     margin: '8px',
@@ -230,15 +245,15 @@ const Result = () => {
                 >
                   {`${Math.round(value.diff * 100)}%`}
                 </Text>
-              </Flex>
+              </>
             )
             const addLink = (componet) => {
               return link && link.length > 0 ? (
                 <a href={link} target='_blank' rel='noreferrer'>
-                  {componet}
+                  <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
                 </a>
               ) : (
-                componet
+                <div {...stylex.props(linkStyles.base)}>{componet}</div>
               )
             }
             return (
@@ -251,7 +266,9 @@ const Result = () => {
                 xl={index < 3 ? 24 : 8}
                 xxl={index < 3 ? 24 : 8}
               >
-                {addLink(createLabel())}
+                <Flex vertical={false} justify='center' align='center'>
+                  {addLink(createLabel())}
+                </Flex>
               </Col>
             )
           })}
@@ -295,8 +312,8 @@ const Result = () => {
           {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => {
             const link = t(`quiz.result.political_parties.data.${value.id}.link`)
             const createLabel = () => (
-              <Flex justify='center' align='center'>
-                <Image width={getSizeWithStep(24, -3, 4, index)} src={value.icon} preview={false} />
+              <>
+                <Image height={getSizeWithStep(24, -3, 4, index)} src={value.icon} preview={false} />
                 <Text
                   style={{
                     margin: '8px',
@@ -322,16 +339,16 @@ const Result = () => {
                 >
                   {`${Math.round(value.diff * 100)}%`}
                 </Text>
-              </Flex>
+              </>
             )
 
             const addLink = (componet) => {
               return link && link.length > 0 ? (
                 <a href={link} target='_blank' rel='noreferrer'>
-                  {componet}
+                  <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
                 </a>
               ) : (
-                componet
+                <div {...stylex.props(linkStyles.base)}>{componet}</div>
               )
             }
 
@@ -345,7 +362,9 @@ const Result = () => {
                 xl={index < 3 ? 24 : 8}
                 xxl={index < 3 ? 24 : 8}
               >
-                {addLink(createLabel())}
+                <Flex vertical={false} justify='center' align='center'>
+                  {addLink(createLabel())}
+                </Flex>
               </Col>
             )
           })}
