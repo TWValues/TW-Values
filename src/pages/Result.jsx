@@ -346,6 +346,7 @@ const Result = () => {
       >
         <Row>
           {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => {
+            const diff = Math.round(100 * value.diff)
             const link = t(`quiz.result.political_parties.data.${value.id}.link`)
             const createLabel = () => (
               <>
@@ -363,17 +364,17 @@ const Result = () => {
                 >
                   {t(`quiz.result.political_parties.data.${value.id}.name`)}
                 </Text>
-                <DiffFilled style={{ margin: '3px', color: getDiffColor(value.diff) }} />
+                <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
                 <Text
                   style={{
-                    color: getDiffColor(value.diff),
+                    color: getDiffColor(diff),
                     fontSize: isLanguage('en')
                       ? `${getSizeWithStep(100, -8, 4, index)}%`
                       : `${getSizeWithStep(100, -8, 4, index)}%`,
                     textAlign: 'center',
                   }}
                 >
-                  {`${Math.round(value.diff * 100)}%`}
+                  {`${diff}%`}
                 </Text>
               </>
             )
