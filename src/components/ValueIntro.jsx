@@ -9,8 +9,8 @@ const ValueIntro = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftD
 
   const getTitleStyles = () => {
     return {
-      sm: { fontSize: 'large' },
-      md: { fontSize: 'large' },
+      sm: { fontSize: 'x-large' },
+      md: { fontSize: 'x-large' },
       lg: { fontSize: 'x-large' },
       xl: { fontSize: 'x-large' },
       xxl: { fontSize: 'x-large' },
@@ -44,7 +44,13 @@ const ValueIntro = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftD
       align='center'
       gap={10}
       style={{
-        margin: '5px',
+        height: '100%',
+        margin: '2px',
+        padding: '10px',
+        borderColor: color,
+        borderStyle: 'solid',
+        borderWidth: '2px',
+        borderRadius: '20px',
       }}
     >
       <Text
@@ -95,7 +101,7 @@ const ValueIntro = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftD
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: screens.md ? '45% 10% 45%' : '48% 4% 48%',
+          gridTemplateColumns: screens.md ? '45% 10% 45%' : '50% 0% 50%',
           alignItems: 'start',
           width: '100%',
         }}

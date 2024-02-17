@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider, Typography, Alert, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { useBreakpoint, getContentMaxWidth } from '../utils/useBreakpoint'
+import { getContentMaxWidth } from '../utils/useBreakpoint'
 import ValueIntro from '../components/ValueIntro'
 import { getValueConstant } from '../utils/color'
 import { getQuestions } from '../data/question'
@@ -44,7 +44,6 @@ const Welcome = () => {
   const { t } = useTranslation()
 
   const navigate = useNavigate()
-  const screens = useBreakpoint()
 
   return (
     <Flex
@@ -96,13 +95,8 @@ const Welcome = () => {
         <div
           {...stylex.props(buttonStyles.base)}
           style={{
-            width: {
-              sm: '100%',
-              md: '60%',
-              lg: '50%',
-              xl: '40%',
-              xxl: '40%',
-            }[screens.size],
+            width: '100%',
+            maxWidth: '480px',
           }}
           onClick={() => {
             navigate('/quiz')
