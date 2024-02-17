@@ -161,43 +161,41 @@ const Result = () => {
 
   const getDiffColor = (diff) => (diff <= 10 ? 'green' : diff <= 20 ? 'orange' : 'red')
 
-  if (!isApiVersionOK) {
-    return (
-      <Flex
-        vertical={true}
-        align='center'
+  const ApiErrorPage = () => (
+    <Flex
+      vertical={true}
+      align='center'
+      style={{
+        width: '100%',
+        backgroundColor: 'white',
+        border: 'black solid 4px',
+        borderRadius: '20px',
+      }}
+    >
+      <Title
+        level={4}
         style={{
-          width: '100%',
-          backgroundColor: 'white',
-          border: 'black solid 4px',
-          borderRadius: '20px',
+          margin: '40px',
+          color: 'red',
         }}
       >
-        <Title
-          level={4}
-          style={{
-            margin: '40px',
-            color: 'red',
-          }}
-        >
-          {t(`quiz.result.api_error.description`)}
-        </Title>
-        <Button
-          href='/'
-          style={{
-            height: 'auto',
-            margin: '40px',
-            borderRadius: '20px',
-            fontSize: 'large',
-            fontWeight: 'bold',
-            textAlign: 'center',
-          }}
-        >
-          {t(`quiz.result.api_error.index`)}
-        </Button>
-      </Flex>
-    )
-  }
+        {t(`quiz.result.api_error.description`)}
+      </Title>
+      <Button
+        href='/'
+        style={{
+          height: 'auto',
+          margin: '40px',
+          borderRadius: '20px',
+          fontSize: 'large',
+          fontWeight: 'bold',
+          textAlign: 'center',
+        }}
+      >
+        {t(`quiz.result.api_error.index`)}
+      </Button>
+    </Flex>
+  )
 
   return (
     <Flex
@@ -215,356 +213,362 @@ const Result = () => {
         padding: '5px',
       }}
     >
-      <Card
-        title={t('quiz.result.ideologies.name')}
-        styles={{
-          header: {
-            fontSize: 'x-large',
-            textAlign: 'center',
-            padding: '0px 0px 0px 80px',
-            borderBottom: 'dodgerblue solid 4px',
-          },
-          body: {
-            padding: getCardBodyPadding(),
-          },
-        }}
-        style={{
-          width: '100%',
-          backgroundColor: 'white',
-          border: 'dodgerblue solid 4px',
-          borderRadius: '20px',
-        }}
-        extra={
-          <Switch
-            unCheckedChildren='3'
-            checkedChildren='∞'
-            size='small'
-            onChange={(checked) => {
-              setExpandIdeology(checked)
+      {!isApiVersionOK ? (
+        <ApiErrorPage />
+      ) : (
+        <>
+          <Card
+            title={t('quiz.result.ideologies.name')}
+            styles={{
+              header: {
+                fontSize: 'x-large',
+                textAlign: 'center',
+                padding: '0px 0px 0px 80px',
+                borderBottom: 'dodgerblue solid 4px',
+              },
+              body: {
+                padding: getCardBodyPadding(),
+              },
             }}
             style={{
-              backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue',
-              margin: '5px 20px',
+              width: '100%',
+              backgroundColor: 'white',
+              border: 'dodgerblue solid 4px',
+              borderRadius: '20px',
             }}
-          />
-        }
-      >
-        <Row>
-          {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
-            const diff = Math.round(100 * value.diff)
-            const linkRC = `quiz.result.ideologies.data.${value.id}.link`
-            const link = i18n.exists(linkRC) ? t(linkRC) : null
-            const createLabel = () => (
-              <>
-                <Text
-                  style={{
-                    margin: '8px',
-                    fontSize: isLanguage('en')
-                      ? `${getSizeWithStep(100, -8, 4, index)}%`
-                      : `${getSizeWithStep(140, -16, 4, index)}%`,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    textAlign: 'center',
-                  }}
-                >
-                  {t(`quiz.result.ideologies.data.${value.id}.name`)}
-                </Text>
-                <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
-                <Text
-                  style={{
-                    color: getDiffColor(diff),
-                    fontSize: isLanguage('en')
-                      ? `${getSizeWithStep(100, -8, 4, index)}%`
-                      : `${getSizeWithStep(100, -8, 4, index)}%`,
-                    textAlign: 'center',
-                  }}
-                >
-                  {`${diff}%`}
-                </Text>
-              </>
-            )
-            const addLink = (componet) => {
-              return link && link.length > 0 ? (
-                <a href={link} target='_blank' rel='noreferrer'>
-                  <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
-                </a>
-              ) : (
-                <div {...stylex.props(linkStyles.base)}>{componet}</div>
-              )
-            }
-            return (
-              <Col
-                key={`ideology.${value.id}`}
-                xs={24}
-                sm={24}
-                md={index < 3 ? 24 : 12}
-                lg={index < 3 ? 24 : 12}
-                xl={index < 3 ? 24 : 8}
-                xxl={index < 3 ? 24 : 8}
-              >
-                <Flex vertical={false} justify='center' align='center'>
-                  {addLink(createLabel())}
-                </Flex>
-              </Col>
-            )
-          })}
-        </Row>
-      </Card>
-      <Card
-        title={t('quiz.result.political_parties.name')}
-        styles={{
-          header: {
-            fontSize: 'x-large',
-            textAlign: 'center',
-            padding: '0px 0px 0px 80px',
-            borderBottom: 'tomato solid 4px',
-          },
-          body: {
-            padding: getCardBodyPadding(),
-          },
-        }}
-        style={{
-          width: '100%',
-          backgroundColor: 'white',
-          border: 'tomato solid 4px',
-          borderRadius: '20px',
-        }}
-        extra={
-          <Switch
-            unCheckedChildren='3'
-            checkedChildren='∞'
-            size='small'
-            onChange={(checked) => {
-              setExpandParty(checked)
-            }}
-            style={{
-              backgroundColor: expandParty ? 'crimson' : 'tomato',
-              margin: '5px 20px',
-            }}
-          />
-        }
-      >
-        <Row>
-          {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => {
-            const diff = Math.round(100 * value.diff)
-            const link = t(`quiz.result.political_parties.data.${value.id}.link`)
-            const createLabel = () => (
-              <>
-                <Image height={getSizeWithStep(24, -3, 4, index)} src={value.icon} preview={false} />
-                <Text
-                  style={{
-                    margin: '8px',
-                    fontSize: isLanguage('en')
-                      ? `${getSizeWithStep(100, -8, 4, index)}%`
-                      : `${getSizeWithStep(140, -16, 4, index)}%`,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    textAlign: 'center',
-                  }}
-                >
-                  {t(`quiz.result.political_parties.data.${value.id}.name`)}
-                </Text>
-                <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
-                <Text
-                  style={{
-                    color: getDiffColor(diff),
-                    fontSize: isLanguage('en')
-                      ? `${getSizeWithStep(100, -8, 4, index)}%`
-                      : `${getSizeWithStep(100, -8, 4, index)}%`,
-                    textAlign: 'center',
-                  }}
-                >
-                  {`${diff}%`}
-                </Text>
-              </>
-            )
-
-            const addLink = (componet) => {
-              return link && link.length > 0 ? (
-                <a href={link} target='_blank' rel='noreferrer'>
-                  <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
-                </a>
-              ) : (
-                <div {...stylex.props(linkStyles.base)}>{componet}</div>
-              )
-            }
-
-            return (
-              <Col
-                key={`party.${value.id}`}
-                xs={24}
-                sm={24}
-                md={index < 3 ? 24 : 12}
-                lg={index < 3 ? 24 : 12}
-                xl={index < 3 ? 24 : 8}
-                xxl={index < 3 ? 24 : 8}
-              >
-                <Flex vertical={false} justify='center' align='center'>
-                  {addLink(createLabel())}
-                </Flex>
-              </Col>
-            )
-          })}
-        </Row>
-      </Card>
-      <Card
-        title={t('quiz.result.tags.name')}
-        styles={{
-          header: {
-            fontSize: 'x-large',
-            textAlign: 'center',
-            padding: '0px 0px 0px 80px',
-            borderBottom: 'greenyellow solid 4px',
-          },
-          body: {
-            padding: getCardBodyPadding(),
-          },
-        }}
-        style={{
-          width: '100%',
-          backgroundColor: 'white',
-          border: 'greenyellow solid 4px',
-          borderRadius: '20px',
-        }}
-        extra={
-          <Switch
-            unCheckedChildren='M'
-            checkedChildren='∞'
-            size='small'
-            onChange={(checked) => {
-              setExpandTags(checked)
-            }}
-            style={{
-              backgroundColor: expandTags ? 'crimson' : 'greenyellow',
-              margin: '5px 20px',
-            }}
-          />
-        }
-      >
-        {getMatchTags(getIdeologyTags(), expandTags).map((value) => {
-          const name = t(`quiz.result.tags.data.${value.id}.name`)
-          const description = t(`quiz.result.tags.data.${value.id}.description`)
-          const link = t(`quiz.result.tags.data.${value.id}.link`)
-          const hasLink = link && link.length > 0
-          const createLabel = () => (
-            <div
-              {...stylex.props(
-                tagButtonStyles.base,
-                matchedTags.has(value.id)
-                  ? hasLink
-                    ? tagButtonStyles.enabledWithLink
-                    : tagButtonStyles.enabled
-                  : hasLink
-                    ? tagButtonStyles.disabledWithLink
-                    : tagButtonStyles.disabled,
-              )}
-            >
-              {name}
-            </div>
-          )
-          return (
-            <Flex
-              key={`tags.${value.id}`}
-              justify='start'
-              align='center'
-              style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}
-            >
-              {hasLink ? (
-                <a href={link} target='_blank' rel='noreferrer'>
-                  {createLabel()}
-                </a>
-              ) : (
-                createLabel()
-              )}
-              <Text
-                style={{
-                  margin: '4px',
-                  color: matchedTags.has(value.id) ? 'black' : 'gray',
+            extra={
+              <Switch
+                unCheckedChildren='3'
+                checkedChildren='∞'
+                size='small'
+                onChange={(checked) => {
+                  setExpandIdeology(checked)
                 }}
-              >
-                {description}
-              </Text>
-            </Flex>
-          )
-        })}
-      </Card>
-      <ValueCard
-        title={t('quiz.result.axes.economic.title')}
-        leftTitle={t('quiz.result.axes.economic.equality.name')}
-        rightTitle={t('quiz.result.axes.economic.efficiency.name')}
-        leftImage={getValueConstant().equality.image}
-        rightImage={getValueConstant().efficiency.image}
-        leftColor={getValueConstant().equality.color}
-        rightColor={getValueConstant().efficiency.color}
-        percent={weights.economic}
-        descriptionTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.diplomatic.title')}
-        leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
-        rightTitle={t('quiz.result.axes.diplomatic.nation.name')}
-        leftImage={getValueConstant().globe.image}
-        rightImage={getValueConstant().nation.image}
-        leftColor={getValueConstant().globe.color}
-        rightColor={getValueConstant().nation.color}
-        percent={weights.diplomatic}
-        descriptionTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.civil.title')}
-        leftTitle={t('quiz.result.axes.civil.liberty.name')}
-        rightTitle={t('quiz.result.axes.civil.authority.name')}
-        leftImage={getValueConstant().liberty.image}
-        rightImage={getValueConstant().authority.image}
-        leftColor={getValueConstant().liberty.color}
-        rightColor={getValueConstant().authority.color}
-        percent={weights.civil}
-        descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.environmental.title')}
-        leftTitle={t('quiz.result.axes.environmental.ecology.name')}
-        rightTitle={t('quiz.result.axes.environmental.production.name')}
-        leftImage={getValueConstant().ecology.image}
-        rightImage={getValueConstant().production.image}
-        leftColor={getValueConstant().ecology.color}
-        rightColor={getValueConstant().production.color}
-        percent={weights.environmental}
-        descriptionTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.societal.title')}
-        leftTitle={t('quiz.result.axes.societal.progress.name')}
-        rightTitle={t('quiz.result.axes.societal.tradition.name')}
-        leftImage={getValueConstant().progress.image}
-        rightImage={getValueConstant().tradition.image}
-        leftColor={getValueConstant().progress.color}
-        rightColor={getValueConstant().tradition.color}
-        percent={weights.societal}
-        descriptionTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.sovereignty.title')}
-        leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
-        rightTitle={t('quiz.result.axes.sovereignty.unification.name')}
-        leftImage={getValueConstant().independence.image}
-        rightImage={getValueConstant().unification.image}
-        leftColor={getValueConstant().independence.color}
-        rightColor={getValueConstant().unification.color}
-        percent={weights.sovereignty}
-        descriptionTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
-      />
-      <ValueCard
-        title={t('quiz.result.axes.us_vs_china.title')}
-        leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
-        rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese.name')}
-        leftImage={getValueConstant().pro_american.image}
-        rightImage={getValueConstant().pro_chinese.image}
-        leftColor={getValueConstant().pro_american.color}
-        rightColor={getValueConstant().pro_chinese.color}
-        percent={weights.us_vs_china}
-        descriptionTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
-      />
+                style={{
+                  backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue',
+                  margin: '5px 20px',
+                }}
+              />
+            }
+          >
+            <Row>
+              {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
+                const diff = Math.round(100 * value.diff)
+                const linkRC = `quiz.result.ideologies.data.${value.id}.link`
+                const link = i18n.exists(linkRC) ? t(linkRC) : null
+                const createLabel = () => (
+                  <>
+                    <Text
+                      style={{
+                        margin: '8px',
+                        fontSize: isLanguage('en')
+                          ? `${getSizeWithStep(100, -8, 4, index)}%`
+                          : `${getSizeWithStep(140, -16, 4, index)}%`,
+                        fontWeight: 'bold',
+                        color: 'black',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {t(`quiz.result.ideologies.data.${value.id}.name`)}
+                    </Text>
+                    <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
+                    <Text
+                      style={{
+                        color: getDiffColor(diff),
+                        fontSize: isLanguage('en')
+                          ? `${getSizeWithStep(100, -8, 4, index)}%`
+                          : `${getSizeWithStep(100, -8, 4, index)}%`,
+                        textAlign: 'center',
+                      }}
+                    >
+                      {`${diff}%`}
+                    </Text>
+                  </>
+                )
+                const addLink = (componet) => {
+                  return link && link.length > 0 ? (
+                    <a href={link} target='_blank' rel='noreferrer'>
+                      <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
+                    </a>
+                  ) : (
+                    <div {...stylex.props(linkStyles.base)}>{componet}</div>
+                  )
+                }
+                return (
+                  <Col
+                    key={`ideology.${value.id}`}
+                    xs={24}
+                    sm={24}
+                    md={index < 3 ? 24 : 12}
+                    lg={index < 3 ? 24 : 12}
+                    xl={index < 3 ? 24 : 8}
+                    xxl={index < 3 ? 24 : 8}
+                  >
+                    <Flex vertical={false} justify='center' align='center'>
+                      {addLink(createLabel())}
+                    </Flex>
+                  </Col>
+                )
+              })}
+            </Row>
+          </Card>
+          <Card
+            title={t('quiz.result.political_parties.name')}
+            styles={{
+              header: {
+                fontSize: 'x-large',
+                textAlign: 'center',
+                padding: '0px 0px 0px 80px',
+                borderBottom: 'tomato solid 4px',
+              },
+              body: {
+                padding: getCardBodyPadding(),
+              },
+            }}
+            style={{
+              width: '100%',
+              backgroundColor: 'white',
+              border: 'tomato solid 4px',
+              borderRadius: '20px',
+            }}
+            extra={
+              <Switch
+                unCheckedChildren='3'
+                checkedChildren='∞'
+                size='small'
+                onChange={(checked) => {
+                  setExpandParty(checked)
+                }}
+                style={{
+                  backgroundColor: expandParty ? 'crimson' : 'tomato',
+                  margin: '5px 20px',
+                }}
+              />
+            }
+          >
+            <Row>
+              {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => {
+                const diff = Math.round(100 * value.diff)
+                const link = t(`quiz.result.political_parties.data.${value.id}.link`)
+                const createLabel = () => (
+                  <>
+                    <Image height={getSizeWithStep(24, -3, 4, index)} src={value.icon} preview={false} />
+                    <Text
+                      style={{
+                        margin: '8px',
+                        fontSize: isLanguage('en')
+                          ? `${getSizeWithStep(100, -8, 4, index)}%`
+                          : `${getSizeWithStep(140, -16, 4, index)}%`,
+                        fontWeight: 'bold',
+                        color: 'black',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {t(`quiz.result.political_parties.data.${value.id}.name`)}
+                    </Text>
+                    <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
+                    <Text
+                      style={{
+                        color: getDiffColor(diff),
+                        fontSize: isLanguage('en')
+                          ? `${getSizeWithStep(100, -8, 4, index)}%`
+                          : `${getSizeWithStep(100, -8, 4, index)}%`,
+                        textAlign: 'center',
+                      }}
+                    >
+                      {`${diff}%`}
+                    </Text>
+                  </>
+                )
+
+                const addLink = (componet) => {
+                  return link && link.length > 0 ? (
+                    <a href={link} target='_blank' rel='noreferrer'>
+                      <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
+                    </a>
+                  ) : (
+                    <div {...stylex.props(linkStyles.base)}>{componet}</div>
+                  )
+                }
+
+                return (
+                  <Col
+                    key={`party.${value.id}`}
+                    xs={24}
+                    sm={24}
+                    md={index < 3 ? 24 : 12}
+                    lg={index < 3 ? 24 : 12}
+                    xl={index < 3 ? 24 : 8}
+                    xxl={index < 3 ? 24 : 8}
+                  >
+                    <Flex vertical={false} justify='center' align='center'>
+                      {addLink(createLabel())}
+                    </Flex>
+                  </Col>
+                )
+              })}
+            </Row>
+          </Card>
+          <Card
+            title={t('quiz.result.tags.name')}
+            styles={{
+              header: {
+                fontSize: 'x-large',
+                textAlign: 'center',
+                padding: '0px 0px 0px 80px',
+                borderBottom: 'greenyellow solid 4px',
+              },
+              body: {
+                padding: getCardBodyPadding(),
+              },
+            }}
+            style={{
+              width: '100%',
+              backgroundColor: 'white',
+              border: 'greenyellow solid 4px',
+              borderRadius: '20px',
+            }}
+            extra={
+              <Switch
+                unCheckedChildren='M'
+                checkedChildren='∞'
+                size='small'
+                onChange={(checked) => {
+                  setExpandTags(checked)
+                }}
+                style={{
+                  backgroundColor: expandTags ? 'crimson' : 'greenyellow',
+                  margin: '5px 20px',
+                }}
+              />
+            }
+          >
+            {getMatchTags(getIdeologyTags(), expandTags).map((value) => {
+              const name = t(`quiz.result.tags.data.${value.id}.name`)
+              const description = t(`quiz.result.tags.data.${value.id}.description`)
+              const link = t(`quiz.result.tags.data.${value.id}.link`)
+              const hasLink = link && link.length > 0
+              const createLabel = () => (
+                <div
+                  {...stylex.props(
+                    tagButtonStyles.base,
+                    matchedTags.has(value.id)
+                      ? hasLink
+                        ? tagButtonStyles.enabledWithLink
+                        : tagButtonStyles.enabled
+                      : hasLink
+                        ? tagButtonStyles.disabledWithLink
+                        : tagButtonStyles.disabled,
+                  )}
+                >
+                  {name}
+                </div>
+              )
+              return (
+                <Flex
+                  key={`tags.${value.id}`}
+                  justify='start'
+                  align='center'
+                  style={{ margin: '10px auto 10px auto', maxWidth: '800px' }}
+                >
+                  {hasLink ? (
+                    <a href={link} target='_blank' rel='noreferrer'>
+                      {createLabel()}
+                    </a>
+                  ) : (
+                    createLabel()
+                  )}
+                  <Text
+                    style={{
+                      margin: '4px',
+                      color: matchedTags.has(value.id) ? 'black' : 'gray',
+                    }}
+                  >
+                    {description}
+                  </Text>
+                </Flex>
+              )
+            })}
+          </Card>
+          <ValueCard
+            title={t('quiz.result.axes.economic.title')}
+            leftTitle={t('quiz.result.axes.economic.equality.name')}
+            rightTitle={t('quiz.result.axes.economic.efficiency.name')}
+            leftImage={getValueConstant().equality.image}
+            rightImage={getValueConstant().efficiency.image}
+            leftColor={getValueConstant().equality.color}
+            rightColor={getValueConstant().efficiency.color}
+            percent={weights.economic}
+            descriptionTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.diplomatic.title')}
+            leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
+            rightTitle={t('quiz.result.axes.diplomatic.nation.name')}
+            leftImage={getValueConstant().globe.image}
+            rightImage={getValueConstant().nation.image}
+            leftColor={getValueConstant().globe.color}
+            rightColor={getValueConstant().nation.color}
+            percent={weights.diplomatic}
+            descriptionTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.civil.title')}
+            leftTitle={t('quiz.result.axes.civil.liberty.name')}
+            rightTitle={t('quiz.result.axes.civil.authority.name')}
+            leftImage={getValueConstant().liberty.image}
+            rightImage={getValueConstant().authority.image}
+            leftColor={getValueConstant().liberty.color}
+            rightColor={getValueConstant().authority.color}
+            percent={weights.civil}
+            descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.environmental.title')}
+            leftTitle={t('quiz.result.axes.environmental.ecology.name')}
+            rightTitle={t('quiz.result.axes.environmental.production.name')}
+            leftImage={getValueConstant().ecology.image}
+            rightImage={getValueConstant().production.image}
+            leftColor={getValueConstant().ecology.color}
+            rightColor={getValueConstant().production.color}
+            percent={weights.environmental}
+            descriptionTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.societal.title')}
+            leftTitle={t('quiz.result.axes.societal.progress.name')}
+            rightTitle={t('quiz.result.axes.societal.tradition.name')}
+            leftImage={getValueConstant().progress.image}
+            rightImage={getValueConstant().tradition.image}
+            leftColor={getValueConstant().progress.color}
+            rightColor={getValueConstant().tradition.color}
+            percent={weights.societal}
+            descriptionTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.sovereignty.title')}
+            leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
+            rightTitle={t('quiz.result.axes.sovereignty.unification.name')}
+            leftImage={getValueConstant().independence.image}
+            rightImage={getValueConstant().unification.image}
+            leftColor={getValueConstant().independence.color}
+            rightColor={getValueConstant().unification.color}
+            percent={weights.sovereignty}
+            descriptionTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
+          />
+          <ValueCard
+            title={t('quiz.result.axes.us_vs_china.title')}
+            leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
+            rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese.name')}
+            leftImage={getValueConstant().pro_american.image}
+            rightImage={getValueConstant().pro_chinese.image}
+            leftColor={getValueConstant().pro_american.color}
+            rightColor={getValueConstant().pro_chinese.color}
+            percent={weights.us_vs_china}
+            descriptionTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
+          />
+        </>
+      )}
     </Flex>
   )
 }
