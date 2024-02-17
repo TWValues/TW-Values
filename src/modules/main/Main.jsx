@@ -38,7 +38,7 @@ const Main = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundImage: reduceWithDelimiter(backgroundImages, ',', (value) => `url(${value})`),
+          backgroundImage: reduceWithDelimiter(backgroundImages, ',', (value) => `url("${value}")`),
           backgroundRepeat: 'repeat',
           backgroundPositionY: reduceWithDelimiter(bgPositionY, ','),
           transition: 'all 0.25s ease-out 0s',
