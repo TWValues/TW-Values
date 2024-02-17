@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { getContentMaxWidth } from '../utils/useBreakpoint'
 import ValueIntro from '../components/ValueIntro'
-import { getValueConstant } from '../utils/color'
+import { getValueConstant } from '../utils/getValueConstant'
 import { getQuestions } from '../data/question'
 import * as stylex from '@stylexjs/stylex'
 
