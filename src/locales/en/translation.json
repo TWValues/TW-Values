@@ -6,6 +6,10 @@
       "start": "Start Quiz!",
       "privacy": "Privacy Notice: The quiz is open source and will not collect or store any personal information."
     },
+    "introduction": {
+      "title": "What is TW Values ?",
+      "description": "TW Values is a political quiz. Users are going to be asked {{count}} questions to identify their ideologies and political party matches. There are seven categories and each has two opposing values."
+    },
     "question_n_of_all": "Question {{index}} of {{all}}",
     "answers": {
       "completely_agree": "Completely Agree",
@@ -219,8 +223,14 @@
       "axes": {
         "economic": {
           "title": "Economic",
-          "equality": "Equality",
-          "efficiency": "Efficiency",
+          "equality": {
+            "name": "Equality",
+            "description": "Those with higher Equality scores believe the economy should distribute value evenly among the populace. They tend to support progressive tax codes, social programs, and even socialism."
+          },
+          "efficiency": {
+            "name": "Efficiency",
+            "description": "Those with higher Efficiency scores believe the economy should be focused on rapid growth. They tend to support lower taxes, privatization, deregulation, and even laissez-faire capitalism."
+          },
           "categories": {
             "0": "Communist",
             "1": "Socialist",
@@ -233,8 +243,14 @@
         },
         "diplomatic": {
           "title": "Diplomatic",
-          "globe": "Globe",
-          "nation": "Nation",
+          "globe": {
+            "name": "Globe",
+            "description": "Those with higher Globe scores believe in a peaceful foreign policy, emphasizing diplomacy, cooperation, integration and even a world government. They are often globalists."
+          },
+          "nation": {
+            "name": "Nation",
+            "description": "Those with higher Nation scores believe in an aggressive foreign policy, valuing the military, strength, sovereignty, and even territorial expansion. They are often nationalists."
+          },
           "categories": {
             "0": "Cosmopolitan",
             "1": "Internationalist",
@@ -247,8 +263,14 @@
         },
         "civil": {
           "title": "Civil",
-          "authority": "Authority",
-          "liberty": "Liberty",
+          "liberty": {
+            "name": "Liberty",
+            "description": "Those with higher Liberty scores believe in strong civil liberties. They tend to support democracy and oppose state intervention in personal lives."
+          },
+          "authority": {
+            "name": "Authority",
+            "description": "Those with higher Authority scores believe in strong state power. They tend to support government surveillance and even autocracy."
+          },
           "categories": {
             "0": "Anarchist",
             "1": "Libertarian",
@@ -261,8 +283,14 @@
         },
         "environmental": {
           "title": "Environmental",
-          "ecology": "Ecology",
-          "production": "Production",
+          "ecology": {
+            "name": "Ecology",
+            "description": "Those with higher Ecology scores believe that climate change has become the greatest threat to humanity, including global warming, expansion of deserts, rising of sea level and wildfire. They tend to support environmental protection and development of renewable energy."
+          },
+          "production": {
+            "name": "Production",
+            "description": "Those with higher Production scores believe that economic growth is more important, even though it causes environmental pollution. They tend to use cheap fossil fuels and think that development of renewable energy is a waste of money."
+          },
           "categories": {
             "0": "Radical Environmentalism",
             "1": "Environmentalism",
@@ -275,8 +303,14 @@
         },
         "societal": {
           "title": "Societal",
-          "progress": "Progress",
-          "tradition": "Tradition",
+          "progress": {
+            "name": "Progress",
+            "description": "Those with higher Progress scores believe in social change and rationality. They are usually secular or atheist, and support science or modern technologies."
+          },
+          "tradition": {
+            "name": "Tradition",
+            "description": "Those with higher Tradition scores believe in traditional values and strict adherence to a moral code. They are sometimes religious and support status quo."
+          },
           "categories": {
             "0": "Revolutionary",
             "1": "Very Progressive",
@@ -289,8 +323,14 @@
         },
         "sovereignty": {
           "title": "Sovereignty",
-          "independence": "Independence",
-          "unification": "Unification",
+          "independence": {
+            "name": "Independence",
+            "description": "Those with higher Independence scores believe that People's Republic of China does not own sovereignty over Taiwan. They are usually Taiwanese Nationalists and tend to support liberty and democracy."
+          },
+          "unification": {
+            "name": "Unification",
+            "description": "Those with higher Unification scores believe that only one government should be formed between Chinese Mainland and Taiwan. They are usually Chinese Nationalists and tend to support the great rejuvenation of the Chinese nation."
+          },
           "categories": {
             "0": "Firm Independence",
             "1": "Independence",
@@ -303,8 +343,14 @@
         },
         "us_vs_china": {
           "title": "U.S. vs China",
-          "pro_american": "Pro-American",
-          "pro_chinese": "Pro-Chinese",
+          "pro_american": {
+            "name": "Pro-American",
+            "description": "Those with higher Pro-American scores believe that Taiwan's semiconductor industry, technologies and military aids rely on United States. They tend to join U.S. alliance and support democracy."
+          },
+          "pro_chinese": {
+            "name": "Pro-Chinese",
+            "description": "Those with higher Pro-Chinese scores believe that Taiwan's export reliance on Chinese market is neccesary and unable to withstand trade sanctions. They tend to keep peaceful relationship with China."
+          },
           "categories": {
             "0": "Pro-Americanism",
             "1": "Pro-American",

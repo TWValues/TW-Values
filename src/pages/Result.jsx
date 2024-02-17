@@ -489,8 +489,8 @@ const Result = () => {
       </Card>
       <ValueCard
         title={t('quiz.result.axes.economic.title')}
-        leftTitle={t('quiz.result.axes.economic.equality')}
-        rightTitle={t('quiz.result.axes.economic.efficiency')}
+        leftTitle={t('quiz.result.axes.economic.equality.name')}
+        rightTitle={t('quiz.result.axes.economic.efficiency.name')}
         leftImage={getValueConstant().equality.image}
         rightImage={getValueConstant().efficiency.image}
         leftColor={getValueConstant().equality.color}
@@ -500,8 +500,8 @@ const Result = () => {
       />
       <ValueCard
         title={t('quiz.result.axes.diplomatic.title')}
-        leftTitle={t('quiz.result.axes.diplomatic.globe')}
-        rightTitle={t('quiz.result.axes.diplomatic.nation')}
+        leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
+        rightTitle={t('quiz.result.axes.diplomatic.nation.name')}
         leftImage={getValueConstant().globe.image}
         rightImage={getValueConstant().nation.image}
         leftColor={getValueConstant().globe.color}
@@ -511,8 +511,8 @@ const Result = () => {
       />
       <ValueCard
         title={t('quiz.result.axes.civil.title')}
-        leftTitle={t('quiz.result.axes.civil.liberty')}
-        rightTitle={t('quiz.result.axes.civil.authority')}
+        leftTitle={t('quiz.result.axes.civil.liberty.name')}
+        rightTitle={t('quiz.result.axes.civil.authority.name')}
         leftImage={getValueConstant().liberty.image}
         rightImage={getValueConstant().authority.image}
         leftColor={getValueConstant().liberty.color}
@@ -522,8 +522,8 @@ const Result = () => {
       />
       <ValueCard
         title={t('quiz.result.axes.environmental.title')}
-        leftTitle={t('quiz.result.axes.environmental.ecology')}
-        rightTitle={t('quiz.result.axes.environmental.production')}
+        leftTitle={t('quiz.result.axes.environmental.ecology.name')}
+        rightTitle={t('quiz.result.axes.environmental.production.name')}
         leftImage={getValueConstant().ecology.image}
         rightImage={getValueConstant().production.image}
         leftColor={getValueConstant().ecology.color}
@@ -533,8 +533,8 @@ const Result = () => {
       />
       <ValueCard
         title={t('quiz.result.axes.societal.title')}
-        leftTitle={t('quiz.result.axes.societal.progress')}
-        rightTitle={t('quiz.result.axes.societal.tradition')}
+        leftTitle={t('quiz.result.axes.societal.progress.name')}
+        rightTitle={t('quiz.result.axes.societal.tradition.name')}
         leftImage={getValueConstant().progress.image}
         rightImage={getValueConstant().tradition.image}
         leftColor={getValueConstant().progress.color}
@@ -544,8 +544,8 @@ const Result = () => {
       />
       <ValueCard
         title={t('quiz.result.axes.sovereignty.title')}
-        leftTitle={t('quiz.result.axes.sovereignty.independence')}
-        rightTitle={t('quiz.result.axes.sovereignty.unification')}
+        leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
+        rightTitle={t('quiz.result.axes.sovereignty.unification.name')}
         leftImage={getValueConstant().independence.image}
         rightImage={getValueConstant().unification.image}
         leftColor={getValueConstant().independence.color}
@@ -555,8 +555,8 @@ const Result = () => {
       />
       <ValueCard
         title={t('quiz.result.axes.us_vs_china.title')}
-        leftTitle={t('quiz.result.axes.us_vs_china.pro_american')}
-        rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese')}
+        leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
+        rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese.name')}
         leftImage={getValueConstant().pro_american.image}
         rightImage={getValueConstant().pro_chinese.image}
         leftColor={getValueConstant().pro_american.color}
