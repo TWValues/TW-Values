@@ -5,8 +5,8 @@ import Header from './header/Header'
 import Footer from './footer/Footer'
 import { reduceWithDelimiter } from '../../utils/range'
 
-import bg1 from '../../assets/background/background-1.webp'
-import bg2 from '../../assets/background/background-2.webp'
+import bg1 from '../../assets/background/bg1.svg'
+import bg2 from '../../assets/background/bg2.svg'
 
 const { Content } = Layout
 
