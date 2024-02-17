@@ -231,7 +231,7 @@ const Quiz = () => {
       justify='center'
       align='center'
       style={{
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.7)',
         border: 'crimson solid 4px',
         borderRadius: '20px',
         ...getContentMaxWidth(),
