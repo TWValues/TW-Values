@@ -80,7 +80,7 @@ export const getPoliticalParties = () => [
       civil: 45,
       societal: 45,
       sovereignty: 45,
-      us_vs_china: 40,
+      us_vs_china: 45,
     },
   },
   {

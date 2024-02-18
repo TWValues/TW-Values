@@ -398,4 +398,10 @@ export const getQuestions = () => [
       diplomatic: -WEIGHTS.p050,
     },
   },
+  {
+    id: 'q1302',
+    weight: {
+      us_vs_china: -WEIGHTS.p100,
+    },
+  },
 ]
