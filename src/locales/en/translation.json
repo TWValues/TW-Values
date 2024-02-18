@@ -594,33 +594,33 @@
             "name": "Democratic Progressive Party",
             "link": "https://en.wikipedia.org/wiki/Democratic_Progressive_Party"
           },
-          "tsu": {
-            "name": "Taiwan Solidarity Union",
-            "link": "https://en.wikipedia.org/wiki/Taiwan_Solidarity_Union"
-          },
           "np": {
             "name": "New Party",
             "link": "https://en.wikipedia.org/wiki/New_Party_(Taiwan)"
           },
-          "npp": {
-            "name": "New Power Party",
-            "link": "https://en.wikipedia.org/wiki/New_Power_Party"
+          "gpt": {
+            "name": "Green Party Taiwan",
+            "link": "https://en.wikipedia.org/wiki/Green_Party_Taiwan"
           },
-          "tpp": {
-            "name": "Taiwan People's Party",
-            "link": "https://en.wikipedia.org/wiki/Taiwan_People%27s_Party"
-          },
-          "tsp": {
-            "name": "Taiwan Statebuilding Party",
-            "link": "https://en.wikipedia.org/wiki/Taiwan_Statebuilding_Party"
+          "tsu": {
+            "name": "Taiwan Solidarity Union",
+            "link": "https://en.wikipedia.org/wiki/Taiwan_Solidarity_Union"
           },
           "cupp": {
             "name": "Chinese Unification Promotion Party",
             "link": "https://en.wikipedia.org/wiki/Chinese_Unification_Promotion_Party"
           },
-          "gpt": {
-            "name": "Green Party Taiwan",
-            "link": "https://en.wikipedia.org/wiki/Green_Party_Taiwan"
+          "npp": {
+            "name": "New Power Party",
+            "link": "https://en.wikipedia.org/wiki/New_Power_Party"
+          },
+          "tsp": {
+            "name": "Taiwan Statebuilding Party",
+            "link": "https://en.wikipedia.org/wiki/Taiwan_Statebuilding_Party"
+          },
+          "tpp": {
+            "name": "Taiwan People's Party",
+            "link": "https://en.wikipedia.org/wiki/Taiwan_People%27s_Party"
           }
         }
       },
