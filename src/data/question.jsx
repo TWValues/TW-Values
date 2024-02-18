@@ -157,7 +157,7 @@ export const getQuestions = () => [
   {
     id: 'q0500',
     weight: {
-      civil: -WEIGHTS.p075,
+      civil: -WEIGHTS.p100,
     },
   },
   {
@@ -194,7 +194,7 @@ export const getQuestions = () => [
   {
     id: 'q0506',
     weight: {
-      civil: -WEIGHTS.p075,
+      civil: -WEIGHTS.p100,
     },
   },
   {
