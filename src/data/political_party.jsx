@@ -108,6 +108,18 @@ export const getPoliticalParties = () => [
     },
   },
   {
+    id: 'sdp',
+    icon: 'https://upload.wikimedia.org/wikipedia/zh/2/2b/SDparty_logo.png',
+    weight: {
+      economic: 60,
+      civil: 60,
+      environmental: 60,
+      societal: 80,
+      sovereignty: 75,
+      us_vs_china: 75,
+    },
+  },
+  {
     id: 'tsp',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Daijish%C5%8D_in_brown.svg',
     weight: {

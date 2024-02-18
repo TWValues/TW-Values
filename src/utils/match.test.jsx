@@ -498,6 +498,13 @@ test('npp', () => {
   expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
+test('sdp', () => {
+  const sdp = getParty('sdp')
+  const dpp = getParty('dpp')
+  expect(sdp.weight.sovereignty).toEqual(dpp.weight.sovereignty)
+  expect(sdp.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
+})
+
 test('tpp', () => {
   const choices = {
     q0000: MULTIPLIER.a,
