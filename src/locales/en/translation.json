@@ -222,11 +222,11 @@
           "title": "Economic",
           "equality": {
             "name": "Equality",
-            "description": "Those with higher Equality scores believe the economy should distribute value evenly among the populace. They tend to support progressive tax codes, social programs, and even socialism."
+            "description": "Those with higher Equality scores believe the economy should distribute value evenly among the populace. They tend to support progressive tax codes, social programs, and at high values, socialism."
           },
           "efficiency": {
             "name": "Efficiency",
-            "description": "Those with higher Efficiency scores believe the economy should be focused on rapid growth. They tend to support lower taxes, privatization, deregulation, and even laissez-faire capitalism."
+            "description": "Those with higher Efficiency scores believe the economy should be focused on rapid growth. They tend to support lower taxes, privatization, deregulation, and at high values, laissez-faire capitalism."
           },
           "categories": {
             "0": "Communist",
@@ -262,11 +262,11 @@
           "title": "Civil",
           "liberty": {
             "name": "Liberty",
-            "description": "Those with higher Liberty scores believe in strong civil liberties. They tend to support democracy and oppose state intervention in personal lives."
+            "description": "Those with higher Liberty scores believe in strong civil liberties. They tend to support democracy and oppose state intervention in personal lives, and at high values, anarchism."
           },
           "authority": {
             "name": "Authority",
-            "description": "Those with higher Authority scores believe in strong state power. They tend to support government surveillance and even autocracy."
+            "description": "Those with higher Authority scores believe in strong state power. They tend to support government surveillance and state intervention in personal lives, and at high values, autocracy."
           },
           "categories": {
             "0": "Anarchist",
