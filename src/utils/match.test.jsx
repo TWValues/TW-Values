@@ -14,10 +14,18 @@ expect.extend({
       message: () => `expected ${received}${isNot ? ' not' : ''} to be within [${min}, ${max}]`,
     }
   },
+  toEqualWithinRange(received, min, max) {
+    const { isNot } = this
+    return {
+      pass: received >= min && received <= max,
+      message: () => `expected ${received}${isNot ? ' not' : ''} to be within [${min}, ${max}]`,
+    }
+  },
 })
 
+const getParty = (id) => getPoliticalParties().filter((value) => value.id == id)[0]
+
 const checkWeights = (weights, partyId) => {
-  const getParty = (id) => getPoliticalParties().filter((value) => value.id == id)[0]
   const party = getParty(partyId)
   const error = 3
   expect(weights.economic).toEqualWithError(party.weight.economic, error)
@@ -401,6 +409,18 @@ test('gpt', () => {
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('gpt')
   expect(party.diff).toBeLessThanOrEqual(0.03)
+})
+
+test('pfp', () => {
+  const pfp = getParty('pfp')
+  const kmt = getParty('kmt')
+  const np = getParty('np')
+  expect(pfp.weight.economic).toEqual(kmt.weight.economic)
+  expect(pfp.weight.civil).toEqual(kmt.weight.civil)
+  expect(pfp.weight.environmental).toEqual(kmt.weight.environmental)
+  expect(pfp.weight.societal).toEqual(kmt.weight.societal)
+  expect(pfp.weight.sovereignty).toEqualWithinRange(np.weight.sovereignty, kmt.weight.sovereignty)
+  expect(pfp.weight.us_vs_china).toEqualWithinRange(np.weight.us_vs_china, kmt.weight.us_vs_china)
 })
 
 test('npp', () => {

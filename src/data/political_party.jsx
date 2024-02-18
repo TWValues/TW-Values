@@ -60,6 +60,18 @@ export const getPoliticalParties = () => [
     },
   },
   {
+    id: 'pfp',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/LogoPFP.svg',
+    weight: {
+      economic: 40,
+      civil: 40,
+      environmental: 35,
+      societal: 30,
+      sovereignty: 25,
+      us_vs_china: 30,
+    },
+  },
+  {
     id: 'tsu',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Taiwan_orange.svg',
     weight: {
