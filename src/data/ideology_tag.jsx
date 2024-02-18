@@ -3,7 +3,7 @@ import MULTIPLIER from '../utils/multiplier'
 export const getIdeologyTags = () => [
   {
     id: 'roc_unification',
-    predicate: (choices) => choices['q1103'] > MULTIPLIER.n,
+    predicate: (choices) => choices['q1104'] > MULTIPLIER.n,
   },
   {
     id: 'roc_independence',

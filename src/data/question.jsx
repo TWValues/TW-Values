@@ -364,6 +364,13 @@ export const getQuestions = () => [
   },
   {
     id: 'q1103',
+    weight: {
+      sovereignty: -WEIGHTS.p075,
+      diplomatic: WEIGHTS.p050,
+    },
+  },
+  {
+    id: 'q1104',
     weight: {},
   },
   {
@@ -382,13 +389,6 @@ export const getQuestions = () => [
     id: 'q1202',
     weight: {
       us_vs_china: WEIGHTS.p100,
-    },
-  },
-  {
-    id: 'q1300',
-    weight: {
-      us_vs_china: -WEIGHTS.p100,
-      diplomatic: WEIGHTS.p050,
     },
   },
   {

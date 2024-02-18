@@ -194,6 +194,9 @@
         "description": "The government should sign cross-strait peace agreement with P.R.C. as soon as possible."
       },
       "q1103": {
+        "description": "All of us are Chinese."
+      },
+      "q1104": {
         "description": "Republic of China (R.O.C.) is the sole legitimate government of China."
       },
       "q1200": {
@@ -204,9 +207,6 @@
       },
       "q1202": {
         "description": "The U.S. military will definitely help Taiwan against China when a war breaks out in the Taiwan Strait."
-      },
-      "q1300": {
-        "description": "All of us are Chinese."
       },
       "q1301": {
         "description": "The goverment should claim that South China Sea are both China's territory."
