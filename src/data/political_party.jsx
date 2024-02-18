@@ -75,7 +75,7 @@ export const getPoliticalParties = () => [
     id: 'tpp',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_Taiwan_People%27s_Party_2019_Logo_Only.svg',
     weight: {
-      economic: 50,
+      economic: 45,
       environmental: 45,
       civil: 45,
       societal: 45,

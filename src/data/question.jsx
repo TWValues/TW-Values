@@ -61,12 +61,6 @@ export const getQuestions = () => [
     },
   },
   {
-    id: 'q0104',
-    weight: {
-      economic: -WEIGHTS.p100,
-    },
-  },
-  {
     id: 'q0105',
     weight: {
       economic: -WEIGHTS.p100,
