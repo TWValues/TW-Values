@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 const { Text } = Typography
 
-const ValueCard = ({
+const ValueMatchCard = ({
   title,
   leftTitle,
   rightTitle,
@@ -234,4 +234,4 @@ const ValueCard = ({
   )
 }
 
-export default ValueCard
+export default ValueMatchCard

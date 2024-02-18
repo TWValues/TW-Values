@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Card, Typography, Image, Button, Flex, Switch, Row, Col } from 'antd'
 import { useTranslation } from 'react-i18next'
-import ValueCard from '../components/ValueCard'
+import ValueMatchCard from '../components/ValueMatchCard'
 import { useBreakpoint, getContentMaxWidth } from '../utils/useBreakpoint'
 import { getIdeologyTags } from '../data/ideology_tag'
 import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/match'
@@ -490,7 +490,7 @@ const Result = () => {
               )
             })}
           </Card>
-          <ValueCard
+          <ValueMatchCard
             title={t('quiz.result.axes.economic.title')}
             leftTitle={t('quiz.result.axes.economic.equality.name')}
             rightTitle={t('quiz.result.axes.economic.efficiency.name')}
@@ -501,7 +501,7 @@ const Result = () => {
             percent={weights.economic}
             descriptionTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
           />
-          <ValueCard
+          <ValueMatchCard
             title={t('quiz.result.axes.diplomatic.title')}
             leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
             rightTitle={t('quiz.result.axes.diplomatic.nation.name')}
@@ -512,7 +512,7 @@ const Result = () => {
             percent={weights.diplomatic}
             descriptionTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
           />
-          <ValueCard
+          <ValueMatchCard
             title={t('quiz.result.axes.civil.title')}
             leftTitle={t('quiz.result.axes.civil.liberty.name')}
             rightTitle={t('quiz.result.axes.civil.authority.name')}
@@ -523,7 +523,7 @@ const Result = () => {
             percent={weights.civil}
             descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
           />
-          <ValueCard
+          <ValueMatchCard
             title={t('quiz.result.axes.environmental.title')}
             leftTitle={t('quiz.result.axes.environmental.ecology.name')}
             rightTitle={t('quiz.result.axes.environmental.production.name')}
@@ -534,7 +534,7 @@ const Result = () => {
             percent={weights.environmental}
             descriptionTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
           />
-          <ValueCard
+          <ValueMatchCard
             title={t('quiz.result.axes.societal.title')}
             leftTitle={t('quiz.result.axes.societal.progress.name')}
             rightTitle={t('quiz.result.axes.societal.tradition.name')}
@@ -545,7 +545,7 @@ const Result = () => {
             percent={weights.societal}
             descriptionTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
           />
-          <ValueCard
+          <ValueMatchCard
             title={t('quiz.result.axes.sovereignty.title')}
             leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
             rightTitle={t('quiz.result.axes.sovereignty.unification.name')}
@@ -556,7 +556,7 @@ const Result = () => {
             percent={weights.sovereignty}
             descriptionTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
           />
-          <ValueCard
+          <ValueMatchCard
             title={t('quiz.result.axes.us_vs_china.title')}
             leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
             rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese.name')}

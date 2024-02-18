@@ -4,7 +4,7 @@ import { useBreakpoint } from '../utils/useBreakpoint'
 
 const { Text } = Typography
 
-const ValueIntro = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftDescription, rightDescription }) => {
+const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftDescription, rightDescription }) => {
   const screens = useBreakpoint()
 
   const getTitleStyles = () => {
@@ -114,4 +114,4 @@ const ValueIntro = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftD
   )
 }
 
-export default ValueIntro
+export default ValueIntroCard

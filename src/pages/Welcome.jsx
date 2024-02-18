@@ -3,7 +3,7 @@ import { Divider, Typography, Alert, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { getContentMaxWidth } from '../utils/useBreakpoint'
-import ValueIntro from '../components/ValueIntro'
+import ValueIntroCard from '../components/ValueIntroCard'
 import { getValueConstant } from '../utils/getValueConstant'
 import { getQuestions } from '../data/question'
 import * as stylex from '@stylexjs/stylex'
@@ -124,7 +124,7 @@ const Welcome = () => {
           {t('quiz.introduction.description', { count: getQuestions().length })}
         </Text>
         <Divider style={{ backgroundColor: 'black' }} />
-        <ValueIntro
+        <ValueIntroCard
           title={t('quiz.result.axes.economic.title')}
           leftTitle={t('quiz.result.axes.economic.equality.name')}
           rightTitle={t('quiz.result.axes.economic.efficiency.name')}
@@ -134,7 +134,7 @@ const Welcome = () => {
           rightDescription={t('quiz.result.axes.economic.efficiency.description')}
         />
         <Divider style={{ backgroundColor: 'black' }} />
-        <ValueIntro
+        <ValueIntroCard
           title={t('quiz.result.axes.diplomatic.title')}
           leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
           rightTitle={t('quiz.result.axes.diplomatic.nation.name')}
@@ -144,7 +144,7 @@ const Welcome = () => {
           rightDescription={t('quiz.result.axes.diplomatic.nation.description')}
         />
         <Divider style={{ backgroundColor: 'black' }} />
-        <ValueIntro
+        <ValueIntroCard
           title={t('quiz.result.axes.civil.title')}
           leftTitle={t('quiz.result.axes.civil.liberty.name')}
           rightTitle={t('quiz.result.axes.civil.authority.name')}
@@ -154,7 +154,7 @@ const Welcome = () => {
           rightDescription={t('quiz.result.axes.civil.authority.description')}
         />
         <Divider style={{ backgroundColor: 'black' }} />
-        <ValueIntro
+        <ValueIntroCard
           title={t('quiz.result.axes.environmental.title')}
           leftTitle={t('quiz.result.axes.environmental.ecology.name')}
           rightTitle={t('quiz.result.axes.environmental.production.name')}
@@ -164,7 +164,7 @@ const Welcome = () => {
           rightDescription={t('quiz.result.axes.environmental.production.description')}
         />
         <Divider style={{ backgroundColor: 'black' }} />
-        <ValueIntro
+        <ValueIntroCard
           title={t('quiz.result.axes.societal.title')}
           leftTitle={t('quiz.result.axes.societal.progress.name')}
           rightTitle={t('quiz.result.axes.societal.tradition.name')}
@@ -174,7 +174,7 @@ const Welcome = () => {
           rightDescription={t('quiz.result.axes.societal.tradition.description')}
         />
         <Divider style={{ backgroundColor: 'black' }} />
-        <ValueIntro
+        <ValueIntroCard
           title={t('quiz.result.axes.sovereignty.title')}
           leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
           rightTitle={t('quiz.result.axes.sovereignty.unification.name')}
@@ -184,7 +184,7 @@ const Welcome = () => {
           rightDescription={t('quiz.result.axes.sovereignty.unification.description')}
         />
         <Divider style={{ backgroundColor: 'black' }} />
-        <ValueIntro
+        <ValueIntroCard
           title={t('quiz.result.axes.us_vs_china.title')}
           leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
           rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese.name')}
