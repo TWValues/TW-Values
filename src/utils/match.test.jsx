@@ -4,22 +4,28 @@ import { getQuestions } from '../data/question'
 import { getPoliticalParties } from '../data/political_party'
 import MULTIPLIER from './multiplier'
 
+expect.extend({
+  toEqualWithError(received, value, error) {
+    const { isNot } = this
+    const min = value - error
+    const max = value + error
+    return {
+      pass: received >= min && received <= max,
+      message: () => `expected ${received}${isNot ? ' not' : ''} to be within [${min}, ${max}]`,
+    }
+  },
+})
+
 const checkWeights = (weights, partyId) => {
   const getParty = (id) => getPoliticalParties().filter((value) => value.id == id)[0]
   const party = getParty(partyId)
-  const threshold = 3
-  expect(weights.economic).toBeGreaterThanOrEqual(party.weight.economic - threshold)
-  expect(weights.economic).toBeLessThanOrEqual(party.weight.economic + threshold)
-  expect(weights.civil).toBeGreaterThanOrEqual(party.weight.civil - threshold)
-  expect(weights.civil).toBeLessThanOrEqual(party.weight.civil + threshold)
-  expect(weights.environmental).toBeGreaterThanOrEqual(party.weight.environmental - threshold)
-  expect(weights.environmental).toBeLessThanOrEqual(party.weight.environmental + threshold)
-  expect(weights.societal).toBeGreaterThanOrEqual(party.weight.societal - threshold)
-  expect(weights.societal).toBeLessThanOrEqual(party.weight.societal + threshold)
-  expect(weights.sovereignty).toBeGreaterThanOrEqual(party.weight.sovereignty - threshold)
-  expect(weights.sovereignty).toBeLessThanOrEqual(party.weight.sovereignty + threshold)
-  expect(weights.us_vs_china).toBeGreaterThanOrEqual(party.weight.us_vs_china - threshold)
-  expect(weights.us_vs_china).toBeLessThanOrEqual(party.weight.us_vs_china + threshold)
+  const error = 3
+  expect(weights.economic).toEqualWithError(party.weight.economic, error)
+  expect(weights.civil).toEqualWithError(party.weight.civil, error)
+  expect(weights.environmental).toEqualWithError(party.weight.environmental, error)
+  expect(weights.societal).toEqualWithError(party.weight.societal, error)
+  expect(weights.sovereignty).toEqualWithError(party.weight.sovereignty, error)
+  expect(weights.us_vs_china).toEqualWithError(party.weight.us_vs_china, error)
 }
 
 test('kmt', () => {
