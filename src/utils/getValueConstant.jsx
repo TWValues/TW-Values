@@ -43,7 +43,7 @@ export const getValueConstant = () => ({
     image: RecyclingSymbol,
   },
   production: {
-    color: 'saddlebrown',
+    color: 'lightslategray',
     image: Factory,
   },
   progress: {

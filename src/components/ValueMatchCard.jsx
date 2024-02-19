@@ -41,7 +41,7 @@ const ValueMatchCard = ({
     }[screens.size]
   }
 
-  const getdescriptionTitleStyles = () => {
+  const getDescriptionTitleStyles = () => {
     if (i18n.language == 'en') {
       return {
         sm: { fontSize: 'x-small' },
@@ -108,6 +108,7 @@ const ValueMatchCard = ({
           />
           <Text
             style={{
+              fontWeight: 'bold',
               color: leftColor,
               textAlign: 'center',
               ...getValueTextStyles(),
@@ -143,7 +144,7 @@ const ValueMatchCard = ({
               </Text>
               <Text
                 style={{
-                  ...getdescriptionTitleStyles(),
+                  ...getDescriptionTitleStyles(),
                   color: getColor(),
                   textAlign: 'center',
                 }}
@@ -191,7 +192,7 @@ const ValueMatchCard = ({
             />
             <Text
               style={{
-                ...getdescriptionTitleStyles(),
+                ...getDescriptionTitleStyles(),
                 color: getColor(),
                 textAlign: 'center',
               }}
@@ -221,6 +222,7 @@ const ValueMatchCard = ({
           />
           <Text
             style={{
+              fontWeight: 'bold',
               color: rightColor,
               textAlign: 'center',
               ...getValueTextStyles(),
