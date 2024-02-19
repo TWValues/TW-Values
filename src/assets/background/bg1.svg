@@ -1,8 +1,8 @@
 <svg width="400" height="300"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 300">
-    <path d="M 0 150 Q 200 0 400 150" stroke="blue" stroke-width="4" fill="none" />
-    <path d="M 0 150 Q 200 300 400 150" stroke="green" stroke-width="4" fill="none"/>
+    <path d="M 0 150 Q 150 0 200 250 Q 230 350 400 150" stroke="blue" stroke-width="4" fill="none" />
+    <path d="M 0 130 Q 100 300 250 160 Q 350 60 400 130" stroke="green" stroke-width="4" fill="none"/>
     <path d="M 0 0 Q 50 100 200 150 Q 350 200 400 300" stroke="orange" stroke-width="4" fill="none" />
     <path d="M 0 300 Q 150 250 200 150 Q 250 50 400 0" stroke="magenta" stroke-width="4" fill="none" />
     <path d="M 0 200 Q 130 240 180 300" stroke="brown" stroke-width="4" fill="none" />
