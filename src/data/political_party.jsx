@@ -7,7 +7,7 @@ export const getPoliticalParties = () => [
       civil: 40,
       environmental: 35,
       societal: 30,
-      sovereignty: 35,
+      sovereignty: 30,
       us_vs_china: 35,
     },
   },
@@ -19,7 +19,7 @@ export const getPoliticalParties = () => [
       civil: 50,
       environmental: 50,
       societal: 55,
-      sovereignty: 15,
+      sovereignty: 10,
       us_vs_china: 10,
     },
   },
@@ -39,7 +39,7 @@ export const getPoliticalParties = () => [
     id: 'np',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/3/32/LogoCNP.svg',
     weight: {
-      economic: 35,
+      economic: 30,
       civil: 30,
       environmental: 35,
       societal: 25,
@@ -52,10 +52,10 @@ export const getPoliticalParties = () => [
     icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Green_Party_Taiwan_logo.png',
     weight: {
       economic: 70,
-      civil: 75,
+      civil: 70,
       environmental: 90,
       societal: 75,
-      sovereignty: 75,
+      sovereignty: 70,
       us_vs_china: 75,
     },
   },
@@ -79,7 +79,7 @@ export const getPoliticalParties = () => [
       civil: 50,
       environmental: 30,
       societal: 30,
-      sovereignty: 75,
+      sovereignty: 80,
       us_vs_china: 75,
     },
   },
@@ -101,9 +101,9 @@ export const getPoliticalParties = () => [
     weight: {
       economic: 75,
       civil: 70,
-      environmental: 75,
+      environmental: 80,
       societal: 75,
-      sovereignty: 75,
+      sovereignty: 80,
       us_vs_china: 75,
     },
   },
@@ -127,8 +127,8 @@ export const getPoliticalParties = () => [
       civil: 75,
       environmental: 50,
       societal: 60,
-      sovereignty: 75,
-      us_vs_china: 70,
+      sovereignty: 80,
+      us_vs_china: 75,
     },
   },
   {
@@ -144,3 +144,5 @@ export const getPoliticalParties = () => [
     },
   },
 ]
+
+export const getPoliticalParty = (id) => getPoliticalParties().filter((value) => value.id == id)[0]

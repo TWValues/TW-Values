@@ -1,7 +1,8 @@
 import { expect, test } from 'vitest'
 import { getValueScores, getPoliticalPartyMatchScores } from './match'
 import { getQuestions } from '../data/question'
-import { getPoliticalParties } from '../data/political_party'
+import { getIdeology } from '../data/ideology'
+import { getPoliticalParty } from '../data/political_party'
 import MULTIPLIER from './multiplier'
 
 expect.extend({
@@ -23,11 +24,9 @@ expect.extend({
   },
 })
 
-const getParty = (id) => getPoliticalParties().filter((value) => value.id == id)[0]
-
 const checkWeights = (weights, partyId) => {
-  const party = getParty(partyId)
-  const error = 3
+  const party = getPoliticalParty(partyId)
+  const error = 2
   expect(weights.economic).toEqualWithError(party.weight.economic, error)
   expect(weights.civil).toEqualWithError(party.weight.civil, error)
   expect(weights.environmental).toEqualWithError(party.weight.environmental, error)
@@ -88,7 +87,7 @@ test('kmt', () => {
     q0900: MULTIPLIER.a,
     q0901: MULTIPLIER.a,
     q0902: MULTIPLIER.d,
-    q1000: MULTIPLIER.n,
+    q1000: MULTIPLIER.d,
     q1001: MULTIPLIER.cd,
     q1002: MULTIPLIER.d,
     q1003: MULTIPLIER.d,
@@ -238,10 +237,10 @@ test('dpp', () => {
     q0900: MULTIPLIER.a,
     q0901: MULTIPLIER.a,
     q0902: MULTIPLIER.d,
-    q1000: MULTIPLIER.a,
+    q1000: MULTIPLIER.ca,
     q1001: MULTIPLIER.a,
-    q1002: MULTIPLIER.a,
-    q1003: MULTIPLIER.n,
+    q1002: MULTIPLIER.ca,
+    q1003: MULTIPLIER.d,
     q1100: MULTIPLIER.d,
     q1101: MULTIPLIER.d,
     q1102: MULTIPLIER.d,
@@ -362,10 +361,10 @@ test('gpt', () => {
     q0403: MULTIPLIER.a,
     q0404: MULTIPLIER.a,
     q0405: MULTIPLIER.a,
-    q0500: MULTIPLIER.cd,
+    q0500: MULTIPLIER.d,
     q0501: MULTIPLIER.d,
     q0502: MULTIPLIER.n,
-    q0503: MULTIPLIER.cd,
+    q0503: MULTIPLIER.d,
     q0504: MULTIPLIER.d,
     q0505: MULTIPLIER.d,
     q0506: MULTIPLIER.d,
@@ -380,18 +379,18 @@ test('gpt', () => {
     q0702: MULTIPLIER.d,
     q0703: MULTIPLIER.d,
     q0704: MULTIPLIER.d,
-    q0705: MULTIPLIER.d,
+    q0705: MULTIPLIER.cd,
     q0800: MULTIPLIER.ca,
-    q0801: MULTIPLIER.ca,
+    q0801: MULTIPLIER.a,
     q0802: MULTIPLIER.ca,
     q0803: MULTIPLIER.a,
     q0900: MULTIPLIER.cd,
     q0901: MULTIPLIER.cd,
     q0902: MULTIPLIER.d,
-    q1000: MULTIPLIER.a,
+    q1000: MULTIPLIER.ca,
     q1001: MULTIPLIER.a,
     q1002: MULTIPLIER.a,
-    q1003: MULTIPLIER.a,
+    q1003: MULTIPLIER.n,
     q1100: MULTIPLIER.d,
     q1101: MULTIPLIER.d,
     q1102: MULTIPLIER.d,
@@ -412,15 +411,28 @@ test('gpt', () => {
 })
 
 test('pfp', () => {
-  const pfp = getParty('pfp')
-  const kmt = getParty('kmt')
-  const np = getParty('np')
+  const pfp = getPoliticalParty('pfp')
+  const kmt = getPoliticalParty('kmt')
+  const np = getPoliticalParty('np')
   expect(pfp.weight.economic).toEqual(kmt.weight.economic)
   expect(pfp.weight.civil).toEqual(kmt.weight.civil)
   expect(pfp.weight.environmental).toEqual(kmt.weight.environmental)
   expect(pfp.weight.societal).toEqual(kmt.weight.societal)
-  expect(pfp.weight.sovereignty).toEqualWithinRange(np.weight.sovereignty, kmt.weight.sovereignty)
+  expect(pfp.weight.sovereignty).toEqualWithError((np.weight.sovereignty + kmt.weight.sovereignty) / 2, 0)
   expect(pfp.weight.us_vs_china).toEqualWithinRange(np.weight.us_vs_china, kmt.weight.us_vs_china)
+})
+
+test('tsu', () => {
+  const tsu = getPoliticalParty('tsu')
+  const dpp = getPoliticalParty('dpp')
+  const ideology = getIdeology('social_conservatism')
+  for (const [key, value] of Object.entries(ideology.weight)) {
+    if (key in tsu.weight) {
+      expect(tsu.weight[key]).toEqual(value)
+    }
+  }
+  expect(tsu.weight.sovereignty).toEqual(dpp.weight.sovereignty + 5)
+  expect(tsu.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
 test('npp', () => {
@@ -429,8 +441,8 @@ test('npp', () => {
     q0001: MULTIPLIER.a,
     q0002: MULTIPLIER.a,
     q0003: MULTIPLIER.a,
-    q0004: MULTIPLIER.a,
-    q0100: MULTIPLIER.cd,
+    q0004: MULTIPLIER.ca,
+    q0100: MULTIPLIER.d,
     q0101: MULTIPLIER.a,
     q0102: MULTIPLIER.d,
     q0103: MULTIPLIER.d,
@@ -449,12 +461,12 @@ test('npp', () => {
     q0403: MULTIPLIER.a,
     q0404: MULTIPLIER.a,
     q0405: MULTIPLIER.n,
-    q0500: MULTIPLIER.cd,
+    q0500: MULTIPLIER.d,
     q0501: MULTIPLIER.d,
     q0502: MULTIPLIER.a,
     q0503: MULTIPLIER.cd,
     q0504: MULTIPLIER.d,
-    q0505: MULTIPLIER.cd,
+    q0505: MULTIPLIER.d,
     q0506: MULTIPLIER.d,
     q0600: MULTIPLIER.a,
     q0601: MULTIPLIER.a,
@@ -467,18 +479,18 @@ test('npp', () => {
     q0702: MULTIPLIER.d,
     q0703: MULTIPLIER.d,
     q0704: MULTIPLIER.n,
-    q0705: MULTIPLIER.d,
+    q0705: MULTIPLIER.cd,
     q0800: MULTIPLIER.a,
     q0801: MULTIPLIER.a,
-    q0802: MULTIPLIER.a,
+    q0802: MULTIPLIER.ca,
     q0803: MULTIPLIER.a,
     q0900: MULTIPLIER.d,
     q0901: MULTIPLIER.d,
     q0902: MULTIPLIER.d,
-    q1000: MULTIPLIER.a,
+    q1000: MULTIPLIER.ca,
     q1001: MULTIPLIER.a,
     q1002: MULTIPLIER.a,
-    q1003: MULTIPLIER.a,
+    q1003: MULTIPLIER.ca,
     q1100: MULTIPLIER.d,
     q1101: MULTIPLIER.d,
     q1102: MULTIPLIER.d,
@@ -499,10 +511,23 @@ test('npp', () => {
 })
 
 test('sdp', () => {
-  const sdp = getParty('sdp')
-  const dpp = getParty('dpp')
+  const sdp = getPoliticalParty('sdp')
+  const dpp = getPoliticalParty('dpp')
+  const ideology = getIdeology('social_democracy')
+  for (const [key, value] of Object.entries(ideology.weight)) {
+    if (key in sdp.weight) {
+      expect(sdp.weight[key]).toEqual(value)
+    }
+  }
   expect(sdp.weight.sovereignty).toEqual(dpp.weight.sovereignty)
   expect(sdp.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
+})
+
+test('tsp', () => {
+  const tsp = getPoliticalParty('tsp')
+  const dpp = getPoliticalParty('dpp')
+  expect(tsp.weight.sovereignty).toEqual(dpp.weight.sovereignty + 5)
+  expect(tsp.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
 test('tpp', () => {
@@ -543,7 +568,7 @@ test('tpp', () => {
     q0602: MULTIPLIER.a,
     q0603: MULTIPLIER.cd,
     q0604: MULTIPLIER.d,
-    q0605: MULTIPLIER.n,
+    q0605: MULTIPLIER.d,
     q0700: MULTIPLIER.a,
     q0701: MULTIPLIER.a,
     q0702: MULTIPLIER.d,

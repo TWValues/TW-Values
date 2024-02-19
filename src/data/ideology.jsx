@@ -486,3 +486,5 @@ export const getIdeologies = () => [
     },
   },
 ]
+
+export const getIdeology = (id) => getIdeologies().filter((value) => value.id == id)[0]
