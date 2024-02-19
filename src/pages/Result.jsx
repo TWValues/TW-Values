@@ -1,31 +1,17 @@
 import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Card, Typography, Image, Button, Flex, Switch, Row, Col } from 'antd'
+import { Card, Typography, Button, Flex, Switch } from 'antd'
 import { useTranslation } from 'react-i18next'
+import MatchCard from '../components/MatchCard'
 import ValueMatchCard from '../components/ValueMatchCard'
 import { useBreakpoint, getContentMaxWidth } from '../utils/useBreakpoint'
 import { getIdeologyTags } from '../data/ideology_tag'
 import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/match'
 import { getValueConstant } from '../utils/getValueConstant'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
-import { DiffFilled } from '@ant-design/icons'
 import * as stylex from '@stylexjs/stylex'
 
 const { Text, Title } = Typography
-
-const linkStyles = stylex.create({
-  base: {
-    padding: '10px 20px',
-    borderRadius: '24px',
-  },
-  link: {
-    backgroundColor: {
-      default: 'transparent',
-      ':hover': { '@media (pointer: fine)': 'aqua' },
-      ':active': 'aqua',
-    },
-  },
-})
 
 const tagButtonStyles = stylex.create({
   base: {
@@ -78,15 +64,9 @@ const tagButtonStyles = stylex.create({
 const Result = () => {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const screens = useBreakpoint()
-  const [expandIdeology, setExpandIdeology] = useState(false, [])
-  const [expandParty, setExpandParty] = useState(false, [])
   const [expandTags, setExpandTags] = useState(false, [])
-
-  const isLanguage = (lang) => {
-    return i18n.language == lang
-  }
 
   const isApiVersionOK = searchParams.get(API_VERSION_KEY) == API_VERSION_VALUE
 
@@ -101,10 +81,6 @@ const Result = () => {
   }
 
   const matchedTags = new Set(searchParams.get('tags').split(','))
-
-  const getTopScores = (scores, all, count) => {
-    return all ? scores : scores.slice(0, Math.min(scores.length, count))
-  }
 
   const getMatchTags = (tags, all) => {
     if (all) {
@@ -146,10 +122,6 @@ const Result = () => {
     return 3
   }
 
-  const getSizeWithStep = (initial, stepSize, maxSteps, index) => {
-    return initial + stepSize * Math.min(Math.max(1, maxSteps) - 1, index)
-  }
-
   const getCardBodyPadding = () =>
     ({
       sm: '10px',
@@ -158,8 +130,6 @@ const Result = () => {
       xl: '24px',
       xll: '24px',
     })[screens.size]
-
-  const getDiffColor = (diff) => (diff <= 10 ? 'green' : diff <= 20 ? 'orange' : 'red')
 
   const ApiErrorPage = () => (
     <Flex
@@ -217,198 +187,24 @@ const Result = () => {
         <ApiErrorPage />
       ) : (
         <>
-          <Card
+          <MatchCard
             title={t('quiz.result.ideologies.name')}
-            styles={{
-              header: {
-                fontSize: 'x-large',
-                textAlign: 'center',
-                padding: '0px 0px 0px 80px',
-                borderBottom: 'dodgerblue solid 4px',
-              },
-              body: {
-                padding: getCardBodyPadding(),
-              },
-            }}
-            style={{
-              width: '100%',
-              backgroundColor: 'white',
-              border: 'dodgerblue solid 4px',
-              borderRadius: '20px',
-            }}
-            extra={
-              <Switch
-                unCheckedChildren='3'
-                checkedChildren='∞'
-                size='small'
-                onChange={(checked) => {
-                  setExpandIdeology(checked)
-                }}
-                style={{
-                  backgroundColor: expandIdeology ? 'crimson' : 'dodgerblue',
-                  margin: '5px 20px',
-                }}
-              />
-            }
-          >
-            <Row>
-              {getTopScores(getIdeologyMatchScores(weights), expandIdeology, 3).map((value, index) => {
-                const diff = Math.round(100 * value.diff)
-                const linkRC = `quiz.result.ideologies.data.${value.id}.link`
-                const link = i18n.exists(linkRC) ? t(linkRC) : null
-                const createLabel = () => (
-                  <>
-                    <Text
-                      style={{
-                        margin: '8px',
-                        fontSize: isLanguage('en')
-                          ? `${getSizeWithStep(100, -8, 4, index)}%`
-                          : `${getSizeWithStep(140, -16, 4, index)}%`,
-                        fontWeight: 'bold',
-                        color: 'black',
-                        textAlign: 'center',
-                      }}
-                    >
-                      {t(`quiz.result.ideologies.data.${value.id}.name`)}
-                    </Text>
-                    <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
-                    <Text
-                      style={{
-                        color: getDiffColor(diff),
-                        fontSize: isLanguage('en')
-                          ? `${getSizeWithStep(100, -8, 4, index)}%`
-                          : `${getSizeWithStep(100, -8, 4, index)}%`,
-                        textAlign: 'center',
-                      }}
-                    >
-                      {`${diff}%`}
-                    </Text>
-                  </>
-                )
-                const addLink = (componet) => {
-                  return link && link.length > 0 ? (
-                    <a href={link} target='_blank' rel='noreferrer'>
-                      <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
-                    </a>
-                  ) : (
-                    <div {...stylex.props(linkStyles.base)}>{componet}</div>
-                  )
-                }
-                return (
-                  <Col
-                    key={`ideology.${value.id}`}
-                    xs={24}
-                    sm={24}
-                    md={index < 3 ? 24 : 12}
-                    lg={index < 3 ? 24 : 12}
-                    xl={index < 3 ? 24 : 8}
-                    xxl={index < 3 ? 24 : 8}
-                  >
-                    <Flex vertical={false} justify='center' align='center'>
-                      {addLink(createLabel())}
-                    </Flex>
-                  </Col>
-                )
-              })}
-            </Row>
-          </Card>
-          <Card
+            data={getIdeologyMatchScores(weights)}
+            nameTemplate='quiz.result.ideologies.data.{{id}}.name'
+            linkTemplate='quiz.result.ideologies.data.{{id}}.link'
+            fontSizeScale={1.2}
+            borderColor='dodgerblue'
+            getCardBodyPadding={getCardBodyPadding}
+          />
+          <MatchCard
             title={t('quiz.result.political_parties.name')}
-            styles={{
-              header: {
-                fontSize: 'x-large',
-                textAlign: 'center',
-                padding: '0px 0px 0px 80px',
-                borderBottom: 'tomato solid 4px',
-              },
-              body: {
-                padding: getCardBodyPadding(),
-              },
-            }}
-            style={{
-              width: '100%',
-              backgroundColor: 'white',
-              border: 'tomato solid 4px',
-              borderRadius: '20px',
-            }}
-            extra={
-              <Switch
-                unCheckedChildren='3'
-                checkedChildren='∞'
-                size='small'
-                onChange={(checked) => {
-                  setExpandParty(checked)
-                }}
-                style={{
-                  backgroundColor: expandParty ? 'crimson' : 'tomato',
-                  margin: '5px 20px',
-                }}
-              />
-            }
-          >
-            <Row>
-              {getTopScores(getPoliticalPartyMatchScores(weights), expandParty, 3).map((value, index) => {
-                const diff = Math.round(100 * value.diff)
-                const link = t(`quiz.result.political_parties.data.${value.id}.link`)
-                const createLabel = () => (
-                  <>
-                    <Image height={getSizeWithStep(24, -3, 4, index)} src={value.icon} preview={false} />
-                    <Text
-                      style={{
-                        margin: '8px',
-                        fontSize: isLanguage('en')
-                          ? `${getSizeWithStep(100, -8, 4, index)}%`
-                          : `${getSizeWithStep(140, -16, 4, index)}%`,
-                        fontWeight: 'bold',
-                        color: 'black',
-                        textAlign: 'center',
-                      }}
-                    >
-                      {t(`quiz.result.political_parties.data.${value.id}.name`)}
-                    </Text>
-                    <DiffFilled style={{ margin: '3px', color: getDiffColor(diff) }} />
-                    <Text
-                      style={{
-                        color: getDiffColor(diff),
-                        fontSize: isLanguage('en')
-                          ? `${getSizeWithStep(100, -8, 4, index)}%`
-                          : `${getSizeWithStep(100, -8, 4, index)}%`,
-                        textAlign: 'center',
-                      }}
-                    >
-                      {`${diff}%`}
-                    </Text>
-                  </>
-                )
-
-                const addLink = (componet) => {
-                  return link && link.length > 0 ? (
-                    <a href={link} target='_blank' rel='noreferrer'>
-                      <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
-                    </a>
-                  ) : (
-                    <div {...stylex.props(linkStyles.base)}>{componet}</div>
-                  )
-                }
-
-                return (
-                  <Col
-                    key={`party.${value.id}`}
-                    xs={24}
-                    sm={24}
-                    md={index < 3 ? 24 : 12}
-                    lg={index < 3 ? 24 : 12}
-                    xl={index < 3 ? 24 : 8}
-                    xxl={index < 3 ? 24 : 8}
-                  >
-                    <Flex vertical={false} justify='center' align='center'>
-                      {addLink(createLabel())}
-                    </Flex>
-                  </Col>
-                )
-              })}
-            </Row>
-          </Card>
+            data={getPoliticalPartyMatchScores(weights)}
+            nameTemplate='quiz.result.political_parties.data.{{id}}.name'
+            linkTemplate='quiz.result.political_parties.data.{{id}}.link'
+            fontSizeScale={1.0}
+            borderColor='tomato'
+            getCardBodyPadding={getCardBodyPadding}
+          />
           <Card
             title={t('quiz.result.tags.name')}
             styles={{
