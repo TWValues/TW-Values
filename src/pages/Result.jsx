@@ -194,7 +194,7 @@ const Result = () => {
             linkTemplate='quiz.result.ideologies.data.{{id}}.link'
             fontSizeScale={1.2}
             borderColor='dodgerblue'
-            getCardBodyPadding={getCardBodyPadding}
+            cardBodyPadding={getCardBodyPadding()}
           />
           <MatchCard
             title={t('quiz.result.political_parties.name')}
@@ -203,7 +203,7 @@ const Result = () => {
             linkTemplate='quiz.result.political_parties.data.{{id}}.link'
             fontSizeScale={1.0}
             borderColor='tomato'
-            getCardBodyPadding={getCardBodyPadding}
+            cardBodyPadding={getCardBodyPadding()}
           />
           <Card
             title={t('quiz.result.tags.name')}

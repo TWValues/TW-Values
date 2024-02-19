@@ -26,7 +26,7 @@ const linkStyles = stylex.create({
   },
 })
 
-const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, borderColor, getCardBodyPadding }) => {
+const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, borderColor, cardBodyPadding }) => {
   const { t, i18n } = useTranslation()
   const [switchOn, setSwitchOn] = useState(false, [])
 
@@ -65,7 +65,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
           borderBottom: `${borderColor} solid 4px`,
         },
         body: {
-          padding: getCardBodyPadding(),
+          padding: cardBodyPadding,
         },
       }}
       style={{
