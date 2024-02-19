@@ -212,7 +212,7 @@ const Result = () => {
                 fontSize: 'x-large',
                 textAlign: 'center',
                 padding: '0px 0px 0px 80px',
-                borderBottom: 'greenyellow solid 4px',
+                borderBottom: 'magenta solid 4px',
               },
               body: {
                 padding: getCardBodyPadding(),
@@ -221,7 +221,7 @@ const Result = () => {
             style={{
               width: '100%',
               backgroundColor: 'white',
-              border: 'greenyellow solid 4px',
+              border: 'magenta solid 4px',
               borderRadius: '20px',
             }}
             extra={
@@ -233,7 +233,7 @@ const Result = () => {
                   setExpandTags(checked)
                 }}
                 style={{
-                  backgroundColor: expandTags ? 'crimson' : 'greenyellow',
+                  backgroundColor: 'magenta',
                   margin: '5px 20px',
                 }}
               />
