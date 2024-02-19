@@ -8,17 +8,20 @@ const { Text } = Typography
 
 const linkStyles = stylex.create({
   base: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '4px 16px',
-    borderRadius: '28px',
+    margin: '2px 4px',
+    padding: '2px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderRadius: '4px',
   },
   link: {
     backgroundColor: {
-      default: 'transparent',
-      ':hover': { '@media (pointer: fine)': 'aqua' },
-      ':active': 'aqua',
+      default: 'aqua',
+      ':hover': { '@media (pointer: fine)': 'white' },
+      ':active': 'white',
+    },
+    borderColor: {
+      default: 'black',
     },
   },
 })
@@ -92,98 +95,72 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
           const diff = Math.round(100 * value.diff)
           const name = t(formatTemplate(nameTemplate, { id: value.id }))
           const link = t(formatTemplate(linkTemplate, { id: value.id }))
-          const Label = () => (
-            <>
-              {value.icon && (
-                <img
-                  width={fontSizeScale * getSize(24, -3, topScoreCount + 1, index)}
-                  height='auto'
-                  src={value.icon}
-                  alt=''
-                />
-              )}
+
+          const PopoverTitle = () => (
+            <Flex vertical={false} justify='center' align='center'>
+              {value.icon && <img width={24} height='auto' src={value.icon} alt='' />}
               <Text
                 style={{
-                  margin: '3px 8px',
-                  fontSize: isLanguage('en')
-                    ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                    : `${fontSizeScale * getSize(140, -16, topScoreCount + 1, index)}%`,
+                  margin: '3px 6px',
+                  fontSize: 'large',
                   fontWeight: 'bold',
                   color: 'black',
                   textAlign: 'center',
                 }}
               >
                 {name}
-              </Text>
-              <Popover
-                title={t('quiz.result.diff_card.compare_with', { name: name })}
-                content={
-                  <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto' }}>
-                    <Text></Text>
-                    <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.user')}</Text>
-                    <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.target')}</Text>
-                    <Text></Text>
-                    {Object.keys(value.weight.target).map((key) => {
-                      const user = value.weight.user[key]
-                      const target = value.weight.target[key]
-                      const diff = user - target
-                      return [
-                        <Text key={`${key}.title`} style={{ textAlign: 'right', margin: '4px' }}>
-                          {t(`quiz.result.axes.${key}.title`)}
-                        </Text>,
-                        <Text
-                          key={`${key}.user`}
-                          style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
-                        >{`${user}%`}</Text>,
-                        <Text key={`${key}.target`} style={{ textAlign: 'right', margin: '4px' }}>{`${target}%`}</Text>,
-                        <Text
-                          key={`${key}.diff`}
-                          style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
-                        >
-                          {(diff > 0 ? '+' : '') + `${diff}%`}
-                        </Text>,
-                      ]
-                    })}
-                  </div>
-                }
-              >
-                <DiffFilled
-                  style={{
-                    margin: '3px',
-                    color: getDiffColor(diff),
-                    fontSize: isLanguage('en')
-                      ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                      : `${fontSizeScale * getSize(120, -10, topScoreCount + 1, index)}%`,
-                  }}
-                />
-                <Text
-                  style={{
-                    color: getDiffColor(diff),
-                    fontSize: isLanguage('en')
-                      ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                      : `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`,
-                    textAlign: 'center',
-                  }}
-                >
-                  {`${diff}%`}
-                </Text>
-              </Popover>
-            </>
+              </Text>{' '}
+              {link && link.length > 0 && (
+                <a href={link} target='_blank' rel='noreferrer'>
+                  <img
+                    {...stylex.props(linkStyles.base, linkStyles.link)}
+                    width={16}
+                    height='auto'
+                    src='https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg'
+                    alt=''
+                  />
+                </a>
+              )}
+            </Flex>
           )
-
-          const addLink = (componet) => {
-            return link && link.length > 0 ? (
-              <a href={link} target='_blank' rel='noreferrer'>
-                <div {...stylex.props(linkStyles.base, linkStyles.link)}>{componet}</div>
-              </a>
-            ) : (
-              <div {...stylex.props(linkStyles.base)}>{componet}</div>
-            )
-          }
+          const PopoverContent = () => (
+            <Flex vertical={true} justify='center' align='center'>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                {t('quiz.result.diff_card.compare_with', { name: name })}
+              </Text>
+              <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto' }}>
+                <Text></Text>
+                <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.user')}</Text>
+                <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.target')}</Text>
+                <Text></Text>
+                {Object.keys(value.weight.target).map((key) => {
+                  const user = value.weight.user[key]
+                  const target = value.weight.target[key]
+                  const diff = user - target
+                  return [
+                    <Text key={`${key}.title`} style={{ textAlign: 'right', margin: '4px' }}>
+                      {t(`quiz.result.axes.${key}.title`)}
+                    </Text>,
+                    <Text
+                      key={`${key}.user`}
+                      style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
+                    >{`${user}%`}</Text>,
+                    <Text key={`${key}.target`} style={{ textAlign: 'right', margin: '4px' }}>{`${target}%`}</Text>,
+                    <Text
+                      key={`${key}.diff`}
+                      style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
+                    >
+                      {(diff > 0 ? '+' : '') + `${diff}%`}
+                    </Text>,
+                  ]
+                })}
+              </div>
+            </Flex>
+          )
 
           return (
             <Col
-              key={formatTemplate(nameTemplate, { id: value.id })}
+              key={name}
               xs={24}
               sm={24}
               md={index < 3 ? 24 : 12}
@@ -192,7 +169,52 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
               xxl={index < 3 ? 24 : 12}
             >
               <Flex vertical={false} justify='center' align='center'>
-                {addLink(<Label />)}
+                <Popover title={<PopoverTitle />} content={<PopoverContent />}>
+                  <Flex vertical={false} justify='center' align='center' style={{ margin: '5px' }}>
+                    {value.icon && (
+                      <img
+                        width={fontSizeScale * getSize(24, -3, topScoreCount + 1, index)}
+                        height='auto'
+                        src={value.icon}
+                        alt=''
+                      />
+                    )}
+                    <Text
+                      style={{
+                        margin: '3px 6px',
+                        fontSize: isLanguage('en')
+                          ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
+                          : `${fontSizeScale * getSize(140, -16, topScoreCount + 1, index)}%`,
+                        fontWeight: 'bold',
+                        color: 'black',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {name}
+                    </Text>
+                    <DiffFilled
+                      style={{
+                        margin: '3px 2px',
+                        color: getDiffColor(diff),
+                        fontSize: isLanguage('en')
+                          ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
+                          : `${fontSizeScale * getSize(120, -10, topScoreCount + 1, index)}%`,
+                      }}
+                    />
+                    <Text
+                      style={{
+                        margin: '3px 2px',
+                        color: getDiffColor(diff),
+                        fontSize: isLanguage('en')
+                          ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
+                          : `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`,
+                        textAlign: 'center',
+                      }}
+                    >
+                      {`${diff}%`}
+                    </Text>
+                  </Flex>
+                </Popover>
               </Flex>
             </Col>
           )
