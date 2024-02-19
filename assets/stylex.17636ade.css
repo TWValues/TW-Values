@@ -2,13 +2,15 @@
 @layer priority1, priority2, priority3, priority4;
 @layer priority1{
 .xd3odtx{margin:0 4px}
+.x578xsc{margin:2px 4px}
 .x16zck5j{margin:5px}
 .x1f8r7k0{margin:6px}
 .xvid92k{padding:1px 12px}
-.x16scj1r{padding:4px 16px}
+.x1i3ajwb{padding:2px}
 }
 @layer priority2{
 .x1k40sjj{border-color:#004000}
+.xub7v3z{border-color:black}
 .x120uepz{border-color:crimson}
 .xusra0j{border-color:darkred}
 .x1y011xe{border-color:dodgerblue}
@@ -18,9 +20,10 @@
 .x71xlcl{border-color:red}
 .x1nvupfo{border-color:white}
 .x1m3ak92{border-radius:20px}
-.x1jvnzes{border-radius:28px}
 .x174e0gf{border-radius:30px}
+.x12oqio5{border-radius:4px}
 .x1y0btm7{border-style:solid}
+.xmkeg23{border-width:1px}
 .xdh2fpr{border-width:2px}
 .x9r2w2z{border-width:3px}
 .x19b7oho:active{border-color:#004000}
@@ -45,6 +48,7 @@
 @layer priority3{
 .x6s0dn4{align-items:center}
 .xgh7i2h{background-color:#004000}
+.xavsq6f{background-color:aqua}
 .x42x0ya{background-color:black}
 .xskgvrd{background-color:crimson}
 .xixu7ty{background-color:darkred}
@@ -53,7 +57,6 @@
 .x1u857p9{background-color:green}
 .xesu2hl{background-color:limegreen}
 .xrkmrrc{background-color:red}
-.xjbqb8w{background-color:transparent}
 .x1awj2ng{color:white}
 .x78zum5{display:flex}
 .x1rg5ohu{display:inline-block}
@@ -62,7 +65,6 @@
 .xt0237e{font-size:x-large}
 .xl56j7k{justify-content:center}
 .xuxw1ft{white-space:nowrap}
-.x1u0xgjp:active{background-color:aqua}
 .x4u2hfz:active{background-color:white}
 .x2brx79:active{color:#004000}
 .x8nnhh1:active{color:black}
@@ -73,7 +75,6 @@
 .x1s7o1zc:active{color:green}
 .xhi5ub0:active{color:limegreen}
 .x96fq8s:active{color:red}
-@media (pointer: fine){.xfw5lei.xfw5lei:hover{background-color:aqua}}
 @media (pointer: fine){.xo30pwf.xo30pwf:hover{background-color:white}}
 @media (pointer: fine){.xuc5uyh.xuc5uyh:hover{color:#004000}}
 @media (pointer: fine){.x1ywq5td.x1ywq5td:hover{color:black}}
