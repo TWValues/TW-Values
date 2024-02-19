@@ -83,7 +83,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
             setSwitchOn(checked)
           }}
           style={{
-            backgroundColor: switchOn ? 'crimson' : borderColor,
+            backgroundColor: borderColor,
             margin: '5px 20px',
           }}
         />
