@@ -30,18 +30,16 @@ export const getValueScores = (questions, choices) => {
 export const getIdeologyMatchScores = (weights) => {
   const ideologyScores = getIdeologies()
     .map((value) => {
-      let distance = 0.0
-      distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
-      distance += Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2)
-      distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
-      distance += Math.pow(
-        Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)),
-        2,
-      )
+      const distance =
+        Math.pow(Math.abs(value.weight.economic - weights.economic), 2) +
+        Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2) +
+        Math.pow(Math.abs(value.weight.civil - weights.civil), 2) +
+        Math.pow(Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)), 2)
+      const diff = Math.sqrt(distance / 4.0) / 100.0
       return {
         id: value.id,
-        distance: distance,
-        diff: Math.sqrt(distance / 4.0) / 100.0,
+        distance,
+        diff,
         weight: {
           target: value.weight,
           user: weights,
@@ -56,18 +54,19 @@ export const getIdeologyMatchScores = (weights) => {
 export const getPoliticalPartyMatchScores = (weights) => {
   const politicalScores = getPoliticalParties()
     .map((value) => {
-      let distance = 0.0
-      distance += Math.pow(Math.abs(value.weight.economic - weights.economic), 2)
-      distance += Math.pow(Math.abs(value.weight.civil - weights.civil), 2)
-      distance += Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2)
-      distance += Math.pow(Math.abs(value.weight.societal - weights.societal), 2)
-      distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
-      distance += Math.pow(Math.abs(value.weight.us_vs_china - weights.us_vs_china), 2)
+      const distance =
+        Math.pow(Math.abs(value.weight.economic - weights.economic), 2) +
+        Math.pow(Math.abs(value.weight.civil - weights.civil), 2) +
+        Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2) +
+        Math.pow(Math.abs(value.weight.societal - weights.societal), 2) +
+        Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2) +
+        Math.pow(Math.abs(value.weight.us_vs_china - weights.us_vs_china), 2)
+      const diff = Math.sqrt(distance / 6.0) / 100.0
       return {
         id: value.id,
         icon: value.icon,
-        distance: distance,
-        diff: Math.sqrt(distance / 6.0) / 100.0,
+        distance,
+        diff,
         weight: {
           target: value.weight,
           user: weights,
