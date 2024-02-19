@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Flex, Card, Switch, Row, Col, Image, Typography } from 'antd'
+import { Flex, Card, Switch, Row, Col, Typography } from 'antd'
 import { DiffFilled } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import * as stylex from '@stylexjs/stylex'
@@ -8,8 +8,11 @@ const { Text } = Typography
 
 const linkStyles = stylex.create({
   base: {
-    padding: '10px 20px',
-    borderRadius: '24px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '4px 16px',
+    borderRadius: '28px',
   },
   link: {
     backgroundColor: {
@@ -91,15 +94,16 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
           const Label = () => (
             <>
               {value.icon && (
-                <Image
-                  height={fontSizeScale * getSize(24, -3, topScoreCount + 1, index)}
+                <img
+                  width={fontSizeScale * getSize(24, -3, topScoreCount + 1, index)}
+                  height='auto'
                   src={value.icon}
-                  preview={false}
+                  alt=''
                 />
               )}
               <Text
                 style={{
-                  margin: '8px',
+                  margin: '3px 8px',
                   fontSize: isLanguage('en')
                     ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
                     : `${fontSizeScale * getSize(140, -16, topScoreCount + 1, index)}%`,
