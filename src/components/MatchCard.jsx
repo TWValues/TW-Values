@@ -43,12 +43,11 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
   const getDiffColor = (diff) => (diff <= 10 ? 'green' : diff <= 20 ? 'orange' : 'red')
 
   const formatTemplate = (template, args) => {
-    let result = ''
-    for (const [key, value] of Object.entries(args)) {
-      result = template.replace(`{{${key}}}`, value)
-    }
+    Object.entries(args).forEach(([key, value]) => {
+      template = template.replace(`{{${key}}}`, value)
+    })
 
-    return result
+    return template
   }
 
   const getSize = (initial, stepSize, maxSteps, index) => {
