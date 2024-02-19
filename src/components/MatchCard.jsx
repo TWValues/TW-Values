@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Flex, Card, Switch, Row, Col, Typography } from 'antd'
+import { Flex, Card, Switch, Row, Col, Typography, Popover } from 'antd'
 import { DiffFilled } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import * as stylex from '@stylexjs/stylex'
@@ -90,6 +90,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
       <Row>
         {getTopScores(data, switchOn, topScoreCount).map((value, index) => {
           const diff = Math.round(100 * value.diff)
+          const name = t(formatTemplate(nameTemplate, { id: value.id }))
           const link = t(formatTemplate(linkTemplate, { id: value.id }))
           const Label = () => (
             <>
@@ -112,28 +113,61 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                   textAlign: 'center',
                 }}
               >
-                {t(formatTemplate(nameTemplate, { id: value.id }))}
+                {name}
               </Text>
-              <DiffFilled
-                style={{
-                  margin: '3px',
-                  color: getDiffColor(diff),
-                  fontSize: isLanguage('en')
-                    ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                    : `${fontSizeScale * getSize(120, -10, topScoreCount + 1, index)}%`,
-                }}
-              />
-              <Text
-                style={{
-                  color: getDiffColor(diff),
-                  fontSize: isLanguage('en')
-                    ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                    : `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`,
-                  textAlign: 'center',
-                }}
+              <Popover
+                title={t('quiz.result.diff_card.compare_with', { name: name })}
+                content={
+                  <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto' }}>
+                    <Text></Text>
+                    <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.user')}</Text>
+                    <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.target')}</Text>
+                    <Text></Text>
+                    {Object.keys(value.weight.target).map((key) => {
+                      const user = value.weight.user[key]
+                      const target = value.weight.target[key]
+                      const diff = user - target
+                      return [
+                        <Text key={`${key}.title`} style={{ textAlign: 'right', margin: '4px' }}>
+                          {t(`quiz.result.axes.${key}.title`)}
+                        </Text>,
+                        <Text
+                          key={`${key}.user`}
+                          style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
+                        >{`${user}%`}</Text>,
+                        <Text key={`${key}.target`} style={{ textAlign: 'right', margin: '4px' }}>{`${target}%`}</Text>,
+                        <Text
+                          key={`${key}.diff`}
+                          style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
+                        >
+                          {(diff > 0 ? '+' : '') + `${diff}%`}
+                        </Text>,
+                      ]
+                    })}
+                  </div>
+                }
               >
-                {`${diff}%`}
-              </Text>
+                <DiffFilled
+                  style={{
+                    margin: '3px',
+                    color: getDiffColor(diff),
+                    fontSize: isLanguage('en')
+                      ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
+                      : `${fontSizeScale * getSize(120, -10, topScoreCount + 1, index)}%`,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: getDiffColor(diff),
+                    fontSize: isLanguage('en')
+                      ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
+                      : `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`,
+                    textAlign: 'center',
+                  }}
+                >
+                  {`${diff}%`}
+                </Text>
+              </Popover>
             </>
           )
 

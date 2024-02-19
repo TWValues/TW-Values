@@ -42,6 +42,10 @@ export const getIdeologyMatchScores = (weights) => {
         id: value.id,
         distance: distance,
         diff: Math.sqrt(distance / 4.0) / 100.0,
+        weight: {
+          target: value.weight,
+          user: weights,
+        },
       }
     })
     .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
@@ -60,9 +64,14 @@ export const getPoliticalPartyMatchScores = (weights) => {
       distance += Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2)
       distance += Math.pow(Math.abs(value.weight.us_vs_china - weights.us_vs_china), 2)
       return {
-        ...value,
+        id: value.id,
+        icon: value.icon,
         distance: distance,
         diff: Math.sqrt(distance / 6.0) / 100.0,
+        weight: {
+          target: value.weight,
+          user: weights,
+        },
       }
     })
     .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))

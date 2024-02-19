@@ -220,6 +220,11 @@
         "description": "抱歉，您的測試結果無法相容於目前新版本，請重新進行測試。",
         "index": "回到首頁"
       },
+      "diff_card": {
+        "compare_with": "與 {{name}} 的比較",
+        "user": "使用者",
+        "target": "目標"
+      },
       "axes": {
         "economic": {
           "title": "經濟",

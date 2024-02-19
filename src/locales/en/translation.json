@@ -220,6 +220,11 @@
         "description": "Sorry, your result is incompatible with current version. Please do the quiz again.",
         "index": "Go to index page"
       },
+      "diff_card": {
+        "compare_with": "Compare with {{name}}",
+        "user": "User",
+        "target": "Target"
+      },
       "axes": {
         "economic": {
           "title": "Economic",

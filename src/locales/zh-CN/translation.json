@@ -220,6 +220,11 @@
         "description": "抱歉，您的测试结果无法兼容于目前新版号，请重新进行测试。",
         "index": "回到主页"
       },
+      "diff_card": {
+        "compare_with": "与 {{name}} 的比较",
+        "user": "使用者",
+        "target": "目标"
+      },
       "axes": {
         "economic": {
           "title": "经济",
