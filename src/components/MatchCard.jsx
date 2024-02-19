@@ -122,40 +122,40 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
               )}
             </Flex>
           )
-          const PopoverContent = () => (
-            <Flex vertical={true} justify='center' align='center'>
-              <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>
-                {t('quiz.result.diff_card.compare_with', { name: name })}
-              </Text>
-              <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto' }}>
-                <Text></Text>
-                <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.user')}</Text>
-                <Text style={{ textAlign: 'right', margin: '4px' }}>{t('quiz.result.diff_card.target')}</Text>
-                <Text></Text>
-                {Object.keys(value.weight.target).map((key) => {
-                  const user = value.weight.user[key]
-                  const target = value.weight.target[key]
-                  const diff = user - target
-                  return [
-                    <Text key={`${key}.title`} style={{ textAlign: 'right', margin: '4px' }}>
-                      {t(`quiz.result.axes.${key}.title`)}
-                    </Text>,
-                    <Text
-                      key={`${key}.user`}
-                      style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
-                    >{`${user}%`}</Text>,
-                    <Text key={`${key}.target`} style={{ textAlign: 'right', margin: '4px' }}>{`${target}%`}</Text>,
-                    <Text
-                      key={`${key}.diff`}
-                      style={{ textAlign: 'right', margin: '4px', color: getDiffColor(Math.abs(diff)) }}
-                    >
-                      {(diff > 0 ? '+' : '') + `${diff}%`}
-                    </Text>,
-                  ]
-                })}
-              </div>
-            </Flex>
-          )
+          const PopoverContent = () => {
+            const textStyles = { textAlign: 'right', margin: '4px' }
+            return (
+              <Flex vertical={true} justify='center' align='center'>
+                <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                  {t('quiz.result.diff_card.compare_with', { name: name })}
+                </Text>
+                <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto' }}>
+                  <Text></Text>
+                  <Text style={textStyles}>{t('quiz.result.diff_card.user')}</Text>
+                  <Text style={textStyles}>{t('quiz.result.diff_card.target')}</Text>
+                  <Text></Text>
+                  {Object.keys(value.weight.target).map((key) => {
+                    const user = value.weight.user[key]
+                    const target = value.weight.target[key]
+                    const diff = user - target
+                    return [
+                      <Text key={`${key}.title`} style={textStyles}>
+                        {t(`quiz.result.axes.${key}.title`)}
+                      </Text>,
+                      <Text
+                        key={`${key}.user`}
+                        style={{ ...textStyles, color: getDiffColor(Math.abs(diff)) }}
+                      >{`${user}%`}</Text>,
+                      <Text key={`${key}.target`} style={textStyles}>{`${target}%`}</Text>,
+                      <Text key={`${key}.diff`} style={{ ...textStyles, color: getDiffColor(Math.abs(diff)) }}>
+                        {(diff > 0 ? '+' : '') + `${diff}%`}
+                      </Text>,
+                    ]
+                  })}
+                </div>
+              </Flex>
+            )
+          }
 
           return (
             <Col
