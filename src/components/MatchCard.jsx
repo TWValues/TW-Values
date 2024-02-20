@@ -196,8 +196,8 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                         margin: '3px 2px',
                         color: getDiffColor(diff),
                         fontSize: isLanguage('en')
-                          ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                          : `${fontSizeScale * getSize(120, -10, topScoreCount + 1, index)}%`,
+                          ? `${fontSizeScale * getSize(80, -8, topScoreCount + 1, index)}%`
+                          : `${fontSizeScale * getSize(100, -10, topScoreCount + 1, index)}%`,
                       }}
                     />
                     <Text
@@ -205,8 +205,8 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                         margin: '3px 2px',
                         color: getDiffColor(diff),
                         fontSize: isLanguage('en')
-                          ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                          : `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`,
+                          ? `${fontSizeScale * getSize(72, -6, topScoreCount + 1, index)}%`
+                          : `${fontSizeScale * getSize(80, -8, topScoreCount + 1, index)}%`,
                         textAlign: 'center',
                       }}
                     >
