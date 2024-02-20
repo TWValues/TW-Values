@@ -435,6 +435,14 @@ test('tsu', () => {
   expect(tsu.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
+test('cupp', () => {
+  const cupp = getPoliticalParty('cupp')
+  const np = getPoliticalParty('np')
+  expect(cupp.weight.societal).toBeLessThanOrEqual(np.weight.societal - 5)
+  expect(cupp.weight.sovereignty).toBeLessThanOrEqual(np.weight.sovereignty - 10)
+  expect(cupp.weight.us_vs_china).toBeLessThanOrEqual(np.weight.us_vs_china - 10)
+})
+
 test('npp', () => {
   const choices = {
     q0000: MULTIPLIER.a,
