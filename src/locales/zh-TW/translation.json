@@ -228,6 +228,11 @@
         "user": "使用者",
         "target": "目標"
       },
+      "share": {
+        "description": "可以使用以下連結，將測試結果與您的朋友們分享",
+        "copy": "複製連結",
+        "copied": "連結已複製"
+      },
       "axes": {
         "economic": {
           "title": "經濟",

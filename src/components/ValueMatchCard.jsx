@@ -76,7 +76,7 @@ const ValueMatchCard = ({
             md: '16px',
             lg: '24px',
             xl: '24px',
-            xll: '24px',
+            xxl: '24px',
           }[screens.size],
         },
       }}

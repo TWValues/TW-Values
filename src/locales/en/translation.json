@@ -228,6 +228,11 @@
         "user": "User",
         "target": "Target"
       },
+      "share": {
+        "description": "Share results with your friends by copying link above",
+        "copy": "Copy Link",
+        "copied": "Copied"
+      },
       "axes": {
         "economic": {
           "title": "Economic",

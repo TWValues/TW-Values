@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Card, Typography, Button, Flex, Switch } from 'antd'
+import { Card, Typography, Button, Flex, Switch, Input, message } from 'antd'
 import { useTranslation } from 'react-i18next'
 import MatchCard from '../components/MatchCard'
 import ValueMatchCard from '../components/ValueMatchCard'
@@ -12,6 +12,7 @@ import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 import * as stylex from '@stylexjs/stylex'
 
 const { Text, Title } = Typography
+const { Search } = Input
 
 const tagButtonStyles = stylex.create({
   base: {
@@ -66,6 +67,7 @@ const Result = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const { t } = useTranslation()
   const screens = useBreakpoint()
+  const [messageApi, contextHolder] = message.useMessage()
   const [expandTags, setExpandTags] = useState(false, [])
 
   const isApiVersionOK = searchParams.get(API_VERSION_KEY) == API_VERSION_VALUE
@@ -128,7 +130,7 @@ const Result = () => {
       md: '16px',
       lg: '24px',
       xl: '24px',
-      xll: '24px',
+      xxl: '24px',
     })[screens.size]
 
   const ApiErrorPage = () => (
@@ -363,6 +365,33 @@ const Result = () => {
             percent={weights.us_vs_china}
             descriptionTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
           />
+          <Flex
+            vertical={true}
+            justify='center'
+            align='center'
+            gap={10}
+            style={{
+              width: '100%',
+              padding: getCardBodyPadding(),
+              backgroundColor: 'white',
+              border: 'black solid 4px',
+              borderRadius: '20px',
+            }}
+          >
+            <Text style={{ fontSize: screens.md ? 'medium' : 'small', margin: '10px 20px' }}>
+              {t('quiz.result.share.description')}
+            </Text>
+            {contextHolder}
+            <Search
+              value={window.location.href}
+              enterButton={t('quiz.result.share.copy')}
+              readOnly={true}
+              onSearch={() => {
+                navigator.clipboard.writeText(window.location.href)
+                messageApi.open({ type: 'success', content: t('quiz.result.share.copied') })
+              }}
+            />
+          </Flex>
         </>
       )}
     </Flex>
