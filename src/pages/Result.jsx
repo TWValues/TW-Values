@@ -174,7 +174,7 @@ const Result = () => {
       align='center'
       gap={20}
       style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
         border: 'crimson solid 4px',
         borderRadius: '20px',
         ...getContentMaxWidth(),
