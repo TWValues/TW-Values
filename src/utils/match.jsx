@@ -30,11 +30,17 @@ export const getValueScores = (questions, choices) => {
 export const getIdeologyMatchScores = (weights) => {
   const ideologyScores = getIdeologies()
     .map((value) => {
+      const userWeight = {
+        economic: weights.economic,
+        diplomatic: weights.diplomatic,
+        civil: weights.civil,
+        societal: Math.round(0.25 * weights.environmental + 0.75 * weights.societal), // environmental is considered as societal in ideology match
+      }
       const distance =
-        Math.pow(Math.abs(value.weight.economic - weights.economic), 2) +
-        Math.pow(Math.abs(value.weight.diplomatic - weights.diplomatic), 2) +
-        Math.pow(Math.abs(value.weight.civil - weights.civil), 2) +
-        Math.pow(Math.abs(value.weight.societal - (0.25 * weights.environmental + 0.75 * weights.societal)), 2)
+        Math.pow(Math.abs(value.weight.economic - userWeight.economic), 2) +
+        Math.pow(Math.abs(value.weight.diplomatic - userWeight.diplomatic), 2) +
+        Math.pow(Math.abs(value.weight.civil - userWeight.civil), 2) +
+        Math.pow(Math.abs(value.weight.societal - userWeight.societal), 2)
       const diff = Math.sqrt(distance / 4.0) / 100.0
       return {
         id: value.id,
@@ -42,7 +48,7 @@ export const getIdeologyMatchScores = (weights) => {
         diff,
         weight: {
           target: value.weight,
-          user: weights,
+          user: userWeight,
         },
       }
     })
