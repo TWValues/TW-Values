@@ -8,7 +8,7 @@ export const getPoliticalParties = () => [
       environmental: 35,
       societal: 30,
       sovereignty: 30,
-      us_vs_china: 35,
+      us_vs_china: 40,
     },
   },
   {
@@ -32,7 +32,7 @@ export const getPoliticalParties = () => [
       environmental: 60,
       societal: 60,
       sovereignty: 75,
-      us_vs_china: 75,
+      us_vs_china: 70,
     },
   },
   {
@@ -56,7 +56,7 @@ export const getPoliticalParties = () => [
       environmental: 90,
       societal: 75,
       sovereignty: 70,
-      us_vs_china: 75,
+      us_vs_china: 70,
     },
   },
   {
@@ -80,7 +80,7 @@ export const getPoliticalParties = () => [
       environmental: 30,
       societal: 30,
       sovereignty: 80,
-      us_vs_china: 75,
+      us_vs_china: 70,
     },
   },
   {
@@ -104,7 +104,7 @@ export const getPoliticalParties = () => [
       environmental: 80,
       societal: 75,
       sovereignty: 80,
-      us_vs_china: 75,
+      us_vs_china: 65,
     },
   },
   {
@@ -116,7 +116,7 @@ export const getPoliticalParties = () => [
       environmental: 60,
       societal: 80,
       sovereignty: 75,
-      us_vs_china: 75,
+      us_vs_china: 70,
     },
   },
   {
@@ -128,7 +128,7 @@ export const getPoliticalParties = () => [
       environmental: 50,
       societal: 60,
       sovereignty: 80,
-      us_vs_china: 75,
+      us_vs_china: 70,
     },
   },
   {

@@ -97,10 +97,11 @@ test('kmt', () => {
     q1103: MULTIPLIER.a,
     q1104: MULTIPLIER.a,
     q1200: MULTIPLIER.d,
-    q1201: MULTIPLIER.d,
+    q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.d,
     q1301: MULTIPLIER.n,
-    q1302: MULTIPLIER.a,
+    q1302: MULTIPLIER.n,
+    q1303: MULTIPLIER.d,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -173,9 +174,10 @@ test('lp', () => {
     q1104: MULTIPLIER.d,
     q1200: MULTIPLIER.cd,
     q1201: MULTIPLIER.cd,
-    q1202: MULTIPLIER.d,
+    q1202: MULTIPLIER.cd,
     q1301: MULTIPLIER.a,
     q1302: MULTIPLIER.ca,
+    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -247,10 +249,11 @@ test('dpp', () => {
     q1103: MULTIPLIER.d,
     q1104: MULTIPLIER.d,
     q1200: MULTIPLIER.a,
-    q1201: MULTIPLIER.a,
+    q1201: MULTIPLIER.n,
     q1202: MULTIPLIER.a,
     q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.d,
+    q1303: MULTIPLIER.d,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -326,6 +329,7 @@ test('np', () => {
     q1202: MULTIPLIER.cd,
     q1301: MULTIPLIER.n,
     q1302: MULTIPLIER.a,
+    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -397,10 +401,11 @@ test('gpt', () => {
     q1103: MULTIPLIER.d,
     q1104: MULTIPLIER.d,
     q1200: MULTIPLIER.a,
-    q1201: MULTIPLIER.a,
+    q1201: MULTIPLIER.n,
     q1202: MULTIPLIER.a,
     q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.d,
+    q1303: MULTIPLIER.d,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -505,10 +510,11 @@ test('npp', () => {
     q1103: MULTIPLIER.d,
     q1104: MULTIPLIER.d,
     q1200: MULTIPLIER.a,
-    q1201: MULTIPLIER.a,
+    q1201: MULTIPLIER.n,
     q1202: MULTIPLIER.a,
     q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.d,
+    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -604,6 +610,7 @@ test('tpp', () => {
     q1202: MULTIPLIER.d,
     q1301: MULTIPLIER.n,
     q1302: MULTIPLIER.n,
+    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
