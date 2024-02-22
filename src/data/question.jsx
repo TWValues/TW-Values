@@ -89,7 +89,7 @@ export const getQuestions = () => [
     id: 'q0203',
     weight: {
       diplomatic: WEIGHTS.p100,
-      civil: WEIGHTS.p050,
+      civil: WEIGHTS.p075,
     },
   },
   {
@@ -176,7 +176,7 @@ export const getQuestions = () => [
     id: 'q0503',
     weight: {
       civil: -WEIGHTS.p100,
-      diplomatic: -WEIGHTS.p050,
+      diplomatic: -WEIGHTS.p075,
     },
   },
   {
@@ -231,7 +231,6 @@ export const getQuestions = () => [
     id: 'q0605',
     weight: {
       societal: WEIGHTS.p100,
-      sovereignty: WEIGHTS.p050,
     },
   },
   {
