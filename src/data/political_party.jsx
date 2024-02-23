@@ -3,7 +3,7 @@ export const getPoliticalParties = () => [
     id: 'kmt',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Blue_Sky_White_Sun.png',
     weight: {
-      economic: 40,
+      economic: 35,
       civil: 40,
       environmental: 35,
       societal: 35,
@@ -15,7 +15,7 @@ export const getPoliticalParties = () => [
     id: 'lp',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Labor_Party_%28Taiwan%29_emblem.svg',
     weight: {
-      economic: 85,
+      economic: 80,
       civil: 50,
       environmental: 50,
       societal: 55,
@@ -51,7 +51,7 @@ export const getPoliticalParties = () => [
     id: 'gpt',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Green_Party_Taiwan_logo.png',
     weight: {
-      economic: 70,
+      economic: 65,
       civil: 70,
       environmental: 90,
       societal: 75,
@@ -63,7 +63,7 @@ export const getPoliticalParties = () => [
     id: 'pfp',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/LogoPFP.svg',
     weight: {
-      economic: 40,
+      economic: 35,
       civil: 40,
       environmental: 35,
       societal: 35,
@@ -99,7 +99,7 @@ export const getPoliticalParties = () => [
     id: 'npp',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Black_Lik_Gold_Circle.svg',
     weight: {
-      economic: 75,
+      economic: 70,
       civil: 70,
       environmental: 80,
       societal: 75,
@@ -135,7 +135,7 @@ export const getPoliticalParties = () => [
     id: 'tpp',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_Taiwan_People%27s_Party_2019_Logo_Only.svg',
     weight: {
-      economic: 50,
+      economic: 45,
       civil: 45,
       environmental: 45,
       societal: 50,
