@@ -281,7 +281,7 @@ const Quiz = () => {
               maxWidth: '360px',
             }}
           >
-            <div
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.stronglyAgree)}
               onClick={() => {
                 setChoice(MULTIPLIER.ca)
@@ -289,8 +289,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.completely_agree')}
-            </div>
-            <div
+            </span>
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.agree)}
               onClick={() => {
                 setChoice(MULTIPLIER.a)
@@ -298,8 +298,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.agree')}
-            </div>
-            <div
+            </span>
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.slightlyAgree)}
               onClick={() => {
                 setChoice(MULTIPLIER.sa)
@@ -307,8 +307,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.slightly_agree')}
-            </div>
-            <div
+            </span>
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.neutral)}
               onClick={() => {
                 setChoice(MULTIPLIER.n)
@@ -316,8 +316,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.neutral')}
-            </div>
-            <div
+            </span>
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.slightlyDisagree)}
               onClick={() => {
                 setChoice(MULTIPLIER.sd)
@@ -325,8 +325,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.slightly_disagree')}
-            </div>
-            <div
+            </span>
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.disagree)}
               onClick={() => {
                 setChoice(MULTIPLIER.d)
@@ -334,8 +334,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.disagree')}
-            </div>
-            <div
+            </span>
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.stronglyDisagree)}
               onClick={() => {
                 setChoice(MULTIPLIER.cd)
@@ -343,8 +343,8 @@ const Quiz = () => {
               }}
             >
               {t('quiz.answers.completely_disagree')}
-            </div>
-            <div
+            </span>
+            <span
               {...stylex.props(buttonStyles.base, buttonStyles.back)}
               onClick={() => {
                 moveToPrevQuestion()
@@ -352,7 +352,7 @@ const Quiz = () => {
               disabled={currentSelectedQuestionIndex === 0}
             >
               {t('quiz.answers.back')}
-            </div>
+            </span>
           </Flex>
         </>
       )}

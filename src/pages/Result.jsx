@@ -11,7 +11,7 @@ import { getValueConstant } from '../utils/getValueConstant'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 import * as stylex from '@stylexjs/stylex'
 
-const { Text, Title } = Typography
+const { Title } = Typography
 const { Search } = Input
 
 const tagButtonStyles = stylex.create({
@@ -246,8 +246,8 @@ const Result = () => {
               const description = t(`quiz.result.tags.data.${value.id}.description`)
               const link = t(`quiz.result.tags.data.${value.id}.link`)
               const hasLink = link && link.length > 0
-              const createLabel = () => (
-                <div
+              const Label = () => (
+                <span
                   {...stylex.props(
                     tagButtonStyles.base,
                     matchedTags.has(value.id)
@@ -260,7 +260,7 @@ const Result = () => {
                   )}
                 >
                   {name}
-                </div>
+                </span>
               )
               return (
                 <Flex
@@ -271,19 +271,19 @@ const Result = () => {
                 >
                   {hasLink ? (
                     <a href={link} target='_blank' rel='noreferrer'>
-                      {createLabel()}
+                      <Label />
                     </a>
                   ) : (
-                    createLabel()
+                    <Label />
                   )}
-                  <Text
+                  <span
                     style={{
                       margin: '4px',
                       color: matchedTags.has(value.id) ? 'black' : 'gray',
                     }}
                   >
                     {description}
-                  </Text>
+                  </span>
                 </Flex>
               )
             })}
@@ -378,9 +378,9 @@ const Result = () => {
               borderRadius: '20px',
             }}
           >
-            <Text style={{ fontSize: screens.md ? 'medium' : 'small', margin: '10px 20px' }}>
+            <span style={{ fontSize: screens.md ? 'medium' : 'small', margin: '10px 20px' }}>
               {t('quiz.result.share.description')}
-            </Text>
+            </span>
             {contextHolder}
             <Search
               value={window.location.href}

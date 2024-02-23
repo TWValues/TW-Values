@@ -8,7 +8,7 @@ import { getValueConstant } from '../utils/getValueConstant'
 import { getQuestions } from '../data/question'
 import * as stylex from '@stylexjs/stylex'
 
-const { Title, Text } = Typography
+const { Title } = Typography
 
 const buttonStyles = stylex.create({
   base: {
@@ -82,7 +82,7 @@ const Welcome = () => {
         >
           {t('quiz.welcome.title')}
         </Title>
-        <Text
+        <span
           style={{
             color: 'black',
             fontSize: 'x-large',
@@ -90,9 +90,9 @@ const Welcome = () => {
           }}
         >
           {t('quiz.welcome.content')}
-        </Text>
+        </span>
         <Divider style={{ backgroundColor: 'crimson' }} />
-        <div
+        <span
           {...stylex.props(buttonStyles.base)}
           style={{
             width: '100%',
@@ -103,7 +103,7 @@ const Welcome = () => {
           }}
         >
           {t('quiz.welcome.start')}
-        </div>
+        </span>
         <Alert message={t('quiz.welcome.privacy')} type='info' showIcon style={{ margin: '20px' }} />
       </Flex>
       <Flex
@@ -120,9 +120,9 @@ const Welcome = () => {
         }}
       >
         <Title level={2}>{t('quiz.introduction.title')}</Title>
-        <Text style={{ fontSize: 'large' }}>
+        <span style={{ fontSize: 'large' }}>
           {t('quiz.introduction.description', { count: getQuestions().length })}
-        </Text>
+        </span>
         <Divider style={{ backgroundColor: 'black' }} />
         <ValueIntroCard
           title={t('quiz.result.axes.economic.title')}

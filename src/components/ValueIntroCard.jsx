@@ -1,8 +1,6 @@
 import React from 'react'
-import { Flex, Typography } from 'antd'
+import { Flex } from 'antd'
 import { useBreakpoint } from '../utils/useBreakpoint'
-
-const { Text } = Typography
 
 const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftDescription, rightDescription }) => {
   const screens = useBreakpoint()
@@ -53,7 +51,7 @@ const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, l
         borderRadius: '20px',
       }}
     >
-      <Text
+      <span
         style={{
           ...getValueTitleStyles(),
           fontWeight: 'bold',
@@ -62,13 +60,13 @@ const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, l
         }}
       >
         {title}
-      </Text>
-      <Text style={{ ...getValueDescriptionStyles() }}>{description}</Text>
+      </span>
+      <span style={{ ...getValueDescriptionStyles() }}>{description}</span>
     </Flex>
   )
 
   const TitleText = () => (
-    <Text
+    <span
       style={{
         ...getTitleStyles(),
         margin: '10px',
@@ -78,7 +76,7 @@ const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, l
       }}
     >
       {title}
-    </Text>
+    </span>
   )
   const LeftSmallCard = () => <SmallCard title={leftTitle} description={leftDescription} color={leftColor} />
   const RightSmallCard = () => <SmallCard title={rightTitle} description={rightDescription} color={rightColor} />

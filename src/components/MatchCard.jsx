@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Flex, Card, Switch, Row, Col, Typography, Popover } from 'antd'
+import { Flex, Card, Switch, Row, Col, Popover } from 'antd'
 import { DiffFilled } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
+import { toStringWithSign } from '../utils/toStringWithSign'
 import * as stylex from '@stylexjs/stylex'
-
-const { Text } = Typography
 
 const linkStyles = stylex.create({
   base: {
@@ -24,6 +23,16 @@ const linkStyles = stylex.create({
       default: 'black',
     },
   },
+})
+
+const diffTextStyles = stylex.create({
+  base: {
+    textAlign: 'right',
+    margin: '4px',
+  },
+  withColor: (color) => ({
+    color,
+  }),
 })
 
 const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, borderColor, cardBodyPadding }) => {
@@ -98,7 +107,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
           const PopoverTitle = () => (
             <Flex vertical={false} justify='center' align='center'>
               {value.icon && <img width={24} height='auto' src={value.icon} alt='' />}
-              <Text
+              <span
                 style={{
                   margin: '3px 6px',
                   fontSize: 'large',
@@ -108,7 +117,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                 }}
               >
                 {name}
-              </Text>{' '}
+              </span>
               {link && link.length > 0 && (
                 <a href={link} target='_blank' rel='noreferrer'>
                   <img
@@ -123,33 +132,35 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
             </Flex>
           )
           const PopoverContent = () => {
-            const textStyles = { textAlign: 'right', margin: '4px' }
             return (
               <Flex vertical={true} justify='center' align='center'>
-                <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                <span style={{ textAlign: 'center', fontWeight: 'bold' }}>
                   {t('quiz.result.diff_card.compare_with', { name: name })}
-                </Text>
+                </span>
                 <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto' }}>
-                  <Text></Text>
-                  <Text style={textStyles}>{t('quiz.result.diff_card.user')}</Text>
-                  <Text style={textStyles}>{t('quiz.result.diff_card.target')}</Text>
-                  <Text></Text>
+                  <span {...stylex.props(diffTextStyles.base)}></span>
+                  <span {...stylex.props(diffTextStyles.base)}>{t('quiz.result.diff_card.user')}</span>
+                  <span {...stylex.props(diffTextStyles.base)}>{t('quiz.result.diff_card.target')}</span>
+                  <span {...stylex.props(diffTextStyles.base)}></span>
                   {Object.keys(value.weight.target).map((key) => {
                     const user = value.weight.user[key]
                     const target = value.weight.target[key]
                     const diff = user - target
                     return [
-                      <Text key={`${key}.title`} style={textStyles}>
+                      <span key={`${key}.title`} {...stylex.props(diffTextStyles.base)}>
                         {t(`quiz.result.axes.${key}.title`)}
-                      </Text>,
-                      <Text
+                      </span>,
+                      <span
                         key={`${key}.user`}
-                        style={{ ...textStyles, color: getDiffColor(Math.abs(diff)) }}
-                      >{`${user}%`}</Text>,
-                      <Text key={`${key}.target`} style={textStyles}>{`${target}%`}</Text>,
-                      <Text key={`${key}.diff`} style={{ ...textStyles, color: getDiffColor(Math.abs(diff)) }}>
-                        {(diff > 0 ? '+' : '') + `${diff}%`}
-                      </Text>,
+                        {...stylex.props(diffTextStyles.base, diffTextStyles.withColor(getDiffColor(Math.abs(diff))))}
+                      >{`${user}%`}</span>,
+                      <span key={`${key}.target`} {...stylex.props(diffTextStyles.base)}>{`${target}%`}</span>,
+                      <span
+                        key={`${key}.diff`}
+                        {...stylex.props(diffTextStyles.base, diffTextStyles.withColor(getDiffColor(Math.abs(diff))))}
+                      >
+                        {`${toStringWithSign(diff)}%`}
+                      </span>,
                     ]
                   })}
                 </div>
@@ -178,7 +189,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                         alt=''
                       />
                     )}
-                    <Text
+                    <span
                       style={{
                         margin: '3px 6px',
                         fontSize: isLanguage('en')
@@ -190,7 +201,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                       }}
                     >
                       {name}
-                    </Text>
+                    </span>
                     <DiffFilled
                       style={{
                         margin: '3px 2px',
@@ -200,7 +211,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                           : `${fontSizeScale * getSize(100, -10, topScoreCount + 1, index)}%`,
                       }}
                     />
-                    <Text
+                    <span
                       style={{
                         margin: '3px 2px',
                         color: getDiffColor(diff),
@@ -211,7 +222,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                       }}
                     >
                       {`${diff}%`}
-                    </Text>
+                    </span>
                   </Flex>
                 </Popover>
               </Flex>

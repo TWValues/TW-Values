@@ -1,9 +1,7 @@
 import React from 'react'
-import { Card, Typography, Progress, Image, Flex } from 'antd'
+import { Card, Progress, Image, Flex } from 'antd'
 import { useBreakpoint } from '../utils/useBreakpoint'
 import { useTranslation } from 'react-i18next'
-
-const { Text } = Typography
 
 const ValueMatchCard = ({
   title,
@@ -106,7 +104,7 @@ const ValueMatchCard = ({
               padding: '4px',
             }}
           />
-          <Text
+          <span
             style={{
               fontWeight: 'bold',
               color: leftColor,
@@ -115,7 +113,7 @@ const ValueMatchCard = ({
             }}
           >
             {leftTitle}
-          </Text>
+          </span>
         </Flex>
         {screens.md ? (
           <Flex
@@ -135,14 +133,14 @@ const ValueMatchCard = ({
                 width: '100%',
               }}
             >
-              <Text
+              <span
                 style={{
                   margin: '5px',
                 }}
               >
                 {`${percent} %`}
-              </Text>
-              <Text
+              </span>
+              <span
                 style={{
                   ...getDescriptionTitleStyles(),
                   color: getColor(),
@@ -150,14 +148,14 @@ const ValueMatchCard = ({
                 }}
               >
                 {descriptionTitle}
-              </Text>
-              <Text
+              </span>
+              <span
                 style={{
                   margin: '5px',
                 }}
               >
                 {`${100 - percent} %`}
-              </Text>
+              </span>
             </Flex>
             <Progress
               type='line'
@@ -190,7 +188,7 @@ const ValueMatchCard = ({
               size={50}
               style={{ margin: '5px' }}
             />
-            <Text
+            <span
               style={{
                 ...getDescriptionTitleStyles(),
                 color: getColor(),
@@ -198,7 +196,7 @@ const ValueMatchCard = ({
               }}
             >
               {descriptionTitle}
-            </Text>
+            </span>
             <Progress
               type='dashboard'
               percent={100 - percent}
@@ -220,7 +218,7 @@ const ValueMatchCard = ({
               padding: '5px',
             }}
           />
-          <Text
+          <span
             style={{
               fontWeight: 'bold',
               color: rightColor,
@@ -229,7 +227,7 @@ const ValueMatchCard = ({
             }}
           >
             {rightTitle}
-          </Text>
+          </span>
         </Flex>
       </Flex>
     </Card>
