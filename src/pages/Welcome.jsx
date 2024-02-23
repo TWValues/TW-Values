@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Typography, Alert, Flex } from 'antd'
+import { Divider, Alert, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { getContentMaxWidth } from '../utils/useBreakpoint'
@@ -7,8 +7,6 @@ import ValueIntroCard from '../components/ValueIntroCard'
 import { getValueConstant } from '../utils/getValueConstant'
 import { getQuestions } from '../data/question'
 import * as stylex from '@stylexjs/stylex'
-
-const { Title } = Typography
 
 const buttonStyles = stylex.create({
   base: {
@@ -73,19 +71,19 @@ const Welcome = () => {
           padding: '16px',
         }}
       >
-        <Title
-          level={1}
+        <h1
           style={{
+            fontSize: 'xx-large',
             color: 'black',
             padding: '10px',
           }}
         >
           {t('quiz.welcome.title')}
-        </Title>
+        </h1>
         <span
           style={{
             color: 'black',
-            fontSize: 'x-large',
+            fontSize: 'large',
             padding: '10px',
           }}
         >
@@ -119,7 +117,15 @@ const Welcome = () => {
           padding: '16px',
         }}
       >
-        <Title level={2}>{t('quiz.introduction.title')}</Title>
+        <h2
+          style={{
+            fontSize: 'x-large',
+            color: 'black',
+            padding: '10px',
+          }}
+        >
+          {t('quiz.introduction.title')}
+        </h2>
         <span style={{ fontSize: 'large' }}>
           {t('quiz.introduction.description', { count: getQuestions().length })}
         </span>

@@ -1,12 +1,10 @@
 import React from 'react'
-import { Layout, Typography, Button, Space, Flex } from 'antd'
+import { Layout, Button, Space, Flex } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import { getHeaderFooterMaxWidth } from '../../../utils/useBreakpoint'
 import packageInfo from '../../../../package.json'
 import { useTranslation } from 'react-i18next'
-
-const { Title } = Typography
 
 const Header = () => {
   const navigate = useNavigate()
@@ -51,20 +49,19 @@ const Header = () => {
           margin: '0 auto',
         }}
       >
-        <Title
-          level={1}
+        <h2
           style={{
+            fontSize: 'xx-large',
             cursor: 'pointer',
             color: 'white',
-            margin: '0 5px',
-            padding: '0',
+            margin: '0px 5px',
           }}
           onClick={() => {
             navigate('/')
           }}
         >
           TW Values
-        </Title>
+        </h2>
         <Space size={8}>
           {languages.map((value, index) => (
             <Button

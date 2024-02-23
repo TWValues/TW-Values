@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { Card, Typography, Button, Flex, Switch, Input, message } from 'antd'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Card, Flex, Switch, Input, message } from 'antd'
 import { useTranslation } from 'react-i18next'
 import MatchCard from '../components/MatchCard'
 import ValueMatchCard from '../components/ValueMatchCard'
@@ -11,8 +11,36 @@ import { getValueConstant } from '../utils/getValueConstant'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 import * as stylex from '@stylexjs/stylex'
 
-const { Title } = Typography
 const { Search } = Input
+
+const apiErrorButtonStyles = stylex.create({
+  base: {
+    height: 'auto',
+    margin: '40px',
+    padding: '5px 20px',
+    borderRadius: '20px',
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    fontSize: 'large',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: {
+      default: 'white',
+      ':hover': { '@media (pointer: fine)': 'crimson' },
+      ':active': 'crimson',
+    },
+    backgroundColor: {
+      default: 'crimson',
+      ':hover': { '@media (pointer: fine)': 'white' },
+      ':active': 'white',
+    },
+    borderColor: {
+      default: 'white',
+      ':hover': { '@media (pointer: fine)': 'crimson' },
+      ':active': 'crimson',
+    },
+  },
+})
 
 const tagButtonStyles = stylex.create({
   base: {
@@ -67,6 +95,7 @@ const Result = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const { t } = useTranslation()
   const screens = useBreakpoint()
+  const navigate = useNavigate()
   const [messageApi, contextHolder] = message.useMessage()
   const [expandTags, setExpandTags] = useState(false, [])
 
@@ -144,28 +173,22 @@ const Result = () => {
         borderRadius: '20px',
       }}
     >
-      <Title
-        level={4}
+      <h2
         style={{
           margin: '40px',
           color: 'red',
         }}
       >
         {t(`quiz.result.api_error.description`)}
-      </Title>
-      <Button
-        href='/'
-        style={{
-          height: 'auto',
-          margin: '40px',
-          borderRadius: '20px',
-          fontSize: 'large',
-          fontWeight: 'bold',
-          textAlign: 'center',
+      </h2>
+      <span
+        {...stylex.props(apiErrorButtonStyles.base)}
+        onClick={() => {
+          navigate('/')
         }}
       >
         {t(`quiz.result.api_error.index`)}
-      </Button>
+      </span>
     </Flex>
   )
 

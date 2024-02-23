@@ -1,9 +1,7 @@
 import React from 'react'
-import { Layout, Typography, Flex } from 'antd'
+import { Layout, Flex } from 'antd'
 import { getHeaderFooterMaxWidth } from '../../../utils/useBreakpoint'
 import { useNavigate } from 'react-router-dom'
-
-const { Title } = Typography
 
 const Footer = () => {
   const navigate = useNavigate()
@@ -27,8 +25,7 @@ const Footer = () => {
           margin: '0 auto',
         }}
       >
-        <Title
-          level={5}
+        <h4
           style={{
             cursor: 'pointer',
             color: 'white',
@@ -39,10 +36,8 @@ const Footer = () => {
           }}
         >
           TW Values
-        </Title>
-        <Title level={5} style={{ color: 'white', margin: 'auto 0 auto 0' }}>
-          Copyright (c) 2023-2024 TW Values
-        </Title>
+        </h4>
+        <h4 style={{ color: 'white', margin: 'auto 0 auto 0' }}>Copyright (c) 2023-2024 TW Values</h4>
       </Flex>
     </Layout.Footer>
   )
