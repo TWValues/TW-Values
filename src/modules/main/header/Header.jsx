@@ -62,7 +62,7 @@ const Header = () => {
         >
           TW Values
         </h2>
-        <Space size={8}>
+        <Space size={4}>
           {languages.map((value, index) => (
             <Button
               key={index}
@@ -73,7 +73,7 @@ const Header = () => {
                 backgroundColor: 'transparent',
                 borderColor: i18n.language === value.key ? 'transparent' : 'white',
                 color: 'white',
-                padding: '0 5px',
+                padding: '0 4px',
                 fontSize: 'medium',
               }}
             >
@@ -88,7 +88,7 @@ const Header = () => {
               backgroundColor: 'transparent',
               borderColor: 'transparent',
               color: 'white',
-              padding: '0 5px',
+              padding: '0 2px',
               fontSize: 'medium',
             }}
           >
@@ -99,7 +99,7 @@ const Header = () => {
             href='https://github.com/TWValues/TW-Values'
             target='_blank'
             icon={<GithubOutlined style={{ color: 'white', fontSize: 'x-large' }} />}
-            style={{ margin: '0 5px' }}
+            style={{ padding: '0 2px' }}
           />
         </Space>
       </Flex>
