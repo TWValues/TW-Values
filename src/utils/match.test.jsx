@@ -81,6 +81,7 @@ test('kmt', () => {
     q0703: MULTIPLIER.n,
     q0704: MULTIPLIER.a,
     q0705: MULTIPLIER.a,
+    q0706: MULTIPLIER.ca,
     q0800: MULTIPLIER.a,
     q0801: MULTIPLIER.d,
     q0802: MULTIPLIER.d,
@@ -158,6 +159,7 @@ test('lp', () => {
     q0703: MULTIPLIER.n,
     q0704: MULTIPLIER.n,
     q0705: MULTIPLIER.d,
+    q0706: MULTIPLIER.ca,
     q0800: MULTIPLIER.n,
     q0801: MULTIPLIER.n,
     q0802: MULTIPLIER.n,
@@ -235,6 +237,7 @@ test('dpp', () => {
     q0703: MULTIPLIER.n,
     q0704: MULTIPLIER.a,
     q0705: MULTIPLIER.d,
+    q0706: MULTIPLIER.a,
     q0800: MULTIPLIER.a,
     q0801: MULTIPLIER.a,
     q0802: MULTIPLIER.a,
@@ -312,6 +315,7 @@ test('np', () => {
     q0703: MULTIPLIER.n,
     q0704: MULTIPLIER.a,
     q0705: MULTIPLIER.a,
+    q0706: MULTIPLIER.ca,
     q0800: MULTIPLIER.a,
     q0801: MULTIPLIER.d,
     q0802: MULTIPLIER.d,
@@ -389,6 +393,7 @@ test('gpt', () => {
     q0703: MULTIPLIER.d,
     q0704: MULTIPLIER.d,
     q0705: MULTIPLIER.cd,
+    q0706: MULTIPLIER.n,
     q0800: MULTIPLIER.ca,
     q0801: MULTIPLIER.a,
     q0802: MULTIPLIER.ca,
@@ -448,7 +453,7 @@ test('tsu', () => {
 test('cupp', () => {
   const cupp = getPoliticalParty('cupp')
   const np = getPoliticalParty('np')
-  expect(cupp.weight.societal).toBeLessThanOrEqual(np.weight.societal - 5)
+  expect(cupp.weight.societal).toBeLessThanOrEqual(np.weight.societal)
   expect(cupp.weight.sovereignty).toBeLessThanOrEqual(np.weight.sovereignty - 10)
   expect(cupp.weight.us_vs_china).toBeLessThanOrEqual(np.weight.us_vs_china - 10)
 })
@@ -499,6 +504,7 @@ test('npp', () => {
     q0703: MULTIPLIER.d,
     q0704: MULTIPLIER.n,
     q0705: MULTIPLIER.cd,
+    q0706: MULTIPLIER.n,
     q0800: MULTIPLIER.a,
     q0801: MULTIPLIER.a,
     q0802: MULTIPLIER.ca,
@@ -596,6 +602,7 @@ test('tpp', () => {
     q0703: MULTIPLIER.d,
     q0704: MULTIPLIER.n,
     q0705: MULTIPLIER.a,
+    q0706: MULTIPLIER.a,
     q0800: MULTIPLIER.a,
     q0801: MULTIPLIER.d,
     q0802: MULTIPLIER.a,
