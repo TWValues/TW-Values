@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Button, Space, Flex } from 'antd'
+import { Layout, Space, Flex } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import { getHeaderFooterMaxWidth } from '../../../utils/useBreakpoint'
@@ -64,43 +64,41 @@ const Header = () => {
         </h2>
         <Space size={4}>
           {languages.map((value, index) => (
-            <Button
+            <span
               key={index}
               onClick={() => {
                 setLanguage(value.key)
               }}
               style={{
-                backgroundColor: 'transparent',
-                borderColor: i18n.language === value.key ? 'transparent' : 'white',
+                borderColor: i18n.language == value.key ? 'transparent' : 'white',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderRadius: '6px',
+                cursor: i18n.language == value.key ? 'default' : 'pointer',
                 color: 'white',
                 padding: '0 4px',
                 fontSize: 'medium',
               }}
             >
               {value.text}
-            </Button>
+            </span>
           ))}
-          <Button
-            type='link'
+          <a
             href={`https://github.com/TWValues/TW-Values/tree/v${packageInfo.version}`}
             target='_blank'
-            style={{
-              backgroundColor: 'transparent',
-              borderColor: 'transparent',
-              color: 'white',
-              padding: '0 2px',
-              fontSize: 'medium',
-            }}
+            rel='noreferrer'
           >
-            {`v${packageInfo.version}`}
-          </Button>
-          <Button
-            type='link'
-            href='https://github.com/TWValues/TW-Values'
-            target='_blank'
-            icon={<GithubOutlined style={{ color: 'white', fontSize: 'x-large' }} />}
-            style={{ padding: '0 2px' }}
-          />
+            <span
+              style={{
+                color: 'white',
+                padding: '0 4px',
+                fontSize: 'medium',
+              }}
+            >{`v${packageInfo.version}`}</span>
+          </a>
+          <a href='https://github.com/TWValues/TW-Values' target='_blank' rel='noreferrer' style={{ padding: '0 2px' }}>
+            <GithubOutlined style={{ color: 'white', fontSize: 'x-large' }} />
+          </a>
         </Space>
       </Flex>
     </Layout.Header>
