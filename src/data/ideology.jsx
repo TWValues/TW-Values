@@ -279,11 +279,11 @@ export const getIdeologies = () => [
     },
   },
   {
-    id: 'social_conservatism',
+    id: 'libertarian_conservatism',
     weight: {
-      economic: 60,
+      economic: 30,
       diplomatic: 40,
-      civil: 50,
+      civil: 80,
       societal: 30,
     },
   },

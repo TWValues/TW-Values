@@ -430,7 +430,7 @@ test('pfp', () => {
 test('tsu', () => {
   const tsu = getPoliticalParty('tsu')
   const dpp = getPoliticalParty('dpp')
-  const ideology = getIdeology('social_conservatism')
+  const ideology = getIdeology('liberal_conservatism')
   for (const [key, value] of Object.entries(ideology.weight)) {
     if (key in tsu.weight) {
       expect(tsu.weight[key]).toEqual(value)

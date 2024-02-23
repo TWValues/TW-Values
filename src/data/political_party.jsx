@@ -75,7 +75,7 @@ export const getPoliticalParties = () => [
     id: 'tsu',
     icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Taiwan_orange.svg',
     weight: {
-      economic: 60,
+      economic: 40,
       civil: 50,
       environmental: 30,
       societal: 30,
