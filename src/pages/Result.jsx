@@ -15,10 +15,10 @@ import * as stylex from '@stylexjs/stylex'
 const apiErrorButtonStyles = stylex.create({
   base: {
     height: 'auto',
-    margin: '40px',
+    margin: '10px',
     padding: '5px 20px',
     borderRadius: '20px',
-    borderWidth: '1px',
+    borderWidth: '3px',
     borderStyle: 'solid',
     fontSize: 'large',
     fontWeight: 'bold',
@@ -196,8 +196,10 @@ const Result = () => {
       align='center'
       style={{
         width: '100%',
-        backgroundColor: 'white',
-        border: 'black solid 4px',
+        backgroundColor: resultStyles.content.backgroundColor,
+        borderColor: resultStyles.content.color,
+        borderStyle: 'solid',
+        borderWidth: '4px',
         borderRadius: '20px',
       }}
     >
