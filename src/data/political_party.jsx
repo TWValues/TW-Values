@@ -42,7 +42,7 @@ export const getPoliticalParties = () => [
       economic: 30,
       civil: 30,
       environmental: 35,
-      societal: 20,
+      societal: 25,
       sovereignty: 20,
       us_vs_china: 25,
     },
