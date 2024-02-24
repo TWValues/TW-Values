@@ -8,7 +8,7 @@
     },
     "introduction": {
       "title": "What is TW Values ?",
-      "description": "TW Values is a political quiz. Users are going to be asked {{count}} questions to identify their ideologies and political party matches. There are seven categories and each has two opposing values."
+      "description": "TW Values is a political quiz. There are seven topics and each has two opposing values. Users will be asked {{count}} questions to identify their ideologies and political party matches."
     },
     "question_n_of_all": "Question {{index}} of {{all}}",
     "answers": {
