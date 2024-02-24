@@ -344,81 +344,81 @@ const Result = () => {
             })}
           </Card>
           <ValueMatchCard
-            title={t('quiz.result.axes.economic.title')}
-            leftTitle={t('quiz.result.axes.economic.equality.name')}
-            rightTitle={t('quiz.result.axes.economic.efficiency.name')}
+            title={t('quiz.result.topics.economic.title')}
+            leftTitle={t('quiz.result.values.equality.name')}
+            rightTitle={t('quiz.result.values.efficiency.name')}
             leftImage={getValueConstant().equality.image}
             rightImage={getValueConstant().efficiency.image}
             leftColor={getValueConstant().equality.color}
             rightColor={getValueConstant().efficiency.color}
             percent={weights.economic}
-            descriptionTitle={t(`quiz.result.axes.economic.categories.${getCategory(weights.economic)}`)}
+            descriptionTitle={t(`quiz.result.topics.economic.categories.${getCategory(weights.economic)}`)}
           />
           <ValueMatchCard
-            title={t('quiz.result.axes.diplomatic.title')}
-            leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
-            rightTitle={t('quiz.result.axes.diplomatic.nation.name')}
+            title={t('quiz.result.topics.diplomatic.title')}
+            leftTitle={t('quiz.result.values.globe.name')}
+            rightTitle={t('quiz.result.values.nation.name')}
             leftImage={getValueConstant().globe.image}
             rightImage={getValueConstant().nation.image}
             leftColor={getValueConstant().globe.color}
             rightColor={getValueConstant().nation.color}
             percent={weights.diplomatic}
-            descriptionTitle={t(`quiz.result.axes.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
+            descriptionTitle={t(`quiz.result.topics.economic.categories.${getCategory(weights.diplomatic)}`)}
           />
           <ValueMatchCard
-            title={t('quiz.result.axes.civil.title')}
-            leftTitle={t('quiz.result.axes.civil.liberty.name')}
-            rightTitle={t('quiz.result.axes.civil.authority.name')}
+            title={t('quiz.result.topics.civil.title')}
+            leftTitle={t('quiz.result.values.liberty.name')}
+            rightTitle={t('quiz.result.values.authority.name')}
             leftImage={getValueConstant().liberty.image}
             rightImage={getValueConstant().authority.image}
             leftColor={getValueConstant().liberty.color}
             rightColor={getValueConstant().authority.color}
             percent={weights.civil}
-            descriptionTitle={t(`quiz.result.axes.civil.categories.${getCategory(weights.civil)}`)}
+            descriptionTitle={t(`quiz.result.topics.civil.categories.${getCategory(weights.civil)}`)}
           />
           <ValueMatchCard
-            title={t('quiz.result.axes.environmental.title')}
-            leftTitle={t('quiz.result.axes.environmental.ecology.name')}
-            rightTitle={t('quiz.result.axes.environmental.production.name')}
+            title={t('quiz.result.topics.environmental.title')}
+            leftTitle={t('quiz.result.values.ecology.name')}
+            rightTitle={t('quiz.result.values.production.name')}
             leftImage={getValueConstant().ecology.image}
             rightImage={getValueConstant().production.image}
             leftColor={getValueConstant().ecology.color}
             rightColor={getValueConstant().production.color}
             percent={weights.environmental}
-            descriptionTitle={t(`quiz.result.axes.environmental.categories.${getCategory(weights.environmental)}`)}
+            descriptionTitle={t(`quiz.result.topics.environmental.categories.${getCategory(weights.environmental)}`)}
           />
           <ValueMatchCard
-            title={t('quiz.result.axes.societal.title')}
-            leftTitle={t('quiz.result.axes.societal.progress.name')}
-            rightTitle={t('quiz.result.axes.societal.tradition.name')}
+            title={t('quiz.result.topics.societal.title')}
+            leftTitle={t('quiz.result.values.progress.name')}
+            rightTitle={t('quiz.result.values.tradition.name')}
             leftImage={getValueConstant().progress.image}
             rightImage={getValueConstant().tradition.image}
             leftColor={getValueConstant().progress.color}
             rightColor={getValueConstant().tradition.color}
             percent={weights.societal}
-            descriptionTitle={t(`quiz.result.axes.societal.categories.${getCategory(weights.societal)}`)}
+            descriptionTitle={t(`quiz.result.topics.societal.categories.${getCategory(weights.societal)}`)}
           />
           <ValueMatchCard
-            title={t('quiz.result.axes.sovereignty.title')}
-            leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
-            rightTitle={t('quiz.result.axes.sovereignty.unification.name')}
+            title={t('quiz.result.topics.sovereignty.title')}
+            leftTitle={t('quiz.result.values.independence.name')}
+            rightTitle={t('quiz.result.values.unification.name')}
             leftImage={getValueConstant().independence.image}
             rightImage={getValueConstant().unification.image}
             leftColor={getValueConstant().independence.color}
             rightColor={getValueConstant().unification.color}
             percent={weights.sovereignty}
-            descriptionTitle={t(`quiz.result.axes.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
+            descriptionTitle={t(`quiz.result.topics.sovereignty.categories.${getCategory(weights.sovereignty)}`)}
           />
           <ValueMatchCard
-            title={t('quiz.result.axes.us_vs_china.title')}
-            leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
-            rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese.name')}
+            title={t('quiz.result.topics.us_vs_china.title')}
+            leftTitle={t('quiz.result.values.pro_american.name')}
+            rightTitle={t('quiz.result.values.pro_chinese.name')}
             leftImage={getValueConstant().pro_american.image}
             rightImage={getValueConstant().pro_chinese.image}
             leftColor={getValueConstant().pro_american.color}
             rightColor={getValueConstant().pro_chinese.color}
             percent={weights.us_vs_china}
-            descriptionTitle={t(`quiz.result.axes.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
+            descriptionTitle={t(`quiz.result.topics.us_vs_china.categories.${getCategory(weights.us_vs_china)}`)}
           />
           <Flex
             vertical={true}

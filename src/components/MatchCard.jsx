@@ -154,7 +154,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                     const diff = user - target
                     return [
                       <span key={`${key}.title`} {...stylex.props(diffTextStyles.base)}>
-                        {t(`quiz.result.axes.${key}.title`)}
+                        {t(`quiz.result.topics.${key}.title`)}
                       </span>,
                       <span
                         key={`${key}.user`}

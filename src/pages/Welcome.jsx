@@ -132,73 +132,73 @@ const Welcome = () => {
         </span>
         <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
-          title={t('quiz.result.axes.economic.title')}
-          leftTitle={t('quiz.result.axes.economic.equality.name')}
-          rightTitle={t('quiz.result.axes.economic.efficiency.name')}
+          title={t('quiz.result.topics.economic.title')}
+          leftTitle={t('quiz.result.values.equality.name')}
+          rightTitle={t('quiz.result.values.efficiency.name')}
           leftColor={getValueConstant().equality.color}
           rightColor={getValueConstant().efficiency.color}
-          leftDescription={t('quiz.result.axes.economic.equality.description')}
-          rightDescription={t('quiz.result.axes.economic.efficiency.description')}
+          leftDescription={t('quiz.result.values.equality.description')}
+          rightDescription={t('quiz.result.values.efficiency.description')}
         />
         <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
-          title={t('quiz.result.axes.diplomatic.title')}
-          leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
-          rightTitle={t('quiz.result.axes.diplomatic.nation.name')}
+          title={t('quiz.result.topics.diplomatic.title')}
+          leftTitle={t('quiz.result.values.globe.name')}
+          rightTitle={t('quiz.result.values.nation.name')}
           leftColor={getValueConstant().globe.color}
           rightColor={getValueConstant().nation.color}
-          leftDescription={t('quiz.result.axes.diplomatic.globe.description')}
-          rightDescription={t('quiz.result.axes.diplomatic.nation.description')}
+          leftDescription={t('quiz.result.values.globe.description')}
+          rightDescription={t('quiz.result.values.nation.description')}
         />
         <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
-          title={t('quiz.result.axes.civil.title')}
-          leftTitle={t('quiz.result.axes.civil.liberty.name')}
-          rightTitle={t('quiz.result.axes.civil.authority.name')}
+          title={t('quiz.result.topics.civil.title')}
+          leftTitle={t('quiz.result.values.liberty.name')}
+          rightTitle={t('quiz.result.values.authority.name')}
           leftColor={getValueConstant().liberty.color}
           rightColor={getValueConstant().authority.color}
-          leftDescription={t('quiz.result.axes.civil.liberty.description')}
-          rightDescription={t('quiz.result.axes.civil.authority.description')}
+          leftDescription={t('quiz.result.values.liberty.description')}
+          rightDescription={t('quiz.result.values.authority.description')}
         />
         <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
-          title={t('quiz.result.axes.environmental.title')}
-          leftTitle={t('quiz.result.axes.environmental.ecology.name')}
-          rightTitle={t('quiz.result.axes.environmental.production.name')}
+          title={t('quiz.result.topics.environmental.title')}
+          leftTitle={t('quiz.result.values.ecology.name')}
+          rightTitle={t('quiz.result.values.production.name')}
           leftColor={getValueConstant().ecology.color}
           rightColor={getValueConstant().production.color}
-          leftDescription={t('quiz.result.axes.environmental.ecology.description')}
-          rightDescription={t('quiz.result.axes.environmental.production.description')}
+          leftDescription={t('quiz.result.values.ecology.description')}
+          rightDescription={t('quiz.result.values.production.description')}
         />
         <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
-          title={t('quiz.result.axes.societal.title')}
-          leftTitle={t('quiz.result.axes.societal.progress.name')}
-          rightTitle={t('quiz.result.axes.societal.tradition.name')}
+          title={t('quiz.result.topics.societal.title')}
+          leftTitle={t('quiz.result.values.progress.name')}
+          rightTitle={t('quiz.result.values.tradition.name')}
           leftColor={getValueConstant().progress.color}
           rightColor={getValueConstant().tradition.color}
-          leftDescription={t('quiz.result.axes.societal.progress.description')}
-          rightDescription={t('quiz.result.axes.societal.tradition.description')}
+          leftDescription={t('quiz.result.values.progress.description')}
+          rightDescription={t('quiz.result.values.tradition.description')}
         />
         <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
-          title={t('quiz.result.axes.sovereignty.title')}
-          leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
-          rightTitle={t('quiz.result.axes.sovereignty.unification.name')}
+          title={t('quiz.result.topics.sovereignty.title')}
+          leftTitle={t('quiz.result.values.independence.name')}
+          rightTitle={t('quiz.result.values.unification.name')}
           leftColor={getValueConstant().independence.color}
           rightColor={getValueConstant().unification.color}
-          leftDescription={t('quiz.result.axes.sovereignty.independence.description')}
-          rightDescription={t('quiz.result.axes.sovereignty.unification.description')}
+          leftDescription={t('quiz.result.values.independence.description')}
+          rightDescription={t('quiz.result.values.unification.description')}
         />
         <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
-          title={t('quiz.result.axes.us_vs_china.title')}
-          leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
-          rightTitle={t('quiz.result.axes.us_vs_china.pro_chinese.name')}
+          title={t('quiz.result.topics.us_vs_china.title')}
+          leftTitle={t('quiz.result.values.pro_american.name')}
+          rightTitle={t('quiz.result.values.pro_chinese.name')}
           leftColor={getValueConstant().pro_american.color}
           rightColor={getValueConstant().pro_chinese.color}
-          leftDescription={t('quiz.result.axes.us_vs_china.pro_american.description')}
-          rightDescription={t('quiz.result.axes.us_vs_china.pro_chinese.description')}
+          leftDescription={t('quiz.result.values.pro_american.description')}
+          rightDescription={t('quiz.result.values.pro_chinese.description')}
         />
       </Flex>
     </Flex>
