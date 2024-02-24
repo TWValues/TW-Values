@@ -27,59 +27,53 @@ export const getValueScores = (questions, choices) => {
   }
 }
 
-export const getIdeologyMatchScores = (weights) => {
-  const ideologyScores = getIdeologies()
-    .map((value) => {
+export const getIdeologyMatchScores = (weight) =>
+  getIdeologies()
+    .map((ideology) => {
       const userWeight = {
-        economic: weights.economic,
-        diplomatic: weights.diplomatic,
-        civil: weights.civil,
-        societal: Math.round(0.25 * weights.environmental + 0.75 * weights.societal), // environmental is considered as societal in ideology match
+        economic: weight.economic,
+        diplomatic: weight.diplomatic,
+        civil: weight.civil,
+        societal: Math.round(0.25 * weight.environmental + 0.75 * weight.societal), // environmental is considered as societal in ideology match
       }
       const distance =
-        Math.pow(Math.abs(value.weight.economic - userWeight.economic), 2) +
-        Math.pow(Math.abs(value.weight.diplomatic - userWeight.diplomatic), 2) +
-        Math.pow(Math.abs(value.weight.civil - userWeight.civil), 2) +
-        Math.pow(Math.abs(value.weight.societal - userWeight.societal), 2)
+        Math.pow(Math.abs(ideology.weight.economic - userWeight.economic), 2) +
+        Math.pow(Math.abs(ideology.weight.diplomatic - userWeight.diplomatic), 2) +
+        Math.pow(Math.abs(ideology.weight.civil - userWeight.civil), 2) +
+        Math.pow(Math.abs(ideology.weight.societal - userWeight.societal), 2)
       const diff = Math.sqrt(distance / 4.0) / 100.0
       return {
-        id: value.id,
+        id: ideology.id,
         distance,
         diff,
         weight: {
-          target: value.weight,
+          target: ideology.weight,
           user: userWeight,
         },
       }
     })
     .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
 
-  return ideologyScores
-}
-
-export const getPoliticalPartyMatchScores = (weights) => {
-  const politicalScores = getPoliticalParties()
-    .map((value) => {
+export const getPoliticalPartyMatchScores = (weight) =>
+  getPoliticalParties()
+    .map((party) => {
       const distance =
-        Math.pow(Math.abs(value.weight.economic - weights.economic), 2) +
-        Math.pow(Math.abs(value.weight.civil - weights.civil), 2) +
-        Math.pow(Math.abs(value.weight.environmental - weights.environmental), 2) +
-        Math.pow(Math.abs(value.weight.societal - weights.societal), 2) +
-        Math.pow(Math.abs(value.weight.sovereignty - weights.sovereignty), 2) +
-        Math.pow(Math.abs(value.weight.us_vs_china - weights.us_vs_china), 2)
+        Math.pow(Math.abs(party.weight.economic - weight.economic), 2) +
+        Math.pow(Math.abs(party.weight.civil - weight.civil), 2) +
+        Math.pow(Math.abs(party.weight.environmental - weight.environmental), 2) +
+        Math.pow(Math.abs(party.weight.societal - weight.societal), 2) +
+        Math.pow(Math.abs(party.weight.sovereignty - weight.sovereignty), 2) +
+        Math.pow(Math.abs(party.weight.us_vs_china - weight.us_vs_china), 2)
       const diff = Math.sqrt(distance / 6.0) / 100.0
       return {
-        id: value.id,
-        icon: value.icon,
+        id: party.id,
+        icon: party.icon,
         distance,
         diff,
         weight: {
-          target: value.weight,
-          user: weights,
+          target: party.weight,
+          user: weight,
         },
       }
     })
     .sort((lhs, rhs) => (lhs.distance < rhs.distance ? -1 : lhs.distance > rhs.distance ? 1 : 0))
-
-  return politicalScores
-}
