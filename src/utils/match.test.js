@@ -101,7 +101,7 @@ test('party:kmt', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.d,
-    q1301: MULTIPLIER.d,
+    q1301: MULTIPLIER.a,
     q1302: MULTIPLIER.d,
     q1303: MULTIPLIER.a,
   }
@@ -335,8 +335,8 @@ test('party:np', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.cd,
-    q1301: MULTIPLIER.n,
-    q1302: MULTIPLIER.n,
+    q1301: MULTIPLIER.a,
+    q1302: MULTIPLIER.d,
     q1303: MULTIPLIER.a,
   }
 
@@ -622,8 +622,8 @@ test('party:tpp', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.d,
     q1202: MULTIPLIER.d,
-    q1301: MULTIPLIER.d,
-    q1302: MULTIPLIER.n,
+    q1301: MULTIPLIER.n,
+    q1302: MULTIPLIER.d,
     q1303: MULTIPLIER.a,
   }
 

@@ -8,7 +8,7 @@ export const getPoliticalParties = () => [
       environmental: 35,
       societal: 30,
       sovereignty: 30,
-      us_vs_china: 40,
+      us_vs_china: 35,
     },
   },
   {
