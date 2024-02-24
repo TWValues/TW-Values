@@ -30,17 +30,17 @@ export const getValueScores = (questions, choices) => {
 export const getIdeologyMatchScores = (weight) =>
   getIdeologies()
     .map((ideology) => {
-      const userWeight = {
+      const newWeight = {
         economic: weight.economic,
         diplomatic: weight.diplomatic,
         civil: weight.civil,
         societal: Math.round(0.25 * weight.environmental + 0.75 * weight.societal), // environmental is considered as societal in ideology match
       }
       const distance =
-        Math.pow(Math.abs(ideology.weight.economic - userWeight.economic), 2) +
-        Math.pow(Math.abs(ideology.weight.diplomatic - userWeight.diplomatic), 2) +
-        Math.pow(Math.abs(ideology.weight.civil - userWeight.civil), 2) +
-        Math.pow(Math.abs(ideology.weight.societal - userWeight.societal), 2)
+        Math.pow(Math.abs(ideology.weight.economic - newWeight.economic), 2) +
+        Math.pow(Math.abs(ideology.weight.diplomatic - newWeight.diplomatic), 2) +
+        Math.pow(Math.abs(ideology.weight.civil - newWeight.civil), 2) +
+        Math.pow(Math.abs(ideology.weight.societal - newWeight.societal), 2)
       const diff = Math.sqrt(distance / 4.0) / 100.0
       return {
         id: ideology.id,
@@ -48,7 +48,7 @@ export const getIdeologyMatchScores = (weight) =>
         diff,
         weight: {
           target: ideology.weight,
-          user: userWeight,
+          user: newWeight,
         },
       }
     })
@@ -57,13 +57,21 @@ export const getIdeologyMatchScores = (weight) =>
 export const getPoliticalPartyMatchScores = (weight) =>
   getPoliticalParties()
     .map((party) => {
+      const coeff = {
+        economic: 1.0,
+        civil: 1.0,
+        environmental: 0.5,
+        societal: 1.0,
+        sovereignty: 1.0,
+        us_vs_china: 0.5,
+      }
       const distance =
-        Math.pow(Math.abs(party.weight.economic - weight.economic), 2) +
-        Math.pow(Math.abs(party.weight.civil - weight.civil), 2) +
-        Math.pow(Math.abs(party.weight.environmental - weight.environmental), 2) +
-        Math.pow(Math.abs(party.weight.societal - weight.societal), 2) +
-        Math.pow(Math.abs(party.weight.sovereignty - weight.sovereignty), 2) +
-        Math.pow(Math.abs(party.weight.us_vs_china - weight.us_vs_china), 2)
+        Math.pow(Math.abs(party.weight.economic - weight.economic), 2) * coeff.economic +
+        Math.pow(Math.abs(party.weight.civil - weight.civil), 2) * coeff.civil +
+        Math.pow(Math.abs(party.weight.environmental - weight.environmental), 2) * coeff.environmental +
+        Math.pow(Math.abs(party.weight.societal - weight.societal), 2) * coeff.societal +
+        Math.pow(Math.abs(party.weight.sovereignty - weight.sovereignty), 2) * coeff.sovereignty +
+        Math.pow(Math.abs(party.weight.us_vs_china - weight.us_vs_china), 2) * coeff.us_vs_china
       const diff = Math.sqrt(distance / 6.0) / 100.0
       return {
         id: party.id,
