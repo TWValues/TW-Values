@@ -1,9 +1,11 @@
 import React from 'react'
 import { Flex } from 'antd'
 import { useBreakpoint } from '../utils/useBreakpoint'
+import { useThemeStore } from '../store/store'
 
 const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, leftDescription, rightDescription }) => {
   const screens = useBreakpoint()
+  const welcomeStyles = useThemeStore((state) => state.theme.data.welcome)
 
   const getTitleStyles = () => {
     return {
@@ -61,7 +63,7 @@ const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, l
       >
         {title}
       </span>
-      <span style={{ ...getValueDescriptionStyles() }}>{description}</span>
+      <span style={{ ...getValueDescriptionStyles(), color: welcomeStyles.content.color }}>{description}</span>
     </Flex>
   )
 
@@ -73,6 +75,7 @@ const ValueIntroCard = ({ title, leftTitle, rightTitle, leftColor, rightColor, l
         textTransform: 'uppercase',
         textAlign: 'center',
         whiteSpace: 'nowrap',
+        color: welcomeStyles.content.color,
       }}
     >
       {title}

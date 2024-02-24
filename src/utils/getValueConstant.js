@@ -59,11 +59,11 @@ export const getValueConstant = () => ({
     image: FlagOfTWIndependence,
   },
   unification: {
-    color: 'black',
+    color: 'red',
     image: ChinaTerritory,
   },
   pro_american: {
-    color: 'navy',
+    color: 'blue',
     image: FlagOfUSA,
   },
   pro_chinese: {

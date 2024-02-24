@@ -4,6 +4,7 @@ import { DiffFilled } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import { toStringWithSign } from '../utils/toStringWithSign'
 import * as stylex from '@stylexjs/stylex'
+import { useThemeStore } from '../store/store'
 
 const linkStyles = stylex.create({
   base: {
@@ -37,6 +38,7 @@ const diffTextStyles = stylex.create({
 
 const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, borderColor, cardBodyPadding }) => {
   const { t, i18n } = useTranslation()
+  const resultStyles = useThemeStore((state) => state.theme.data.result)
   const [switchOn, setSwitchOn] = useState(false, [])
 
   const topScoreCount = 3
@@ -72,6 +74,8 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
           textAlign: 'center',
           padding: '0px 0px 0px 80px',
           borderBottom: `${borderColor} solid 4px`,
+          color: resultStyles.content.color,
+          backgroundColor: resultStyles.content.backgroundColor,
         },
         body: {
           padding: cardBodyPadding,
@@ -79,9 +83,11 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
       }}
       style={{
         width: '100%',
-        backgroundColor: 'white',
+        padding: '5px',
         border: `${borderColor} solid 4px`,
         borderRadius: '20px',
+        color: resultStyles.content.color,
+        backgroundColor: resultStyles.content.backgroundColor,
       }}
       extra={
         <Switch
@@ -112,7 +118,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                   margin: '3px 6px',
                   fontSize: 'large',
                   fontWeight: 'bold',
-                  color: 'black',
+                  color: resultStyles.content.color,
                   textAlign: 'center',
                 }}
               >
@@ -196,7 +202,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                           ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
                           : `${fontSizeScale * getSize(140, -16, topScoreCount + 1, index)}%`,
                         fontWeight: 'bold',
-                        color: 'black',
+                        color: resultStyles.content.color,
                         textAlign: 'center',
                       }}
                     >

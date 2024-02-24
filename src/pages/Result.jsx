@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { Card, Flex, Switch, Input, message } from 'antd'
+import { Card, Flex, Switch, message } from 'antd'
 import { useTranslation } from 'react-i18next'
+import { useThemeStore } from '../store/store'
 import MatchCard from '../components/MatchCard'
 import ValueMatchCard from '../components/ValueMatchCard'
 import { useBreakpoint, getContentMaxWidth } from '../utils/useBreakpoint'
@@ -10,8 +11,6 @@ import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/m
 import { getValueConstant } from '../utils/getValueConstant'
 import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
 import * as stylex from '@stylexjs/stylex'
-
-const { Search } = Input
 
 const apiErrorButtonStyles = stylex.create({
   base: {
@@ -90,12 +89,41 @@ const tagButtonStyles = stylex.create({
   },
 })
 
+const linkButtonStyles = stylex.create({
+  base: {
+    display: 'inline-block',
+    whiteSpace: 'nowrap',
+    fontSize: 'medium',
+    margin: '5px',
+    padding: '0px 10px',
+    borderStyle: 'solid',
+    borderWidth: '3px',
+    borderRadius: '30px',
+    color: {
+      default: 'white',
+      ':hover': { '@media (pointer: fine)': 'dodgerblue' },
+      ':active': 'dodgerblue',
+    },
+    backgroundColor: {
+      default: 'dodgerblue',
+      ':hover': { '@media (pointer: fine)': 'white' },
+      ':active': 'white',
+    },
+    borderColor: {
+      default: 'dodgerblue',
+      ':hover': { '@media (pointer: fine)': 'dodgerblue' },
+      ':active': 'dodgerblue',
+    },
+  },
+})
+
 const Result = () => {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
   const { t } = useTranslation()
   const screens = useBreakpoint()
   const navigate = useNavigate()
+  const resultStyles = useThemeStore((state) => state.theme.data.result)
   const [messageApi, contextHolder] = message.useMessage()
   const [expandTags, setExpandTags] = useState(false, [])
 
@@ -199,7 +227,7 @@ const Result = () => {
       align='center'
       gap={20}
       style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backgroundColor: resultStyles.backgroundColor,
         border: 'crimson solid 4px',
         borderRadius: '20px',
         ...getContentMaxWidth(),
@@ -238,6 +266,8 @@ const Result = () => {
                 textAlign: 'center',
                 padding: '0px 0px 0px 80px',
                 borderBottom: 'magenta solid 4px',
+                color: resultStyles.content.color,
+                backgroundColor: resultStyles.content.backgroundColor,
               },
               body: {
                 padding: getCardBodyPadding(),
@@ -245,9 +275,11 @@ const Result = () => {
             }}
             style={{
               width: '100%',
-              backgroundColor: 'white',
+              padding: '5px',
               border: 'magenta solid 4px',
               borderRadius: '20px',
+              color: resultStyles.content.color,
+              backgroundColor: resultStyles.content.backgroundColor,
             }}
             extra={
               <Switch
@@ -302,7 +334,7 @@ const Result = () => {
                   <span
                     style={{
                       margin: '4px',
-                      color: matchedTags.has(value.id) ? 'black' : 'gray',
+                      color: matchedTags.has(value.id) ? resultStyles.content.color : 'gray',
                     }}
                   >
                     {description}
@@ -396,24 +428,49 @@ const Result = () => {
             style={{
               width: '100%',
               padding: getCardBodyPadding(),
-              backgroundColor: 'white',
-              border: 'black solid 4px',
+              backgroundColor: resultStyles.content.backgroundColor,
+              borderColor: resultStyles.content.color,
+              borderStyle: 'solid',
+              borderWidth: '4px',
               borderRadius: '20px',
             }}
           >
-            <span style={{ fontSize: screens.md ? 'medium' : 'small', margin: '10px 20px' }}>
+            <span
+              style={{
+                fontSize: screens.md ? 'medium' : 'small',
+                margin: '10px 20px',
+                color: resultStyles.content.color,
+              }}
+            >
               {t('quiz.result.share.description')}
             </span>
+            <span
+              style={{
+                display: 'block',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                color: resultStyles.content.color,
+                borderColor: resultStyles.content.color,
+                borderStyle: 'solid',
+                borderWidth: '1px',
+                borderRadius: '10px',
+                maxWidth: '100%',
+                padding: '5px',
+              }}
+            >
+              {window.location.href}
+            </span>{' '}
             {contextHolder}
-            <Search
-              value={window.location.href}
-              enterButton={t('quiz.result.share.copy')}
-              readOnly={true}
-              onSearch={() => {
+            <span
+              {...stylex.props(linkButtonStyles.base)}
+              onClick={() => {
                 navigator.clipboard.writeText(window.location.href)
                 messageApi.open({ type: 'success', content: t('quiz.result.share.copied') })
               }}
-            />
+            >
+              {t('quiz.result.share.copy')}
+            </span>
           </Flex>
         </>
       )}

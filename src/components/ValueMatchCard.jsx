@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, Progress, Image, Flex } from 'antd'
 import { useBreakpoint } from '../utils/useBreakpoint'
 import { useTranslation } from 'react-i18next'
+import { useThemeStore } from '../store/store'
 
 const ValueMatchCard = ({
   title,
@@ -16,8 +17,9 @@ const ValueMatchCard = ({
 }) => {
   const { i18n } = useTranslation()
   const screens = useBreakpoint()
+  const resultStyles = useThemeStore((state) => state.theme.data.result)
 
-  const getColor = () => (percent >= 60 ? leftColor : percent <= 40 ? rightColor : 'black')
+  const getColor = () => (percent >= 60 ? leftColor : percent <= 40 ? rightColor : resultStyles.content.color)
 
   const getValueTextStyles = () => {
     if (i18n.language == 'en') {
@@ -67,6 +69,8 @@ const ValueMatchCard = ({
           fontSize: 'x-large',
           textAlign: 'center',
           borderBottom: `${getColor()} solid 4px`,
+          color: resultStyles.content.color,
+          backgroundColor: resultStyles.content.backgroundColor,
         },
         body: {
           padding: {
@@ -80,9 +84,11 @@ const ValueMatchCard = ({
       }}
       style={{
         width: '100%',
-        backgroundColor: 'white',
+        padding: '5px',
         border: `${getColor()} solid 4px`,
         borderRadius: '20px',
+        color: resultStyles.content.color,
+        backgroundColor: resultStyles.content.backgroundColor,
       }}
     >
       <Flex

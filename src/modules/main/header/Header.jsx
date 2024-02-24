@@ -1,14 +1,18 @@
 import React from 'react'
 import { Layout, Space, Flex } from 'antd'
-import { GithubOutlined } from '@ant-design/icons'
+import { MoonOutlined, SunOutlined, GithubOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import { getHeaderFooterMaxWidth } from '../../../utils/useBreakpoint'
 import packageInfo from '../../../../package.json'
 import { useTranslation } from 'react-i18next'
+import { useThemeStore } from '../../../store/store'
+import { getThemeId } from '../../../themes/theme'
 
 const Header = () => {
   const navigate = useNavigate()
   const { i18n } = useTranslation()
+  const themeId = useThemeStore((state) => state.theme.id)
+  const setTheme = useThemeStore((state) => state.setTheme)
 
   const languages = [
     {
@@ -83,6 +87,19 @@ const Header = () => {
               {value.text}
             </span>
           ))}
+          <span
+            onClick={() => {
+              setTheme(themeId == getThemeId().light ? getThemeId().dark : getThemeId().light)
+            }}
+            style={{
+              color: 'white',
+              padding: '0 4px',
+              fontSize: 'medium',
+              cursor: 'pointer',
+            }}
+          >
+            {themeId == getThemeId().light ? <SunOutlined /> : <MoonOutlined />}
+          </span>
           <a
             href={`https://github.com/TWValues/TW-Values/tree/v${packageInfo.version}`}
             target='_blank'

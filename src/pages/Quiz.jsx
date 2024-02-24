@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate, createSearchParams } from 'react-router-dom'
 import shuffle from '../utils/shuffle'
 import { getContentMaxWidth } from '../utils/useBreakpoint'
+import { useThemeStore } from '../store/store'
 import { getQuestions } from '../data/question'
 import { getMatchedIdeologyTags } from '../data/ideology_tag'
 import MULTIPLIER from '../utils/multiplier'
@@ -190,6 +191,7 @@ const buttonStyles = stylex.create({
 const Quiz = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  const quizStyles = useThemeStore((state) => state.theme.data.quiz)
 
   const questions = useMemo(() => {
     return shuffle(getQuestions())
@@ -231,7 +233,7 @@ const Quiz = () => {
       justify='center'
       align='center'
       style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backgroundColor: quizStyles.backgroundColor,
         border: 'crimson solid 4px',
         borderRadius: '20px',
         ...getContentMaxWidth(),
@@ -251,6 +253,8 @@ const Quiz = () => {
               header: {
                 fontSize: 'xx-large',
                 borderBottom: 'dodgerblue solid 4px',
+                color: quizStyles.content.color,
+                backgroundColor: quizStyles.content.backgroundColor,
               },
               body: {
                 fontSize: 'x-large',
@@ -260,10 +264,13 @@ const Quiz = () => {
             }}
             style={{
               margin: '20px',
+              padding: '5px',
               border: 'dodgerblue solid 4px',
               borderRadius: '20px',
               width: '100%',
               maxWidth: '800px',
+              color: quizStyles.content.color,
+              backgroundColor: quizStyles.content.backgroundColor,
             }}
           >
             {t(`quiz.questions.${questions[currentSelectedQuestionIndex].id}.description`)}
@@ -273,9 +280,11 @@ const Quiz = () => {
             justify='center'
             align='center'
             style={{
-              backgroundColor: 'white',
-              border: 'black solid 4px',
-              padding: '12px 24px',
+              backgroundColor: quizStyles.content.backgroundColor,
+              borderColor: quizStyles.content.color,
+              borderStyle: 'solid',
+              borderWidth: '4px',
+              padding: '12px 16px',
               borderRadius: '20px',
               width: '100%',
               maxWidth: '360px',

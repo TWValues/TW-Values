@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import Header from './header/Header'
 import Footer from './footer/Footer'
 import { reduceWithDelimiter } from '../../utils/range'
+import { useThemeStore } from '../../store/store'
 
 import bg1 from '../../assets/background/bg1.svg'
 import bg2 from '../../assets/background/bg2.svg'
@@ -11,6 +12,8 @@ import bg2 from '../../assets/background/bg2.svg'
 const { Content } = Layout
 
 const Main = () => {
+  const mainStyles = useThemeStore((state) => state.theme.data.main)
+
   const backgroundImages = [bg1, bg2]
   const [bgPositionY, setBgPositionY] = useState(
     backgroundImages.map(() => 0),
@@ -38,6 +41,7 @@ const Main = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          backgroundColor: mainStyles.backgroundColor,
           backgroundImage: reduceWithDelimiter(backgroundImages, ',', (value) => `url("${value}")`),
           backgroundRepeat: 'repeat',
           backgroundPositionY: reduceWithDelimiter(bgPositionY, ','),

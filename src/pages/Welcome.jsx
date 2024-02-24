@@ -2,6 +2,7 @@ import React from 'react'
 import { Divider, Alert, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { useThemeStore } from '../store/store'
 import { getContentMaxWidth } from '../utils/useBreakpoint'
 import ValueIntroCard from '../components/ValueIntroCard'
 import { getValueConstant } from '../utils/getValueConstant'
@@ -40,8 +41,8 @@ const buttonStyles = stylex.create({
 
 const Welcome = () => {
   const { t } = useTranslation()
-
   const navigate = useNavigate()
+  const welcomeStyles = useThemeStore((state) => state.theme.data.welcome)
 
   return (
     <Flex
@@ -50,7 +51,7 @@ const Welcome = () => {
       align='center'
       gap={20}
       style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backgroundColor: welcomeStyles.backgroundColor,
         border: 'crimson solid 4px',
         borderRadius: '20px',
         ...getContentMaxWidth(),
@@ -65,7 +66,7 @@ const Welcome = () => {
         align='center'
         style={{
           width: '100%',
-          backgroundColor: 'white',
+          backgroundColor: welcomeStyles.content.backgroundColor,
           border: 'dodgerblue solid 4px',
           borderRadius: '20px',
           padding: '16px',
@@ -74,7 +75,7 @@ const Welcome = () => {
         <h1
           style={{
             fontSize: 'xx-large',
-            color: 'black',
+            color: welcomeStyles.content.color,
             padding: '10px',
           }}
         >
@@ -82,7 +83,7 @@ const Welcome = () => {
         </h1>
         <span
           style={{
-            color: 'black',
+            color: welcomeStyles.content.color,
             fontSize: 'large',
             padding: '10px',
           }}
@@ -111,7 +112,7 @@ const Welcome = () => {
         gap={10}
         style={{
           width: '100%',
-          backgroundColor: 'white',
+          backgroundColor: welcomeStyles.content.backgroundColor,
           border: 'orange solid 4px',
           borderRadius: '20px',
           padding: '16px',
@@ -120,16 +121,16 @@ const Welcome = () => {
         <h2
           style={{
             fontSize: 'x-large',
-            color: 'black',
+            color: welcomeStyles.content.color,
             padding: '10px',
           }}
         >
           {t('quiz.introduction.title')}
         </h2>
-        <span style={{ fontSize: 'large' }}>
+        <span style={{ fontSize: 'large', color: welcomeStyles.content.color }}>
           {t('quiz.introduction.description', { count: getQuestions().length })}
         </span>
-        <Divider style={{ backgroundColor: 'black' }} />
+        <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
           title={t('quiz.result.axes.economic.title')}
           leftTitle={t('quiz.result.axes.economic.equality.name')}
@@ -139,7 +140,7 @@ const Welcome = () => {
           leftDescription={t('quiz.result.axes.economic.equality.description')}
           rightDescription={t('quiz.result.axes.economic.efficiency.description')}
         />
-        <Divider style={{ backgroundColor: 'black' }} />
+        <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
           title={t('quiz.result.axes.diplomatic.title')}
           leftTitle={t('quiz.result.axes.diplomatic.globe.name')}
@@ -149,7 +150,7 @@ const Welcome = () => {
           leftDescription={t('quiz.result.axes.diplomatic.globe.description')}
           rightDescription={t('quiz.result.axes.diplomatic.nation.description')}
         />
-        <Divider style={{ backgroundColor: 'black' }} />
+        <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
           title={t('quiz.result.axes.civil.title')}
           leftTitle={t('quiz.result.axes.civil.liberty.name')}
@@ -159,7 +160,7 @@ const Welcome = () => {
           leftDescription={t('quiz.result.axes.civil.liberty.description')}
           rightDescription={t('quiz.result.axes.civil.authority.description')}
         />
-        <Divider style={{ backgroundColor: 'black' }} />
+        <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
           title={t('quiz.result.axes.environmental.title')}
           leftTitle={t('quiz.result.axes.environmental.ecology.name')}
@@ -169,7 +170,7 @@ const Welcome = () => {
           leftDescription={t('quiz.result.axes.environmental.ecology.description')}
           rightDescription={t('quiz.result.axes.environmental.production.description')}
         />
-        <Divider style={{ backgroundColor: 'black' }} />
+        <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
           title={t('quiz.result.axes.societal.title')}
           leftTitle={t('quiz.result.axes.societal.progress.name')}
@@ -179,7 +180,7 @@ const Welcome = () => {
           leftDescription={t('quiz.result.axes.societal.progress.description')}
           rightDescription={t('quiz.result.axes.societal.tradition.description')}
         />
-        <Divider style={{ backgroundColor: 'black' }} />
+        <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
           title={t('quiz.result.axes.sovereignty.title')}
           leftTitle={t('quiz.result.axes.sovereignty.independence.name')}
@@ -189,7 +190,7 @@ const Welcome = () => {
           leftDescription={t('quiz.result.axes.sovereignty.independence.description')}
           rightDescription={t('quiz.result.axes.sovereignty.unification.description')}
         />
-        <Divider style={{ backgroundColor: 'black' }} />
+        <Divider style={{ backgroundColor: welcomeStyles.content.color }} />
         <ValueIntroCard
           title={t('quiz.result.axes.us_vs_china.title')}
           leftTitle={t('quiz.result.axes.us_vs_china.pro_american.name')}
