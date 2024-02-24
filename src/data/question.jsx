@@ -1,5 +1,4 @@
 const WEIGHTS = {
-  p150: 24,
   p100: 16,
   p075: 12,
   p050: 8,
@@ -336,8 +335,8 @@ export const getQuestions = () => [
   {
     id: 'q1001',
     weight: {
-      sovereignty: WEIGHTS.p150,
-      diplomatic: -WEIGHTS.p100,
+      sovereignty: WEIGHTS.p100,
+      diplomatic: -WEIGHTS.p075,
     },
   },
   {
@@ -356,14 +355,14 @@ export const getQuestions = () => [
   {
     id: 'q1100',
     weight: {
-      sovereignty: -WEIGHTS.p075,
+      sovereignty: -WEIGHTS.p100,
     },
   },
   {
     id: 'q1101',
     weight: {
-      sovereignty: -WEIGHTS.p150,
-      us_vs_china: -WEIGHTS.p100,
+      sovereignty: -WEIGHTS.p100,
+      us_vs_china: -WEIGHTS.p075,
     },
   },
   {

@@ -101,9 +101,9 @@ test('party:kmt', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.d,
-    q1301: MULTIPLIER.n,
-    q1302: MULTIPLIER.n,
-    q1303: MULTIPLIER.d,
+    q1301: MULTIPLIER.d,
+    q1302: MULTIPLIER.d,
+    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -167,7 +167,7 @@ test('party:lp', () => {
     q0900: MULTIPLIER.n,
     q0901: MULTIPLIER.n,
     q0902: MULTIPLIER.n,
-    q1000: MULTIPLIER.cd,
+    q1000: MULTIPLIER.d,
     q1001: MULTIPLIER.cd,
     q1002: MULTIPLIER.cd,
     q1003: MULTIPLIER.d,
@@ -246,7 +246,7 @@ test('party:dpp', () => {
     q0901: MULTIPLIER.a,
     q0902: MULTIPLIER.d,
     q1000: MULTIPLIER.ca,
-    q1001: MULTIPLIER.a,
+    q1001: MULTIPLIER.n,
     q1002: MULTIPLIER.ca,
     q1003: MULTIPLIER.d,
     q1100: MULTIPLIER.d,
@@ -336,7 +336,7 @@ test('party:np', () => {
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.cd,
     q1301: MULTIPLIER.n,
-    q1302: MULTIPLIER.a,
+    q1302: MULTIPLIER.n,
     q1303: MULTIPLIER.a,
   }
 
@@ -402,7 +402,7 @@ test('party:gpt', () => {
     q0901: MULTIPLIER.cd,
     q0902: MULTIPLIER.d,
     q1000: MULTIPLIER.ca,
-    q1001: MULTIPLIER.a,
+    q1001: MULTIPLIER.n,
     q1002: MULTIPLIER.a,
     q1003: MULTIPLIER.n,
     q1100: MULTIPLIER.d,
@@ -446,7 +446,7 @@ test('party:tsu', () => {
       expect(tsu.weight[key]).toEqual(value)
     }
   }
-  expect(tsu.weight.sovereignty).toEqual(dpp.weight.sovereignty + 5)
+  expect(tsu.weight.sovereignty).toEqual(dpp.weight.sovereignty + 10)
   expect(tsu.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
@@ -513,7 +513,7 @@ test('party:npp', () => {
     q0901: MULTIPLIER.d,
     q0902: MULTIPLIER.d,
     q1000: MULTIPLIER.ca,
-    q1001: MULTIPLIER.a,
+    q1001: MULTIPLIER.n,
     q1002: MULTIPLIER.a,
     q1003: MULTIPLIER.ca,
     q1100: MULTIPLIER.d,
@@ -552,7 +552,7 @@ test('party:sdp', () => {
 test('party:tsp', () => {
   const tsp = getPoliticalParty('tsp')
   const dpp = getPoliticalParty('dpp')
-  expect(tsp.weight.sovereignty).toEqual(dpp.weight.sovereignty + 5)
+  expect(tsp.weight.sovereignty).toEqual(dpp.weight.sovereignty + 10)
   expect(tsp.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
@@ -622,7 +622,7 @@ test('party:tpp', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.d,
     q1202: MULTIPLIER.d,
-    q1301: MULTIPLIER.n,
+    q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.n,
     q1303: MULTIPLIER.a,
   }
