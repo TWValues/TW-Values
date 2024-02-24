@@ -3,11 +3,14 @@
 @layer priority1{
 .xd3odtx{margin:0 4px}
 .x578xsc{margin:2px 4px}
+.x1a7442q{margin:40px}
 .x20nx6h{margin:4px}
 .x16zck5j{margin:5px}
 .x1f8r7k0{margin:6px}
+.x1p3i4rr{padding:0 10px}
 .xvid92k{padding:1px 12px}
 .x1i3ajwb{padding:2px}
+.xt65foa{padding:5px 20px}
 }
 @layer priority2{
 .x1k40sjj{border-color:#004000}
@@ -64,8 +67,11 @@
 .x1rg5ohu{display:inline-block}
 .xdt5ytf{flex-direction:column}
 .xcgtkfa{font-size:large}
+.x1jylwp8{font-size:medium}
 .xt0237e{font-size:x-large}
+.x117nqv4{font-weight:bold}
 .xl56j7k{justify-content:center}
+.x2b8uid{text-align:center}
 .x1hr2gdg{text-align:right}
 .xuxw1ft{white-space:nowrap}
 .x4u2hfz:active{background-color:white}
@@ -92,6 +98,7 @@
 @layer priority4{
 .x1vqgdyp{height:40px}
 .xng8ra{height:60px}
+.xt7dq6l{height:auto}
 .xh8yej3{width:100%}
 .x1kmanbg{width:55%}
 .x65xoit{width:70%}
