@@ -41,6 +41,9 @@ const Header = () => {
         height: 'auto',
         backgroundColor: 'crimson',
         padding: '0',
+        position: 'fixed', // for fixed header
+        top: '0', // for fixed header
+        zIndex: '1', // for fixed header
       }}
     >
       <Flex

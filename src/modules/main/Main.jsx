@@ -47,6 +47,7 @@ const Main = () => {
           backgroundPositionY: reduceWithDelimiter(bgPositionY, ','),
           transition: 'all 0.25s ease-out 0s',
           width: '100%',
+          paddingTop: '64px', // for fixed header
         }}
       >
         <Outlet />
