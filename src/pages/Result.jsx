@@ -447,9 +447,7 @@ const Result = () => {
             <span
               style={{
                 display: 'block',
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
+                overflowWrap: 'break-word',
                 color: resultStyles.content.color,
                 borderColor: resultStyles.content.color,
                 borderStyle: 'solid',
