@@ -24,7 +24,7 @@ expect.extend({
   },
 })
 
-const checkWeights = (weights, partyId) => {
+const checkPartyWeights = (weights, partyId) => {
   const party = getPoliticalParty(partyId)
   const error = 2
   expect(weights.economic).toEqualWithError(party.weight.economic, error)
@@ -35,7 +35,7 @@ const checkWeights = (weights, partyId) => {
   expect(weights.us_vs_china).toEqualWithError(party.weight.us_vs_china, error)
 }
 
-test('kmt', () => {
+test('party:kmt', () => {
   const choices = {
     q0000: MULTIPLIER.a,
     q0001: MULTIPLIER.d,
@@ -107,13 +107,13 @@ test('kmt', () => {
   }
 
   const weights = getValueScores(getQuestions(), choices)
-  checkWeights(weights, 'kmt')
+  checkPartyWeights(weights, 'kmt')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('kmt')
   expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
-test('lp', () => {
+test('party:lp', () => {
   const choices = {
     q0000: MULTIPLIER.ca,
     q0001: MULTIPLIER.a,
@@ -185,13 +185,13 @@ test('lp', () => {
   }
 
   const weights = getValueScores(getQuestions(), choices)
-  checkWeights(weights, 'lp')
+  checkPartyWeights(weights, 'lp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('lp')
   expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
-test('dpp', () => {
+test('party:dpp', () => {
   const choices = {
     q0000: MULTIPLIER.a,
     q0001: MULTIPLIER.d,
@@ -263,13 +263,13 @@ test('dpp', () => {
   }
 
   const weights = getValueScores(getQuestions(), choices)
-  checkWeights(weights, 'dpp')
+  checkPartyWeights(weights, 'dpp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('dpp')
   expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
-test('np', () => {
+test('party:np', () => {
   const choices = {
     q0000: MULTIPLIER.a,
     q0001: MULTIPLIER.d,
@@ -341,13 +341,13 @@ test('np', () => {
   }
 
   const weights = getValueScores(getQuestions(), choices)
-  checkWeights(weights, 'np')
+  checkPartyWeights(weights, 'np')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('np')
   expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
-test('gpt', () => {
+test('party:gpt', () => {
   const choices = {
     q0000: MULTIPLIER.a,
     q0001: MULTIPLIER.a,
@@ -419,13 +419,13 @@ test('gpt', () => {
   }
 
   const weights = getValueScores(getQuestions(), choices)
-  checkWeights(weights, 'gpt')
+  checkPartyWeights(weights, 'gpt')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('gpt')
   expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
-test('pfp', () => {
+test('party:pfp', () => {
   const pfp = getPoliticalParty('pfp')
   const kmt = getPoliticalParty('kmt')
   const np = getPoliticalParty('np')
@@ -437,7 +437,7 @@ test('pfp', () => {
   expect(pfp.weight.us_vs_china).toEqualWithinRange(np.weight.us_vs_china, kmt.weight.us_vs_china)
 })
 
-test('tsu', () => {
+test('party:tsu', () => {
   const tsu = getPoliticalParty('tsu')
   const dpp = getPoliticalParty('dpp')
   const ideology = getIdeology('liberal_conservatism')
@@ -450,7 +450,7 @@ test('tsu', () => {
   expect(tsu.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
-test('cupp', () => {
+test('party:cupp', () => {
   const cupp = getPoliticalParty('cupp')
   const np = getPoliticalParty('np')
   expect(cupp.weight.societal).toBeLessThanOrEqual(np.weight.societal)
@@ -458,7 +458,7 @@ test('cupp', () => {
   expect(cupp.weight.us_vs_china).toBeLessThanOrEqual(np.weight.us_vs_china - 10)
 })
 
-test('npp', () => {
+test('party:npp', () => {
   const choices = {
     q0000: MULTIPLIER.a,
     q0001: MULTIPLIER.a,
@@ -530,13 +530,13 @@ test('npp', () => {
   }
 
   const weights = getValueScores(getQuestions(), choices)
-  checkWeights(weights, 'npp')
+  checkPartyWeights(weights, 'npp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('npp')
   expect(party.diff).toBeLessThanOrEqual(0.03)
 })
 
-test('sdp', () => {
+test('party:sdp', () => {
   const sdp = getPoliticalParty('sdp')
   const dpp = getPoliticalParty('dpp')
   const ideology = getIdeology('social_democracy')
@@ -549,14 +549,14 @@ test('sdp', () => {
   expect(sdp.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
-test('tsp', () => {
+test('party:tsp', () => {
   const tsp = getPoliticalParty('tsp')
   const dpp = getPoliticalParty('dpp')
   expect(tsp.weight.sovereignty).toEqual(dpp.weight.sovereignty + 5)
   expect(tsp.weight.us_vs_china).toEqual(dpp.weight.us_vs_china)
 })
 
-test('tpp', () => {
+test('party:tpp', () => {
   const choices = {
     q0000: MULTIPLIER.a,
     q0001: MULTIPLIER.d,
@@ -628,7 +628,7 @@ test('tpp', () => {
   }
 
   const weights = getValueScores(getQuestions(), choices)
-  checkWeights(weights, 'tpp')
+  checkPartyWeights(weights, 'tpp')
   const party = getPoliticalPartyMatchScores(weights).at(0)
   expect(party.id).toEqual('tpp')
   expect(party.diff).toBeLessThanOrEqual(0.03)
