@@ -363,7 +363,7 @@ const Result = () => {
             leftColor={getValueConstant().globe.color}
             rightColor={getValueConstant().nation.color}
             percent={weights.diplomatic}
-            descriptionTitle={t(`quiz.result.topics.economic.categories.${getCategory(weights.diplomatic)}`)}
+            descriptionTitle={t(`quiz.result.topics.diplomatic.categories.${getCategory(weights.diplomatic)}`)}
           />
           <ValueMatchCard
             title={t('quiz.result.topics.civil.title')}
