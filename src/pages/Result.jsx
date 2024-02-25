@@ -120,7 +120,7 @@ const linkButtonStyles = stylex.create({
 const Result = () => {
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const screens = useBreakpoint()
   const navigate = useNavigate()
   const resultStyles = useThemeStore((state) => state.theme.data.result)
@@ -156,6 +156,10 @@ const Result = () => {
       })
     }
     return tags.filter((value) => matchedTags.has(value.id))
+  }
+
+  const isLanguage = (lang) => {
+    return i18n.language == lang
   }
 
   const getCategory = (percent) => {
@@ -247,7 +251,7 @@ const Result = () => {
             data={getIdeologyMatchScores(weights)}
             nameTemplate='quiz.result.ideologies.data.{{id}}.name'
             linkTemplate='quiz.result.ideologies.data.{{id}}.link'
-            fontSizeScale={1.2}
+            fontSizeScale={isLanguage('en') ? 1.0 : 1.2}
             borderColor='dodgerblue'
             cardBodyPadding={getCardBodyPadding()}
           />
@@ -256,7 +260,7 @@ const Result = () => {
             data={getPoliticalPartyMatchScores(weights)}
             nameTemplate='quiz.result.political_parties.data.{{id}}.name'
             linkTemplate='quiz.result.political_parties.data.{{id}}.link'
-            fontSizeScale={1.0}
+            fontSizeScale={isLanguage('en') ? 0.8 : 1.0}
             borderColor='tomato'
             cardBodyPadding={getCardBodyPadding()}
           />

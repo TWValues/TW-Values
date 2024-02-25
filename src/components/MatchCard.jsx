@@ -37,7 +37,7 @@ const diffTextStyles = stylex.create({
 })
 
 const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, borderColor, cardBodyPadding }) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const resultStyles = useThemeStore((state) => state.theme.data.result)
   const [switchOn, setSwitchOn] = useState(false, [])
 
@@ -45,10 +45,6 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
 
   const getTopScores = (scores, showAll, count) => {
     return showAll ? scores : scores.slice(0, Math.min(scores.length, count))
-  }
-
-  const isLanguage = (lang) => {
-    return i18n.language == lang
   }
 
   const getDiffColor = (diff) => (diff <= 10 ? 'green' : diff <= 20 ? 'orange' : 'red')
@@ -189,7 +185,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                   <Flex vertical={false} justify='center' align='center' style={{ margin: '5px' }}>
                     {value.icon && (
                       <img
-                        width={fontSizeScale * getSize(24, -3, topScoreCount + 1, index)}
+                        width={fontSizeScale * getSize(24, -3, topScoreCount, index)}
                         height='auto'
                         src={value.icon}
                         alt=''
@@ -198,9 +194,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                     <span
                       style={{
                         margin: '3px 6px',
-                        fontSize: isLanguage('en')
-                          ? `${fontSizeScale * getSize(100, -8, topScoreCount + 1, index)}%`
-                          : `${fontSizeScale * getSize(140, -16, topScoreCount + 1, index)}%`,
+                        fontSize: `${fontSizeScale * getSize(160, -28, topScoreCount, index)}%`,
                         fontWeight: 'bold',
                         color: resultStyles.content.color,
                         textAlign: 'center',
@@ -212,18 +206,14 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                       style={{
                         margin: '3px 2px',
                         color: getDiffColor(diff),
-                        fontSize: isLanguage('en')
-                          ? `${fontSizeScale * getSize(80, -8, topScoreCount + 1, index)}%`
-                          : `${fontSizeScale * getSize(100, -10, topScoreCount + 1, index)}%`,
+                        fontSize: `${0.8 * fontSizeScale * getSize(160, -28, topScoreCount, index)}%`,
                       }}
                     />
                     <span
                       style={{
                         margin: '3px 2px',
                         color: getDiffColor(diff),
-                        fontSize: isLanguage('en')
-                          ? `${fontSizeScale * getSize(72, -6, topScoreCount + 1, index)}%`
-                          : `${fontSizeScale * getSize(80, -8, topScoreCount + 1, index)}%`,
+                        fontSize: `${0.8 * fontSizeScale * getSize(160, -28, topScoreCount, index)}%`,
                         textAlign: 'center',
                       }}
                     >
