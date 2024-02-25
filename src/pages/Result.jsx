@@ -118,8 +118,7 @@ const linkButtonStyles = stylex.create({
 })
 
 const Result = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const { t, i18n } = useTranslation()
   const screens = useBreakpoint()
   const navigate = useNavigate()
