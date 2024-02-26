@@ -36,6 +36,17 @@ const diffTextStyles = stylex.create({
   }),
 })
 
+const scaleUpStyles = stylex.create({
+  base: {
+    margin: '5px',
+    transition: 'transform 0.2s',
+    transform: {
+      default: 'scale(1.0)',
+      ':hover': 'scale(1.2)',
+    },
+  },
+})
+
 const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, borderColor, cardBodyPadding }) => {
   const { t } = useTranslation()
   const resultStyles = useThemeStore((state) => state.theme.data.result)
@@ -182,7 +193,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
             >
               <Flex vertical={false} justify='center' align='center'>
                 <Popover title={<PopoverTitle />} content={<PopoverContent />}>
-                  <Flex vertical={false} justify='center' align='center' style={{ margin: '5px' }}>
+                  <Flex vertical={false} justify='center' align='center' {...stylex.props(scaleUpStyles.base)}>
                     {value.icon && (
                       <img
                         width={fontSizeScale * getSize(24, -3, topScoreCount, index)}
@@ -194,7 +205,7 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                     <span
                       style={{
                         margin: '3px 6px',
-                        fontSize: `${fontSizeScale * getSize(160, -28, topScoreCount, index)}%`,
+                        fontSize: `${fontSizeScale * getSize(160, -24, topScoreCount, index)}%`,
                         fontWeight: 'bold',
                         color: resultStyles.content.color,
                         textAlign: 'center',
@@ -206,14 +217,14 @@ const MatchCard = ({ title, data, nameTemplate, linkTemplate, fontSizeScale, bor
                       style={{
                         margin: '3px 2px',
                         color: getDiffColor(diff),
-                        fontSize: `${0.8 * fontSizeScale * getSize(160, -28, topScoreCount, index)}%`,
+                        fontSize: `${0.8 * fontSizeScale * getSize(160, -24, topScoreCount, index)}%`,
                       }}
                     />
                     <span
                       style={{
                         margin: '3px 2px',
                         color: getDiffColor(diff),
-                        fontSize: `${0.8 * fontSizeScale * getSize(160, -28, topScoreCount, index)}%`,
+                        fontSize: `${0.8 * fontSizeScale * getSize(160, -24, topScoreCount, index)}%`,
                         textAlign: 'center',
                       }}
                     >
