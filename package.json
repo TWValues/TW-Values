@@ -19,6 +19,9 @@
     "test": "vitest",
     "lint:check": "eslint ./src",
     "lint": "eslint --fix ./src",
+    "release:major": "npm version major -m \"Bump version to v%s.\"",
+    "release:minor": "npm version minor -m \"Bump version to v%s.\"",
+    "release:patch": "npm version patch -m \"Bump version to v%s.\"",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
