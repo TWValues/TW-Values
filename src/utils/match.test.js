@@ -100,9 +100,9 @@ test('party:kmt', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.d,
+    q1300: MULTIPLIER.a,
     q1301: MULTIPLIER.a,
     q1302: MULTIPLIER.d,
-    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -177,9 +177,9 @@ test('party:lp', () => {
     q1200: MULTIPLIER.cd,
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.cd,
+    q1300: MULTIPLIER.a,
     q1301: MULTIPLIER.a,
     q1302: MULTIPLIER.ca,
-    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -254,9 +254,9 @@ test('party:dpp', () => {
     q1200: MULTIPLIER.a,
     q1201: MULTIPLIER.n,
     q1202: MULTIPLIER.a,
+    q1300: MULTIPLIER.d,
     q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.d,
-    q1303: MULTIPLIER.d,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -331,9 +331,9 @@ test('party:np', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.cd,
     q1202: MULTIPLIER.cd,
+    q1300: MULTIPLIER.a,
     q1301: MULTIPLIER.a,
     q1302: MULTIPLIER.d,
-    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -408,9 +408,9 @@ test('party:gpt', () => {
     q1200: MULTIPLIER.a,
     q1201: MULTIPLIER.n,
     q1202: MULTIPLIER.a,
+    q1300: MULTIPLIER.d,
     q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.d,
-    q1303: MULTIPLIER.d,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -518,9 +518,9 @@ test('party:npp', () => {
     q1200: MULTIPLIER.a,
     q1201: MULTIPLIER.n,
     q1202: MULTIPLIER.a,
+    q1300: MULTIPLIER.a,
     q1301: MULTIPLIER.d,
     q1302: MULTIPLIER.d,
-    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
@@ -615,9 +615,9 @@ test('party:tpp', () => {
     q1200: MULTIPLIER.d,
     q1201: MULTIPLIER.d,
     q1202: MULTIPLIER.d,
+    q1300: MULTIPLIER.a,
     q1301: MULTIPLIER.n,
     q1302: MULTIPLIER.d,
-    q1303: MULTIPLIER.a,
   }
 
   const weights = getValueScores(getQuestions(), choices)
