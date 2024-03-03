@@ -706,6 +706,11 @@
             "name": "政治異化",
             "description": "意指公民個人對現行政治制度的疏遠感或排斥感。在代議制民主國家，這通常會導致選民冷漠，以及在選舉中棄選和棄投。",
             "link": "https://zh.wikipedia.org/zh-tw/%E6%94%BF%E6%B2%BB%E7%95%B0%E5%8C%96"
+          },
+          "multiculturalism": {
+            "name": "多元文化主義",
+            "description": "多元文化主義支持各種擁有不同的文化的族群皆可以生活在同一個社會之中並相互尊重以及受到同等待遇。",
+            "link": "https://zh.wikipedia.org/zh-tw/%E5%A4%9A%E5%85%83%E6%96%87%E5%8C%96%E4%B8%BB%E7%BE%A9"
           }
         }
       }

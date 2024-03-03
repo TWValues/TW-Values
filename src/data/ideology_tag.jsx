@@ -53,6 +53,10 @@ export const getIdeologyTags = () => [
       return weak.length >= 0.8 * all.length
     },
   },
+  {
+    id: 'multiculturalism',
+    predicate: (choices) => choices['q0200'] > MULTIPLIER.n && choices['q0203'] > MULTIPLIER.n,
+  },
 ]
 
 export const getMatchedIdeologyTags = (choices) =>

@@ -706,6 +706,11 @@
             "name": "Political Apathy",
             "description": "In political science, political apathy is a lack of interest or apathy towards politics.",
             "link": "https://en.wikipedia.org/wiki/Political_apathy"
+          },
+          "multiculturalism": {
+            "name": "Multiculturalism",
+            "description": "It supports that various ethnic with different cultures exist in a single society, and all groups respect each other and are treated equally.",
+            "link": "https://en.wikipedia.org/wiki/Multiculturalism"
           }
         }
       }
