@@ -38,7 +38,7 @@
         "description": "The government should increase the rate of the House Hoarding Tax."
       },
       "q0100": {
-        "description": "For the sake of economic growth, sacrifice of labor rights is acceptable. Whoever invented unpaid leave should win a Nobel Prize."
+        "description": "\"For the sake of economic growth, sacrifice of labor rights is acceptable. Whoever invented unpaid leave should win a Nobel Prize.\""
       },
       "q0101": {
         "description": "Inheritance is a legitimate form of wealth."
@@ -101,7 +101,7 @@
         "description": "The minimum age for participation in elections should NOT be changed from 20 to 18."
       },
       "q0501": {
-        "description": "Government surveillance is necessary in the modern world."
+        "description": "Government should propose laws to fight misinfomation, even if the law restricts free speech in some degree."
       },
       "q0502": {
         "description": "The sacrifice of some civil liberties is necessary to protect us from acts of terrorism."
@@ -152,7 +152,7 @@
         "description": "Prostitution should be illegal."
       },
       "q0705": {
-        "description": "- Young and beautiful girls, suitable for being counter staff.\n- It is scary for women to go out on the street without makeup.\n- Too many unmarried women are a national security concern."
+        "description": "- \"Young and beautiful girls, suitable for being counter staff.\"\n- \"It is scary for women to go out on the street without makeup.\"\n- \"Too many unmarried women are a national security concern.\""
       },
       "q0800": {
         "description": "Climate change is currently one of the greatest threats to our way of life."
@@ -188,37 +188,37 @@
         "description": "Participate in international events as Chinese Taipei is unacceptable."
       },
       "q1100": {
-        "description": "Taiwan is a province of People's Republic of China (P.R.C.)."
+        "description": "Taiwan is a province of the People's Republic of China (PRC)."
       },
       "q1101": {
-        "description": "Political negotiations with P.R.C. should be carried out immediately to achieve national unification."
+        "description": "Political negotiations with the PRC should be carried out immediately to achieve national unification."
       },
       "q1102": {
-        "description": "The government should sign cross-strait peace agreement with P.R.C. as soon as possible."
+        "description": "The government should sign cross-strait peace agreement with the PRC as soon as possible."
       },
       "q1103": {
         "description": "All of us are Chinese."
       },
       "q1104": {
-        "description": "Republic of China (R.O.C.) is the sole legitimate government of China."
+        "description": "The Republic of China is the sole legitimate government of China."
       },
       "q1200": {
-        "description": "The government should stand with U.S. against P.R.C.."
+        "description": "The government should stand with the USA against the PRC."
       },
       "q1201": {
-        "description": "A referendum should be held immediately to join the U.S. as the 51st state of them."
+        "description": "A referendum should be held immediately to join the USA as the 51st state of them."
       },
       "q1202": {
-        "description": "The U.S. military will definitely help Taiwan against P.R.C. when a war breaks out in the Taiwan Strait."
+        "description": "The U.S. Armed Forces will definitely help Taiwan against the PRC when a war breaks out in the Taiwan Strait."
       },
       "q1300": {
-        "description": "U.S. Beef and pork containing ractopamine should be banned."
+        "description": "The U.S. Beef and pork containing ractopamine should be banned."
       },
       "q1301": {
-        "description": "The government should communicate with P.R.C. on the premise of 1992 Consensus."
+        "description": "The government should communicate with the PRC on the premise of the 1992 Consensus."
       },
       "q1302": {
-        "description": "We should ignore the U.S. export ban and continue to provide advanced semiconductor manufacturing services to P.R.C.."
+        "description": "We should ignore the US export ban and continue to provide advanced semiconductor manufacturing services to the PRC."
       }
     },
     "result": {
@@ -501,7 +501,7 @@
           },
           "religious_anarchism": {
             "name": "Religious Anarchism",
-            "link": ""
+            "link": "https://en.wikipedia.org/wiki/religious_anarchism"
           },
           "right_wing_populism": {
             "name": "Right-Wing Populism",
@@ -589,7 +589,7 @@
           },
           "totalitarian_capitalism": {
             "name": "Totalitarian Capitalism",
-            "link": ""
+            "link": "https://en.wikipedia.org/wiki/totalitarian_capitalism"
           },
           "ultra_capitalism": {
             "name": "Ultra-Capitalism",
@@ -610,7 +610,7 @@
           },
           "lp": {
             "name": "Labor Party",
-            "link": ""
+            "link": "https://en.wikipedia.org/wiki/Labor_Party_(Taiwan)"
           },
           "dpp": {
             "name": "Democratic Progressive Party",
@@ -663,9 +663,9 @@
             "link": ""
           },
           "roc_independence": {
-            "name": "R.O.C. Independence",
+            "name": "R.O.C. Independence (Huadu)",
             "description": "Republic of China renounce China's territory and sovereignty and become two completely independent states with the People's Republic of China.",
-            "link": ""
+            "link": "https://en.wikipedia.org/wiki/Huadu_(Taiwan)"
           },
           "tw_independence": {
             "name": "Taiwan Independence",
