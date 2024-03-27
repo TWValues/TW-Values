@@ -223,8 +223,11 @@
     },
     "result": {
       "api_error": {
-        "description": "抱歉，您的測試結果無法相容於目前新版本，請重新進行測試。",
+        "description": "抱歉，您的結果無法相容於目前新版本，請重新進行測試。",
         "index": "回到首頁"
+      },
+      "api_warning": {
+        "description": "目前顯示的資料是來自舊的問題集，請重新進行測試以獲得最新結果。"
       },
       "diff_card": {
         "compare_with": "與 {{name}} 的比較",

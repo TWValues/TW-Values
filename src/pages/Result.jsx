@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Card, Flex, Switch, message } from 'antd'
+import { WarningOutlined } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import { useThemeStore } from '../store/store'
 import MatchCard from '../components/MatchCard'
@@ -9,7 +10,7 @@ import { useBreakpoint, getContentMaxWidth } from '../utils/useBreakpoint'
 import { getIdeologyTags } from '../data/ideology_tag'
 import { getIdeologyMatchScores, getPoliticalPartyMatchScores } from '../utils/match'
 import { getValueConstant } from '../utils/getValueConstant'
-import { API_VERSION_KEY, API_VERSION_VALUE } from '../utils/apiVersion'
+import { API_VERSION_KEY, isApiVersionCompatible, isApiVersionEqual } from '../utils/apiVersion'
 import * as stylex from '@stylexjs/stylex'
 
 const apiErrorButtonStyles = stylex.create({
@@ -126,7 +127,7 @@ const Result = () => {
   const [messageApi, contextHolder] = message.useMessage()
   const [expandTags, setExpandTags] = useState(false, [])
 
-  const isApiVersionOK = searchParams.get(API_VERSION_KEY) == API_VERSION_VALUE
+  const apiVersion = searchParams.get(API_VERSION_KEY) || ''
 
   const weights = {
     economic: searchParams.get('economic'),
@@ -196,6 +197,7 @@ const Result = () => {
   const ApiErrorPage = () => (
     <Flex
       vertical={true}
+      justify='center'
       align='center'
       style={{
         width: '100%',
@@ -204,11 +206,12 @@ const Result = () => {
         borderStyle: 'solid',
         borderWidth: '4px',
         borderRadius: '20px',
+        padding: '20px',
       }}
     >
       <h2
         style={{
-          margin: '40px',
+          margin: '5px',
           color: 'red',
         }}
       >
@@ -222,6 +225,33 @@ const Result = () => {
       >
         {t(`quiz.result.api_error.index`)}
       </span>
+    </Flex>
+  )
+
+  const ApiWarningPage = () => (
+    <Flex
+      vertical={false}
+      justify='center'
+      align='center'
+      style={{
+        width: '100%',
+        backgroundColor: resultStyles.apiWarningPage.backgroundColor,
+        borderColor: resultStyles.apiWarningPage.borderColor,
+        borderStyle: 'solid',
+        borderWidth: '4px',
+        borderRadius: '20px',
+        padding: '20px',
+      }}
+    >
+      <WarningOutlined style={{ color: resultStyles.apiWarningPage.color, fontSize: 'large' }} />
+      <h3
+        style={{
+          margin: '5px',
+          color: resultStyles.apiWarningPage.color,
+        }}
+      >
+        {t(`quiz.result.api_warning.description`)}
+      </h3>
     </Flex>
   )
 
@@ -241,10 +271,11 @@ const Result = () => {
         padding: '5px',
       }}
     >
-      {!isApiVersionOK ? (
+      {!isApiVersionCompatible(apiVersion) ? (
         <ApiErrorPage />
       ) : (
         <>
+          {!isApiVersionEqual(apiVersion) && <ApiWarningPage />}
           <MatchCard
             title={t('quiz.result.ideologies.name')}
             data={getIdeologyMatchScores(weights)}

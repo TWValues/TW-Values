@@ -223,8 +223,11 @@
     },
     "result": {
       "api_error": {
-        "description": "Sorry, your result is incompatible with current version. Please do the quiz again.",
+        "description": "Sorry, the result is incompatible with current version. Please do the quiz again.",
         "index": "Go to index page"
+      },
+      "api_warning": {
+        "description": "The data being showed is from the old question list. Consider doing the quiz again to obtain latest result."
       },
       "diff_card": {
         "compare_with": "Compare with {{name}}",

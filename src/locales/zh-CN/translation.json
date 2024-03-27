@@ -223,8 +223,11 @@
     },
     "result": {
       "api_error": {
-        "description": "抱歉，您的测试结果无法兼容于目前新版号，请重新进行测试。",
+        "description": "抱歉，您的结果无法兼容于目前新版号，请重新进行测验。",
         "index": "回到主页"
+      },
+      "api_warning": {
+        "description": "目前显示的资料是来自旧的问题集，请重新进行测验以获得最新结果。"
       },
       "diff_card": {
         "compare_with": "与 {{name}} 的比较",

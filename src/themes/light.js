@@ -24,6 +24,11 @@ const theme = {
         color: 'black',
         backgroundColor: 'white',
       },
+      apiWarningPage: {
+        color: 'orangered',
+        backgroundColor: 'white',
+        borderColor: 'black',
+      },
     },
   },
 }
